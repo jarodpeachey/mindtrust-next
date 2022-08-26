@@ -1,0 +1,105 @@
+@use "colors" as *;
+@use "shadows" as *;
+@use "breakpoints" as *;
+
+#menu li.has-submenu {
+  position: relative;
+  filter: drop-shadow(3px 3px 0.9375rem rgba(0, 0, 0, 0.2));
+
+  &:hover a {
+    color: $color--mindtrust;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    background: $color--mindtrust-dark;
+    left: calc(50% + 2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s;
+    bottom: -30px;
+    transition: left 0.1s ease-out, bottom 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0.1s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -20px;
+    left: calc(50% - 6px);
+    transition: left 0.1s ease-out, bottom 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0s;
+  }
+
+  .submenu__wrapper {
+    transition: 0.2s;
+    position: absolute;
+    width: 800px;
+    max-width: 90vw;
+    top: calc(100%);
+    padding-top: 14px;
+    margin: 0 auto;
+    z-index: 999;
+    left: -6rem;
+    @include media-breakpoint-up(xl) {
+      left: 0;
+    }
+
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0.1s;
+    transform: scale(0.95);
+  }
+
+  &:hover .submenu__wrapper {
+    display: block;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0s;
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .submenu {
+    background: $color--mindtrust-dark;
+    border-radius: 5px;
+    padding: 0.4rem 0.8rem;
+    box-shadow: $shadow--carousel;
+  }
+
+  a.submenu__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    border-radius: 5px;
+    padding: 0.8rem 0.8rem 0.8rem 0rem;
+    text-decoration: none;
+    transition: 0.1s;
+
+    &:hover {
+      background: #29333e;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      margin-right: -0.3rem;
+      margin-top: -0.8rem;
+    }
+
+    h4 {
+      margin-top: 0rem;
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      color: #abb2c6;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}

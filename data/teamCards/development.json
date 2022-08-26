@@ -1,0 +1,40 @@
+{
+  "silo": "Development",
+  "teamCards": [
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/software-architect.jpg?auto=format&fm=webp",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Software Architect",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/mobile-developer.jpg?auto=format&fm=webp",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Mobile Developer",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/design/ui-ux-designer.jpg?auto=format&fm=webp",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "UI/UX Designer",
+      "silo": "Design"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/product-manager.jpg?auto=format&fm=webp",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Product Manager",
+      "silo": "Strategy"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/full-stack-developer.jpg?auto=format&fm=webp",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Full Stack Developer",
+      "silo": "Development"
+    }
+  ]
+}

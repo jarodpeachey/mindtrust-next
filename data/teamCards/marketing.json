@@ -1,0 +1,40 @@
+{
+  "silo": "Marketing",
+  "teamCards": [
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/brand-strategist.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Brand Strategist",
+      "silo": "Strategy"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/marketing/copywriter.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Copywriter",
+      "silo": "Marketing"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/design/creative-director.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Creative Director",
+      "silo": "Design"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/web-developer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Web Developer",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/marketing/seo-expert.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "SEO Expert",
+      "silo": "Marketing"
+    }
+  ]
+}

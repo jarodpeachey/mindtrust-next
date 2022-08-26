@@ -1,0 +1,40 @@
+{
+  "silo": "Strategy",
+  "teamCards": [
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/digital-strategist.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Digital Strategist",
+      "silo": "Strategy"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/fundraising-consultant.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Fundraising Consultant",
+      "silo": "Strategy"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/ux-researcher.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "UX Researcher",
+      "silo": "Design"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/automation-expert.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Automation Expert",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/virtual-cfo.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Virtual CFO",
+      "silo": "Strategy"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "silo": "Production",
+  "teamCards": [
+    {
+      "avatar": "https://assets.mindtrust.com/img/production/character-artist.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "3D Character Artist",
+      "silo": "Production"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/production/3d-animator.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Animation/Rigger",
+      "silo": "Production"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/design/art-director.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Art Director",
+      "silo": "Design"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/production/web-animator.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Web Animator",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/production/audio-engineer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Audio Engineer",
+      "silo": "Production"
+    }
+  ]
+}

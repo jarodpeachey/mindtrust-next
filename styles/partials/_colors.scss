@@ -1,0 +1,67 @@
+// LIGHT MODE COLORS
+$color--background-light: #ffffff; /* USED ON CARDS/FOREGROUND */
+$color--background-dark: #ffffff; /* USED ON BACKGROUND */
+$color--heading: #111111; /* USED FOR HEADINGS */
+$color--paragraph: #444444; /* USED FOR MAIN TEXT */
+$color--accent: #6a7885; /* USED FOR ACCENT TEXT */
+$color--mid: #1f2730; /* USED FOR FOOTER/NAV BACKGROUNDS */
+$cut--filter: brightness(.98); /* USED FOR CUT BACKGROUNDS FILTER */
+$grid--filter: none; /* USED FOR GRID FILTER */
+$icon--filter: brightness(1); /* USED FOR GRAY ICONS */
+
+$color--mindtrust: #008feb;
+$color--mindtrust-light: #c6e8ff;
+$color--mindtrust-lighter: #f3faff;
+$color--mindtrust-mid: #384757;
+$color--mindtrust-dark: #1f2730;
+$color--strategy: #6b00ff;
+$color--strategy-light: #e1ccff;
+$color--strategy-lighter: #f9f5ff;
+$color--design: #df425a;
+$color--design-light: #f1c0ca;
+$color--design-lighter: #fdf3f4;
+$color--marketing: #fa7548;
+$color--marketing-light: #fed5c6;
+$color--marketing-lighter: #fff8f5;
+$color--production: #feb12b;
+$color--production-light: #fae21b;
+$color--production-lighter: #fffbf2;
+$color--technology: #1dc4d7;
+$color--technology-light: #c6eef2;
+$color--technology-lighter: #f1fbfd;
+$color--link: #007acc;
+
+// DARK MODE COLORS
+// $color--background-light: #3b424b; /* USED ON CARDS/FOREGROUND */
+// $color--background-dark: #262c33; /* USED ON BACKGROUND */
+// $color--heading: #ffffff; /* USED FOR HEADINGS */
+// $color--paragraph: #f0f0f0; /* USED FOR MAIN TEXT */
+// $color--accent: #93a3b1; /* USED FOR ACCENT TEXT */
+// $color--mid: #1f2730; /* USED FOR FOOTER/NAV BACKGROUNDS */
+// $cut--filter: brightness(0.1); /* USED FOR CUT BACKGROUNDS FILTER */
+// $grid--filter: none; /* USED FOR GRID FILTER */
+// $icon--filter: brightness(8); /* USED FOR GRAY ICONS */
+
+
+// Neutrals
+
+$color--coal: #111;
+$color--ash: #333;
+$color--stone: #444;
+$color--smoke: #6a7885;
+$color--slate: #8e9aa7;
+$color--fog: #c7c9cf;
+$color--cotton: #f6f7fb;
+$color--gray-bg: #f5f5f5;
+
+// Background Gradients
+
+$gradient--light-blue: linear-gradient(180deg, #f4f8f9 0%, rgba(244, 248, 249, 0) 100%);
+$gradient--rich-blue: radial-gradient(72.13% 125.05% at 74.47% 75.81%, #2bd9ff 18.75%, #009bff 56.77%, #0c68d3 99.39%);
+$gradient--mindtrust-blue: radial-gradient(72.13% 125.05% at 74.47% 75.81%, #2bd9ff 18.75%, #009bff 56.77%, #0c68d3 99.39%),
+  linear-gradient(180deg, #00ffff 0%, rgba(0, 255, 255, 0) 100%);
+
+// Extra Colors
+
+$color--madras-blue: #B1D1E3;
+$color--blue: #009BFF;

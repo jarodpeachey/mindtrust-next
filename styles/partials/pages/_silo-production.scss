@@ -1,0 +1,122 @@
+@use "../colors" as *;
+@use "../breakpoints" as *;
+
+.silo.production {
+
+  .section-heading {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.75rem;
+  }
+
+  .section-description {
+    line-height: 2.125rem;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .hero {
+    padding-top: 13.125rem;
+    h1 {
+      font-size: 3.75rem;
+      font-weight: 700;
+      line-height: 68px;
+      margin-bottom: 2.5rem;
+      margin-top: 0rem;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 34px;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .hero::before {
+    background-image: url("/media/img/backgrounds/silos/production--hero.svg");
+    background-size: contain;
+
+    width: 80%;
+
+    @include media-breakpoint-up(md) {
+      width: 100%;
+      max-width: 960px;
+      background-size: cover;
+    }
+  }
+
+  .scene {
+    margin: 6rem 0;
+
+    h2.section-heading {
+      text-align: left;
+      margin-top: 0;
+    }
+
+    p.section-description {
+      text-align: left;
+    }
+  }
+
+  .experts {
+    h2.section-heading {
+      text-align: left;
+      max-width: 500px;
+      margin-bottom: 3.75rem;
+    }
+
+    .row {
+      margin-left: -0.625rem;
+      margin-right: -0.625rem;
+    }
+
+    div[class*="col"] {
+      padding: 0.625rem;
+    }
+
+    .card {
+      background: $color--background-light;
+      padding: 1.25rem;
+      box-shadow: 0px 4px 20px rgba(39, 100, 145, 0.15);
+
+      img {
+        height: 34px;
+        width: auto;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+        color: $color--accent;
+      }
+    }
+  }
+
+  .skills {
+    h2.section-heading,
+    p.section-description {
+      text-align: left;
+    }
+  }
+
+  #production-logos {
+    filter: invert(100%);
+  }
+
+  .bg--radial {
+    background: radial-gradient(72.13% 125.05% at 74.47% 75.81%, rgb(43, 217, 255) 18.75%, rgb(0, 155, 255) 56.77%, rgb(12, 104, 211) 99.39%),
+      linear-gradient(rgb(0, 255, 255) 0%, rgba(0, 255, 255, 0) 100%);
+    mix-blend-mode: normal;
+  }
+}
+
+.brand--image {
+  width: 130px;
+}

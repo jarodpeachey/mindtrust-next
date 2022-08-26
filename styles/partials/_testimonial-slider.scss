@@ -1,0 +1,43 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "shadows" as *;
+
+.testimonial-slider_container {
+  max-width: 1170px;
+  margin: -18px auto 0 auto;
+
+  .testimonial-slider__main-container {
+    padding-top: 26px;
+    overflow: hidden;
+  }
+
+  @include media-breakpoint-down(lg) {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-down(xs) {
+    max-width: 100%;
+  }
+
+  .testimonials__carousel-arrow-group {
+    padding: 0.5rem 1.875rem;
+
+    .tertiary_slide__prev-arrow {
+      margin-right: 10px;
+    }
+
+    button {
+      border: 0px;
+      box-sizing: border-box;
+      filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.05));
+      background: #FFFFFF;
+      padding: 22px 27px;
+      cursor: pointer;
+
+      img {
+        width: 10px;
+        height: 19px;
+      }
+    }
+  }
+}

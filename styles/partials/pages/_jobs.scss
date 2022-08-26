@@ -1,0 +1,350 @@
+@use "../breakpoints" as *;
+@use "../colors" as *;
+@use "../shadows" as *;
+@use "../inputs" as *;
+@use "../cards/card" as *;
+@use "../../mixins.scss" as *;
+
+.jobs {
+  .hero {
+    padding-bottom: 0;
+    padding-top: 4.0625rem;
+    padding-bottom: 8rem;
+    margin-bottom: -8rem;
+
+    @include media-breakpoint-up(lg) {
+      .section-heading {
+        max-width: 340px;
+      }
+    }
+
+    .breadcrumbs {
+      margin: 0 0 4.0625rem 0;
+    }
+    h1,
+    p {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    p {
+      @include media-breakpoint-up(md) {
+        max-width: 130px;
+        position: relative;
+        margin-bottom: -3rem;
+        top: 1rem;
+      }
+      @include media-breakpoint-up(lg) {
+        max-width: 999px;
+      }
+    }
+    h1 {
+      font-size: 2.625rem;
+      margin-top: 0;
+
+      @include media-breakpoint-only(md) {
+        // position: relative;
+        // top: 2rem;
+        padding-bottom: 1.75rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: -1.75rem
+      }
+    }
+    .row {
+      flex-direction: column-reverse;
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+      }
+
+      @include media-breakpoint-up(md) {
+        .col-lg-4,
+        .col-lg-8 {
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    }
+
+    .col-lg-8 {
+      @include media-breakpoint-up(sm) {
+        height: 370px;
+        min-height: 370px;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 436px;
+        min-height: 436px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 508px;
+        min-height: 508px;
+      }
+    }
+
+    picture,
+    src,
+    img.hero__image {
+      min-height: 250px;
+      width: 100vw;
+
+      @include media-breakpoint-up(sm) {
+        height: 340px;
+        width: 510px;
+        min-height: 340px;
+        min-width: 510px;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 406px;
+        width: 610px;
+        min-height: 406px;
+        min-width: 610px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 478px;
+        width: 717px;
+        min-height: 478px;
+        min-width: 717px;
+      }
+    }
+
+    .hero__image {
+      position: relative;
+      // width: calc(100% + 40px);
+      left: -20px;
+      min-height: 250px;
+      width: 100vw;
+
+      @include media-breakpoint-up(sm) {
+        left: 0;
+        // height: 340px;
+        // width: 510px;
+        // min-height: 340px;
+        // min-width: 510px;
+        border-radius: 5px;
+      }
+      @include media-breakpoint-up(md) {
+        position: relative;
+        z-index: 0;
+        bottom: 4rem;
+        box-shadow: $shadow--deep;
+      }
+      @include media-breakpoint-up(lg) {
+        bottom: 6rem;
+        // height: 406px;
+        // width: 610px;
+        // min-height: 406px;
+        // min-width: 610px;
+      }
+      @include media-breakpoint-up(xl) {
+        // height: 478px;
+        // width: 717px;
+        // min-height: 478px;
+        // min-width: 717px;
+      }
+    }
+
+    .col-lg-8 {
+      position: relative;
+    }
+
+    .hero__image--indicator {
+      display: none;
+
+      @include media-breakpoint-up(sm) {
+        display: block;
+        position: absolute;
+        right: -6px;
+        top: -6px;
+        height: 64px;
+        width: 64px;
+        min-height: 64px;
+        min-width: 64px;
+        z-index: 9;
+      }
+
+      @include media-breakpoint-up(md) {
+        top: -4.6rem;
+        right: -1rem;
+        height: 64px;
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        top: -6.6rem;
+        right: -1rem;
+      }
+    }
+
+    .card {
+      top: -10rem;
+      width: calc(100% + 0.9375rem);
+      left: -0.9375rem;
+      transform: none;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      z-index: 1;
+      position: relative;
+      height: fit-content;
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+      text-align: left;
+
+      label {
+        font-family: "Nunito Sans", "Raleway";
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 34px;
+        color: $color--accent;
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: -0.6rem;
+          font-size: 1rem;
+        }
+      }
+
+      @media (min-width: 420px) {
+        width: 92%;
+      }
+      @media (min-width: 500px) {
+        top: -14rem;
+      }
+      @include media-breakpoint-up(sm) {
+        top: -15rem;
+        padding-top: 2.6rem;
+        padding-bottom: 2.6rem;
+        left: 0;
+      }
+      @include media-breakpoint-up(md) {
+        border-radius: 5px;
+        top: 0;
+        position: relative;
+        bottom: 0;
+        width: 380%;
+        min-width: 380%;
+        max-width: 380%;
+        padding: 1rem;
+        left: 0;
+        padding-left: 0;
+        box-shadow: none;
+        top: -4rem;
+      }
+      @include media-breakpoint-up(lg) {
+        width: 200%;
+        min-width: 200%;
+        max-width: 200%;
+        top: -6rem;
+        padding: 2.6rem 1.5rem;
+        padding-left: 0;
+      }
+      @media (min-width: 1200px) {
+        width: 600px;
+        min-width: 600px;
+        max-width: 600px;
+        // top: -4rem;
+      }
+    }
+  }
+
+  .jobs {
+    margin-top: -10rem;
+    padding-top: 0;
+
+    @media (min-width: 500px) {
+      margin-top: -21rem;
+    }
+    @include media-breakpoint-up(sm) {
+      margin-top: -20rem;
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: -10rem;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: -12rem;
+    }
+    .jobs__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .job-listing {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        transition: 0.1s;
+
+        @include media-breakpoint-up(sm) {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        &:hover {
+          box-shadow: $shadow--light;
+          background: $color--background-light;
+        }
+
+        .job__title {
+          font-size: 1.375rem;
+          line-height: 30px;
+          margin-top: 0;
+          margin-bottom: 0.75rem;
+        }
+
+        .job__info {
+          display: flex;
+          margin-top: 0.3rem;
+          align-items: center;
+
+          p {
+            margin: 0;
+            color: $color--accent;
+          }
+
+          .icon {
+            width: 20px;
+            height: 20px;
+            color: $color--fog;
+            margin-right: 0.3rem;
+          }
+
+          .icon:nth-of-type(2) {
+            display: inline-block;
+            margin-left: 3rem;
+          }
+        }
+
+        .btn {
+          margin-top: 1rem;
+          @include media-breakpoint-up(sm) {
+            margin-top: 0;
+            margin-left: auto;
+          }
+        }
+      }
+    }
+
+    .no-results {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.125rem;
+    }
+  }
+
+  .footer-cta {
+    .footer-cta__title {
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 34px;
+      margin-top: 0;
+      text-align: center;
+      color: #ffffff;
+      max-width: 700px;
+      margin-bottom: 1.8rem;
+    }
+  }
+}

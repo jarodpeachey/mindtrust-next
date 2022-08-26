@@ -1,0 +1,88 @@
+@use "partials/_typography" as *;
+@use "vendor/_grid" as *;
+@use "partials/_sections" as *;
+@use "partials/_colors" as *;
+@use "partials/_buttons" as *;
+@use "partials/_animate" as *;
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+#___gatsby {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: $color--background-dark;
+
+  &:before {
+    content: "";
+    width: 175px;
+    height: 999999999px;
+    background: url("/media/img/grid.png");
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    filter: $grid--filter;
+  }
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+#development-logos {
+  filter: invert(100%);
+}
+
+// Grid stuff
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px; /* 1176px */
+  }
+  .container--narrow {
+    max-width: 960px;
+    margin: auto;
+  }
+
+  .nav .container,
+  footer .container,
+  .home .hero .container,
+  .silo .hero .container {
+    max-width: 1400px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .container.container--wide {
+    max-width: 1400px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+html body div.stack-animate {
+  .animate {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: opacity 0.1s, transform 0.4s;
+
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+a[href="https://mindtrust.com/cookie-policy/"]
+{
+  color: $color--link !important;
+  font-family: "Nunito Sans" !important;
+}

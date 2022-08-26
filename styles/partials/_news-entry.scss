@@ -1,0 +1,72 @@
+@use "breakpoints" as *;
+
+.news-entry {
+  text-decoration: none;
+  justify-content: space-between;
+  padding: 20px;
+  display: block;
+  border-top: 1px solid #e8e8e8;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  // border-radius: 5px;
+  transition: 0.2s;
+
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid transparent;
+  }
+
+  .news-entry__title {
+    font-family: "Avenir Demi";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    text-decoration: none;
+    color: #111111;
+    margin-bottom: 12px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+      max-width: 767px; 
+      padding-right: 10px;
+    }
+  }
+
+  .news-entry__right {
+    @include media-breakpoint-up(md) {
+      min-width: 125px;
+    }
+
+    strong {
+      font-family: "Avenir Demi";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 30px;
+      /* identical to box height, or 136% */
+
+      /* Coal */
+      margin-bottom: 8px;
+      color: #111111;
+    }
+
+    p {
+      margin: 0;
+      /* Large Paragraph Text */
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 34px;
+      /* identical to box height, or 189% */
+
+      /* Stone */
+
+      color: #444444;
+    }
+  }
+}

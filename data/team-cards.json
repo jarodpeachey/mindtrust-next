@@ -1,0 +1,244 @@
+{
+  "silos": [
+    {
+      "silo": "Design",
+      "teamCards": [
+        {
+          "avatar": "https://assets.mindtrust.com/img/design/creative-director-2.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Creative Director",
+          "silo": "Design"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/design/ui-ux-designer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "UI/UX Designer",
+          "silo": "Design"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/brand-strategist.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Brand Strategist",
+          "silo": "Marketing"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/front-end-developer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Front-End Developer",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/design/prototype-designer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Prototype Designer",
+          "silo": "Design"
+        }
+      ]
+    },
+    {
+      "silo": "Strategy",
+      "teamCards": [
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/digital-strategist.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Digital Strategist",
+          "silo": "Strategy"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/fundraising-consultant.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Fundraising Consultant",
+          "silo": "Strategy"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/ux-researcher.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "UX Researcher",
+          "silo": "Design"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/automation-expert.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Automation Expert",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/virtual-cfo.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Virtual CFO",
+          "silo": "Strategy"
+        }
+      ]
+    },
+    {
+      "silo": "Development",
+      "teamCards": [
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/software-architect.jpg?auto=format&fm=webp",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Software Architect",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/mobile-developer.jpg?auto=format&fm=webp",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Mobile Developer",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/design/ui-ux-designer.jpg?auto=format&fm=webp",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "UI/UX Designer",
+          "silo": "Design"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/product-manager.jpg?auto=format&fm=webp",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Product Manager",
+          "silo": "Strategy"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/full-stack-developer.jpg?auto=format&fm=webp",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Full Stack Developer",
+          "silo": "Development"
+        }
+      ]
+    },
+    {
+      "silo": "Marketing",
+      "teamCards": [
+        {
+          "avatar": "https://assets.mindtrust.com/img/strategy/brand-strategist.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Brand Strategist",
+          "silo": "Strategy"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/marketing/copywriter.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Copywriter",
+          "silo": "Marketing"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/design/creative-director.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Creative Director",
+          "silo": "Design"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/web-developer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Web Developer",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/marketing/seo-expert.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "SEO Expert",
+          "silo": "Marketing"
+        }
+      ]
+    },
+    {
+      "silo": "Production",
+      "teamCards": [
+        {
+          "avatar": "https://assets.mindtrust.com/img/production/character-artist.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "3D Character Artist",
+          "silo": "Production"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/production/3d-animator.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Animation/Rigger",
+          "silo": "Production"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/design/art-director.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Art Director",
+          "silo": "Design"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/production/web-animator.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Web Animator",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/production/audio-engineer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Audio Engineer",
+          "silo": "Production"
+        }
+      ]
+    },
+    {
+      "silo": "Technology",
+      "teamCards": [
+        {
+          "avatar": "https://assets.mindtrust.com/img/technology/cloud-architect.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Cloud Architect",
+          "silo": "Technology"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/technology/dev-ops-engineer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "DevOps Engineer",
+          "silo": "Technology"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/data-scientist.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Data Scientist",
+          "silo": "Strategy"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/development/blockchain-developer.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Blockchain Developer",
+          "silo": "Development"
+        },
+        {
+          "avatar": "https://assets.mindtrust.com/img/technology/systems-architect.jpg?auto=format",
+          "alt": "Sample Avatar",
+          "hours": 15,
+          "title": "Systems Admin",
+          "silo": "Technology"
+        }
+      ]
+    }
+  ]
+}

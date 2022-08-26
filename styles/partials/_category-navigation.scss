@@ -1,0 +1,45 @@
+@use "./colors" as *;
+@use "./breakpoints" as *;
+
+.blog-navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+
+  a.blog-navigation--item {
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 4px;
+    color: $color--accent;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: 0.1s;
+    &.selected {
+      color: $color--paragraph;
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: $color--link;
+    }
+
+    // flex: 1 1 0;
+    width: 50%;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+
+    @media (min-width: 500px) {
+      width: 33%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: fit-content;
+      margin-right: 1rem;
+      margin-bottom: 0;
+      flex: none;
+      font-size: 1rem;
+    }
+  }
+}

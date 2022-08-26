@@ -1,0 +1,40 @@
+{
+  "silo": "Technology",
+  "teamCards": [
+    {
+      "avatar": "https://assets.mindtrust.com/img/technology/cloud-architect.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Cloud Architect",
+      "silo": "Technology"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/technology/dev-ops-engineer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "DevOps Engineer",
+      "silo": "Technology"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/data-scientist.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Data Scientist",
+      "silo": "Strategy"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/blockchain-developer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Blockchain Developer",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/technology/systems-architect.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Systems Admin",
+      "silo": "Technology"
+    }
+  ]
+}

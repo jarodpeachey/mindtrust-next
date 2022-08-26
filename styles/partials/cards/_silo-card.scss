@@ -1,0 +1,104 @@
+@use "./card" as *;
+@use "../breakpoints" as *;
+@use "../colors" as *;
+
+.card.silo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  h3 {
+    margin-top: 0;
+    transition: ease-in-out 0.1s;
+  }
+
+  img {
+    filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.1));
+    margin-bottom: 3rem;
+    width: 72px;
+    height: 73px;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .card-link {
+    margin-top: auto;
+    padding-top: 2rem;
+    transition: ease-in-out 0.1s;
+    color: $color--stone;
+    line-height: 1.5em;
+    font-size: 1.2em;
+
+    &::after {
+      bottom: 1px;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .card-link {
+      text-decoration: underline;
+      color: $color--link;
+    }
+
+    h3 {
+      // @include media-breakpoint-up(md) {
+      color: $color--link;
+      // }
+    }
+
+    // &.strategy .card-link,
+    // &.strategy h3 {
+    //   color: $color--strategy;
+    // }
+    // &.marketing .card-link,
+    // &.marketing h3 {
+    //   color: $color--marketing;
+    // }
+    // &.design .card-link,
+    // &.design h3 {
+    //   color: $color--design;
+    // }
+    // &.production .card-link,
+    // &.production h3 {
+    //   color: $color--production;
+    // }
+    // &.technology .card-link,
+    // &.technology h3 {
+    //   color: $color--technology;
+    // }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .card-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+
+      h3 {
+        margin: 0 1rem 0 1rem;
+      }
+
+      img {
+        margin: 0;
+      }
+    }
+  }
+}

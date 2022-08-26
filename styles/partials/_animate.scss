@@ -1,0 +1,21 @@
+.mt-animate__slide {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 0.6s;
+}
+
+.mt-animate__slideup {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.4s;
+}
+
+.mt-animate__fade {
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.mt-animate__active {
+  opacity: 1;
+  transform: none;
+}

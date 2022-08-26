@@ -1,0 +1,1744 @@
+@use "breakpoints" as *;
+@use "shadows" as *;
+@use "colors" as *;
+
+$factorxs: 0.6;
+$factorsm: 0.8;
+$factormd: 1;
+
+$delayOne: 0s;
+$delayTwo: 0.2s;
+$delayThree: 0.4s;
+$delayFour: 0.6s;
+$delayFive: 0.8s;
+$delaySix: 1s;
+
+.silo-toggle {
+  margin-top: 72px;
+
+  .laptop {
+    width: 100%;
+  }
+
+  .toggle__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    // @include media-breakpoint-up(sm) {
+    flex-direction: column;
+    // }
+
+    // @include media-breakpoint-up(md) {
+    //   flex-direction: row;
+    // }
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .toggle__button {
+      width: 100%;
+      // margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: block;
+      margin-bottom: 16px;
+      margin-right: 0;
+      background: none;
+      padding: 0;
+      padding-bottom: 10px;
+
+      cursor: pointer;
+      transition: 0.5s;
+      // border: 1px solid $color--fog;
+      border-radius: 5px;
+      position: relative;
+
+      @include media-breakpoint-up(xl) {
+        margin-right: 0;
+        margin-bottom: 16px;
+        background: white;
+        margin-right: 0;
+        margin-bottom: 16px;
+        padding: 1.375rem;
+        // background: $color--cotton;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 3px;
+        background: white;
+        width: 1%;
+        left: 0;
+        bottom: 0;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        // animation: timer 5s linear forwards;
+        transition: width 0s;
+        transition-timing-function: linear;
+        transition-delay: 0s;
+        // animation-timing-function: linear;
+      }
+
+      &.active {
+        position: relative;
+
+        p {
+          color: $color--mindtrust !important;
+        }
+
+        @include media-breakpoint-up(xl) {
+          box-shadow: $shadow--light;
+          background: white;
+
+          p {
+            color: initial !important;
+          }
+        }
+
+        &.timer {
+          &:after {
+            width: 100%;
+            transition: width 4s;
+            transition-timing-function: linear;
+            transition-delay: 0s;
+            background: $color--mindtrust;
+          }
+        }
+      }
+
+      p:first-child {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: #000;
+        font-family: "Avenir Demi";
+        margin: 0;
+        // font-size: 1.6rem;
+
+        @media (min-width: 576px) {
+          font-size: 1.125rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+          margin-bottom: 0.75rem;
+        }
+      }
+
+      p:last-child {
+        font-size: 1rem;
+        font-family: "Nunito Sans";
+        margin-top: 0;
+        display: none;
+
+        @include media-breakpoint-up(xl) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .col-xl-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toggle__right {
+    position: relative;
+    height: #{$factormd * 500}px;
+    // left: calc(80% - 70vw);
+
+    transform: scale(0.42);
+    margin: 0 auto;
+
+    width: 690px;
+    flex: 0 0 auto;
+    transform-origin: center top;
+
+    @media (min-width: 400px) {
+      transform: scale(0.5);
+    }
+
+    @media (min-width: 460px) {
+      transform: scale(0.6);
+    }
+
+    @include media-breakpoint-up(sm) {
+      transform: scale(0.7);
+    }
+
+    @include media-breakpoint-up(md) {
+      height: #{$factormd * 580}px;
+      transform: scale(1);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 600px;
+    }
+
+    h3 {
+      position: relative;
+      height: 100%;
+      text-align: center;
+      width: 100%;
+      // margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+
+      svg.title__arrow {
+        // width: 150px;
+        // height: 150px;
+        margin: 0 auto;
+        position: absolute;
+        // transform: scaleX(-1);
+        left: 22%;
+        bottom: -50%;
+        stroke-width: 2;
+        stroke: #858585;
+
+        @include media-breakpoint-up(lg) {
+          left: 30%;
+        }
+
+        @include media-breakpoint-up(xl) {
+          left: 22%;
+        }
+
+        .draw-arrow {
+          stroke-width: 2;
+          stroke: #858585;
+          fill: none;
+          stroke-dasharray: 400;
+          stroke-dashoffset: 400;
+          animation-duration: 2s;
+          animation-fill-mode: forwards;
+          // animation-name: draw;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+          // transition: opacity 0.5s;
+          // opacity: 0;
+          // stroke-dashoffset: 0;
+
+          // &.active {
+          // animation-name: draw;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+          // }
+        }
+      }
+
+      span {
+        width: 100%;
+      }
+
+      span {
+        animation-fill-mode: forwards;
+        animation-duration: 0.5s;
+
+        @media (min-width: 430px) {
+          white-space: nowrap;
+        }
+      }
+
+      span.one {
+        left: 0;
+        opacity: 1;
+        position: relative;
+      }
+      span.two {
+        left: -20px;
+        opacity: 0;
+        position: absolute;
+        top: -15px;
+
+        @media (min-width: 430px) {
+          top: 0;
+        }
+      }
+      span.three {
+        left: -20px;
+        opacity: 0;
+        position: absolute;
+      }
+    }
+
+    .flex {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .pie {
+      // transform: rotate(180deg);
+      z-index: 1;
+      position: relative;
+      max-width: 250px;
+      // box-shadow: 25px 19px 39.8846px rgba(186, 186, 186, 0.2);
+      border-radius: 50%;
+      // background: $tooltip-bg-color;
+      text-align: center;
+      background: white;
+      border-radius: 999px;
+      top: #{$factormd * 180}px;
+      left: #{$factormd * 100}px;
+      width: #{$factormd * 180}px;
+      height: #{$factormd * 180}px;
+
+      opacity: 0;
+      transition: 0.5s opacity;
+
+      .doughnut {
+        width: #{$factormd * 180}px;
+        height: #{$factormd * 180}px;
+      }
+      // }
+
+      @include media-breakpoint-up(lg) {
+        width: 220px;
+        height: 220px;
+        left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        top: 194px;
+        left: 160px;
+
+        .doughnut {
+          width: 220px;
+          height: 220px;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 200px;
+        height: 200px;
+        left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        top: 164px;
+        left: 110px;
+
+        .doughnut {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      .pie__inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pie__percent {
+        color: rgb(46, 53, 58, 1);
+        font-family: "Avenir Bold";
+        margin-bottom: 14px;
+
+        .number {
+          transition-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+
+        // font-size: #{$factorxs * 42.3}px;
+        // line-height: #{$factorxs * 28.25}px;
+
+        // @include media-breakpoint-up(sm) {
+        //   font-size: #{$factorsm * 42.3}px;
+        //   line-height: #{$factorsm * 28.25}px;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        font-size: #{$factormd * 42.3}px;
+        line-height: #{$factormd * 28.25}px;
+        // }
+      }
+
+      .pie__text {
+        color: rgb(46, 53, 58, 1);
+        font-family: "Avenir Demi";
+
+        // font-size: #{$factorxs * 14}px;
+        // line-height: #{$factorxs * 17}px;
+
+        // @include media-breakpoint-up(sm) {
+        //   font-size: #{$factorsm * 14}px;
+        //   line-height: #{$factorsm * 17}px;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        font-size: #{$factormd * 14}px;
+        line-height: #{$factormd * 17}px;
+        // }
+      }
+
+      img {
+        position: absolute;
+        bottom: -10%;
+        width: 15%;
+      }
+    }
+
+    .pie-vs {
+      font-size: 30px;
+      color: #444444;
+      font-family: "Avenir Demi";
+      line-height: 27px;
+      opacity: 0;
+      width: fit-content;
+      margin: 0 auto;
+      z-index: 9;
+      position: relative;
+
+      top: 66px;
+      transition: 0.5s;
+
+      @include media-breakpoint-up(md) {
+        top: 72px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        top: 66px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        top: 50px;
+      }
+    }
+
+    .pie-two {
+      // transform: rotate(180deg);
+      z-index: 1;
+      position: absolute;
+      max-width: 250px;
+      // box-shadow: 25px 19px 39.8846px rgba(186, 186, 186, 0.2);
+      border-radius: 50%;
+      // background: $tooltip-bg-color;
+      text-align: center;
+      background: white;
+      border-radius: 999px;
+      top: #{$factormd * 180}px;
+      right: #{$factormd * 100}px;
+      width: #{$factormd * 180}px;
+      height: #{$factormd * 180}px;
+      opacity: 0;
+      transition: 0.5s opacity;
+
+      .doughnut {
+        width: #{$factormd * 180}px;
+        height: #{$factormd * 180}px;
+      }
+      // }
+
+      @include media-breakpoint-up(lg) {
+        width: 220px;
+        height: 220px;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        top: 194px;
+        right: 160px;
+
+        .doughnut {
+          width: 220px;
+          height: 220px;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 200px;
+        height: 200px;
+        margin-left: 0;
+        margin-right: 0;
+        top: 164px;
+        right: 110px;
+
+        .doughnut {
+          width: 180px;
+          height: 180px;
+        }
+      }
+
+      .pie-two__inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pie-two__percent {
+        color: rgb(46, 53, 58, 1);
+        font-family: "Avenir Bold";
+        margin-bottom: 14px;
+
+        .number {
+          transition-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+
+        // font-size: #{$factorxs * 42.3}px;
+        // line-height: #{$factorxs * 28.25}px;
+
+        // @include media-breakpoint-up(sm) {
+        //   font-size: #{$factorsm * 42.3}px;
+        //   line-height: #{$factorsm * 28.25}px;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        font-size: #{$factormd * 42.3}px;
+        line-height: #{$factormd * 28.25}px;
+        // }
+      }
+
+      .pie-two__text {
+        color: rgb(46, 53, 58, 1);
+        font-family: "Avenir Demi";
+
+        // font-size: #{$factorxs * 14}px;
+        // line-height: #{$factorxs * 17}px;
+
+        // @include media-breakpoint-up(sm) {
+        //   font-size: #{$factorsm * 14}px;
+        //   line-height: #{$factorsm * 17}px;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        font-size: #{$factormd * 14}px;
+        line-height: #{$factormd * 17}px;
+        // }
+      }
+
+      img {
+        position: absolute;
+        bottom: -10%;
+        width: 15%;
+      }
+    }
+
+    .pie,
+    .pie-two,
+    .pie-vs {
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .pie,
+    .pie-two {
+      .pie__indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: -3rem;
+        width: 100%;
+        color: #2e353a;
+        font-size: 18px;
+        font-family: "Avenir Demi";
+        line-height: 22px;
+
+        .block {
+          width: 15px;
+          height: 15px;
+          background: $color--mindtrust;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .pie-two .pie__indicator .block {
+      background: $color--design;
+    }
+
+    svg.arrow {
+      // width: 150px;
+      // height: 150px;
+      margin: 0 auto;
+      position: absolute;
+      // transform: scaleX(-1);
+      right: -60px;
+      top: 39%;
+
+      .draw-arrow {
+        stroke-width: 2;
+        stroke: #858585;
+        fill: none;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        // animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        transition: opacity 0.5s;
+        opacity: 0;
+
+        &.tail-1 {
+          animation-delay: 0.3s;
+        }
+        &.tail-2 {
+          animation-delay: 0.6s;
+        }
+        &.tail-3 {
+          animation-delay: 0.9s;
+        }
+        &.tail-4 {
+          animation-delay: 1.2s;
+        }
+
+        // &.active {
+        // animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        // }
+      }
+    }
+
+    svg.arrow-2 {
+      // width: 150px;
+      // height: 150px;
+      margin: 0 auto;
+      position: absolute;
+      // transform: scaleX(-1);
+      right: -80px;
+      top: -20%;
+
+      .draw-arrow {
+        stroke-width: 1;
+        stroke: #858585;
+        fill: none;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        // animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        transition: opacity 0.5s;
+        opacity: 1;
+
+        &.tail-1 {
+          animation-delay: 0.5s;
+        }
+        &.tail-2 {
+          animation-delay: 0.5s;
+        }
+
+        // &.active {
+        // animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        // }
+      }
+    }
+
+    .toggle__slide {
+      // display: none;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .team-cards,
+      h3 {
+        display: none;
+      }
+
+      h3 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 28px;
+        color: #000000;
+      }
+
+      img[role="presentation"] {
+        width: 100%;
+      }
+
+      .team-cards {
+        position: absolute;
+        right: 24px;
+        top: 55%;
+        right: 0;
+        width: fit-content;
+        transform: scale($factormd);
+        top: #{$factormd * 20%};
+        animation-fill-mode: forwards;
+        animation-duration: 0.5s;
+        animation-name: fadeIn;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+
+        @include media-breakpoint-up(lg) {
+          right: 64px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          right: 0px;
+        }
+
+        .team-card {
+          margin: 8px 0;
+          width: 100%;
+          position: relative;
+          width: #{$factormd * 380}px;
+
+          &.swap-1.in {
+            transform: translateY(calc(-300% - 24px)) !important;
+            left: 100px;
+            opacity: 0;
+          }
+
+          &.swap-2.in {
+            transform: translateY(calc(-200% - 16px)) !important;
+            left: 100px;
+            opacity: 0;
+          }
+
+          .team-card__icon {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 999px;
+            padding: 4px 15px 4px 0;
+            background: #f7f7f7;
+
+            span {
+              color: #000000;
+              font-family: "Avenir Regular", "Raleway", "Raleway Extrabold";
+
+              strong {
+                font-family: "Avenir Bold", "Raleway Bold", "Raleway Extrabold";
+              }
+            }
+
+            img {
+              // position: absolute;
+              width: 34px;
+              height: 34px;
+              animation-fill-mode: forwards;
+              animation-duration: 0.5s;
+              margin-right: 0.375rem;
+            }
+          }
+
+          .team-card__title {
+            position: relative;
+            height: 100%;
+            max-width: 50%;
+          }
+
+          .team-card__hours {
+            font-size: 15px !important;
+            font-family: "Avenir Regular";
+            position: relative;
+            top: 3px;
+            max-width: 100%;
+
+            strong {
+              font-family: "Avenir Demi";
+            }
+          }
+
+          &:nth-child(1) {
+            animation-delay: 0s;
+          }
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+          &:nth-child(4) {
+            animation-delay: 0.6s;
+          }
+          &:nth-child(5) {
+            animation-delay: 0.8s;
+          }
+          &:nth-child(6) {
+            animation-delay: 1s;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &.active {
+      .pie {
+        opacity: 1;
+      }
+      .toggle__slide {
+        .team-cards,
+        h3 {
+          display: block;
+        }
+      }
+    }
+
+    &.one {
+      .title__arrow .draw-arrow {
+        animation-name: drawReverse;
+      }
+      .pie {
+        transition: 1s;
+        transition-delay: 0s;
+        transform: none;
+      }
+
+      .pie-vs {
+        opacity: 0 !important;
+      }
+
+      .pie-two,
+      .pie-vs {
+        opacity: 0;
+        transition-delay: 0s;
+        // animation-name: fadeOut;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        animation-delay: 0s;
+        transform: none;
+        transition-duration: 1s;
+      }
+
+      svg.arrow-2 .draw-arrow {
+        animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        opacity: 1;
+      }
+    }
+
+    &.one.from-start {
+      .toggle__slide {
+        .team-cards {
+          .team-card {
+            transform: none;
+            position: relative;
+            left: 100px;
+            animation-name: left;
+            animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            // animation-delay: 1s;
+
+            &:nth-child(1) {
+              transform: none;
+              transition-duration: 0s;
+              animation-delay: 0s;
+            }
+            &:nth-child(2) {
+              transform: none;
+              transition-duration: 0s;
+              animation-delay: 0.2s;
+            }
+
+            &.swap-1 {
+              &.in {
+                opacity: 0;
+                left: 100px;
+                animation: none;
+              }
+            }
+
+            &.swap-2 {
+              &.in {
+                opacity: 0;
+                left: 100px;
+                animation: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.two {
+      .title__arrow .draw-arrow {
+        animation-name: drawReverse;
+      }
+      svg.arrow-2 .draw-arrow {
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        opacity: 0;
+      }
+
+      .pie {
+        transition: 1s;
+        transition-delay: 0s;
+        transform: none;
+      }
+
+      .pie-two {
+        animation-delay: 0s;
+        transform: none;
+        transition: 1s;
+      }
+
+      .pie-two,
+      .pie-vs {
+        opacity: 0 !important;
+        transition-delay: 0s;
+        // animation-name: fadeOut;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+      }
+    }
+
+    &.three {
+      .title__arrow .draw-arrow {
+        animation-name: draw;
+      }
+      svg.arrow-2 .draw-arrow {
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        opacity: 0;
+      }
+
+      .pie {
+        transition: 1s;
+        transition-delay: 0.5s;
+        transform: translateX(15%);
+        @include media-breakpoint-up(xl) {
+          transform: translateX(8%);
+        }
+      }
+
+      .pie-two {
+        transition: 1s;
+        transition-delay: 0.5s;
+        animation-delay: 0.5s;
+        transform: translateX(-15%);
+        opacity: 1;
+
+        @include media-breakpoint-up(xl) {
+          transform: translateX(-8%);
+        }
+      }
+
+      .pie-vs {
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+    }
+
+    &.one.from-two {
+      svg.arrow .draw-arrow {
+        animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        opacity: 1;
+      }
+
+      h3 {
+        span.one {
+          animation-name: title;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          animation-name: titleReverse;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          .team-card {
+            position: relative;
+
+            &:nth-child(1) {
+              animation-duration: 0s;
+              transform: translateY(calc(100% + 8px));
+              animation: swapOneReverse forwards 0.5s;
+              animation-timing-function: ease;
+              will-change: transform;
+            }
+            &:nth-child(2) {
+              animation-duration: 0s;
+              transform: translateY(calc(-100% - 8px));
+              animation: swapTwoReverse forwards 0.5s;
+              animation-timing-function: ease;
+              will-change: transform;
+            }
+
+            &.swap-1 {
+              &.in {
+                opacity: 1;
+                left: 0px;
+                animation-name: right;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-delay: 0s;
+                animation-duration: 0.5s;
+                animation-delay: 0.2s;
+              }
+
+              &.out {
+                opacity: 0;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-duration: 0.5s;
+                animation-delay: 0.7s;
+              }
+            }
+
+            &.swap-2 {
+              &.in {
+                opacity: 1;
+                left: 0;
+                animation-name: right;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-delay: 0s;
+                animation-duration: 0.5s;
+                animation-delay: 0.7s;
+              }
+
+              &.out {
+                opacity: 0;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-duration: 0.7s;
+                animation-delay: 1.2s;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.one.from-three {
+      svg.arrow .draw-arrow {
+        opacity: 0;
+        // stroke-dashoffset: 400;
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+      }
+
+      h3 {
+        span.one {
+          animation-name: title;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          animation-name: titleReverse;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          .team-card {
+            transform: none;
+            position: relative;
+            left: 100px;
+            animation-name: left;
+            animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            // animation-delay: 1s;
+
+            &:nth-child(1) {
+              transform: none;
+              transition-duration: 0s;
+              animation-delay: 0s;
+            }
+            &:nth-child(2) {
+              transform: none;
+              transition-duration: 0s;
+              animation-delay: 0.2s;
+            }
+
+            &.swap-1 {
+              &.in {
+                opacity: 0;
+                left: 100px;
+                animation: none;
+              }
+            }
+
+            &.swap-2 {
+              &.in {
+                opacity: 0;
+                left: 100px;
+                animation: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.two.from-one {
+      svg.arrow .draw-arrow {
+        animation-name: draw;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        opacity: 1;
+      }
+
+      h3 {
+        span.one {
+          animation-name: titleReverse;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          animation-name: title;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          .team-card {
+            opacity: 1;
+            left: 0;
+            transform: none;
+            position: relative;
+
+            &:nth-child(1) {
+              animation: swapOne forwards 0.5s;
+              animation-timing-function: ease;
+              will-change: transform;
+            }
+            &:nth-child(2) {
+              animation: swapTwo forwards 0.5s;
+              animation-timing-function: ease;
+              will-change: transform;
+            }
+
+            &.swap-1 {
+              &.out {
+                animation-name: right;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-delay: 0s;
+                animation-duration: 0.5s;
+                animation-delay: 0.2s;
+              }
+
+              &.in {
+                opacity: 0;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-duration: 0.5s;
+                animation-delay: 0.7s;
+              }
+            }
+
+            &.swap-2 {
+              &.out {
+                animation-name: right;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-delay: 0s;
+                animation-duration: 0.5s;
+                animation-delay: 0.7s;
+              }
+
+              &.in {
+                opacity: 0;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-fill-mode: forwards;
+                animation-duration: 0.7s;
+                animation-delay: 1.2s;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.two.from-two {
+      svg.arrow .draw-arrow {
+        animation-name: none;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+
+      h3 {
+        span.one {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          opacity: 1;
+          left: 0px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          .team-card {
+            opacity: 1;
+            left: 0;
+            transform: none;
+            position: relative;
+            animation: none;
+
+            &.swap-1 {
+              &.in {
+                transform: none;
+                position: relative;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                opacity: 0;
+                animation-delay: $delayThree;
+              }
+
+              &.out {
+                left: 100px;
+                animation: none;
+                opacity: 0;
+              }
+            }
+
+            &.swap-2 {
+              &.in {
+                transform: none;
+                position: relative;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                opacity: 0;
+                animation-delay: $delayFive;
+              }
+
+              &.out {
+                left: 100px;
+                animation: none;
+                opacity: 0;
+              }
+            }
+
+            &:nth-child(1) {
+              transform: translateY(calc(100% + 8px));
+              transition-duration: 0s;
+              animation-delay: 0.2s;
+            }
+            &:nth-child(2) {
+              transform: translateY(calc(-100% - 8px));
+              transition-duration: 0s;
+              animation-delay: 0s;
+            }
+          }
+        }
+      }
+    }
+
+    &.two.from-three {
+      svg.arrow .draw-arrow {
+        opacity: 0;
+        stroke-dashoffset: 400;
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+      }
+
+      h3 {
+        span.one {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          animation-name: title;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          animation-name: titleReverse;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          .team-card {
+            transform: none;
+            position: relative;
+            left: 100px;
+            animation-name: left;
+            animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            // animation-delay: 1s;
+
+            &.swap-1 {
+              &.in {
+                transform: none;
+                position: relative;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                opacity: 0;
+                animation-delay: $delayThree;
+              }
+
+              &.out {
+                left: 100px;
+                animation: none;
+                opacity: 0;
+              }
+            }
+
+            &.swap-2 {
+              &.in {
+                transform: none;
+                position: relative;
+                left: 100px;
+                animation-name: left;
+                animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                opacity: 0;
+                animation-delay: $delayFive;
+              }
+
+              &.out {
+                left: 100px;
+                animation: none;
+                opacity: 0;
+              }
+            }
+
+            &:nth-child(1) {
+              transform: translateY(calc(100% + 8px));
+              transition-duration: 0s;
+              animation-delay: 0.2s;
+            }
+            &:nth-child(2) {
+              transform: translateY(calc(-100% - 8px));
+              transition-duration: 0s;
+              animation-delay: 0s;
+            }
+          }
+        }
+      }
+    }
+
+    &.three.from-one {
+      svg.arrow .draw-arrow {
+        opacity: 0;
+        // stroke-dashoffset: 400;
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+      }
+
+      h3 {
+        span.one {
+          animation-name: titleReverse;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          animation-name: title;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          // animation: fadeOut 0.5s forwards;
+          animation: fadeOut 0.5s forwards;
+
+          .team-card {
+            // left: 0px;
+            animation-name: none;
+            animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+            opacity: 1;
+
+            &.swap-1.in {
+              opacity: 0;
+              animation: none;
+            }
+
+            &.swap-2.in {
+              opacity: 0;
+              animation: none;
+            }
+
+            &:nth-child(1) {
+              animation-name: none;
+              animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+              transform: none;
+              transition-duration: 0s;
+              animation-delay: 0.5s;
+            }
+            &:nth-child(2) {
+              animation-name: none;
+              animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+              transform: none;
+              transition-duration: 0s;
+              animation-delay: 0s;
+            }
+          }
+        }
+      }
+    }
+
+    &.three.from-two {
+      svg.arrow .draw-arrow {
+        opacity: 0;
+        // stroke-dashoffset: 400;
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+      }
+
+      h3 {
+        span.one {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          animation-name: titleReverse;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          animation-name: title;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          // animation: fadeOut 0.5s forwards;
+          opacity: 0;
+          animation: fadeOut 0.5s forwards;
+
+          .team-card {
+            // left: 0px;
+            animation-name: none;
+            animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+            opacity: 1;
+
+            &.swap-1.out {
+              opacity: 0;
+              animation: none;
+            }
+
+            &.swap-1.in {
+              left: 0;
+            }
+
+            &.swap-2.out {
+              opacity: 0;
+              animation: none;
+            }
+
+            &.swap-2.in {
+              left: 0;
+            }
+
+            &:nth-child(1) {
+              animation-name: none;
+              animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+              transform: translateY(calc(100% + 8px));
+              transition-duration: 0s;
+              animation-delay: 0.5s;
+            }
+            &:nth-child(2) {
+              animation-name: none;
+              animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+              transform: translateY(calc(-100% - 8px));
+              transition-duration: 0s;
+              animation-delay: 0s;
+            }
+          }
+        }
+      }
+    }
+
+    &.three.from-three {
+      svg.arrow .draw-arrow {
+        opacity: 0;
+        // stroke-dashoffset: 400;
+        animation-name: drawReverse;
+        animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+      }
+
+      h3 {
+        span.one {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.two {
+          opacity: 0;
+          left: -20px;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+        span.three {
+          opacity: 1;
+          left: 0;
+          animation-name: none;
+          animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+        }
+      }
+
+      .toggle__slide {
+        .team-cards {
+          // animation: fadeOut 0.5s forwards;
+          opacity: 0;
+          animation: none;
+
+          .team-card {
+            // left: 0px;
+            animation-name: none;
+            animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+* {
+  transition: height 0.2s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawReverse {
+  to {
+    stroke-dashoffset: 400;
+  }
+}
+
+@keyframes swapOne {
+  0% {
+    position: relative;
+    transform: none;
+  }
+  100% {
+    transform: translateY(calc(100% + 8px));
+  }
+}
+
+@keyframes swapOneReverse {
+  0% {
+    transform: translateY(calc(100% + 8px));
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes swapTwo {
+  0% {
+    position: relative;
+    transform: none;
+  }
+  100% {
+    transform: translateY(calc(-100% - 8px));
+  }
+}
+
+@keyframes swapTwoReverse {
+  0% {
+    transform: translateY(calc(-100% - 8px));
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes left {
+  0% {
+    position: relative;
+    left: 100px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes leftSlow {
+  0% {
+    position: relative;
+    left: 300px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes leftTwo {
+  0% {
+    left: 100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  from {
+    position: relative;
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    position: relative;
+    left: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes title {
+  0% {
+    left: -20px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes titleReverse {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  // 40% {
+  //   opacity: 0.1;
+  // }
+  100% {
+    left: -20px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes timer {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.1, 0.1);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}

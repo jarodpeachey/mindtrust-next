@@ -1,0 +1,77 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "inputs" as *;
+
+.newsletter-form {
+  width: 100%;
+  margin-top: 44px;
+  display: block;
+
+  .newsletter__form--label,
+  .newsletter__form--button,
+  .newsletter__form--input {
+    margin: 0;
+  }
+
+  .newsletter__form--button,
+  .newsletter__form--input {
+    white-space: nowrap;
+    height: 50px;
+  }
+
+  .newsletter__form--input {
+    margin-top: 0.375rem;
+    margin-bottom: 0.6rem;
+    display: block;
+    width: 100%;
+  }
+
+  .newsletter__form--button {
+    width: 100%;
+  }
+
+  .newsletter__checkbox {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+
+    .newsletter__checkbox--content {
+      color: $color--accent;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .newsletter__form--button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      width: 34%;
+      display: inline-block;
+      position: relative;
+      border: 1px solid #0089e1;
+    }
+
+    .newsletter__form--label {
+      display: inline-block;
+      width: 66%;
+      margin-top: -22px;
+    }
+
+    .newsletter__form--input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .error-message {
+    color: rgb(196, 13, 13);
+    font-size: 1rem;
+    // position: absolute;
+    // top: 100%;
+    text-align: left;
+  }
+}

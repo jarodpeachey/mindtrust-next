@@ -1,0 +1,30 @@
+@use "./colors" as *;
+@use "./breakpoints" as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4.0625rem;
+  justify-content: center;
+  width: 100%;
+
+  .main {
+    margin: 0 18px;
+  }
+
+  a {
+    font-family: "Nunito Sans", "Raleway";
+    font-size: 1rem;
+    line-height: 34px;
+    color: $color--stone;
+    margin: 0px 8px;
+    text-decoration: none;
+
+    &.active {
+      font-weight: bold;
+      text-decoration: underline;
+      color: $color--mindtrust;
+    }
+  }
+}

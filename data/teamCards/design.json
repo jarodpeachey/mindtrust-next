@@ -1,0 +1,40 @@
+{
+  "silo": "Design",
+  "teamCards": [
+    {
+      "avatar": "https://assets.mindtrust.com/img/design/creative-director-2.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Creative Director",
+      "silo": "Design"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/design/ui-ux-designer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "UI/UX Designer",
+      "silo": "Design"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/strategy/brand-strategist.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Brand Strategist",
+      "silo": "Marketing"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/development/front-end-developer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Front-End Developer",
+      "silo": "Development"
+    },
+    {
+      "avatar": "https://assets.mindtrust.com/img/design/prototype-designer.jpg?auto=format",
+      "alt": "Sample Avatar",
+      "hours": 15,
+      "title": "Prototype Designer",
+      "silo": "Design"
+    }
+  ]
+}

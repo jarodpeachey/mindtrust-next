@@ -1,0 +1,39 @@
+@use "../breakpoints" as *;
+@use "../colors" as *;
+@use "../shadows" as *;
+
+.event {
+  section {
+
+  }
+
+  h1 {
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  p.description {
+    font-size: 16px;
+    line-height: 26px;
+    font-family: "Nunito Sans";
+    font-weight: normal;
+    margin-bottom: 24px;
+  }
+
+  .event__date, .event__duration {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  .event__date {
+    margin-bottom: 10px;
+  }
+
+  .event__content {
+    margin-top: 32px;
+  }
+}

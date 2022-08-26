@@ -1,0 +1,212 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "inputs" as *;
+
+.tertiary aside.silo-form,
+.silo aside.silo-form {
+  background: $color--mindtrust-dark;
+  padding: 8.0625rem 0 0;
+  position: relative;
+  padding-bottom: 350px;
+
+  .col-md-6.col-lg-5:first-child {
+    // position: relative;
+    // margin-bottom: 200px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 5rem;
+  }
+
+  h2.section-heading {
+    color: #ffffff;
+    font-size: 2.3125rem;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: left;
+  }
+
+  .quote {
+    position: absolute;
+    bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      position: static;
+    }
+  }
+
+  p.section-description {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 32px;
+    padding-bottom: 2.5rem;
+    text-align: left;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid $color--mindtrust-mid;
+  }
+
+  .silo-form__quote {
+    color: $color--fog;
+
+    font-size: 1rem;
+    line-height: 30px;
+    margin-bottom: 2rem;
+  }
+
+  .silo-form__flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .silo-form__avatar {
+    border-radius: 999px;
+    margin-right: 1rem;
+    display: inline-block;
+    width: 74px;
+    height: 74px;
+    margin-right: 1.375rem;
+  }
+
+  .silo-form__description {
+    display: inline-block;
+  }
+
+  .silo-form__name {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    color: $color--fog;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .silo-form__company {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    color: $color--fog;
+  }
+
+  .silo-form__brands {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    overflow: hidden;
+
+    .brand {
+      width: 110%;
+      min-width: 110%;
+      position: relative;
+    }
+  }
+
+  .silo-form__card {
+    p {
+      color: $color--cotton;
+      margin-bottom: 0;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    background: #384757;
+    padding: 2rem;
+    border-radius: 5px;
+
+    @include media-breakpoint-up(md) {
+      padding: 3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 4rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+      form.silo-form {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .logo {
+      height: 56px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      color: $color--stone;
+      margin: 1.25rem 0;
+      display: block;
+    }
+
+    label a {
+      color: white;
+      position: relative;
+      z-index: 999;
+    }
+
+    .row {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    [class*="col"] {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    input,
+    button {
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    label {
+      color: $color--cotton;
+      margin-bottom: 0.6rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      box-shadow: 0px 4px 16px 0px #6a788525;
+
+      &:focus {
+        border: 1px solid $color--mindtrust;
+      }
+
+      &.error {
+        background: #ffebeb;
+      }
+    }
+
+    .error-message {
+      // color: $color--mindtrust;
+      font-size: 1rem;
+      color: #009BFF;
+    }
+
+    input + .error-message {
+      // background: #c40d0d;
+    }
+
+    .privacy-policy-quote {
+      display: block;
+
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+  }
+}

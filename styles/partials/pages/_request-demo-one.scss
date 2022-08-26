@@ -1,0 +1,351 @@
+@use "../breakpoints" as *;
+@use "../colors" as *;
+@use "../inputs" as *;
+@use "../shadows" as *;
+
+.request-demo-one {
+  border: 10px solid red;
+  .slick-dots {
+    // margin-top: 32px;
+    display: block;
+    bottom: -50px !important;
+
+    li {
+      width: 32px;
+      height: 32px;
+      margin: 0;
+    }
+
+    button {
+      width: 32px;
+      height: 32px;
+    }
+
+    button::before {
+      color: #00000050;
+      opacity: 1;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 10px;
+    }
+
+    .slick-active button::before {
+      color: $color--mindtrust;
+    }
+  }
+
+  /* purgecss ignore current */
+  header {
+    /* purgecss ignore current */
+    padding-top: 64px !important;
+    margin-bottom: 64px !important;
+
+    h2 {
+      /* purgecss ignore current */
+      margin: 0 !important;
+      margin-bottom: 16px !important;
+      margin-top: 32px !important;
+    }
+  }
+
+  label[placeholder*="URL"] {
+    /* purgecss ignore current */
+    margin-left: 8px !important;
+  }
+
+  fieldset {
+    /* purgecss ignore current */
+    // margin: 0 !important;
+    // width: 100% !important;
+    // max-width: 100% !important;
+  }
+
+  p {
+    /* purgecss ignore current */
+    font-size: 17.6px !important;
+    line-height: 26px !important;
+    color: #444444 !important;
+  }
+
+  .inputs-list {
+    /* purgecss ignore current */
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    label[for*="LEGAL_CONSENT"] {
+      /* purgecss ignore current */
+      display: flex !important;
+      justify-content: flex-start !important;
+
+      input {
+        /* purgecss ignore current */
+        margin: 0 !important;
+        width: fit-content !important;
+        float: none !important;
+      }
+
+      span {
+        /* purgecss ignore current */
+        margin-top: -6px !important;
+
+        p {
+          /* purgecss ignore current */
+          color: #000000cc !important;
+        }
+      }
+    }
+  }
+
+  input[type="submit"] {
+    /* purgecss ignore current */
+    background: #008feb !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    border: 0.12em solid #008feb !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-weight: 800 !important;
+    font-size: 1.2em !important;
+    transition: background ease-in-out 0.1s, border ease-in-out 0.1s !important;
+    padding: 0.7em 1.5em 0.85em !important;
+    cursor: pointer !important;
+    width: fit-content !important;
+    font-family: "Avenir Demi", "Raleway Bold", "Raleway Extrabold" !important;
+    line-height: 1.08em !important;
+    display: block !important;
+    width: 100% !important;
+
+    &:hover {
+      /* purgecss ignore current */
+      background: #1481cf !important;
+      // box-shadow: 3px 3px 26px -10px #00000040 !important;
+      border: 0.12em solid #1481cf !important;
+    }
+  }
+
+  form {
+    /* purgecss ignore current */
+    // display: none !important;
+  }
+
+  .input {
+    /* purgecss ignore current */
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+
+    &:hover {
+      /* purgecss ignore current */
+      border: none !important;
+    }
+
+    input,
+    textarea {
+      /* purgecss ignore current */
+      margin-top: 8px !important;
+      display: block !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+
+      // &[name="firstname"] {
+      //   /* purgecss ignore current */
+      //   margin-right: 8px !important;
+      //   display: block !important;
+      //   width: calc(100% - 8px) !important;
+      // }
+
+      // &[name="lastname"] {
+      //   /* purgecss ignore current */
+      //   margin-left: 8px !important;
+      //   display: block !important;
+      //   width: calc(100% - 8px) !important;
+      // }
+
+      // &[name="company"] {
+      //   /* purgecss ignore current */
+      //   margin-right: 8px !important;
+      //   display: block !important;
+      //   width: calc(100% - 8px) !important;
+      // }
+
+      // &[name="website"] {
+      //   /* purgecss ignore current */
+      //   margin-left: 8px !important;
+      //   display: block !important;
+      //   width: calc(100% - 8px) !important;
+      // }
+
+      &:focus {
+        /* purgecss ignore current */
+        border-color: $color--mindtrust !important;
+      }
+    }
+
+    ~ ul[role="alert"] {
+      /* purgecss ignore current */
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      margin-top: 8px !important;
+      margin-bottom: 12px !important;
+
+      li label {
+        /* purgecss ignore current */
+        color: red !important;
+      }
+    }
+  }
+
+  .wrapper {
+    /* purgecss ignore current */
+    max-width: 600px !important;
+    margin: 0 auto !important;
+  }
+
+  .sidebar {
+    /* purgecss ignore current */
+    background: #1f2831 !important;
+    padding: 80px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    margin-top: 80px !important;
+    min-height: 100vh !important;
+
+    @include media-breakpoint-up(lg) {
+      /* purgecss ignore current */
+      padding: 100px 50px !important;
+      margin-top: 0 !important;
+    }
+
+    .container {
+      /* purgecss ignore current */
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .stars {
+      /* purgecss ignore current */
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 auto !important;
+      margin-bottom: 7px !important;
+
+      img {
+        /* purgecss ignore current */
+        width: 24px !important;
+        margin: 0 2px !important;
+      }
+    }
+
+    .partners {
+      /* purgecss ignore current */
+      font-family: "Avenir Regular" !important;
+      color: #d5dfe6 !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      margin-bottom: 48px !important;
+      font-weight: 500 !important;
+      max-width: 400px;
+      display: block;
+      font-size: 18px;
+      line-height: 26px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      max-width: 380px;
+      position: relative;
+
+      &:after {
+        background: #566068;
+        height: 2px;
+        width: 36px;
+        bottom: 0;
+        left: calc(50% - 18px);
+        position: absolute;
+        content: "";
+        display: block;
+      }
+    }
+
+    .quote {
+      /* purgecss ignore current */
+      font-family: "Avenir Demi";
+      text-align: center !important;
+      margin: 0 auto !important;
+      color: white !important;
+      font-weight: 600 !important;
+      font-size: 22px !important;
+      line-height: 36px !important;
+      margin-bottom: 36px !important;
+      max-width: 450px;
+    }
+
+    .headshot {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      border-radius: 999px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .name {
+      /* purgecss ignore current */
+      font-size: 16px !important;
+      line-height: 16px !important;
+      color: white !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      font-weight: 500 !important;
+      margin-bottom: 6px !important;
+      font-family: "Avenir Demi";
+      max-width: 300px;
+    }
+
+    .company {
+      /* purgecss ignore current */
+      font-size: 14px !important;
+      line-height: 16px !important;
+      color: white !important;
+      font-family: "Avenir Demi";
+      margin: 0 auto !important;
+      text-align: center !important;
+      font-weight: 500 !important;
+      color: #7f8b96 !important;
+      max-width: 300px;
+    }
+  }
+
+  .trusted-by {
+    text-align: center;
+    margin-top: 96px;
+
+    p {
+      margin: 0 auto !important;
+      width: fit-content !important;
+      text-align: center !important;
+      font-family: "Avenir Regular" !important;
+      font-size: 18px !important;
+      line-height: 1rem !important;
+      color: white !important;
+      margin-bottom: 24px !important;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+
+      img {
+        flex: 1 1 0;
+        @include media-breakpoint-up(md) {
+          max-width: 50%;
+          min-width: 33%;
+        }
+      }
+    }
+  }
+}
