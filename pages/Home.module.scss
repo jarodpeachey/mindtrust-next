@@ -2,419 +2,422 @@
 @use "../styles/partials/colors" as *;
 @use "../styles/partials/shadows" as *;
 
-.home {
-  .callout {
-    text-align: center;
+// .home {
+.customSpan {
+  color: red !important;
+}
+.callout {
+  text-align: center;
+}
+.linear-gradient-box {
+  height: 20.6875rem;
+  width: 100%;
+  background: linear-gradient(0deg, #ffffff 78.54%, rgba(255, 255, 255, 0) 97.83%);
+  position: absolute;
+  z-index: -1;
+  top: 11rem;
+}
+
+h1.section-heading sup {
+  font-size: 70%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.2em;
+}
+
+h1.plug-into sup {
+  font-size: 50%;
+  top: -0.6em;
+  position: relative;
+  vertical-align: baseline;
+}
+
+h2.section-heading sup {
+  font-size: 90%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.15em;
+}
+
+.hero {
+  padding-top: 25.0625rem;
+  margin-top: -14rem;
+  overflow: hidden;
+  padding-bottom: 25rem;
+  margin-bottom: -24rem;
+
+  @include media-breakpoint-up(md) {
+    // padding-top: 10rem;
+    margin-bottom: -20rem;
   }
-  .linear-gradient-box {
-    height: 20.6875rem;
-    width: 100%;
-    background: linear-gradient(0deg, #ffffff 78.54%, rgba(255, 255, 255, 0) 97.83%);
-    position: absolute;
+
+  .hero-heading-container {
+    z-index: 1;
+  }
+
+  .webgl-globe-container {
     z-index: -1;
-    top: 11rem;
   }
 
-  h1.section-heading sup {
-    font-size: 70%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-    top: -0.2em;
+  .col-md-6:last-child {
+    @include media-breakpoint-up(md) {
+      position: relative;
+    }
   }
 
-  h1.plug-into sup {
-    font-size: 50%;
-    top: -0.6em;
-    position: relative;
-    vertical-align: baseline;
+  h1 span {
+    // opacity: 0.5;
+    font-family: "Avenir Regular";
+    margin: 0;
   }
 
-  h2.section-heading sup {
-    font-size: 90%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-    top: -0.15em;
+  @include media-breakpoint-down(lg) {
+    .btn {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      margin-right: 0;
+    }
   }
 
-  .hero {
-    padding-top: 25.0625rem;
-    margin-top: -14rem;
-    overflow: hidden;
-    padding-bottom: 25rem;
-    margin-bottom: -24rem;
+  .col-xl-6.col-md-6 {
+    @include media-breakpoint-up(md) {
+      position: relative;
+    }
+  }
+
+  .featured__image {
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    width: 100%;
+    z-index: -2;
 
     @include media-breakpoint-up(md) {
-      // padding-top: 10rem;
-      margin-bottom: -20rem;
+      display: none;
+      // opacity: 1;
+      // position: relative;
+      // display: block;
+      // width: 120%;
+      // left: 0;
+      // top: 0;
+      // z-index: 1;
+      // max-width: 999px;
     }
 
-    .hero-heading-container {
-      z-index: 1;
+    @include media-breakpoint-up(lg) {
+      // width: 48vw;
+      // margin-left: 4vw;
+      // margin-top: -4rem;
     }
 
-    .webgl-globe-container {
-      z-index: -1;
-    }
-
-    .col-md-6:last-child {
-      @include media-breakpoint-up(md) {
-        position: relative;
-      }
-    }
-
-    h1 span {
-      // opacity: 0.5;
-      font-family: "Avenir Regular";
-      margin: 0;
-    }
-
-    @include media-breakpoint-down(lg) {
-      .btn {
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 0.6rem;
-        margin-right: 0;
-      }
-    }
-
-    .col-xl-6.col-md-6 {
-      @include media-breakpoint-up(md) {
-        position: relative;
-      }
-    }
-
-    .featured__image {
-      position: absolute;
-      top: 12rem;
-      left: 0;
-      width: 100%;
-      z-index: -2;
-
-      @include media-breakpoint-up(md) {
-        display: none;
-        // opacity: 1;
-        // position: relative;
-        // display: block;
-        // width: 120%;
-        // left: 0;
-        // top: 0;
-        // z-index: 1;
-        // max-width: 999px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        // width: 48vw;
-        // margin-left: 4vw;
-        // margin-top: -4rem;
-      }
-
-      @include media-breakpoint-up(xl) {
-        // max-width: 960px;
-        // margin-top: -8rem;
-        // margin-left: 3rem;
-      }
-    }
-  }
-
-  .services {
-    .col-lg-4.col-sm-6.col-12 {
-      margin-bottom: 30px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      @include media-breakpoint-up(sm) {
-        &:nth-child(5),
-        &:nth-child(6) {
-          margin-bottom: 0;
-        }
-      }
-
-      @include media-breakpoint-up(lg) {
-        &:nth-child(4) {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-
-  .taas {
-    // padding-bottom: 0;
-    // margin-bottom: 7.25rem;
-    // overflow: visible;
-
-    .background {
-      background: radial-gradient(67.46% 116.16% at 34.19% 113.3%, #3a4c61 18.75%, #303d4d 90.49%, #2c343e 100%);
-      padding-top: 4rem;
-
-      @include media-breakpoint-up(md) {
-        padding-top: 5rem;
-      }
-    }
-
-    h2,
-    p {
-      color: #ffffff;
-    }
-
-    p {
-      margin-bottom: 3.4375rem;
-    }
-
-    .taas__wrapper {
-      box-shadow: $shadow--deep;
-      border-radius: 5px;
-      background: $color--background-light;
-      position: relative;
-      top: 2rem;
-      border-radius: 5px;
-    }
-
-    h3 {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      font-family: "Avenir Demi", "Raleway Bold", "Raleway Extrabold";
-      font-size: 1.875rem;
-      line-height: 2.125rem;
-      color: $color--heading;
-      text-align: center;
-      margin: 0;
-    }
-
-    .taas__body {
-      background: darken($color--background-light, 5%);
-      padding-top: 2rem;
-      border-radius: 5px;
-
-      .row {
-        margin: 0;
-      }
-
-      [class*="col"] {
-        padding-top: 0;
-        padding-bottom: 30px;
-
-        &:first-child {
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      .flex {
-        display: flex;
-        align-items: center;
-        margin-top: 32px;
-      }
-
-      .block {
-        width: 16px;
-        height: 16px;
-        background: $color--mindtrust;
-        margin-right: 1rem;
-      }
-
-      .taas__text {
-        font-family: "Avenir Demi", "Raleway Bold", "Raleway Extrabold";
-        font-size: 1.125rem;
-        line-height: 22px;
-        color: $color--heading;
-      }
-
-      .pie {
-        // transform: rotate(180deg);
-        z-index: 1;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        // box-shadow: 25px 19px 39.8846px rgba(186, 186, 186, 0.2);
-        border-radius: 999px;
-        // background: $tooltip-bg-color;
-        text-align: center;
-        background: white;
-        border-radius: 999px;
-
-        width: 300px;
-        height: 300px;
-
-        .taas__donut {
-          width: 300px;
-          height: 300px;
-        }
-
-        @include media-breakpoint-up(md) {
-          width: 240px;
-          height: 240px;
-
-          .taas__donut {
-            width: 240px;
-            height: 240px;
-          }
-        }
-
-        @include media-breakpoint-up(lg) {
-          width: 280px;
-          height: 280px;
-
-          .taas__donut {
-            width: 280px;
-            height: 280px;
-          }
-        }
-
-        .pie__inner {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .pie__percent {
-          color: rgb(46, 53, 58, 1);
-          font-family: "Avenir Bold";
-          font-size: 54px;
-          line-height: 36px;
-          margin-bottom: 18px;
-        }
-
-        .pie__text {
-          color: rgb(46, 53, 58, 1);
-          font-family: "Avenir Regular";
-          font-size: 14px;
-          line-height: 18px;
-
-          strong {
-            font-family: "Avenir Bold";
-          }
-        }
-
-        img {
-          position: absolute;
-          bottom: -10%;
-          width: 15%;
-        }
-      }
-
-      .team-cards {
-        margin: 0;
-        width: 100%;
-
-        @include media-breakpoint-up(lg) {
-          position: relative;
-          left: 3rem;
-        }
-
-        .team-card {
-          max-width: 100%;
-          width: 100%;
-
-          position: relative;
-          left: 200px;
-          opacity: 0;
-
-          .team-card__title {
-            position: relative;
-            height: 100%;
-            max-width: 35%;
-
-            @include media-breakpoint-up(md) {
-              max-width: 50%;
-            }
-          }
-
-          .team-card__hours {
-            font-size: 15px !important;
-            font-family: "Avenir Regular";
-            position: relative;
-            top: 3px;
-            max-width: 100%;
-
-            strong {
-              font-family: "Avenir Demi";
-            }
-          }
-
-          &.active {
-            animation: left 0.8s forwards;
-
-            &:nth-child(1) {
-              animation-delay: 0s;
-            }
-            &:nth-child(2) {
-              animation-delay: 0.5s;
-            }
-            &:nth-child(3) {
-              animation-delay: 1s;
-            }
-            &:nth-child(4) {
-              animation-delay: 1.5s;
-            }
-            &:nth-child(5) {
-              animation-delay: 2s;
-            }
-            &:nth-child(6) {
-              animation-delay: 2.5s;
-            }
-          }
-
-          @include media-breakpoint-up(md) {
-            max-width: 440px;
-            width: 440px;
-          }
-
-          &:first-child {
-            margin-top: 0;
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .talent {
-    .section-heading {
-      text-align: left;
-    }
-
-    .section-description {
-      text-align: left;
-      margin-bottom: 0;
-    }
-
-    .callout {
-      padding-top: 2rem;
-    }
-
-    .callout-description {
-      text-align: center;
-      padding-bottom: 2rem;
-    }
-
-    .talent__arrow {
-      width: 420px;
-      height: 101.33px;
-      min-width: 420px;
-      min-height: 101.33px;
-    }
-
-    .talent__carousel-holder {
-      margin-top: 6.75rem;
+    @include media-breakpoint-up(xl) {
+      // max-width: 960px;
+      // margin-top: -8rem;
+      // margin-left: 3rem;
     }
   }
 }
+
+.services {
+  .col-lg-4.col-sm-6.col-12 {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      &:nth-child(5),
+      &:nth-child(6) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.taas {
+  // padding-bottom: 0;
+  // margin-bottom: 7.25rem;
+  // overflow: visible;
+
+  .background {
+    background: radial-gradient(67.46% 116.16% at 34.19% 113.3%, #3a4c61 18.75%, #303d4d 90.49%, #2c343e 100%);
+    padding-top: 4rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 5rem;
+    }
+  }
+
+  h2,
+  p {
+    color: #ffffff;
+  }
+
+  p {
+    margin-bottom: 3.4375rem;
+  }
+
+  .taas__wrapper {
+    box-shadow: $shadow--deep;
+    border-radius: 5px;
+    background: $color--background-light;
+    position: relative;
+    top: 2rem;
+    border-radius: 5px;
+  }
+
+  h3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: "Avenir Demi", "Raleway Bold", "Raleway Extrabold";
+    font-size: 1.875rem;
+    line-height: 2.125rem;
+    color: $color--heading;
+    text-align: center;
+    margin: 0;
+  }
+
+  .taas__body {
+    background: darken($color--background-light, 5%);
+    padding-top: 2rem;
+    border-radius: 5px;
+
+    .row {
+      margin: 0;
+    }
+
+    [class*="col"] {
+      padding-top: 0;
+      padding-bottom: 30px;
+
+      &:first-child {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      margin-top: 32px;
+    }
+
+    .block {
+      width: 16px;
+      height: 16px;
+      background: $color--mindtrust;
+      margin-right: 1rem;
+    }
+
+    .taas__text {
+      font-family: "Avenir Demi", "Raleway Bold", "Raleway Extrabold";
+      font-size: 1.125rem;
+      line-height: 22px;
+      color: $color--heading;
+    }
+
+    .pie {
+      // transform: rotate(180deg);
+      z-index: 1;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      // box-shadow: 25px 19px 39.8846px rgba(186, 186, 186, 0.2);
+      border-radius: 999px;
+      // background: $tooltip-bg-color;
+      text-align: center;
+      background: white;
+      border-radius: 999px;
+
+      width: 300px;
+      height: 300px;
+
+      .taas__donut {
+        width: 300px;
+        height: 300px;
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 240px;
+        height: 240px;
+
+        .taas__donut {
+          width: 240px;
+          height: 240px;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 280px;
+        height: 280px;
+
+        .taas__donut {
+          width: 280px;
+          height: 280px;
+        }
+      }
+
+      .pie__inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pie__percent {
+        color: rgb(46, 53, 58, 1);
+        font-family: "Avenir Bold";
+        font-size: 54px;
+        line-height: 36px;
+        margin-bottom: 18px;
+      }
+
+      .pie__text {
+        color: rgb(46, 53, 58, 1);
+        font-family: "Avenir Regular";
+        font-size: 14px;
+        line-height: 18px;
+
+        strong {
+          font-family: "Avenir Bold";
+        }
+      }
+
+      img {
+        position: absolute;
+        bottom: -10%;
+        width: 15%;
+      }
+    }
+
+    .team-cards {
+      margin: 0;
+      width: 100%;
+
+      @include media-breakpoint-up(lg) {
+        position: relative;
+        left: 3rem;
+      }
+
+      .team-card {
+        max-width: 100%;
+        width: 100%;
+
+        position: relative;
+        left: 200px;
+        opacity: 0;
+
+        .team-card__title {
+          position: relative;
+          height: 100%;
+          max-width: 35%;
+
+          @include media-breakpoint-up(md) {
+            max-width: 50%;
+          }
+        }
+
+        .team-card__hours {
+          font-size: 15px !important;
+          font-family: "Avenir Regular";
+          position: relative;
+          top: 3px;
+          max-width: 100%;
+
+          strong {
+            font-family: "Avenir Demi";
+          }
+        }
+
+        &.active {
+          animation: left 0.8s forwards;
+
+          &:nth-child(1) {
+            animation-delay: 0s;
+          }
+          &:nth-child(2) {
+            animation-delay: 0.5s;
+          }
+          &:nth-child(3) {
+            animation-delay: 1s;
+          }
+          &:nth-child(4) {
+            animation-delay: 1.5s;
+          }
+          &:nth-child(5) {
+            animation-delay: 2s;
+          }
+          &:nth-child(6) {
+            animation-delay: 2.5s;
+          }
+        }
+
+        @include media-breakpoint-up(md) {
+          max-width: 440px;
+          width: 440px;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.talent {
+  .section-heading {
+    text-align: left;
+  }
+
+  .section-description {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .callout {
+    padding-top: 2rem;
+  }
+
+  .callout-description {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .talent__arrow {
+    width: 420px;
+    height: 101.33px;
+    min-width: 420px;
+    min-height: 101.33px;
+  }
+
+  .talent__carousel-holder {
+    margin-top: 6.75rem;
+  }
+}
+// }
 
 // .card-col-container
 

@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/partials/_silo-toggle-animation.scss"
+// import "../styles/partials/_silo-toggle-animation.scss"
 import TeamCard from "../cards/TeamCard"
 import { Doughnut } from "react-chartjs-2"
 import { data } from "../../data/pieData"

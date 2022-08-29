@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Script from "next/script"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -34,9 +35,6 @@ export default function Layout(props, { children, home }) {
         {props.noindex ? <meta name="robots" content="noindex" /> : ""}
         <script type="application/ld+json">{props.schema}</script>
 
-        <script src="js/sal.js" type="text/javascript" defer="true" />
-        <script src="js/main.js" type="text/javascript" defer="true" />
-
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -57,8 +55,12 @@ export default function Layout(props, { children, home }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         ></script>
-        <script type="text/javascript" src="/js/slick/slick.min.js"></script>
       </Head>
+
+      <Script src="/js/sal.js" />
+      <Script src="/js/animate.js" />
+      <Script src="/js/slick/slick.min.js" />
+
       <main>{props.children}</main>
     </>
   )

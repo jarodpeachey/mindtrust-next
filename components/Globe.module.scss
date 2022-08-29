@@ -1,0 +1,142 @@
+@use "../styles/partials/utilities" as *;
+@use "../styles/partials/breakpoints" as *;
+
+.webgl-globe-fallback {
+  width: 100%;
+  position: relative;
+  top: 0px;
+
+  display: none;
+
+  img {
+    width: 100%;
+    top: -10%;
+    position: relative;
+  }
+
+  @include media-breakpoint-up(md) {
+    // display: none;
+    // display: block;
+  }
+}
+
+.webgl-globe {
+  position: absolute;
+  top: -40%;
+  left: -15%;
+  width: 125%;
+  height: 200%;
+  max-width: 818px;
+
+  display: none;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 120%;
+    left: -10%;
+    top: 8%;
+
+    .team-card {
+      top: 3rem;
+      width: 280px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    width: 120%;
+    left: -10%;
+    top: 10%;
+
+    .team-card {
+      top: 1rem;
+      width: 280px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    width: 120%;
+    left: -10%;
+    top: -20%;
+
+    .team-card {
+      top: 0.7rem;
+      width: 280px;
+    }
+  }
+
+  // @include media-breakpoint-up(lg) {
+  //   left: -10%;
+  //   top: -28%;
+  // }
+  @include media-breakpoint-up(xl) {
+    left: -5%;
+    top: -75%;
+  }
+
+  @media (min-width: 1400px) {
+    top: -100%;
+    left: -40%;
+  }
+
+  #webgl-globe-app {
+    height: 100%;
+
+    height: 500px;
+
+    @include media-breakpoint-up(lg) {
+      height: 700px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 1000px;
+    }
+    @media (min-width: 1400px) {
+      height: 1300px;
+      width: 1320px;
+    }
+  }
+
+  canvas {
+    display: block;
+    // position: absolute;
+    height: 500px;
+
+    @include media-breakpoint-up(lg) {
+      height: 700px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 1000px;
+    }
+    @media (min-width: 1400px) {
+      height: 1300px;
+      width: 1320px;
+      // transform: scale(1.1);
+    }
+  }
+
+  .team-container {
+    display: none;
+  }
+  .webgl-profile-inner-container {
+    position: relative;
+    left: 50%;
+    will-change: transform, opacity; /* makes slow movements much more fluid */
+  }
+  .team-card {
+    position: relative;
+    left: 25px;
+    bottom: 75px;
+    -webkit-box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
+    -moz-box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
+    box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
+    .team-card__icon {
+      margin-right: 0.8125rem;
+      padding-left: 0.8125rem;
+    }
+  }
+}
+
+.webgl-element-hidden {
+  display: none;
+}

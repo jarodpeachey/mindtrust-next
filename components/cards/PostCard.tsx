@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/partials/cards/_post-card.scss"
+import styles from "./PostCard.module.scss"
 import { formatDate } from "../../../static/js/utils/formatDate"
 import { formatURL } from "../../utils/formatURL"
 
@@ -39,27 +39,27 @@ const PostCard: React.FC<PostCardProps> = ({ title, className, href, summary, im
   }
 
   return (
-    <div className={`post-card card ${className} ${horizontal && "horizontal"}`}>
-      <div className="post-card__image">
+    <div className={`${styles["post-card"]} card ${className} ${horizontal && "horizontal"}`}>
+      <div className={styles["post-card__image"]}>
         <a href={href}>
           <img src={image || "/media/img/blog.jpg"} alt="" />
         </a>
       </div>
-      <div className="post-card__info d-flex align-items-center justify-content-between">
-        <a href={tags.length > 0 ? `/${silo.toLowerCase()}/blog/${formatURL(tags[0])}` : `/${silo.toLowerCase()}/blog`} className="tag">
+      <div className={`${styles["post-card__info"]} d-flex align-items-center justify-content-between`}>
+        <a href={tags.length > 0 ? `/${silo.toLowerCase()}/blog/${formatURL(tags[0])}` : `/${silo.toLowerCase()}/blog`} className={styles.tag}>
           {tags[0] || silo}
         </a>
-        <a className="silo__image" href={`/${silo.toLowerCase()}/blog`}>
+        <a className={styles.silo__image} href={`/${silo.toLowerCase()}/blog`}>
           <img src={`/media/img/icons/silos/icon--${silo.toLowerCase()}.svg`} alt="" />
         </a>
       </div>
-      <div className="post-card__content">
+      <div className={styles["post-card__content"]}>
         <a href={href}>
-          <h3 className="post-card__title">{title}</h3>
+          <h3 className={styles["post-card__title"]}>{title}</h3>
         </a>
         <div dangerouslySetInnerHTML={{ __html: summary }} />
-        <div className="post-card__footer">
-          <div className="post-card__date">{formatDate(new Date().getTime())}</div>
+        <div className={styles["post-card__footer"]}>
+          <div className={styles["post-card__date"]}>{formatDate(new Date().getTime())}</div>
         </div>
       </div>
     </div>

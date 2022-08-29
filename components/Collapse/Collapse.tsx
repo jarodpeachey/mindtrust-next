@@ -1,5 +1,6 @@
 import React from "react"
-import "../styles/partials/_collapse.scss"
+// import "../styles/partials/_collapse.scss"
+import styles from "./Collapse.module.scss"
 
 interface CollapseProps {
   title: string
@@ -9,15 +10,15 @@ interface CollapseProps {
 
 const Collapse: React.FC<CollapseProps> = props => {
   return (
-    <div className={`collapse ${props.id}`} id={props.id}>
-      <h3 className={`collapse__title ${props.id}--title`}>
+    <div className={`${styles.collapse} ${props.id}`} id={props.id}>
+      <h3 className={`${styles.collapse__title} ${props.id}--title`}>
         {props.title}
         <img loading="lazy" src="/media/img/icons/icon--chevron-right.svg" alt="Arrow" />
       </h3>
-      <div className={`collapse__content ${props.id}--content`}>
+      <div className={`${styles.collapse__content} ${props.id}--content`}>
         {/* <p>{props.content}</p> */}
         <div>
-          <div className="inner" dangerouslySetInnerHTML={{ __html: props.content }}></div>
+          <div className={styles.inner} dangerouslySetInnerHTML={{ __html: props.content }}></div>
         </div>
       </div>
     </div>

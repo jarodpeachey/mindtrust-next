@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import TestimonialCarouselSlide from "../cards/TestimonialCarouselSlide"
+import TestimonialCarouselSlide from "./TestimonialCarouselSlide"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "./TestimonialCarousel.module.scss"

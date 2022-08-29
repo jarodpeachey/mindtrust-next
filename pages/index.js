@@ -1,18 +1,18 @@
 import Layout from "../components/layout"
-// import utilStyles from '../styles/utils.module.css'
+// import styles from '../styles/utils.module.css'
 import { getSortedPostsData } from "../lib/posts"
 import React from "react"
-import Navigation from "../components/Navigation"
+import Navigation from "../components/Navigation/Navigation"
 import SiloCard from "../components/cards/SiloCard"
-import utilStyles from "./home.module.scss"
-// import "../styles/partials/_carousels.scss"
-// import "../styles/partials/_scenes.scss"
+import styles from "./Home.module.scss"
+// import "../../styles/partials/_carousels.scss"
+// import "../../styles/partials/_scenes.scss"
 import { talentCarouselSlides, testimonialCarouselSlides } from "../data/homePage"
-import Footer from "../components/Footer"
-import TalentCarousel from "../components/TalentCarousel"
-import TestimonialCarousel from "../components/TestimonialCarousel"
+import Footer from "../components/Footer/Footer"
+import TalentCarousel from "../components/TalentCarousel/TalentCarousel"
+import TestimonialCarousel from "../components/TestimonialCarousel/TestimonialCarousel"
 import TeamCard from "../components/cards/TeamCard"
-import ToggleAnimation from "../components/ToggleAnimation"
+import ToggleAnimation from "../components/ToggleAnimation/ToggleAnimation"
 import { BRIDGE_APP_URL } from "../config"
 import { WebglGlobe } from "../components/WebglGlobe"
 
@@ -24,64 +24,65 @@ export default function Home({ data }) {
     <Layout title={"Teams as a Service Platform - Plug into the Internet of Talent"} bodyClass="home" homepage>
       <header>
         <Navigation />
+        <TeamCard member={{ avatar: "", alt: "", title: "Test" }} />
 
-        <div className={utilStyles["linear-gradient-box"]}></div>
-        <div className={utilStyles.hero}>
+        <div className={styles["linear-gradient-box"]}></div>
+        <div className={styles.hero}>
           <div className="container">
             <div className="row">
               <div className="col-lg-5 col-md-6 hero-heading-container">
                 <h1 className="section-heading display plug-into">
-                  Plug into the Internet of Talent<sup>&reg;</sup>
+                  Plug into the <span className={styles.customSpan}>Internet</span> of Talent<sup>&reg;</sup>
                 </h1>
                 <p className="section-description">
                   We built the world’s first Teams as a Service (TaaS) platform to give you on-demand access to the top developers, designers, marketers,
                   technologists, and business strategists.
                 </p>
                 <p className="section-description">Easily scale up or down, only pay for what you use.</p>
-                <a href="/request-project/1" className={`btn ${utilStyles.hero__button}`}>
+                <a href="/request-project/1" className={`btn ${styles.hero__button}`}>
                   Get started
                 </a>
                 <a target="_blank" href="https://meetings.mindtrust.com/meetings/sales-team-demo/web-demo-request" className="btn outlined light">
                   Request a demo
                 </a>
               </div>
-              <div className={`col-md-6 ${utilStyles['webgl-globe-container']}`}>
+              <div className={`col-md-6 ${styles["webgl-globe-container"]}`}>
                 <WebglGlobe />
                 {/* This part is the static globe image section */}
-                {/* <img className={utilStyles.featured__image} src="/media/img/mobile-hero-globe.png" /> */}
+                {/* <img className={styles.featured__image} src="/media/img/mobile-hero-globe.png" /> */}
               </div>
             </div>
           </div>
         </div>
 
         <div className="container" id="trusted-by">
-          <div className={utilStyles.logos}>
-            <div className={utilStyles.logo}>
-              <div className={utilStyles.text}>Trusted by:</div>
+          <div className={styles.logos}>
+            <div className={styles.logo}>
+              <div className={styles.text}>Trusted by:</div>
             </div>
-            <div className={utilStyles.logo}>
+            <div className={styles.logo}>
               <img src="/media/img/logos/logo-amex.svg" alt="American Express logo" />
             </div>
-            <div className={utilStyles.logo}>
+            <div className={styles.logo}>
               <img src="/media/img/logos/logo-cvs.svg" alt="CVS logo" />
             </div>
-            <div className={utilStyles.logo}>
+            <div className={styles.logo}>
               <img src="/media/img/logos/logo-honeywell.svg" alt="Honeywell logo" />
             </div>
-            <div className={utilStyles.logo}>
+            <div className={styles.logo}>
               <img src="/media/img/logos/logo-deloitte.svg" alt="Deloitte logo" />
             </div>
-            <div className={utilStyles.logo}>
+            <div className={styles.logo}>
               <img src="/media/img/logos/logo-visa.svg" alt="Visa logo" />
             </div>
           </div>
         </div>
       </header>
       <main>
-        <section className={utilStyles.services}>
+        <section className={styles.services}>
           <div className="container down-arrow">
             <h2 className="mt-animate__fade mt-animate section-heading display">
-              Team up with <span className={utilStyles.underline}>elite talent</span> to innovate faster
+              Team up with <span className={styles.underline}>elite talent</span> to innovate faster
             </h2>
             <p className="section-description mt-animate__fade mt-animate">
               Whether you want to add a member to your existing team or develop a complex project from scratch, we’ll build and manage a world-class team to
@@ -204,8 +205,8 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        <section className={`overflow ${utilStyles.taas}`}>
-          <div className={utilStyles.background}>
+        <section className={`overflow ${styles.taas}`}>
+          <div className={styles.background}>
             <div className="container">
               <h2 className="mt-animate__fade mt-animate section-heading display">The world's first Teams as a Service (TaaS) Platform</h2>
               <p className="mt-animate__fade mt-animate section-description">
@@ -215,29 +216,29 @@ export default function Home({ data }) {
               </p>
               <div className="row">
                 <div className="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                  <div id="taas__wrapper" className={utilStyles.taas__wrapper}>
+                  <div id="taas__wrapper" className={styles.taas__wrapper}>
                     <h3>Your MindTrust Team</h3>
-                    <div className={utilStyles.taas__body}>
+                    <div className={styles.taas__body}>
                       <div className="row">
                         <div className="col-md-5">
-                          <div className={utilStyles.pie}>
-                            <div className={utilStyles.pie__inner}>
-                              <div className={utilStyles.pie__percent}>
+                          <div className={styles.pie}>
+                            <div className={styles.pie__inner}>
+                              <div className={styles.pie__percent}>
                                 <span className="taas-animation__number" data-animate="125">
                                   0
                                 </span>
                               </div>
-                              <div className={utilStyles.pie__text}>
+                              <div className={styles.pie__text}>
                                 <strong>/ 200</strong> TaaS hours used
                               </div>
                               <img src="/media/img/icons/icon--mindtrust.svg" alt="MindTrust logo" />
                             </div>
 
-                            <div className={utilStyles.taas__donut}></div>
+                            <div className={styles.taas__donut}></div>
                           </div>
-                          <div className={utilStyles.flex}>
-                            <div className={utilStyles.block}></div>
-                            <div className={utilStyles.taas__text}>Teams as a Service</div>
+                          <div className={styles.flex}>
+                            <div className={styles.block}></div>
+                            <div className={styles.taas__text}>Teams as a Service</div>
                           </div>
                         </div>
 
@@ -327,7 +328,7 @@ export default function Home({ data }) {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-8 offset-md-2">
-                <p className={utilStyles.callout}>People Powered</p>
+                <p className={styles.callout}>People Powered</p>
                 <p className="callout-description section-description">
                   The heartbeat of TaaS is our amazing people. Our global network of vetted industry experts can handle anything from ideation, to launch and
                   beyond.
@@ -337,7 +338,7 @@ export default function Home({ data }) {
 
             <div className="row">
               <div className="col-10 offset-1">
-                <img loading="lazy" src="/media/img/section-arrow.svg" role="presentation" className={utilStyles.talent__arrow} alt="" />
+                <img loading="lazy" src="/media/img/section-arrow.svg" role="presentation" className={styles.talent__arrow} alt="" />
               </div>
             </div>
 

@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, withPrefix } from "gatsby"
-import "../styles/partials/_contact-form.scss"
-import "../styles/partials/pages/_contact.scss"
+
+// import "../styles/partials/_contact-form.scss"
+// import "../styles/partials/pages/_contact.scss"
 import Option from "../Option"
 import Select from "../Select"
-import Checkbox from "../Checkbox/index"
+import Checkbox from "../Checkbox/Checkbox"
 import RadioButton from "../RadioButton"
 
 interface Props {

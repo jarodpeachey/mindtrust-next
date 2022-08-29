@@ -1,7 +1,7 @@
 import React from "react"
 
 import TestimonialSlideCard from "./cards/TestimonialSlideCard"
-import "../styles/partials/_testimonial-slider.scss"
+// import "../styles/partials/_testimonial-slider.scss"
 
 const TestimonialSlickSlide = ({ slides, showAvatar = true }) => {
   return (

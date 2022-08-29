@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import { withPrefix } from "gatsby"
 import "../styles/_layout.scss"
 import { title } from "process"
+import Script from '../node_modules/next/script'
 
 interface Props {
   title: string
@@ -69,9 +70,9 @@ const Head: React.FC<Props> = props => {
       <meta name="twitter:description" content={description || defaultDescription} />
       {noindex ? <meta name="robots" content="noindex" /> : ""}
       <script type="application/ld+json">{schema}</script>
-
-      <script src={withPrefix("js/sal.js")} type="text/javascript" defer="true" />
-      <script src={withPrefix("js/main.js")} type="text/javascript" defer="true" />
+{/* 
+      <script src={"/js/sal.js"} type="text/javascript" defer="true" />
+      <script src={"/js/main.js"} type="text/javascript" defer="true" /> */}
 
       {/* <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet"></link> */}
     </Helmet>

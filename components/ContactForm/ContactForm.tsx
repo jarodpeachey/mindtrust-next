@@ -1,11 +1,12 @@
 import React from "react"
-import { Link, withPrefix } from "gatsby"
-import "../styles/partials/_contact-form.scss"
-import "../styles/partials/pages/_contact.scss"
+
+import "../../styles/partials/_contact-form.scss"
+import "../../styles/partials/pages/_contact.scss"
 import Option from "../Option"
 import Select from "../Select"
-import Checkbox from "../Checkbox/index"
+import Checkbox from "../Checkbox/Checkbox"
 import RadioButton from "../RadioButton"
+import styles from "./ContactForm.module.scss"
 
 interface Props {
   showForm: boolean
@@ -14,39 +15,39 @@ interface Props {
 const ContactForm: React.FC<Props> = props => {
   return (
     <>
-      <div className="contact-form" aria-label="Contact MindTrust">
-        <div className="contact-form__card">
+      <div className={styles["contact-form"]} aria-label="Contact MindTrust">
+        <div className={styles["contact-form__card"]}>
           <div id="form-message"></div>
-          <img loading="lazy" src="/media/img/icons/icon--mindtrust.svg" alt="MindTrust logo" className="logo" />
-          <span className="info">
-            Fields marked with a <span className="error-message">*</span> are required
+          <img loading="lazy" src="/media/img/icons/icon--mindtrust.svg" alt="MindTrust logo" className={styles.logo} />
+          <span className={styles.info}>
+            Fields marked with a <span className={styles["error-message"]}>*</span> are required
           </span>
-          <form className="contact-form">
+          <form className={styles["contact-form"]}>
             <div className="row">
               <div className="col-12">
-                <label htmlFor="firstName" className="label first-name">
-                  First name <span className="error-message">*</span>
+                <label htmlFor="firstName" className={styles["label first-name"]}>
+                  First name <span className={styles["error-message"]}>*</span>
                 </label>
-                <input type="text" id="firstName" placeholder="" className="input validate first-name" />
-                <span className="error-message">Please enter your first name</span>
+                <input type="text" id="firstName" placeholder="" className={styles["input validate first-name"]} />
+                <span className={styles["error-message"]}>Please enter your first name</span>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
-                <label htmlFor="lastName" className="label last-name">
-                  Last name <span className="error-message">*</span>
+                <label htmlFor="lastName" className={styles["label last-name"]}>
+                  Last name <span className={styles["error-message"]}>*</span>
                 </label>
-                <input type="text" id="lastName" placeholder="" className="input validate last-name" />
-                <span className="error-message">Please enter your last name</span>
+                <input type="text" id="lastName" placeholder="" className={styles["input validate last-name"]} />
+                <span className={styles["error-message"]}>Please enter your last name</span>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
                 <label htmlFor="email" className="label email">
-                  Business email <span className="error-message">*</span>
+                  Business email <span className={styles["error-message"]}>*</span>
                 </label>
                 <input type="email" id="email" placeholder="" className="input validate email" />
-                <span className="error-message">Please enter a valid email</span>
+                <span className={styles["error-message"]}>Please enter a valid email</span>
               </div>
             </div>
             <div className="row">
@@ -54,16 +55,16 @@ const ContactForm: React.FC<Props> = props => {
                 <label htmlFor="phone" className="label phone">
                   Phone number
                 </label>
-                <input type="tel" id="phone" placeholder="" className="input phone" />
+                <input type="tel" id="phone" placeholder="" className="input phone"/>
               </div>
             </div>
             <div className="row">
               <div className="col-md-12 col-lg-6">
                 <label htmlFor="companyName" className="label company">
-                  Company name <span className="error-message">*</span>
+                  Company name <span className={styles["error-message"]}>*</span>
                 </label>
                 <input type="text" id="companyName" placeholder="" className="input validate company" />
-                <span className="error-message">Please enter a value</span>
+                <span className={styles["error-message"]}>Please enter a value</span>
               </div>
               <div className="col-md-12 col-lg-6">
                 <label htmlFor="companyWebsite" className="label website">
@@ -75,10 +76,10 @@ const ContactForm: React.FC<Props> = props => {
             <div className="row">
               <div className="col-12">
                 <label htmlFor="message" className="label message">
-                  Let us know what you're looking for and how we can help <span className="error-message">*</span>
+                  Let us know what you're looking for and how we can help <span className={styles["error-message"]}>*</span>
                 </label>
                 <textarea id="message" className="input validate textarea message"></textarea>
-                <span className="error-message">Please enter a value</span>
+                <span className={styles["error-message"]}>Please enter a value</span>
               </div>
             </div>
             <div className="row">

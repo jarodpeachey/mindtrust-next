@@ -2,7 +2,7 @@
 @use "../colors" as *;
 @use "../breakpoints" as *;
 
-.card.post-card {
+.post-card {
   display: flex;
   flex-direction: column;
   padding: 0;

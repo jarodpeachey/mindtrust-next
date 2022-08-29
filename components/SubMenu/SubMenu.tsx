@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/partials/_submenu.scss"
+// import "../styles/partials/_submenu.scss"
 
 interface SubMenuProps {
   children: object

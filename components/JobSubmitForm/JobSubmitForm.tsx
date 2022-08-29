@@ -1,7 +1,7 @@
 import React from "react"
-import Checkbox from "../Checkbox/index"
-import "../styles/partials/_jobsubmit-form.scss"
-import "../styles/partials/pages/_contact.scss"
+import Checkbox from "../Checkbox/Checkbox"
+// import "../styles/partials/_jobsubmit-form.scss"
+// import "../styles/partials/pages/_contact.scss"
 
 interface Props {
   showForm: boolean

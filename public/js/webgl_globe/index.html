@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8"/><title>Globe Integration - Dev</title><style>html,
+			body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				/* to avoid jittering (there may be an underlying cause to it, as this does not happen without the CSSRenderer) */
+				/* overflow-x: hidden; */
+				/* background-color: darkgray; */
+			}
+			#webgl-globe-app {
+				height: 100%;
+			}
+			#webgl-globe-app.small {
+				width: 800px;
+				height: 600px;
+				position: relative;
+				top: 100px;
+				margin: auto;
+				border: 1px solid lightgrey;
+			}
+			canvas {
+				display: block;
+				height: 100%;
+			}
+
+			.webgl-profile-container .webgl-profile-inner-container {
+				position: relative;
+				left: 50%;
+				will-change: transform, opacity; /* makes slow movements much more fluid */
+			}
+
+			/* PROFILES */
+			#webgl-globe-profiles {
+				display: none;
+				border: 2px solid black;
+			}
+			.globe-profile {
+				display: inline-block;
+				position: relative;
+				left: 50px;
+				bottom: 50px;
+				padding: 5px 10px;
+				background-color: white;
+				-webkit-box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
+				-moz-box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
+				box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
+			}
+			.globe-profile .globe-profile-thumbnail {
+				width: 32px;
+				border-radius: 32px;
+				display: inline-block;
+			}
+			.globe-profile .globe-profile-body {
+				margin-left: 10px;
+				display: inline-block;
+			}
+			.globe-profile .globe-profile-body .globe-profile-title-and-name {
+				display: inline-block;
+			}
+			.globe-profile .globe-profile-body .globe-profile-name {
+				color: gray;
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag {
+				margin-left: 10px;
+				display: inline-block;
+				padding: 5px 10px;
+				border-radius: 20px;
+				position: relative;
+				top: -10px;
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag.strategy {
+				background-color: rgb(199, 167, 224);
+				color: rgb(96, 42, 141);
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag.design {
+				background-color: rgb(201, 159, 183);
+				color: rgb(141, 42, 100);
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag.development {
+				background-color: rgb(132, 158, 187);
+				color: rgb(42, 88, 141);
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag.marketing {
+				background-color: rgb(180, 123, 135);
+				color: rgb(141, 42, 63);
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag.production {
+				background-color: rgb(192, 163, 139);
+				color: rgb(141, 87, 42);
+			}
+			.globe-profile .globe-profile-body .globe-profile-tag.technology {
+				background-color: rgb(154, 201, 197);
+				color: rgb(42, 141, 133);
+			}
+
+			#scroll-test {
+				padding-top: 800px;
+				padding-bottom: 800px;
+			}</style></head><body><div id="webgl-globe-profiles"></div><div id="webgl-globe-app"></div><div id="scroll-test">This is a test</div><script src="/js/webgl_globe/globe-integration.fda87c5a7877e101b399.js"></script></body></html>

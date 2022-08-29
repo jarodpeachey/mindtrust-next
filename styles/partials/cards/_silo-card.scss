@@ -2,7 +2,7 @@
 @use "../breakpoints" as *;
 @use "../colors" as *;
 
-.card.silo-card {
+.silo-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

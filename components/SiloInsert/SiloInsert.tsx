@@ -1,7 +1,7 @@
 import React from "react"
 import TalentCarouselSlide from "../cards/TalentCarouselSlide"
 import { TalentCarouselSlideItem } from "../../types/card-types"
-import "../styles/partials/_silo-insert.scss"
+// import "../styles/partials/_silo-insert.scss"
 import { BRIDGE_APP_URL } from "../../config"
 import { teamCards } from "../../data/designPage"
 import TeamCard from "../cards/TeamCard"

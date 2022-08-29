@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import TeamCard from "../components/cards/TeamCard"
-import "../styles/partials/_webgl_globe.scss"
-import { withPrefix } from "gatsby"
+// import "../styles/partials/_webgl_globe.scss"
+import styles from "./Globe.module.scss"
 import { TeamCardItem } from "../../types/card-types"
 
 // locations have underscore characters, to make it easier to use as css selector
@@ -114,23 +114,20 @@ MEMBERS_BY_LOCATION.forEach((member, location) => {
   locations.push(location)
 })
 
-
 export const WebglGlobe = () => {
   return (
-
-    <div className="webgl-globe-loader">
-
-      <div className="webgl-globe-fallback webgl-element-hidden">
+    <div className={styles["webgl-globe-loader"]}>
+      <div className={styles["webgl-globe-fallback webgl-element-hidden"]}>
         <img src="/media/webgl_globe/fallback/fallback.01.png?v=1" />
       </div>
 
-      <div className="webgl-globe webgl-element-hidden">
+      <div className={styles["webgl-globe webgl-element-hidden"]}>
         <div id="webgl-globe-profiles">
-          <div className="team-container">
-            <div className="team-cards">
+          <div className={styles["team-container"]}>
+            <div className={styles["team-cards"]}>
               {locations.map((location, i) => {
                 return (
-                  <div className="team-card-wrapper" key={i} data-location={location}>
+                  <div className={styles["team-card-wrapper"]} key={i} data-location={location}>
                     <TeamCard member={MEMBERS_BY_LOCATION.get(location)} />
                   </div>
                 )
@@ -140,7 +137,6 @@ export const WebglGlobe = () => {
         </div>
         <div id="webgl-globe-app" />
       </div>
-
     </div>
   )
 }

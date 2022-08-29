@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/partials/_footer.scss"
+// import "../styles/partials/_footer.scss"
 
 interface FooterTalent {
   title: string

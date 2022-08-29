@@ -1,7 +1,7 @@
 import React from "react"
 import TeamCard from "./cards/TeamCard"
 
-import "../styles/partials/_scenes.scss"
+// import "../styles/partials/_scenes.scss"
 
 import { TeamCardItem } from "../../types/card-types"
 

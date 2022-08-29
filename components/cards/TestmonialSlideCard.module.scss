@@ -1,0 +1,111 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/shadows" as *;
+
+.testimonial-slide__card {
+  height: auto !important;
+  display: flex !important;
+  background: transparent;
+  padding: 2.5rem 1.875rem;
+  transition: transform ease-in-out 0.1s;
+
+  .testimonial-slide__description-container {
+    height: 100%;
+    min-height: 504px;
+    width: 50%;
+    background-color: #fff;
+    padding: 48px 52px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 15%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .testimonial-slide__client-info-container {
+      display: flex;
+      align-items: center;
+      @include media-breakpoint-down(xxss) {
+        display: block;
+      }
+      .testimonial-slide__company-logo-short {
+        width: 80px;
+        height: 80px;
+        margin-right: 18px;
+
+        @include media-breakpoint-down(xxss) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .testimonial-slide__image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .testimonial-slide__quote {
+      color: #000000;
+      font-family: Avenir Next;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 36px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 8; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+
+    .testimonial-slide__name {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #111;
+      font-family: Avenir Demi, Raleway Bold, Raleway Extrabold;
+      margin: 0 0 4px;
+    }
+
+    .testimonial-slide__title {
+      font-weight: 400;
+      margin: 0;
+      font-size: 0.9rem;
+      color: #6a7885;
+      line-height: 1.375rem;
+      font-family: Avenir Regular, Raleway, Raleway Extrabold;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      border-radius: 5px;
+      padding: 34px 24px;
+    }
+  }
+
+  .testimonial-slide__company-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+    min-height: 504px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    // background-image: url("/media/img/tertiary_slide_default.png");
+
+    @include media-breakpoint-down(sm) {
+      width: 0%;
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 2.5rem 1rem;
+    height: auto !important;
+  }
+}
