@@ -209,11 +209,15 @@ nav {
         margin-bottom: 32px;
 
         img {
-          margin-top: 3px;
-          margin-right: 0.8125rem;
-          display: block;
-          height: 34px;
-          width: 34px;
+          // top: 3px !important;
+          position: relative;
+          display: block !important;
+          height: 34px !important;
+          width: 34px !important;
+        }
+
+        .submenu__item--content {
+          margin-left: 0.8125rem !important;
         }
 
         .submenu__item--title {

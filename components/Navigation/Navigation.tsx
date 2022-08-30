@@ -1,5 +1,5 @@
 import React from "react"
-import Image from '../../node_modules/next/image'
+import Image from "../../node_modules/next/image"
 
 const Navigation = class extends React.Component {
   render() {
@@ -130,7 +130,17 @@ const Navigation = class extends React.Component {
                       <div className="row">
                         <div className="col-lg-6">
                           <a href="/strategy-teams" className="submenu__item">
-                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--strategy.svg" alt="Strategy" />
+                            <div style={{ height: 34, width: 34 }}>
+                              <Image
+                                style={{ height: 34, width: 34 }}
+                                layout="fixed"
+                                loading="lazy"
+                                width={34}
+                                height={34}
+                                src="/media/img/icons/silos/navicon--strategy.svg"
+                                alt="Strategy"
+                              />
+                            </div>
                             <div className="submenu__item--content">
                               <p className="submenu__item--title">Strategy</p>
                               <p>Top business experts for digital transformation, data science, fundraising, finance, product and project management.</p>
@@ -139,7 +149,17 @@ const Navigation = class extends React.Component {
                         </div>
                         <div className="col-lg-6">
                           <a href="/design-teams" className="submenu__item">
-                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--design.svg" alt="Design" />
+                            <div style={{ height: 34, width: 34 }}>
+                              <Image
+                                style={{ height: 34, width: 34 }}
+                                layout="fixed"
+                                loading="lazy"
+                                width={34}
+                                height={34}
+                                src="/media/img/icons/silos/navicon--design.svg"
+                                alt="Design"
+                              />
+                            </div>
                             <div className="submenu__item--content">
                               <p className="submenu__item--title">Design</p>
                               <p>Award winning designers deliver amazing brand, creative, UI, UX, prototypes, and interactive digital experiences.</p>
@@ -148,7 +168,17 @@ const Navigation = class extends React.Component {
                         </div>
                         <div className="col-lg-6">
                           <a href="/development-teams" className="submenu__item">
-                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--development.svg" alt="Development" />
+                            <div style={{ height: 34, width: 34 }}>
+                              <Image
+                                style={{ height: 34, width: 34 }}
+                                layout="fixed"
+                                loading="lazy"
+                                width={34}
+                                height={34}
+                                src="/media/img/icons/silos/navicon--development.svg"
+                                alt="Development"
+                              />
+                            </div>
                             <div className="submenu__item--content">
                               <p className="submenu__item--title">Development</p>
                               <p>
@@ -159,7 +189,17 @@ const Navigation = class extends React.Component {
                         </div>
                         <div className="col-lg-6">
                           <a href="/marketing-teams" className="submenu__item">
-                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--marketing.svg" alt="Marketing" />
+                            <div style={{ height: 34, width: 34 }}>
+                              <Image
+                                style={{ height: 34, width: 34 }}
+                                layout="fixed"
+                                loading="lazy"
+                                width={34}
+                                height={34}
+                                src="/media/img/icons/silos/navicon--marketing.svg"
+                                alt="Marketing"
+                              />
+                            </div>
                             <div className="submenu__item--content">
                               <p className="submenu__item--title">Marketing</p>
                               <p>
@@ -171,7 +211,17 @@ const Navigation = class extends React.Component {
                         </div>
                         <div className="col-lg-6">
                           <a href="/production-teams" className="submenu__item">
-                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--production.svg" alt="Production" />
+                            <div style={{ height: 34, width: 34 }}>
+                              <Image
+                                style={{ height: 34, width: 34 }}
+                                layout="fixed"
+                                loading="lazy"
+                                width={34}
+                                height={34}
+                                src="/media/img/icons/silos/navicon--production.svg"
+                                alt="Production"
+                              />
+                            </div>
                             <div className="submenu__item--content">
                               <p className="submenu__item--title">Production</p>
                               <p>
@@ -183,7 +233,17 @@ const Navigation = class extends React.Component {
                         </div>
                         <div className="col-lg-6">
                           <a href="/technology-teams" className="submenu__item">
-                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--technology.svg" alt="Technology" />
+                            <div style={{ height: 34, width: 34 }}>
+                              <Image
+                                style={{ height: 34, width: 34 }}
+                                layout="fixed"
+                                loading="lazy"
+                                width={34}
+                                height={34}
+                                src="/media/img/icons/silos/navicon--technology.svg"
+                                alt="Technology"
+                              />
+                            </div>
                             <div className="submenu__item--content">
                               <p className="submenu__item--title">Technology</p>
                               <p>
