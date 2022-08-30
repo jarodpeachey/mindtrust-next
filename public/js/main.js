@@ -1,8 +1,6 @@
 ;(function () {
   const notBuild = typeof window !== "undefined"
   const isMobileDevice = isMobile()
-  alert("NOT BUILD VALUE: ", notBuild)
-  console.log("NOT BUILD VALUE: ", notBuild)
 
   addScript("/js/navigation.js")
   addScript("/js/animate.js")
@@ -17,7 +15,6 @@
     addScript("/js/utils/helper.js")
     addScript("/js/utils/clearbitTrack.js")
     addScript("/js/getstartedForm.js")
-    addScript("/js/requestProjectOne.js")
 
     // if ("hbspt" in window) {
     //   window.hbspt.forms.create({ region: "na1", portalId: "441110", formId: "d8bd52a5-f23d-4801-9517-0cd5f818f218", target: ".request-form", onFormSubmit: function($form){setTimeout(() => {window.location.href = "https://meetings.mindtrust.com/meetings/sales-team-demo/web-demo-request"}, 2000)} })
@@ -67,11 +64,6 @@
 
   if (notBuild && window.location.pathname.includes("news")) {
     addScript("/js/newsInfiniteLoad.js", true)
-  }
-
-  if (notBuild && window.location.pathname.includes("join-mindtrust")) {
-    addScript("/js/jobSubmitForm.js", true)
-    addScript("/js/joinMindtrustOne.js", true)
   }
 
   if (
@@ -145,11 +137,11 @@
   }
 
   if (notBuild && window.location.pathname === "/") {
-    // if (isMobileDevice || (notBuild && window.innerWidth < 768)) {
-    //   addWebglGlobeFallback()
-    // } else {
-    //   addWebglGlobe()
-    // }
+    if (isMobileDevice || (notBuild && window.innerWidth < 768)) {
+      addWebglGlobeFallback()
+    } else {
+      addWebglGlobe()
+    }
     addWebglGlobe()
   }
 

@@ -1,0 +1,272 @@
+
+uniform vec3 diffuse;
+uniform float opacity;
+
+#ifndef FLAT_SHADED
+
+	varying vec3 vNormal;
+
+#endif
+
+#include <common>
+
+
+
+// /MAT/mesh_basic_builder_pulse_shadow/disk3
+float disk_feather(float dist, float radius, float feather){
+	if(feather <= 0.0){
+		if(dist < radius){return 1.0;}else{return 0.0;}
+	} else {
+		float half_feather = feather * 0.5;
+		if(dist < (radius - half_feather)){
+			return 1.0;
+		} else {
+			if(dist > (radius + half_feather)){
+				return 0.0;
+			} else {
+				float feather_start = (radius - half_feather);
+				float blend = 1.0 - (dist - feather_start) / feather;
+				return blend;
+			}
+		}
+	}
+}
+
+float disk2d(vec2 pos, vec2 center, float radius, float feather){
+	float dist = distance(pos, center);
+	return disk_feather(dist, radius, feather);
+}
+
+// function could be called sphere, but is an overload of disk, and is the same
+float disk3d(vec3 pos, vec3 center, float radius, float feather){
+	float dist = distance(pos, center);
+	return disk_feather(dist, radius, feather);
+}
+
+// /MAT/mesh_basic_builder_pulse_shadow/complement1
+float complement(float x){return 1.0-x;}
+vec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}
+vec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}
+vec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}
+
+
+
+
+
+
+
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_radius
+uniform float v_POLY_param_radius_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_color_role0
+uniform vec3 v_POLY_param_color_role0_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_color_role1
+uniform vec3 v_POLY_param_color_role1_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_color_role2
+uniform vec3 v_POLY_param_color_role2_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_color_role3
+uniform vec3 v_POLY_param_color_role3_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_color_role4
+uniform vec3 v_POLY_param_color_role4_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_color_role5
+uniform vec3 v_POLY_param_color_role5_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_shadowcolor
+uniform vec3 v_POLY_param_shadowcolor_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_shadow_intensity
+uniform float v_POLY_param_shadow_intensity_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_baseopacity
+uniform float v_POLY_param_baseopacity_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/param_id
+uniform float v_POLY_param_id_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/globals1
+varying vec2 v_POLY_globals1_uv;
+
+// /MAT/mesh_basic_builder_pulse_shadow/attribute2
+varying float varying_v_POLY_attribute2_val;
+
+// /MAT/mesh_basic_builder_pulse_shadow/attribute1
+varying float varying_v_POLY_attribute1_val;
+
+
+
+
+#include <dithering_pars_fragment>
+#include <color_pars_fragment>
+#include <uv_pars_fragment>
+#include <uv2_pars_fragment>
+#include <map_pars_fragment>
+#include <alphamap_pars_fragment>
+#include <aomap_pars_fragment>
+#include <lightmap_pars_fragment>
+#include <envmap_common_pars_fragment>
+#include <envmap_pars_fragment>
+#include <cube_uv_reflection_fragment>
+#include <fog_pars_fragment>
+#include <specularmap_pars_fragment>
+#include <logdepthbuf_pars_fragment>
+#include <clipping_planes_pars_fragment>
+
+void main() {
+
+	#include <clipping_planes_fragment>
+
+	vec4 diffuseColor = vec4( diffuse, opacity );
+
+
+
+	// /MAT/mesh_basic_builder_pulse_shadow/constant2
+	float v_POLY_constant2_val = 0.3;
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/attribute2
+	float v_POLY_attribute2_val = varying_v_POLY_attribute2_val;
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/constant_white
+	vec3 v_POLY_constant_white_val = vec3(1.0, 1.0, 1.0);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/attribute1
+	float v_POLY_attribute1_val = varying_v_POLY_attribute1_val;
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult4
+	float v_POLY_mult4_product = (v_POLY_param_radius_val * v_POLY_constant2_val * 1.0);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/round3
+	float v_POLY_round3_val = sign(v_POLY_attribute2_val)*floor(abs(v_POLY_attribute2_val)+0.5);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/round1
+	float v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/round2
+	float v_POLY_round2_val = sign(v_POLY_param_id_val)*floor(abs(v_POLY_param_id_val)+0.5);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/disk3
+	float v_POLY_disk3_float = disk2d(v_POLY_globals1_uv, vec2(0.5, 0.5), v_POLY_mult4_product, 0.1);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/disk2
+	float v_POLY_disk2_float = disk2d(v_POLY_globals1_uv, vec2(0.5, 0.5), v_POLY_mult4_product, 0.01);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult_add2
+	float v_POLY_mult_add2_val = (0.65*(v_POLY_mult4_product + 0.0)) + 0.0;
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult_add1
+	float v_POLY_mult_add1_val = (1.6*(v_POLY_mult4_product + 0.0)) + 0.0;
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/float_to_int1
+	int v_POLY_float_to_int1_int = int(v_POLY_round3_val);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/compare1
+	bool v_POLY_compare1_val = (v_POLY_round1_val == v_POLY_round2_val);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/compare2
+	bool v_POLY_compare2_val = (v_POLY_disk3_float > 0.48);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/disk1
+	float v_POLY_disk1_float = disk2d(v_POLY_globals1_uv, vec2(0.53, 0.52), v_POLY_mult_add2_val, v_POLY_mult_add1_val);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/switch1
+	vec3 v_POLY_switch1_val;
+	int v_POLY_switch1_index = v_POLY_float_to_int1_int;
+	if(v_POLY_switch1_index == 0){v_POLY_switch1_val = v_POLY_param_color_role0_val;}
+	else if(v_POLY_switch1_index == 1){v_POLY_switch1_val = v_POLY_param_color_role1_val;}
+	else if(v_POLY_switch1_index == 2){v_POLY_switch1_val = v_POLY_param_color_role2_val;}
+	else if(v_POLY_switch1_index == 3){v_POLY_switch1_val = v_POLY_param_color_role3_val;}
+	else if(v_POLY_switch1_index == 4){v_POLY_switch1_val = v_POLY_param_color_role4_val;}
+	else if(v_POLY_switch1_index == 5){v_POLY_switch1_val = v_POLY_param_color_role5_val;}
+	else if(v_POLY_switch1_index == 6){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/two_way_switch1
+	float v_POLY_two_way_switch1_val;
+	if(v_POLY_compare1_val){
+	v_POLY_two_way_switch1_val = 1.0;
+	} else {
+	v_POLY_two_way_switch1_val = 0.0;
+	}
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult2
+	vec3 v_POLY_mult2_product = (v_POLY_disk1_float * v_POLY_param_shadowcolor_val);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult3
+	float v_POLY_mult3_product = (v_POLY_disk1_float * v_POLY_param_shadow_intensity_val * 1.0);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mix2
+	vec3 v_POLY_mix2_mix = mix(v_POLY_switch1_val, v_POLY_constant_white_val, 0.65);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult_add3
+	float v_POLY_mult_add3_val = (v_POLY_two_way_switch1_val*(v_POLY_param_baseopacity_val + 0.0)) + 0.0;
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mult1
+	vec3 v_POLY_mult1_product = (v_POLY_disk2_float * v_POLY_mix2_mix);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/max1
+	float v_POLY_max1_val = max(v_POLY_disk2_float, v_POLY_mult3_product);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/complement1
+	float v_POLY_complement1_val = complement(v_POLY_mult_add3_val);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/two_way_switch2
+	vec3 v_POLY_two_way_switch2_val;
+	if(v_POLY_compare2_val){
+	v_POLY_two_way_switch2_val = v_POLY_mult1_product;
+	} else {
+	v_POLY_two_way_switch2_val = v_POLY_mult2_product;
+	}
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/mix1
+	float v_POLY_mix1_mix = mix(v_POLY_max1_val, 0.0, v_POLY_complement1_val);
+	
+	// /MAT/mesh_basic_builder_pulse_shadow/output1
+	diffuseColor.xyz = v_POLY_two_way_switch2_val;
+	diffuseColor.a = v_POLY_mix1_mix;
+
+
+
+
+	#include <logdepthbuf_fragment>
+	#include <map_fragment>
+	#include <color_fragment>
+	#include <alphamap_fragment>
+	#include <alphatest_fragment>
+	#include <specularmap_fragment>
+
+	ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+
+	// accumulation (baked indirect lighting only)
+	#ifdef USE_LIGHTMAP
+	
+		vec4 lightMapTexel= texture2D( lightMap, vUv2 );
+		reflectedLight.indirectDiffuse += lightMapTexelToLinear( lightMapTexel ).rgb * lightMapIntensity;
+
+	#else
+
+		reflectedLight.indirectDiffuse += vec3( 1.0 );
+
+	#endif
+
+	// modulation
+	#include <aomap_fragment>
+
+	reflectedLight.indirectDiffuse *= diffuseColor.rgb;
+
+	vec3 outgoingLight = reflectedLight.indirectDiffuse;
+
+	#include <envmap_fragment>
+
+	gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+
+	#include <tonemapping_fragment>
+	#include <encodings_fragment>
+	#include <fog_fragment>
+	#include <premultiplied_alpha_fragment>
+	#include <dithering_fragment>
+
+}

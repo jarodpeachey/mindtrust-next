@@ -1,0 +1,39 @@
+{
+	"type": "materials",
+	"nodes": {
+		"mesh_lambert_SPHERE": {
+			"type": "meshLambert",
+			"params": {
+				"color": {
+					"raw_input": [
+						2,
+						2,
+						2
+					],
+					"overriden_options": {
+						"conversion": "no conversion"
+					}
+				},
+				"transparent": 1,
+				"opacity": 0.77
+			}
+		},
+		"mesh_basic_BG": {
+			"type": "meshBasic",
+			"params": {
+				"color": [
+					0.10414502024650574,
+					0.14124104380607605,
+					0.2619999945163727
+				],
+				"opacity": "0.33*3",
+				"useMap": true,
+				"map": "/COP/file_bg_shadow",
+				"alphaMap": "/COP/texture_properties_BG"
+			}
+		}
+	},
+	"selection": [
+		"mesh_basic_builder_pulse_shadow"
+	]
+}

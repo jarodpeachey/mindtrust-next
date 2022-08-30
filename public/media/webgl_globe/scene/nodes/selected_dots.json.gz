@@ -1,0 +1,154 @@
+{
+  "type": "geo",
+  "nodes": {
+    "attrib_create_id": {
+      "type": "attrib_create",
+      "params": {
+        "name": "id",
+        "value1": "@ptnum"
+      },
+      "inputs": [
+        "object_merge1"
+      ],
+      "cloned_state_overriden": true
+    },
+    "attrib_create_shadow1": {
+      "type": "attrib_create",
+      "params": {
+        "name": "shadow"
+      },
+      "inputs": [
+        "circle1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_create_shadow2": {
+      "type": "attrib_create",
+      "params": {
+        "name": "shadow"
+      },
+      "inputs": [
+        "sphere1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_create_sphere": {
+      "type": "attrib_create",
+      "params": {
+        "name": "sphere",
+        "value1": 1
+      },
+      "inputs": [
+        "attrib_create_shadow2"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_create_sphere1": {
+      "type": "attrib_create",
+      "params": {
+        "name": "sphere"
+      },
+      "inputs": [
+        "attrib_create_shadow1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "circle1": {
+      "type": "circle",
+      "params": {
+        "radius": 0.03,
+        "segments": 20,
+        "open": false,
+        "direction": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "instance1": {
+      "type": "instance",
+      "params": {
+        "attributes_to_copy": "instance* role id",
+        "material": "/MAT/mesh_basic_builder_SELECTED_DOTS"
+      },
+      "inputs": [
+        "merge1",
+        "attrib_create_id"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "merge1": {
+      "type": "merge",
+      "inputs": [
+        "attrib_create_sphere1",
+        "attrib_create_sphere"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "object_merge1": {
+      "type": "object_merge",
+      "params": {
+        "geometry": "/arcs/OUT_selected_dots"
+      }
+    },
+    "sphere1": {
+      "type": "sphere",
+      "params": {
+        "radius": 0.01,
+        "open": true,
+        "angle_range_x": [
+          0,
+          3.141592653589793
+        ],
+        "angle_range_y": [
+          0,
+          3.141592653589793
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "REF_cook": {
+      "type": "null",
+      "inputs": [
+        "instance1"
+      ],
+      "flags": {
+        "display": true,
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    }
+  },
+  "inputs": [
+    "null_ry"
+  ],
+  "flags": {
+    "display": true
+  },
+  "selection": [
+    "REF_cook"
+  ]
+}

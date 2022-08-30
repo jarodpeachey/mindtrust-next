@@ -1,0 +1,15 @@
+<svg width="901" height="1071" viewBox="0 0 901 1071" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_6927_64208" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-170" y="0" width="1071" height="1071">
+<path d="M899.141 1070L-168.998 2V1070H899.141Z" fill="#C4C4C4" stroke="black"/>
+</mask>
+<g mask="url(#mask0_6927_64208)">
+<ellipse rx="554.299" ry="554.228" transform="matrix(-1 0 0 1 457.302 507.773)" fill="url(#paint0_radial_6927_64208)" fill-opacity="0.9"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_6927_64208" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(554.299 554.228) rotate(90) scale(554.228 554.299)">
+<stop stop-color="#E8F2F6" stop-opacity="0.81"/>
+<stop offset="0.541667" stop-color="#E8F2F6" stop-opacity="0.65"/>
+<stop offset="1" stop-color="#EDF1F5" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

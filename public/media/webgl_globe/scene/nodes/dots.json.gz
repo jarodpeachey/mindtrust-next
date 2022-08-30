@@ -1,0 +1,172 @@
+{
+  "type": "geo",
+  "nodes": {
+    "instance1": {
+      "type": "instance",
+      "params": {
+        "attributes_to_copy": "instance* land id f",
+        "material": "/MAT/mesh_basic_builder_DOTS"
+      },
+      "inputs": [
+        "transform_DEBUG",
+        "OUT_pts"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "circle1": {
+      "type": "circle",
+      "params": {
+        "radius": 0.006,
+        "segments": 8,
+        "open": 0
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform2": {
+      "type": "transform",
+      "params": {
+        "r": [
+          90,
+          0,
+          0
+        ],
+        "scale": 1.3
+      },
+      "inputs": [
+        "circle1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "OUT_pts": {
+      "type": "null",
+      "inputs": [
+        "transform1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_DEBUG": {
+      "type": "transform",
+      "params": {
+        "scale": 3.2
+      },
+      "inputs": [
+        "transform2"
+      ],
+      "flags": {
+        "bypass": true,
+        "optimize": true
+      }
+    },
+    "delete1": {
+      "type": "delete",
+      "params": {
+        "by_expression": 1,
+        "expression": "@land==0"
+      },
+      "inputs": [
+        "OUT_pts"
+      ]
+    },
+    "OUT_land_pts": {
+      "type": "null",
+      "inputs": [
+        "delete1"
+      ],
+      "cloned_state_overriden": true
+    },
+    "icosahedron1": {
+      "type": "icosahedron",
+      "params": {
+        "detail": 44,
+        "points_only": 1
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_from_texture1": {
+      "type": "attrib_from_texture",
+      "params": {
+        "texture": "/COP/file_land",
+        "attrib": "land"
+      },
+      "inputs": [
+        "icosahedron1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_from_texture2": {
+      "type": "attrib_from_texture",
+      "params": {
+        "texture": "/COP/file_f",
+        "attrib": "f",
+        "mult": 5
+      },
+      "inputs": [
+        "attrib_from_texture1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform1": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          168,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_from_texture2"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "object_properties_OUT": {
+      "type": "object_properties",
+      "params": {
+        "frustrum_culled": 0,
+        "cast_shadow": 0,
+        "receive_shadow": 0
+      },
+      "inputs": [
+        "instance1"
+      ],
+      "flags": {
+        "display": true,
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    }
+  },
+  "params": {
+    "render_order": 1
+  },
+  "inputs": [
+    "null_ry"
+  ],
+  "flags": {
+    "display": true
+  },
+  "selection": [
+    "icosahedron1"
+  ]
+}

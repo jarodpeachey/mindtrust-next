@@ -315,8 +315,8 @@
   }
 
   .trusted-by {
-    .team-cards-container {
-      .team-cards-arrow-img-mobile {
+    .teamCards-container {
+      .teamCards-arrow-img-mobile {
         @include media-breakpoint-up(lg) {
           display: none;
         }
@@ -328,7 +328,7 @@
       }
     }
 
-    .team-cards {
+    .teamCards {
       position: relative;
 
       @include media-breakpoint-up(lg) {
@@ -338,7 +338,7 @@
         display: none;
       }
 
-      .team-cards-arrow-img {
+      .teamCards-arrow-img {
         position: absolute;
         right: -23%;
         top: -33%;

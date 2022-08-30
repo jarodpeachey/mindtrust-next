@@ -1,0 +1,37 @@
+{
+	"type": "cop",
+	"nodes": {
+		"file_land": {
+			"type": "image",
+			"params": {
+				"url": "/tex/land.512.jpg",
+				"tminFilter": 1,
+				"minFilter": 1006,
+				"tflipY": true,
+				"flipY": true
+			}
+		},
+		"file_f": {
+			"type": "image",
+			"params": {
+				"url": "/tex/f.512.jpg",
+				"tminFilter": 1,
+				"minFilter": 1006,
+				"tflipY": true,
+				"flipY": true
+			}
+		},
+		"file_bg_shadow": {
+			"type": "image",
+			"params": {
+				"url": "/tex/bg.1024.png",
+				"encoding": 3007,
+				"tflipY": 1,
+				"flipY": 1
+			}
+		}
+	},
+	"selection": [
+		"file_bg_shadow"
+	]
+}

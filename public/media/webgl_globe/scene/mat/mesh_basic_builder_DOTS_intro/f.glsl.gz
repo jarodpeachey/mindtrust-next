@@ -1,0 +1,322 @@
+
+uniform vec3 diffuse;
+uniform float opacity;
+
+#ifndef FLAT_SHADED
+
+	varying vec3 vNormal;
+
+#endif
+
+#include <common>
+
+
+
+// /MAT/mesh_basic_builder_DOTS_intro/easing3
+float exponentialIn(float t) {
+  return t == 0.0 ? t : pow(2.0, 10.0 * (t - 1.0));
+}
+
+
+
+// /MAT/mesh_basic_builder_DOTS_intro/fit2
+//
+//
+// FIT
+//
+//
+float fit(float val, float src_min, float src_max, float dest_min, float dest_max){
+	float src_range = src_max - src_min;
+	float dest_range = dest_max - dest_min;
+
+	float r = (val - src_min) / src_range;
+	return (r * dest_range) + dest_min;
+}
+vec2 fit(vec2 val, vec2 src_min, vec2 src_max, vec2 dest_min, vec2 dest_max){
+	return vec2(
+		fit(val.x, src_min.x, src_max.x, dest_min.x, dest_max.x),
+		fit(val.y, src_min.y, src_max.y, dest_min.y, dest_max.y)
+	);
+}
+vec3 fit(vec3 val, vec3 src_min, vec3 src_max, vec3 dest_min, vec3 dest_max){
+	return vec3(
+		fit(val.x, src_min.x, src_max.x, dest_min.x, dest_max.x),
+		fit(val.y, src_min.y, src_max.y, dest_min.y, dest_max.y),
+		fit(val.z, src_min.z, src_max.z, dest_min.z, dest_max.z)
+	);
+}
+vec4 fit(vec4 val, vec4 src_min, vec4 src_max, vec4 dest_min, vec4 dest_max){
+	return vec4(
+		fit(val.x, src_min.x, src_max.x, dest_min.x, dest_max.x),
+		fit(val.y, src_min.y, src_max.y, dest_min.y, dest_max.y),
+		fit(val.z, src_min.z, src_max.z, dest_min.z, dest_max.z),
+		fit(val.w, src_min.w, src_max.w, dest_min.w, dest_max.w)
+	);
+}
+
+//
+//
+// FIT TO 01
+// fits the range [src_min, src_max] to [0, 1]
+//
+float fit_to_01(float val, float src_min, float src_max){
+	float size = src_max - src_min;
+	return (val - src_min) / size;
+}
+vec2 fit_to_01(vec2 val, vec2 src_min, vec2 src_max){
+	return vec2(
+		fit_to_01(val.x, src_min.x, src_max.x),
+		fit_to_01(val.y, src_min.y, src_max.y)
+	);
+}
+vec3 fit_to_01(vec3 val, vec3 src_min, vec3 src_max){
+	return vec3(
+		fit_to_01(val.x, src_min.x, src_max.x),
+		fit_to_01(val.y, src_min.y, src_max.y),
+		fit_to_01(val.z, src_min.z, src_max.z)
+	);
+}
+vec4 fit_to_01(vec4 val, vec4 src_min, vec4 src_max){
+	return vec4(
+		fit_to_01(val.x, src_min.x, src_max.x),
+		fit_to_01(val.y, src_min.y, src_max.y),
+		fit_to_01(val.z, src_min.z, src_max.z),
+		fit_to_01(val.w, src_min.w, src_max.w)
+	);
+}
+
+//
+//
+// FIT FROM 01
+// fits the range [0, 1] to [dest_min, dest_max]
+//
+float fit_from_01(float val, float dest_min, float dest_max){
+	return fit(val, 0.0, 1.0, dest_min, dest_max);
+}
+vec2 fit_from_01(vec2 val, vec2 src_min, vec2 src_max){
+	return vec2(
+		fit_from_01(val.x, src_min.x, src_max.x),
+		fit_from_01(val.y, src_min.y, src_max.y)
+	);
+}
+vec3 fit_from_01(vec3 val, vec3 src_min, vec3 src_max){
+	return vec3(
+		fit_from_01(val.x, src_min.x, src_max.x),
+		fit_from_01(val.y, src_min.y, src_max.y),
+		fit_from_01(val.z, src_min.z, src_max.z)
+	);
+}
+vec4 fit_from_01(vec4 val, vec4 src_min, vec4 src_max){
+	return vec4(
+		fit_from_01(val.x, src_min.x, src_max.x),
+		fit_from_01(val.y, src_min.y, src_max.y),
+		fit_from_01(val.z, src_min.z, src_max.z),
+		fit_from_01(val.w, src_min.w, src_max.w)
+	);
+}
+
+//
+//
+// FIT FROM 01 TO VARIANCE
+// fits the range [0, 1] to [center - variance, center + variance]
+//
+float fit_from_01_to_variance(float val, float center, float variance){
+	return fit_from_01(val, center - variance, center + variance);
+}
+vec2 fit_from_01_to_variance(vec2 val, vec2 center, vec2 variance){
+	return vec2(
+		fit_from_01_to_variance(val.x, center.x, variance.x),
+		fit_from_01_to_variance(val.y, center.y, variance.y)
+	);
+}
+vec3 fit_from_01_to_variance(vec3 val, vec3 center, vec3 variance){
+	return vec3(
+		fit_from_01_to_variance(val.x, center.x, variance.x),
+		fit_from_01_to_variance(val.y, center.y, variance.y),
+		fit_from_01_to_variance(val.z, center.z, variance.z)
+	);
+}
+vec4 fit_from_01_to_variance(vec4 val, vec4 center, vec4 variance){
+	return vec4(
+		fit_from_01_to_variance(val.x, center.x, variance.x),
+		fit_from_01_to_variance(val.y, center.y, variance.y),
+		fit_from_01_to_variance(val.z, center.z, variance.z),
+		fit_from_01_to_variance(val.w, center.w, variance.w)
+	);
+}
+
+// /MAT/mesh_basic_builder_DOTS_intro/easing1
+float quadraticOut(float t) {
+  return -t * (t - 2.0);
+}
+
+
+
+// /MAT/mesh_basic_builder_DOTS_intro/complement2
+float complement(float x){return 1.0-x;}
+vec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}
+vec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}
+vec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}
+
+
+
+
+
+
+
+
+// /MAT/mesh_basic_builder_DOTS_intro/param_progress
+uniform float v_POLY_param_progress_val;
+
+// /MAT/mesh_basic_builder_DOTS_intro/param1
+uniform vec3 v_POLY_param1_val;
+
+// /MAT/mesh_basic_builder_DOTS_intro/attribute5
+varying float varying_v_POLY_attribute5_val;
+
+// /MAT/mesh_basic_builder_DOTS_intro/attribute1
+varying float varying_v_POLY_attribute1_val;
+
+// /MAT/mesh_basic_builder_DOTS_intro/attribute4
+varying float varying_v_POLY_attribute4_val;
+
+
+
+
+#include <dithering_pars_fragment>
+#include <color_pars_fragment>
+#include <uv_pars_fragment>
+#include <uv2_pars_fragment>
+#include <map_pars_fragment>
+#include <alphamap_pars_fragment>
+#include <aomap_pars_fragment>
+#include <lightmap_pars_fragment>
+#include <envmap_common_pars_fragment>
+#include <envmap_pars_fragment>
+#include <cube_uv_reflection_fragment>
+#include <fog_pars_fragment>
+#include <specularmap_pars_fragment>
+#include <logdepthbuf_pars_fragment>
+#include <clipping_planes_pars_fragment>
+
+void main() {
+
+	#include <clipping_planes_fragment>
+
+	vec4 diffuseColor = vec4( diffuse, opacity );
+
+
+
+	// /MAT/mesh_basic_builder_DOTS_intro/attribute5
+	float v_POLY_attribute5_val = varying_v_POLY_attribute5_val;
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/attribute1
+	float v_POLY_attribute1_val = varying_v_POLY_attribute1_val;
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/attribute4
+	float v_POLY_attribute4_val = varying_v_POLY_attribute4_val;
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/constant_white
+	vec3 v_POLY_constant_white_val = vec3(1.0, 1.0, 1.0);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/compare2
+	bool v_POLY_compare2_val = (v_POLY_attribute5_val < 0.5);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/round1
+	float v_POLY_round1_val = sign(v_POLY_attribute4_val)*floor(abs(v_POLY_attribute4_val)+0.5);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/vec3_to_vec4_1
+	vec4 v_POLY_vec3_to_vec4_1_vec4 = vec4(v_POLY_param1_val.xyz, 0.0);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/two_way_switch2
+	float v_POLY_two_way_switch2_val;
+	if(v_POLY_compare2_val){
+	v_POLY_two_way_switch2_val = 3.1;
+	} else {
+	v_POLY_two_way_switch2_val = 0.0;
+	}
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/float_to_vec2_1
+	vec2 v_POLY_float_to_vec2_1_vec2 = vec2(v_POLY_round1_val, 420.1418);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/color_correct1
+	vec4 v_POLY_color_correct1_out = sRGBToLinear(v_POLY_vec3_to_vec4_1_vec4);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/add3
+	float v_POLY_add3_sum = (v_POLY_two_way_switch2_val + v_POLY_attribute1_val + 0.0);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/random1
+	float v_POLY_random1_rand = rand(v_POLY_float_to_vec2_1_vec2);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/vec4_to_vec3_1
+	vec3 v_POLY_vec4_to_vec3_1_vec3 = v_POLY_color_correct1_out.xyz;
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/easing3
+	float v_POLY_easing3_out = exponentialIn(v_POLY_random1_rand);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/add1
+	float v_POLY_add1_sum = (v_POLY_add3_sum + v_POLY_easing3_out + 0.0);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/substract1
+	float v_POLY_substract1_substract = (v_POLY_param_progress_val - v_POLY_add1_sum - 0.0);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/fit2
+	float v_POLY_fit2_val = fit(v_POLY_substract1_substract, 0.19, 0.77, 0.0, 0.92);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/clamp2
+	float v_POLY_clamp2_val = clamp(v_POLY_fit2_val, 0.0, 1.0);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/easing1
+	float v_POLY_easing1_out = quadraticOut(v_POLY_clamp2_val);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/complement2
+	float v_POLY_complement2_val = complement(v_POLY_easing1_out);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/mix1
+	vec3 v_POLY_mix1_mix = mix(v_POLY_vec4_to_vec3_1_vec3, v_POLY_constant_white_val, v_POLY_complement2_val);
+	
+	// /MAT/mesh_basic_builder_DOTS_intro/output1
+	diffuseColor.xyz = v_POLY_mix1_mix;
+
+
+
+
+	#include <logdepthbuf_fragment>
+	#include <map_fragment>
+	#include <color_fragment>
+	#include <alphamap_fragment>
+	#include <alphatest_fragment>
+	#include <specularmap_fragment>
+
+	ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+
+	// accumulation (baked indirect lighting only)
+	#ifdef USE_LIGHTMAP
+	
+		vec4 lightMapTexel= texture2D( lightMap, vUv2 );
+		reflectedLight.indirectDiffuse += lightMapTexelToLinear( lightMapTexel ).rgb * lightMapIntensity;
+
+	#else
+
+		reflectedLight.indirectDiffuse += vec3( 1.0 );
+
+	#endif
+
+	// modulation
+	#include <aomap_fragment>
+
+	reflectedLight.indirectDiffuse *= diffuseColor.rgb;
+
+	vec3 outgoingLight = reflectedLight.indirectDiffuse;
+
+	#include <envmap_fragment>
+
+	gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+
+	#include <tonemapping_fragment>
+	#include <encodings_fragment>
+	#include <fog_fragment>
+	#include <premultiplied_alpha_fragment>
+	#include <dithering_fragment>
+
+}

@@ -1,0 +1,93 @@
+{
+	"type": "obj",
+	"nodes": {
+		"null_ry": {
+			"type": "null",
+			"inputs": [
+				"null_gentle_rotation"
+			],
+			"flags": {
+				"display": false
+			}
+		},
+		"hemisphere_light2": {
+			"type": "hemisphereLight",
+			"params": {
+				"skyColor": {
+					"raw_input": [
+						0.8725000023841858,
+						0.9292374849319458,
+						1
+					],
+					"overriden_options": {
+						"conversion": "no conversion"
+					}
+				},
+				"groundColor": {
+					"raw_input": [
+						0.43895500898361206,
+						0.48488083481788635,
+						0.5059999823570251
+					],
+					"overriden_options": {
+						"conversion": "no conversion"
+					}
+				},
+				"intensity": 0.49
+			},
+			"inputs": [
+				"perspective_camera_MASTER"
+			],
+			"flags": {
+				"display": true
+			}
+		},
+		"spot_light2": {
+			"type": "spotLight",
+			"params": {
+				"t": [
+					-2,
+					-2.2,
+					-0.8999999999999999
+				],
+				"r": [
+					143,
+					0,
+					30
+				],
+				"color": {
+					"raw_input": [
+						0.5287500619888306,
+						0.5274479985237122,
+						0.5274282097816467
+					],
+					"overriden_options": {
+						"conversion": "no conversion"
+					}
+				},
+				"intensity": 0.23,
+				"angle": 57.6,
+				"decay": 4
+			},
+			"inputs": [
+				"perspective_camera_MASTER"
+			],
+			"flags": {
+				"display": true
+			}
+		},
+		"null_gentle_rotation": {
+			"type": "null",
+			"params": {
+				"r": [
+					"5*sin($T*0.5+687) + 2.5*cos($T-12)",
+					"5*sin($T*0.45+1541) + 2.5*cos($T+6541654)",
+					0
+				]
+			},
+			"flags": {
+				"display": false
+			}
+		}
+	}
+}

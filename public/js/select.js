@@ -170,12 +170,8 @@
     const newerJobs = document.querySelectorAll(".job-listing")
     if (newerJobs.length === 0) {
       jobsList.innerHTML = `
-        <p id="no-results" class="no-results">No results.</p>
+        <p class="no-results">No results.</p>
       `
-    }
-    if (newerJobs.length > 0) {
-      var noResult = document.getElementById("no-results");
-      noResult.remove();
     }
   }
 })()

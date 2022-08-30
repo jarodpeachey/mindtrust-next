@@ -1,0 +1,220 @@
+{
+  "properties": {
+    "frame": 1,
+    "frame_range": [
+      1,
+      500
+    ],
+    "frame_range_locked": [
+      true,
+      false
+    ],
+    "realtime_state": true,
+    "master_camera_node_path": "/perspective_camera_MASTER"
+  },
+  "root": {
+    "type": "obj",
+    "nodes": {
+      "perspective_camera_MASTER": {
+        "type": "perspective_camera",
+        "nodes": {
+          "renderers1": {
+            "type": "renderers",
+            "nodes": {
+              "webgl_renderer1": {
+                "type": "webgl_renderer",
+                "params": {
+                  "alpha": 0,
+                  "tone_mapping": 0,
+                  "sort_objects": 0
+                }
+              },
+              "css2d_renderer1": {
+                "type": "css2d_renderer",
+                "params": {
+                  "use_fog": 1,
+                  "fog_near": 2.5,
+                  "fog_far": 3
+                }
+              }
+            },
+            "selection": [
+              "webgl_renderer1"
+            ]
+          }
+        },
+        "params": {
+          "t": [
+            0,
+            0,
+            3
+          ],
+          "near": 0.1,
+          "far": 10,
+          "fov": 64,
+          "set_renderer": 1,
+          "set_css_renderer": 1
+        },
+        "flags": {
+          "display": true
+        }
+      },
+      "globe_shadow": {
+        "type": "geo",
+        "nodes": {
+          "plane1": {
+            "type": "plane",
+            "params": {
+              "size": [
+                5,
+                5
+              ],
+              "direction": [
+                0,
+                0,
+                1
+              ]
+            },
+            "flags": {
+              "optimize": true
+            }
+          },
+          "transform1": {
+            "type": "transform",
+            "params": {
+              "t": [
+                0,
+                0,
+                -4
+              ]
+            },
+            "inputs": [
+              "plane1"
+            ],
+            "flags": {
+              "optimize": true
+            }
+          },
+          "material1": {
+            "type": "material",
+            "params": {
+              "material": "/MAT/mesh_basic_BG"
+            },
+            "inputs": [
+              "transform1"
+            ],
+            "flags": {
+              "display": true,
+              "optimize": true
+            },
+            "cloned_state_overriden": true
+          }
+        },
+        "params": {
+          "render_order": 8
+        },
+        "inputs": [
+          "perspective_camera_MASTER"
+        ],
+        "flags": {
+          "display": true
+        },
+        "selection": [
+          "plane1",
+          "transform1",
+          "material1"
+        ]
+      },
+      "null_ry": {
+        "type": "null",
+        "inputs": [
+          "null_gentle_rotation"
+        ],
+        "flags": {
+          "display": false
+        }
+      },
+      "hemisphere_light2": {
+        "type": "hemisphere_light",
+        "params": {
+          "sky_color": {
+            "raw_input": [
+              0.8725000023841858,
+              0.9292374849319458,
+              1
+            ],
+            "overriden_options": {
+              "conversion": "no conversion"
+            }
+          },
+          "ground_color": {
+            "raw_input": [
+              0.43895500898361206,
+              0.48488083481788635,
+              0.5059999823570251
+            ],
+            "overriden_options": {
+              "conversion": "no conversion"
+            }
+          },
+          "intensity": 0.49,
+          "show_helper": false
+        },
+        "inputs": [
+          "perspective_camera_MASTER"
+        ],
+        "flags": {
+          "display": true
+        }
+      },
+      "spot_light2": {
+        "type": "spot_light",
+        "params": {
+          "t": [
+            -2,
+            -2.2,
+            -0.8999999999999999
+          ],
+          "r": [
+            143,
+            0,
+            30
+          ],
+          "color": {
+            "raw_input": [
+              0.5287500619888306,
+              0.5274479985237122,
+              0.5274282097816467
+            ],
+            "overriden_options": {
+              "conversion": "no conversion"
+            }
+          },
+          "intensity": 0.23,
+          "angle": 57.6,
+          "decay": 4,
+          "show_helper": false
+        },
+        "inputs": [
+          "perspective_camera_MASTER"
+        ],
+        "flags": {
+          "display": true
+        }
+      },
+      "null_gentle_rotation": {
+        "type": "null",
+        "params": {
+          "r": [
+            "5*sin($T*0.5+687) + 2.5*cos($T-12)",
+            "5*sin($T*0.45+541) + 2.5*cos($T+6541654)",
+            0
+          ]
+        },
+        "flags": {
+          "display": false
+        }
+      }
+    }
+  }
+}

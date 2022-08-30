@@ -36,7 +36,7 @@
     left: -10%;
     top: 8%;
 
-    .team-card {
+    .teamCard {
       top: 3rem;
       width: 280px;
     }
@@ -48,7 +48,7 @@
     left: -10%;
     top: 10%;
 
-    .team-card {
+    .teamCard {
       top: 1rem;
       width: 280px;
     }
@@ -60,7 +60,7 @@
     left: -10%;
     top: -20%;
 
-    .team-card {
+    .teamCard {
       top: 0.7rem;
       width: 280px;
     }
@@ -123,14 +123,14 @@
     left: 50%;
     will-change: transform, opacity; /* makes slow movements much more fluid */
   }
-  .team-card {
+  .teamCard {
     position: relative;
     left: 25px;
     bottom: 75px;
     -webkit-box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
     -moz-box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
     box-shadow: 10px 10px 58px 0px rgba(191, 191, 191, 1);
-    .team-card__icon {
+    .teamCard__icon {
       margin-right: 0.8125rem;
       padding-left: 0.8125rem;
     }

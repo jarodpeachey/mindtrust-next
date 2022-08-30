@@ -1,7 +1,7 @@
 ;(function () {
   const stackAnimateElements = document.querySelectorAll(".stack-animate")
   const donut = document.querySelector(".taas__donut")
-  const taasTeamCards = document.querySelectorAll(".taas__team-card")
+  const taasTeamCards = document.querySelectorAll(".taas__teamCard")
   const taasTeamCardsParentElement = document.getElementById("taas__wrapper")
   let filled = 0
   let animated = false

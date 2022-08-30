@@ -1,0 +1,116 @@
+
+#include <common>
+
+
+
+// /MAT/mesh_basic_builder_ARCS/globals1
+varying vec3 v_POLY_globals1_position;
+varying vec3 v_POLY_globals1_cameraPosition;
+
+// /MAT/mesh_basic_builder_ARCS/attribute2
+varying float varying_v_POLY_attribute2_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute3
+varying float varying_v_POLY_attribute3_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute_role0
+varying float varying_v_POLY_attribute_role0_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute_role1
+varying float varying_v_POLY_attribute_role1_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute1
+varying float varying_v_POLY_attribute1_val;
+
+// /MAT/mesh_basic_builder_ARCS/varying_write1
+varying vec4 varying_mvPosition;
+
+// /MAT/mesh_basic_builder_ARCS/attribute2
+attribute float idn;
+
+// /MAT/mesh_basic_builder_ARCS/attribute3
+attribute float arc_id;
+
+// /MAT/mesh_basic_builder_ARCS/attribute_role0
+attribute float role0;
+
+// /MAT/mesh_basic_builder_ARCS/attribute_role1
+attribute float role1;
+
+
+
+
+#include <uv_pars_vertex>
+#include <uv2_pars_vertex>
+#include <envmap_pars_vertex>
+#include <color_pars_vertex>
+#include <fog_pars_vertex>
+#include <morphtarget_pars_vertex>
+#include <skinning_pars_vertex>
+#include <logdepthbuf_pars_vertex>
+#include <clipping_planes_pars_vertex>
+
+void main() {
+
+	#include <uv_vertex>
+	#include <uv2_vertex>
+	#include <color_vertex>
+
+
+
+	// /MAT/mesh_basic_builder_ARCS/globals1
+	v_POLY_globals1_position = vec3(position);
+	v_POLY_globals1_cameraPosition = vec3(cameraPosition);
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute2
+	varying_v_POLY_attribute2_val = float(idn);
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute3
+	varying_v_POLY_attribute3_val = float(arc_id);
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute_role0
+	varying_v_POLY_attribute_role0_val = float(role0);
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute_role1
+	varying_v_POLY_attribute_role1_val = float(role1);
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute1
+	varying_v_POLY_attribute1_val = float(idn);
+	
+	// /MAT/mesh_basic_builder_ARCS/model_view_matrix_mult1
+	vec4 v_POLY_model_view_matrix_mult1_mvMult = modelViewMatrix * vec4(v_POLY_globals1_position, 1.0);
+	
+	// /MAT/mesh_basic_builder_ARCS/varying_write1
+	varying_mvPosition = v_POLY_model_view_matrix_mult1_mvMult;
+	
+	// /MAT/mesh_basic_builder_ARCS/output1
+	vec3 transformed = position;
+	vec3 objectNormal = normal;
+
+
+
+	#include <skinbase_vertex>
+
+	#ifdef USE_ENVMAP
+
+// removed:
+//	#include <beginnormal_vertex>
+	#include <morphnormal_vertex>
+	#include <skinnormal_vertex>
+	#include <defaultnormal_vertex>
+
+	#endif
+
+// removed:
+//	#include <begin_vertex>
+	#include <morphtarget_vertex>
+	#include <skinning_vertex>
+	#include <project_vertex>
+	#include <logdepthbuf_vertex>
+
+	#include <worldpos_vertex>
+	#include <clipping_planes_vertex>
+	#include <envmap_vertex>
+	#include <fog_vertex>
+
+}

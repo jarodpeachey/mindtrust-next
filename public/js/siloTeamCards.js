@@ -1,6 +1,6 @@
 ;(function () {
-  const teamCardsParent = document.querySelector(".team-cards")
-  const teamCards = teamCardsParent.querySelectorAll(".team-card")
+  const teamCardsParent = document.querySelector(".teamCards")
+  const teamCards = teamCardsParent.querySelectorAll(".teamCard")
 
   let hasScrolled = false
   let down = false

@@ -1,0 +1,270 @@
+
+uniform vec3 diffuse;
+uniform float opacity;
+
+#ifndef FLAT_SHADED
+
+	varying vec3 vNormal;
+
+#endif
+
+#include <common>
+
+
+
+// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1
+// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl
+vec3 rgb2hsv(vec3 c)
+{
+	vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+	vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+	vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+	float d = q.x - min(q.w, q.y);
+	float e = 1.0e-10;
+	return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1
+// https://github.com/hughsk/glsl-hsv2rgb
+// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl
+vec3 hsv2rgb(vec3 c) {
+	vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+	vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+	return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+
+
+
+
+
+
+// /MAT/mesh_basic_builder_ARCS/param_threshold
+uniform float v_POLY_param_threshold_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_visibles_count
+uniform float v_POLY_param_visibles_count_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_color_role0
+uniform vec3 v_POLY_param_color_role0_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_color_role1
+uniform vec3 v_POLY_param_color_role1_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_color_role2
+uniform vec3 v_POLY_param_color_role2_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_color_role3
+uniform vec3 v_POLY_param_color_role3_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_color_role4
+uniform vec3 v_POLY_param_color_role4_val;
+
+// /MAT/mesh_basic_builder_ARCS/param_color_role5
+uniform vec3 v_POLY_param_color_role5_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute2
+varying float varying_v_POLY_attribute2_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute3
+varying float varying_v_POLY_attribute3_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute_role0
+varying float varying_v_POLY_attribute_role0_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute_role1
+varying float varying_v_POLY_attribute_role1_val;
+
+// /MAT/mesh_basic_builder_ARCS/attribute1
+varying float varying_v_POLY_attribute1_val;
+
+
+
+
+#include <dithering_pars_fragment>
+#include <color_pars_fragment>
+#include <uv_pars_fragment>
+#include <uv2_pars_fragment>
+#include <map_pars_fragment>
+#include <alphamap_pars_fragment>
+#include <aomap_pars_fragment>
+#include <lightmap_pars_fragment>
+#include <envmap_common_pars_fragment>
+#include <envmap_pars_fragment>
+#include <cube_uv_reflection_fragment>
+#include <fog_pars_fragment>
+#include <specularmap_pars_fragment>
+#include <logdepthbuf_pars_fragment>
+#include <clipping_planes_pars_fragment>
+
+void main() {
+
+	#include <clipping_planes_fragment>
+
+	vec4 diffuseColor = vec4( diffuse, opacity );
+
+
+
+	// /MAT/mesh_basic_builder_ARCS/attribute2
+	float v_POLY_attribute2_val = varying_v_POLY_attribute2_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute3
+	float v_POLY_attribute3_val = varying_v_POLY_attribute3_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute_role0
+	float v_POLY_attribute_role0_val = varying_v_POLY_attribute_role0_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute_role1
+	float v_POLY_attribute_role1_val = varying_v_POLY_attribute_role1_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/attribute1
+	float v_POLY_attribute1_val = varying_v_POLY_attribute1_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/add1
+	float v_POLY_add1_sum = (v_POLY_attribute2_val + v_POLY_attribute3_val + 0.0);
+	
+	// /MAT/mesh_basic_builder_ARCS/round1
+	float v_POLY_round1_val = sign(v_POLY_attribute_role0_val)*floor(abs(v_POLY_attribute_role0_val)+0.5);
+	
+	// /MAT/mesh_basic_builder_ARCS/round2
+	float v_POLY_round2_val = sign(v_POLY_attribute_role1_val)*floor(abs(v_POLY_attribute_role1_val)+0.5);
+	
+	// /MAT/mesh_basic_builder_ARCS/compare3
+	bool v_POLY_compare3_val = (v_POLY_add1_sum <= v_POLY_param_threshold_val);
+	
+	// /MAT/mesh_basic_builder_ARCS/mult_add1
+	float v_POLY_mult_add1_val = (1.0*(v_POLY_add1_sum + v_POLY_param_visibles_count_val)) + 0.0;
+	
+	// /MAT/mesh_basic_builder_ARCS/float_to_int1
+	int v_POLY_float_to_int1_int = int(v_POLY_round1_val);
+	
+	// /MAT/mesh_basic_builder_ARCS/float_to_int2
+	int v_POLY_float_to_int2_int = int(v_POLY_round2_val);
+	
+	// /MAT/mesh_basic_builder_ARCS/compare4
+	bool v_POLY_compare4_val = (v_POLY_mult_add1_val > v_POLY_param_threshold_val);
+	
+	// /MAT/mesh_basic_builder_ARCS/switch2
+	vec3 v_POLY_switch2_val;
+	int v_POLY_switch2_index = v_POLY_float_to_int1_int;
+	if(v_POLY_switch2_index == 0){v_POLY_switch2_val = v_POLY_param_color_role0_val;}
+	else if(v_POLY_switch2_index == 1){v_POLY_switch2_val = v_POLY_param_color_role1_val;}
+	else if(v_POLY_switch2_index == 2){v_POLY_switch2_val = v_POLY_param_color_role2_val;}
+	else if(v_POLY_switch2_index == 3){v_POLY_switch2_val = v_POLY_param_color_role3_val;}
+	else if(v_POLY_switch2_index == 4){v_POLY_switch2_val = v_POLY_param_color_role4_val;}
+	else if(v_POLY_switch2_index == 5){v_POLY_switch2_val = v_POLY_param_color_role5_val;}
+	else if(v_POLY_switch2_index == 6){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}
+	
+	// /MAT/mesh_basic_builder_ARCS/switch1
+	vec3 v_POLY_switch1_val;
+	int v_POLY_switch1_index = v_POLY_float_to_int2_int;
+	if(v_POLY_switch1_index == 0){v_POLY_switch1_val = v_POLY_param_color_role0_val;}
+	else if(v_POLY_switch1_index == 1){v_POLY_switch1_val = v_POLY_param_color_role1_val;}
+	else if(v_POLY_switch1_index == 2){v_POLY_switch1_val = v_POLY_param_color_role2_val;}
+	else if(v_POLY_switch1_index == 3){v_POLY_switch1_val = v_POLY_param_color_role3_val;}
+	else if(v_POLY_switch1_index == 4){v_POLY_switch1_val = v_POLY_param_color_role4_val;}
+	else if(v_POLY_switch1_index == 5){v_POLY_switch1_val = v_POLY_param_color_role5_val;}
+	else if(v_POLY_switch1_index == 6){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}
+	
+	// /MAT/mesh_basic_builder_ARCS/and1
+	bool v_POLY_and1_and = v_POLY_compare3_val && v_POLY_compare4_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/mix2
+	vec3 v_POLY_mix2_mix = mix(v_POLY_switch2_val, v_POLY_switch1_val, v_POLY_attribute1_val);
+	
+	// /MAT/mesh_basic_builder_ARCS/two_way_switch3
+	float v_POLY_two_way_switch3_val;
+	if(v_POLY_and1_and){
+	v_POLY_two_way_switch3_val = 1.0;
+	} else {
+	v_POLY_two_way_switch3_val = 0.0;
+	}
+	
+	// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1
+	vec3 v_POLY_rgb_to_hsv1_hsv = rgb2hsv(v_POLY_mix2_mix);
+	
+	// /MAT/mesh_basic_builder_ARCS/null1
+	float v_POLY_null1_val = v_POLY_two_way_switch3_val;
+	
+	// /MAT/mesh_basic_builder_ARCS/vec3_to_float1
+	float v_POLY_vec3_to_float1_x = v_POLY_rgb_to_hsv1_hsv.x;
+	float v_POLY_vec3_to_float1_z = v_POLY_rgb_to_hsv1_hsv.z;
+	float v_POLY_vec3_to_float1_y = v_POLY_rgb_to_hsv1_hsv.y;
+	
+	// /MAT/mesh_basic_builder_ARCS/mult_add2
+	float v_POLY_mult_add2_val = (0.34*(v_POLY_vec3_to_float1_y + 0.0)) + 0.0;
+	
+	// /MAT/mesh_basic_builder_ARCS/float_to_vec3_1
+	vec3 v_POLY_float_to_vec3_1_vec3 = vec3(v_POLY_vec3_to_float1_x, v_POLY_mult_add2_val, v_POLY_vec3_to_float1_z);
+	
+	// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1
+	vec3 v_POLY_hsv_to_rgb1_rgb = hsv2rgb(v_POLY_float_to_vec3_1_vec3);
+	
+	// /MAT/mesh_basic_builder_ARCS/vec3_to_vec4_1
+	vec4 v_POLY_vec3_to_vec4_1_vec4 = vec4(v_POLY_hsv_to_rgb1_rgb.xyz, 0.0);
+	
+	// /MAT/mesh_basic_builder_ARCS/color_correct1
+	vec4 v_POLY_color_correct1_out = GammaToLinear(v_POLY_vec3_to_vec4_1_vec4, 2.2);
+	
+	// /MAT/mesh_basic_builder_ARCS/vec4_to_vec3_1
+	vec3 v_POLY_vec4_to_vec3_1_vec3 = v_POLY_color_correct1_out.xyz;
+	
+	// /MAT/mesh_basic_builder_ARCS/mult2
+	vec3 v_POLY_mult2_product = (v_POLY_null1_val * v_POLY_vec4_to_vec3_1_vec3);
+	
+	// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv2
+	vec3 v_POLY_rgb_to_hsv2_hsv = rgb2hsv(v_POLY_mult2_product);
+	
+	// /MAT/mesh_basic_builder_ARCS/mult_add4
+	vec3 v_POLY_mult_add4_val = (vec3(1.0, 1.4, 1.0)*(v_POLY_rgb_to_hsv2_hsv + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.0, 0.0);
+	
+	// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb2
+	vec3 v_POLY_hsv_to_rgb2_rgb = hsv2rgb(v_POLY_mult_add4_val);
+	
+	// /MAT/mesh_basic_builder_ARCS/output1
+	diffuseColor.xyz = v_POLY_hsv_to_rgb2_rgb;
+	diffuseColor.a = v_POLY_null1_val;
+
+
+
+
+	#include <logdepthbuf_fragment>
+	#include <map_fragment>
+	#include <color_fragment>
+	#include <alphamap_fragment>
+	#include <alphatest_fragment>
+	#include <specularmap_fragment>
+
+	ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+
+	// accumulation (baked indirect lighting only)
+	#ifdef USE_LIGHTMAP
+	
+		vec4 lightMapTexel= texture2D( lightMap, vUv2 );
+		reflectedLight.indirectDiffuse += lightMapTexelToLinear( lightMapTexel ).rgb * lightMapIntensity;
+
+	#else
+
+		reflectedLight.indirectDiffuse += vec3( 1.0 );
+
+	#endif
+
+	// modulation
+	#include <aomap_fragment>
+
+	reflectedLight.indirectDiffuse *= diffuseColor.rgb;
+
+	vec3 outgoingLight = reflectedLight.indirectDiffuse;
+
+	#include <envmap_fragment>
+
+	gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+
+	#include <tonemapping_fragment>
+	#include <encodings_fragment>
+	#include <fog_fragment>
+	#include <premultiplied_alpha_fragment>
+	#include <dithering_fragment>
+
+}

@@ -88,17 +88,17 @@ const ToggleAnimation = props => {
               </h3>
               <img src="/media/img/laptop.svg" alt="Laptop image" className="laptop" />
               <div className="flex">
-                <div className="team-cards">
+                <div className="teamCards">
                   {cards.map((card, index) => {
                     return (
-                      <ul key={index} className={`team-card card ${index === 2 ? "swap-1 out" : index === 4 ? "swap-2 out" : ""}`}>
-                        <li className="team-card__image">
+                      <ul key={index} className={`teamCard card ${index === 2 ? "swap-1 out" : index === 4 ? "swap-2 out" : ""}`}>
+                        <li className="teamCard__image">
                           <img width="48" height="48" style={{ background: "#00000050" }} src={card.image} alt="" role="presentation" />
                         </li>
-                        <li className="team-card__title">{card.title}</li>
-                        <li className="team-card__icon">
+                        <li className="teamCard__title">{card.title}</li>
+                        <li className="teamCard__icon">
                           <img width="34" height="34" src={`/media/img/icons/silos/icon--${card.category}.svg`} alt="" role="presentation" className="one" />
-                          <div className="team-card__title team-card__hours delay">
+                          <div className="teamCard__title teamCard__hours delay">
                             <strong>{card.hours}</strong> hours
                           </div>
                         </li>
@@ -107,14 +107,14 @@ const ToggleAnimation = props => {
                   })}
                   {swapCards.map((card, index) => {
                     return (
-                      <ul key={index} className={`team-card swap-${index + 1} in card`}>
-                        <li className="team-card__image">
+                      <ul key={index} className={`teamCard swap-${index + 1} in card`}>
+                        <li className="teamCard__image">
                           <img width="48" height="48" style={{ background: "#00000050" }} src={card.image} alt="" role="presentation" />
                         </li>
-                        <li className="team-card__title">{card.title}</li>
-                        <li className="team-card__icon">
+                        <li className="teamCard__title">{card.title}</li>
+                        <li className="teamCard__icon">
                           <img width="34" height="34" src={`/media/img/icons/silos/icon--${card.category}.svg`} alt="" role="presentation" className="one" />
-                          <div className="team-card__title team-card__hours delay">
+                          <div className="teamCard__title teamCard__hours delay">
                             <strong>{card.hours}</strong> hours
                           </div>
                         </li>

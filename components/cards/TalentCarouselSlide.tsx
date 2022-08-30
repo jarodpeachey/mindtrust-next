@@ -1,5 +1,5 @@
 import React from "react"
-import { TalentCarouselSlideItem } from "../../../types/card-types"
+import { TalentCarouselSlideItem } from "../../types/card-types"
 
 interface TalentCarouselSlideProps {
   slide: TalentCarouselSlideItem
@@ -9,7 +9,7 @@ interface TalentCarouselSlideProps {
 const TalentCarouselSlide: React.FC<TalentCarouselSlideProps> = ({ slide, customClass }) => {
   const { name, title, avatar, alt, previously, countryLogo, countryTitle } = slide
   return (
-    <div className="card p-none talent-carousel__slide">
+    <div style={{ padding: 0 }} className="card p-none talent-carousel__slide">
       <img loading="lazy" src={avatar} alt={alt} className="headshot" />
 
       <ul className="individual-details">

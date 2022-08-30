@@ -1,0 +1,199 @@
+{
+	"type": "geo",
+	"nodes": {
+		"attrib_create_id": {
+			"type": "attribCreate",
+			"params": {
+				"name": "id",
+				"value1": "@ptnum"
+			},
+			"inputs": [
+				"object_merge1"
+			],
+			"cloned_state_overriden": true
+		},
+		"object_merge1": {
+			"type": "objectMerge",
+			"params": {
+				"geometry": "/arcs/OUT_selected_dots"
+			}
+		},
+		"copy1": {
+			"type": "copy",
+			"params": {
+				"transformMode": 1,
+				"copyAttributes": 1,
+				"attributesToCopy": "id role",
+				"useCopyExpr": 1
+			},
+			"inputs": [
+				"object_properties3",
+				"attrib_create_id4"
+			]
+		},
+		"normals1": {
+			"type": "normals",
+			"params": {
+				"edit": true,
+				"updateX": true,
+				"x": "@P.x",
+				"updateY": true,
+				"y": "@P.y",
+				"updateZ": true,
+				"z": "@P.z"
+			},
+			"inputs": [
+				"attrib_create_id"
+			],
+			"cloned_state_overriden": true
+		},
+		"REF_cook": {
+			"type": "null",
+			"inputs": [
+				"material3"
+			],
+			"flags": {
+				"display": true,
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"point1": {
+			"type": "point",
+			"params": {
+				"updateX": 1,
+				"x": 0,
+				"updateY": 1,
+				"y": 0,
+				"updateZ": 1,
+				"z": 0,
+				"updateNormals": 0
+			},
+			"inputs": [
+				"normals1"
+			],
+			"cloned_state_overriden": true
+		},
+		"plane2": {
+			"type": "plane",
+			"params": {
+				"size": [
+					0.48,
+					0.48
+				],
+				"useSegmentsCount": 1,
+				"direction": [
+					0,
+					0,
+					1
+				],
+				"center": [
+					0,
+					0,
+					1.0001
+				]
+			},
+			"flags": {
+				"optimize": true
+			}
+		},
+		"transform9": {
+			"type": "transform",
+			"params": {
+				"scale": 1.005
+			},
+			"inputs": [
+				"plane2"
+			],
+			"flags": {
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"material3": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/mesh_basic_builder_pulse_shadow"
+			},
+			"inputs": [
+				"attrib_promote1"
+			],
+			"flags": {
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"object_properties3": {
+			"type": "objectProperties",
+			"params": {
+				"name": "pulse_shadow",
+				"frustumCulled": false,
+				"castShadow": false,
+				"receiveShadow": false
+			},
+			"inputs": [
+				"transform9"
+			],
+			"flags": {
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"attrib_create_id4": {
+			"type": "attribCreate",
+			"params": {
+				"name": "id",
+				"value1": "@ptnum"
+			},
+			"inputs": [
+				"delete_first_pt"
+			],
+			"cloned_state_overriden": true
+		},
+		"attrib_promote1": {
+			"type": "attribPromote",
+			"params": {
+				"classFrom": 1,
+				"classTo": 0,
+				"name": "id role"
+			},
+			"inputs": [
+				"copy1"
+			],
+			"flags": {
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"delete_keep_first_pt_of_each_arc": {
+			"type": "delete",
+			"params": {
+				"invert": 1,
+				"byExpression": 1,
+				"expression": "@ptnum%2 == 0"
+			},
+			"inputs": [
+				"point1"
+			]
+		},
+		"delete_first_pt": {
+			"type": "delete",
+			"params": {
+				"byExpression": true,
+				"expression": "@ptnum == 0"
+			},
+			"inputs": [
+				"point1"
+			]
+		}
+	},
+	"params": {
+		"renderOrder": 10
+	},
+	"inputs": [
+		"null_ry"
+	],
+	"flags": {
+		"display": true
+	}
+}

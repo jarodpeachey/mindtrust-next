@@ -1,0 +1,3348 @@
+{
+	"type": "meshBasicBuilder",
+	"nodes": {
+		"globals1": {
+			"type": "globals"
+		},
+		"output1": {
+			"type": "output",
+			"inputs": [
+				null,
+				null,
+				{
+					"index": 2,
+					"node": "null_color",
+					"output": "val"
+				},
+				{
+					"index": 3,
+					"node": "null_alpha",
+					"output": "val"
+				}
+			]
+		},
+		"normalize1": {
+			"type": "normalize",
+			"params": {
+				"in": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "position"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "normalized",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"normalize2": {
+			"type": "normalize",
+			"params": {
+				"in": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "cameraPosition"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "normalized",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"dot1": {
+			"type": "dot",
+			"params": {
+				"vec0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"vec1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "normalize1",
+					"output": "normalized"
+				},
+				{
+					"index": 1,
+					"node": "normalize2",
+					"output": "normalized"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "vec0",
+						"type": "vec3"
+					},
+					{
+						"name": "vec1",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"fit1": {
+			"type": "fit",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"srcMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": -1
+				},
+				"srcMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"destMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"destMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "dot1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "src_min",
+						"type": "float"
+					},
+					{
+						"name": "src_max",
+						"type": "float"
+					},
+					{
+						"name": "dest_min",
+						"type": "float"
+					},
+					{
+						"name": "dest_max",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"ramp1": {
+			"type": "ramp",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "fit2",
+					"output": "val"
+				}
+			]
+		},
+		"param3": {
+			"type": "param",
+			"params": {
+				"name": "rotationSpeed"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"mult_add3": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				null,
+				null,
+				{
+					"index": 2,
+					"node": "param3",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "pre_add",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "post_add",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"rotate1": {
+			"type": "rotate",
+			"params": {
+				"vector": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						1
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"axis": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						1,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"angle": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "position"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "vector",
+						"type": "vec3"
+					},
+					{
+						"name": "axis",
+						"type": "vec3"
+					},
+					{
+						"name": "angle",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"attribute_role0": {
+			"type": "attribute",
+			"params": {
+				"name": "role0"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"switch1": {
+			"type": "switch",
+			"params": {
+				"index": {
+					"type": "integer",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"in0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in2": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in3": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in4": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in5": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in6": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in7": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in8": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in9": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in10": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"maxInputsCount": 12,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "float_to_int2",
+					"output": "int"
+				},
+				{
+					"index": 1,
+					"node": "param_color_role0",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "param_color_role1",
+					"output": "val"
+				},
+				{
+					"index": 3,
+					"node": "param_color_role2",
+					"output": "val"
+				},
+				{
+					"index": 4,
+					"node": "param_color_role3",
+					"output": "val"
+				},
+				{
+					"index": 5,
+					"node": "param_color_role4",
+					"output": "val"
+				},
+				{
+					"index": 6,
+					"node": "param_color_role5",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "index",
+						"type": "int"
+					},
+					{
+						"name": "in0",
+						"type": "vec3"
+					},
+					{
+						"name": "in1",
+						"type": "vec3"
+					},
+					{
+						"name": "in2",
+						"type": "vec3"
+					},
+					{
+						"name": "in3",
+						"type": "vec3"
+					},
+					{
+						"name": "in4",
+						"type": "vec3"
+					},
+					{
+						"name": "in5",
+						"type": "vec3"
+					},
+					{
+						"name": "in6",
+						"type": "vec3"
+					},
+					{
+						"name": "in7",
+						"type": "vec3"
+					},
+					{
+						"name": "in8",
+						"type": "vec3"
+					},
+					{
+						"name": "in9",
+						"type": "vec3"
+					},
+					{
+						"name": "in10",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"float_to_int1": {
+			"type": "floatToInt",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "round1",
+					"output": "val"
+				}
+			]
+		},
+		"param_color_role0": {
+			"type": "param",
+			"params": {
+				"name": "colorRole0",
+				"type": 4,
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"param_color_role1": {
+			"type": "param",
+			"params": {
+				"name": "colorRole1",
+				"type": 4,
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"param_color_role2": {
+			"type": "param",
+			"params": {
+				"name": "colorRole2",
+				"type": 4,
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"param_color_role3": {
+			"type": "param",
+			"params": {
+				"name": "colorRole3",
+				"type": 4,
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"param_color_role4": {
+			"type": "param",
+			"params": {
+				"name": "colorRole4",
+				"type": 4,
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"param_color_role5": {
+			"type": "param",
+			"params": {
+				"name": "colorRole5",
+				"type": 4,
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"round1": {
+			"type": "round",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute_role0",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"mix2": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"value1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.91
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "switch2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "switch1",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "attribute1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "vec3"
+					},
+					{
+						"name": "value1",
+						"type": "vec3"
+					},
+					{
+						"name": "blend",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "mix",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"switch2": {
+			"type": "switch",
+			"params": {
+				"index": {
+					"type": "integer",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"in0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in2": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in3": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in4": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in5": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in6": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in7": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in8": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in9": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"in10": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"maxInputsCount": 12,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "float_to_int1",
+					"output": "int"
+				},
+				{
+					"index": 1,
+					"node": "param_color_role0",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "param_color_role1",
+					"output": "val"
+				},
+				{
+					"index": 3,
+					"node": "param_color_role2",
+					"output": "val"
+				},
+				{
+					"index": 4,
+					"node": "param_color_role3",
+					"output": "val"
+				},
+				{
+					"index": 5,
+					"node": "param_color_role4",
+					"output": "val"
+				},
+				{
+					"index": 6,
+					"node": "param_color_role5",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "index",
+						"type": "int"
+					},
+					{
+						"name": "in0",
+						"type": "vec3"
+					},
+					{
+						"name": "in1",
+						"type": "vec3"
+					},
+					{
+						"name": "in2",
+						"type": "vec3"
+					},
+					{
+						"name": "in3",
+						"type": "vec3"
+					},
+					{
+						"name": "in4",
+						"type": "vec3"
+					},
+					{
+						"name": "in5",
+						"type": "vec3"
+					},
+					{
+						"name": "in6",
+						"type": "vec3"
+					},
+					{
+						"name": "in7",
+						"type": "vec3"
+					},
+					{
+						"name": "in8",
+						"type": "vec3"
+					},
+					{
+						"name": "in9",
+						"type": "vec3"
+					},
+					{
+						"name": "in10",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"float_to_int2": {
+			"type": "floatToInt",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "round2",
+					"output": "val"
+				}
+			]
+		},
+		"round2": {
+			"type": "round",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute_role1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute_role1": {
+			"type": "attribute",
+			"params": {
+				"name": "role1"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute1": {
+			"type": "attribute",
+			"params": {
+				"name": "idn"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"mix3": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"value1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "constant_white",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "vec4_to_vec3_1",
+					"output": "vec3"
+				},
+				{
+					"index": 2,
+					"node": "clamp1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "vec3"
+					},
+					{
+						"name": "value1",
+						"type": "vec3"
+					},
+					{
+						"name": "blend",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "mix",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"constant_white": {
+			"type": "constant",
+			"params": {
+				"type": 4,
+				"vec3": [
+					10,
+					10,
+					10
+				]
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"clamp1": {
+			"type": "clamp",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"min": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"max": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "ramp1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "min",
+						"type": "float"
+					},
+					{
+						"name": "max",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute2": {
+			"type": "attribute",
+			"params": {
+				"name": "idn"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"two_way_switch3": {
+			"type": "twoWaySwitch",
+			"params": {
+				"condition": {
+					"type": "boolean",
+					"default_value": false,
+					"options": {
+						"spare": true
+					}
+				},
+				"ifTrue": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 1
+				},
+				"ifFalse": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "and1",
+					"output": "and"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "condition",
+						"type": "bool"
+					},
+					{
+						"name": "if_true",
+						"type": "float"
+					},
+					{
+						"name": "if_false",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"compare3": {
+			"type": "compare",
+			"params": {
+				"test": 3,
+				"value0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"value1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.5
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "add1",
+					"output": "sum"
+				},
+				{
+					"index": 1,
+					"node": "param_threshold",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "float"
+					},
+					{
+						"name": "value1",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "bool"
+					}
+				]
+			}
+		},
+		"mult2": {
+			"type": "mult",
+			"params": {
+				"mult0": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult1": {
+					"type": "vector3",
+					"default_value": [
+						1,
+						1,
+						1
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "null1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "vec4_to_vec3_1",
+					"output": "vec3"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "mult0",
+						"type": "float"
+					},
+					{
+						"name": "mult1",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "product",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"attribute3": {
+			"type": "attribute",
+			"params": {
+				"name": "arc_id"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"add1": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add3": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add4": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add5": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add6": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"maxInputsCount": 7,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "attribute3",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "float"
+					},
+					{
+						"name": "add1",
+						"type": "float"
+					},
+					{
+						"name": "add2",
+						"type": "float"
+					},
+					{
+						"name": "add3",
+						"type": "float"
+					},
+					{
+						"name": "add4",
+						"type": "float"
+					},
+					{
+						"name": "add5",
+						"type": "float"
+					},
+					{
+						"name": "add6",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"color_correct1": {
+			"type": "colorCorrect",
+			"params": {
+				"from": 1,
+				"to": 0
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3_to_vec4_1",
+					"output": "vec4"
+				}
+			]
+		},
+		"vec3_to_vec4_1": {
+			"type": "vec3ToVec4",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "hsv_to_rgb1",
+					"output": "rgb"
+				}
+			]
+		},
+		"vec4_to_vec3_1": {
+			"type": "vec4ToVec3",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "color_correct1",
+					"output": "out"
+				}
+			]
+		},
+		"color_correct2": {
+			"type": "colorCorrect",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3_to_vec4_1",
+					"output": "vec4"
+				}
+			]
+		},
+		"compare4": {
+			"type": "compare",
+			"params": {
+				"test": 2,
+				"value0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"value1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.5
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "multAdd2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "param_threshold",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "float"
+					},
+					{
+						"name": "value1",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "bool"
+					}
+				]
+			}
+		},
+		"mult_add1": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 2
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "add1",
+					"output": "sum"
+				},
+				{
+					"index": 1,
+					"node": "param_visibles_count",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "pre_add",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "post_add",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"and1": {
+			"type": "and",
+			"params": {
+				"and0": {
+					"type": "boolean",
+					"default_value": false,
+					"options": {
+						"spare": true
+					}
+				},
+				"and1": {
+					"type": "boolean",
+					"default_value": false,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "compare3",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "compare4",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "and0",
+						"type": "bool"
+					},
+					{
+						"name": "and1",
+						"type": "bool"
+					}
+				],
+				"out": [
+					{
+						"name": "and",
+						"type": "bool"
+					}
+				]
+			}
+		},
+		"null1": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "twoWaySwitch1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"constant1": {
+			"type": "constant",
+			"params": {
+				"float": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"hsv_to_rgb1": {
+			"type": "hsvToRgb",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "float_to_vec3_1",
+					"output": "vec3"
+				}
+			]
+		},
+		"rgb_to_hsv1": {
+			"type": "rgbToHsv",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "mix2",
+					"output": "mix"
+				}
+			]
+		},
+		"vec3_to_float1": {
+			"type": "vec3ToFloat",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "rgb_to_hsv1",
+					"output": "hsv"
+				}
+			]
+		},
+		"float_to_vec3_1": {
+			"type": "floatToVec3",
+			"params": {
+				"y": 0.36
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3_to_float1",
+					"output": "x"
+				},
+				{
+					"index": 1,
+					"node": "multAdd3",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "vec3_to_float1",
+					"output": "z"
+				}
+			]
+		},
+		"mult_add2": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.34
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3_to_float1",
+					"output": "y"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "pre_add",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "post_add",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"param_threshold": {
+			"type": "param",
+			"params": {
+				"name": "threshold"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"param_visibles_count": {
+			"type": "param",
+			"params": {
+				"name": "visiblesCount"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"model_view_matrix_mult1": {
+			"type": "modelViewMatrixMult",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "position"
+				}
+			]
+		},
+		"varying_write1": {
+			"type": "varyingWrite",
+			"params": {
+				"name": "varying_mvPosition",
+				"type": 3,
+				"vertex": {
+					"type": "vector4",
+					"default_value": [
+						0,
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "model_view_matrix_mult1",
+					"output": "mvMult"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "vertex",
+						"type": "vec4"
+					}
+				],
+				"out": []
+			}
+		},
+		"varying_read1": {
+			"type": "varyingRead",
+			"params": {
+				"name": "varying_mvPosition",
+				"type": 3
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "fragment",
+						"type": "vec4"
+					}
+				]
+			}
+		},
+		"fog1": {
+			"type": "fog",
+			"params": {
+				"near": 3,
+				"far": 4.2
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "varying_read1",
+					"output": "fragment"
+				},
+				{
+					"index": 1,
+					"node": "mult2",
+					"output": "product"
+				}
+			]
+		},
+		"constant2": {
+			"type": "constant",
+			"params": {
+				"type": 4
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"rgb_to_hsv2": {
+			"type": "rgbToHsv",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "mult2",
+					"output": "product"
+				}
+			]
+		},
+		"hsv_to_rgb2": {
+			"type": "hsvToRgb",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "multAdd1",
+					"output": "val"
+				}
+			]
+		},
+		"vec3_to_float2": {
+			"type": "vec3ToFloat",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "rgb_to_hsv2",
+					"output": "hsv"
+				}
+			]
+		},
+		"mult_add4": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "vector3",
+					"default_value": [
+						1,
+						1,
+						1
+					],
+					"options": {
+						"spare": true
+					},
+					"raw_input": [
+						1,
+						1.4,
+						1
+					]
+				},
+				"postAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "rgb_to_hsv2",
+					"output": "hsv"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "pre_add",
+						"type": "vec3"
+					},
+					{
+						"name": "mult",
+						"type": "vec3"
+					},
+					{
+						"name": "post_add",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"multAdd1": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "vector3",
+					"default_value": [
+						1,
+						1,
+						1
+					],
+					"options": {
+						"spare": true
+					},
+					"raw_input": [
+						1,
+						1.4,
+						1
+					]
+				},
+				"postAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "rgb_to_hsv2",
+					"output": "hsv"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "preAdd",
+						"type": "vec3"
+					},
+					{
+						"name": "mult",
+						"type": "vec3"
+					},
+					{
+						"name": "postAdd",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"twoWaySwitch1": {
+			"type": "twoWaySwitch",
+			"params": {
+				"condition": {
+					"type": "boolean",
+					"default_value": false,
+					"options": {
+						"spare": true
+					}
+				},
+				"ifTrue": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 1
+				},
+				"ifFalse": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "and1",
+					"output": "and"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "condition",
+						"type": "bool"
+					},
+					{
+						"name": "ifTrue",
+						"type": "float"
+					},
+					{
+						"name": "ifFalse",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd2": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 2
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "add1",
+					"output": "sum"
+				},
+				{
+					"index": 1,
+					"node": "param_visibles_count",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"fit2": {
+			"type": "fit",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"srcMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": -1
+				},
+				"srcMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"destMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"destMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "dot1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "srcMin",
+						"type": "float"
+					},
+					{
+						"name": "srcMax",
+						"type": "float"
+					},
+					{
+						"name": "destMin",
+						"type": "float"
+					},
+					{
+						"name": "destMax",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd3": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.34
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3_to_float1",
+					"output": "y"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"null_alpha": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "null1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"null_color": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "hsv_to_rgb2",
+					"output": "rgb"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		}
+	},
+	"params": {
+		"transparent": 1,
+		"alphaTest": 1,
+		"doubleSided": 1,
+		"rotationSpeed": {
+			"type": "float",
+			"default_value": 0,
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			}
+		},
+		"colorRole0": {
+			"type": "color",
+			"default_value": [
+				0,
+				0,
+				0
+			],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": [
+				0.4,
+				0.133,
+				0.988
+			]
+		},
+		"colorRole1": {
+			"type": "color",
+			"default_value": [
+				0,
+				0,
+				0
+			],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": [
+				0.89,
+				0.254,
+				0.356
+			]
+		},
+		"colorRole2": {
+			"type": "color",
+			"default_value": [
+				0,
+				0,
+				0
+			],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": [
+				0,
+				0.619,
+				0.992
+			]
+		},
+		"colorRole3": {
+			"type": "color",
+			"default_value": [
+				0,
+				0,
+				0
+			],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": [
+				0.996,
+				0.454,
+				0.298
+			]
+		},
+		"colorRole4": {
+			"type": "color",
+			"default_value": [
+				0,
+				0,
+				0
+			],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": [
+				1,
+				0.686,
+				0.215
+			]
+		},
+		"colorRole5": {
+			"type": "color",
+			"default_value": [
+				0,
+				0,
+				0
+			],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": [
+				0,
+				0.772,
+				0.839
+			]
+		},
+		"threshold": {
+			"type": "float",
+			"default_value": 0,
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": 2
+		},
+		"visiblesCount": {
+			"type": "float",
+			"default_value": 0,
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": 5
+		},
+		"ramp": {
+			"type": "ramp",
+			"default_value": {
+				"interpolation": "linear",
+				"points": [
+					{
+						"position": 0,
+						"value": 0
+					},
+					{
+						"position": 1,
+						"value": 1
+					}
+				]
+			},
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": {
+				"interpolation": "",
+				"points": [
+					{
+						"position": 0.13723196881091618,
+						"value": 0
+					},
+					{
+						"position": 0.4306791868210798,
+						"value": 0.3807128906250001
+					},
+					{
+						"position": 0.6990253411306043,
+						"value": 1
+					}
+				]
+			}
+		}
+	},
+	"selection": [
+		"param_color_role5"
+	],
+	"persisted_config": {
+		"material": {
+			"metadata": {
+				"version": 4.5,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "39AC859B-E2D5-405B-91AB-DD48368BF188",
+			"type": "ShaderMaterial",
+			"name": "/MAT/mesh_basic_builder_ARCS",
+			"side": 2,
+			"transparent": true,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680,
+			"alphaTest": 1,
+			"glslVersion": null,
+			"uniforms": {
+				"diffuse": {
+					"type": "c",
+					"value": 15658734
+				},
+				"opacity": {
+					"value": 1
+				},
+				"map": {
+					"value": null
+				},
+				"uvTransform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"uv2Transform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"alphaMap": {
+					"value": null
+				},
+				"specularMap": {
+					"value": null
+				},
+				"envMap": {
+					"value": null
+				},
+				"flipEnvMap": {
+					"value": -1
+				},
+				"reflectivity": {
+					"value": 1
+				},
+				"refractionRatio": {
+					"value": 0.98
+				},
+				"maxMipLevel": {
+					"value": 0
+				},
+				"aoMap": {
+					"value": null
+				},
+				"aoMapIntensity": {
+					"value": 1
+				},
+				"lightMap": {
+					"value": null
+				},
+				"lightMapIntensity": {
+					"value": 1
+				},
+				"fogDensity": {
+					"value": 0.00025
+				},
+				"fogNear": {
+					"value": 1
+				},
+				"fogFar": {
+					"value": 2000
+				},
+				"fogColor": {
+					"type": "c",
+					"value": 16777215
+				},
+				"v_POLY_param3_val": {
+					"value": 0
+				},
+				"v_POLY_param_color_role0_val": {
+					"type": "c",
+					"value": 6693371
+				},
+				"v_POLY_param_color_role1_val": {
+					"type": "c",
+					"value": 14827610
+				},
+				"v_POLY_param_color_role2_val": {
+					"type": "c",
+					"value": 40444
+				},
+				"v_POLY_param_color_role3_val": {
+					"type": "c",
+					"value": 16610123
+				},
+				"v_POLY_param_color_role4_val": {
+					"type": "c",
+					"value": 16756278
+				},
+				"v_POLY_param_color_role5_val": {
+					"type": "c",
+					"value": 50389
+				},
+				"v_POLY_param_threshold_val": {
+					"value": 2
+				},
+				"v_POLY_param_visibles_count_val": {
+					"value": 5
+				},
+				"ramp_texture_v_POLY_ramp1_val": {
+					"value": null
+				}
+			},
+			"vertexShader": "\n#include <common>\n\n\n\n// /MAT/mesh_basic_builder_ARCS/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_cameraPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/mesh_basic_builder_ARCS/varying_write1\nvarying vec4 varying_mvPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nattribute float idn;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nattribute float arc_id;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nattribute float role0;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nattribute float role1;\n\n\n\n\n#include <uv_pars_vertex>\n#include <uv2_pars_vertex>\n#include <envmap_pars_vertex>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\t#include <uv2_vertex>\n\t#include <color_vertex>\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_cameraPosition = vec3(cameraPosition);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tvarying_v_POLY_attribute2_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tvarying_v_POLY_attribute3_val = float(arc_id);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tvarying_v_POLY_attribute_role0_val = float(role0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tvarying_v_POLY_attribute_role1_val = float(role1);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tvarying_v_POLY_attribute1_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/model_view_matrix_mult1\n\tvec4 v_POLY_model_view_matrix_mult1_mvMult = modelViewMatrix * vec4(v_POLY_globals1_position, 1.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/varying_write1\n\tvarying_mvPosition = v_POLY_model_view_matrix_mult1_mvMult;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_ENVMAP\n\n// removed:\n//\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\t#include <envmap_vertex>\n\t#include <fog_vertex>\n\n}\n",
+			"fragmentShader": "\nuniform vec3 diffuse;\nuniform float opacity;\n\n#ifndef FLAT_SHADED\n\n\tvarying vec3 vNormal;\n\n#endif\n\n#include <common>\n\n\n\n// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 rgb2hsv(vec3 c)\n{\n\tvec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);\n\tvec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));\n\tvec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));\n\n\tfloat d = q.x - min(q.w, q.y);\n\tfloat e = 1.0e-10;\n\treturn vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);\n}\n\n// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/mesh_basic_builder_ARCS/param_threshold\nuniform float v_POLY_param_threshold_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_visibles_count\nuniform float v_POLY_param_visibles_count_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role0\nuniform vec3 v_POLY_param_color_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role1\nuniform vec3 v_POLY_param_color_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role2\nuniform vec3 v_POLY_param_color_role2_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role3\nuniform vec3 v_POLY_param_color_role3_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role4\nuniform vec3 v_POLY_param_color_role4_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role5\nuniform vec3 v_POLY_param_color_role5_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <uv2_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_pars_fragment>\n#include <cube_uv_reflection_fragment>\n#include <fog_pars_fragment>\n#include <specularmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tfloat v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tfloat v_POLY_attribute_role0_val = varying_v_POLY_attribute_role0_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tfloat v_POLY_attribute_role1_val = varying_v_POLY_attribute_role1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/add1\n\tfloat v_POLY_add1_sum = (v_POLY_attribute2_val + v_POLY_attribute3_val + 0.0 + 0.0 + 0.0 + 0.0 + 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute_role0_val)*floor(abs(v_POLY_attribute_role0_val)+0.5);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute_role1_val)*floor(abs(v_POLY_attribute_role1_val)+0.5);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/compare3\n\tbool v_POLY_compare3_val = (v_POLY_add1_sum <= v_POLY_param_threshold_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd2\n\tfloat v_POLY_multAdd2_val = (1.0*(v_POLY_add1_sum + v_POLY_param_visibles_count_val)) + 0.0;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_int1\n\tint v_POLY_float_to_int1_int = int(v_POLY_round1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_int2\n\tint v_POLY_float_to_int2_int = int(v_POLY_round2_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/compare4\n\tbool v_POLY_compare4_val = (v_POLY_multAdd2_val > v_POLY_param_threshold_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/switch2\n\tvec3 v_POLY_switch2_val;\n\tint v_POLY_switch2_index = v_POLY_float_to_int1_int;\n\tif(v_POLY_switch2_index == 0){v_POLY_switch2_val = v_POLY_param_color_role0_val;}\n\telse if(v_POLY_switch2_index == 1){v_POLY_switch2_val = v_POLY_param_color_role1_val;}\n\telse if(v_POLY_switch2_index == 2){v_POLY_switch2_val = v_POLY_param_color_role2_val;}\n\telse if(v_POLY_switch2_index == 3){v_POLY_switch2_val = v_POLY_param_color_role3_val;}\n\telse if(v_POLY_switch2_index == 4){v_POLY_switch2_val = v_POLY_param_color_role4_val;}\n\telse if(v_POLY_switch2_index == 5){v_POLY_switch2_val = v_POLY_param_color_role5_val;}\n\telse if(v_POLY_switch2_index == 6){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 7){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 8){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 9){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 10){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/switch1\n\tvec3 v_POLY_switch1_val;\n\tint v_POLY_switch1_index = v_POLY_float_to_int2_int;\n\tif(v_POLY_switch1_index == 0){v_POLY_switch1_val = v_POLY_param_color_role0_val;}\n\telse if(v_POLY_switch1_index == 1){v_POLY_switch1_val = v_POLY_param_color_role1_val;}\n\telse if(v_POLY_switch1_index == 2){v_POLY_switch1_val = v_POLY_param_color_role2_val;}\n\telse if(v_POLY_switch1_index == 3){v_POLY_switch1_val = v_POLY_param_color_role3_val;}\n\telse if(v_POLY_switch1_index == 4){v_POLY_switch1_val = v_POLY_param_color_role4_val;}\n\telse if(v_POLY_switch1_index == 5){v_POLY_switch1_val = v_POLY_param_color_role5_val;}\n\telse if(v_POLY_switch1_index == 6){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 7){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 8){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 9){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 10){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/and1\n\tbool v_POLY_and1_and = v_POLY_compare3_val && v_POLY_compare4_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_switch2_val, v_POLY_switch1_val, v_POLY_attribute1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_and1_and){\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1\n\tvec3 v_POLY_rgb_to_hsv1_hsv = rgb2hsv(v_POLY_mix2_mix);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null1\n\tfloat v_POLY_null1_val = v_POLY_twoWaySwitch1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec3_to_float1\n\tfloat v_POLY_vec3_to_float1_x = v_POLY_rgb_to_hsv1_hsv.x;\n\tfloat v_POLY_vec3_to_float1_z = v_POLY_rgb_to_hsv1_hsv.z;\n\tfloat v_POLY_vec3_to_float1_y = v_POLY_rgb_to_hsv1_hsv.y;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null_alpha\n\tfloat v_POLY_null_alpha_val = v_POLY_null1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd3\n\tfloat v_POLY_multAdd3_val = (0.34*(v_POLY_vec3_to_float1_y + 0.0)) + 0.0;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_vec3_1\n\tvec3 v_POLY_float_to_vec3_1_vec3 = vec3(v_POLY_vec3_to_float1_x, v_POLY_multAdd3_val, v_POLY_vec3_to_float1_z);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1\n\tvec3 v_POLY_hsv_to_rgb1_rgb = hsv2rgb(v_POLY_float_to_vec3_1_vec3);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec3_to_vec4_1\n\tvec4 v_POLY_vec3_to_vec4_1_vec4 = vec4(v_POLY_hsv_to_rgb1_rgb.xyz, 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/color_correct1\n\tvec4 v_POLY_color_correct1_out = GammaToLinear(v_POLY_vec3_to_vec4_1_vec4, 2.2);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec4_to_vec3_1\n\tvec3 v_POLY_vec4_to_vec3_1_vec3 = v_POLY_color_correct1_out.xyz;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/mult2\n\tvec3 v_POLY_mult2_product = (v_POLY_null1_val * v_POLY_vec4_to_vec3_1_vec3);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv2\n\tvec3 v_POLY_rgb_to_hsv2_hsv = rgb2hsv(v_POLY_mult2_product);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd1\n\tvec3 v_POLY_multAdd1_val = (vec3(1.0, 1.4, 1.0)*(v_POLY_rgb_to_hsv2_hsv + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb2\n\tvec3 v_POLY_hsv_to_rgb2_rgb = hsv2rgb(v_POLY_multAdd1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null_color\n\tvec3 v_POLY_null_color_val = v_POLY_hsv_to_rgb2_rgb;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tdiffuseColor.xyz = v_POLY_null_color_val;\n\tdiffuseColor.a = v_POLY_null_alpha_val;\n\n\n\n\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <specularmap_fragment>\n\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\n\t// accumulation (baked indirect lighting only)\n\t#ifdef USE_LIGHTMAP\n\t\n\t\tvec4 lightMapTexel= texture2D( lightMap, vUv2 );\n\t\treflectedLight.indirectDiffuse += lightMapTexelToLinear( lightMapTexel ).rgb * lightMapIntensity;\n\n\t#else\n\n\t\treflectedLight.indirectDiffuse += vec3( 1.0 );\n\n\t#endif\n\n\t// modulation\n\t#include <aomap_fragment>\n\n\treflectedLight.indirectDiffuse *= diffuseColor.rgb;\n\n\tvec3 outgoingLight = reflectedLight.indirectDiffuse;\n\n\t#include <envmap_fragment>\n\n\tgl_FragColor = vec4( outgoingLight, diffuseColor.a );\n\n\t#include <tonemapping_fragment>\n\t#include <encodings_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n\n}\n",
+			"lights": false
+		},
+		"uniforms_time_dependent": false,
+		"uniforms_resolution_dependent": false,
+		"param_uniform_pairs": [
+			[
+				"rotationSpeed",
+				"v_POLY_param3_val"
+			],
+			[
+				"colorRole0",
+				"v_POLY_param_color_role0_val"
+			],
+			[
+				"colorRole1",
+				"v_POLY_param_color_role1_val"
+			],
+			[
+				"colorRole2",
+				"v_POLY_param_color_role2_val"
+			],
+			[
+				"colorRole3",
+				"v_POLY_param_color_role3_val"
+			],
+			[
+				"colorRole4",
+				"v_POLY_param_color_role4_val"
+			],
+			[
+				"colorRole5",
+				"v_POLY_param_color_role5_val"
+			],
+			[
+				"threshold",
+				"v_POLY_param_threshold_val"
+			],
+			[
+				"visiblesCount",
+				"v_POLY_param_visibles_count_val"
+			],
+			[
+				"ramp",
+				"ramp_texture_v_POLY_ramp1_val"
+			]
+		],
+		"custom_materials": {
+			"customDistanceMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "6E7BAB77-BF1D-4220-9938-FB3B12917992",
+				"type": "ShaderMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 15658734
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"referencePosition": {
+						"type": "v3",
+						"value": [
+							0,
+							0,
+							0
+						]
+					},
+					"nearDistance": {
+						"value": 1
+					},
+					"farDistance": {
+						"value": 1000
+					},
+					"v_POLY_param3_val": {
+						"value": 0
+					},
+					"v_POLY_param_color_role0_val": {
+						"type": "c",
+						"value": 6693371
+					},
+					"v_POLY_param_color_role1_val": {
+						"type": "c",
+						"value": 14827610
+					},
+					"v_POLY_param_color_role2_val": {
+						"type": "c",
+						"value": 40444
+					},
+					"v_POLY_param_color_role3_val": {
+						"type": "c",
+						"value": 16610123
+					},
+					"v_POLY_param_color_role4_val": {
+						"type": "c",
+						"value": 16756278
+					},
+					"v_POLY_param_color_role5_val": {
+						"type": "c",
+						"value": 50389
+					},
+					"v_POLY_param_threshold_val": {
+						"value": 2
+					},
+					"v_POLY_param_visibles_count_val": {
+						"value": 5
+					},
+					"ramp_texture_v_POLY_ramp1_val": {
+						"value": null
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#define DISTANCE\n\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /MAT/mesh_basic_builder_ARCS/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_cameraPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/mesh_basic_builder_ARCS/varying_write1\nvarying vec4 varying_mvPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nattribute float idn;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nattribute float arc_id;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nattribute float role0;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nattribute float role1;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_cameraPosition = vec3(cameraPosition);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tvarying_v_POLY_attribute2_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tvarying_v_POLY_attribute3_val = float(arc_id);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tvarying_v_POLY_attribute_role0_val = float(role0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tvarying_v_POLY_attribute_role1_val = float(role1);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tvarying_v_POLY_attribute1_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/model_view_matrix_mult1\n\tvec4 v_POLY_model_view_matrix_mult1_mvMult = modelViewMatrix * vec4(v_POLY_globals1_position, 1.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/varying_write1\n\tvarying_mvPosition = v_POLY_model_view_matrix_mult1_mvMult;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvWorldPosition = worldPosition.xyz;\n\n}\n",
+				"fragmentShader": "\n#define DISTANCE\n\nuniform vec3 referencePosition;\nuniform float nearDistance;\nuniform float farDistance;\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 rgb2hsv(vec3 c)\n{\n\tvec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);\n\tvec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));\n\tvec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));\n\n\tfloat d = q.x - min(q.w, q.y);\n\tfloat e = 1.0e-10;\n\treturn vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);\n}\n\n// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/mesh_basic_builder_ARCS/param_threshold\nuniform float v_POLY_param_threshold_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_visibles_count\nuniform float v_POLY_param_visibles_count_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role0\nuniform vec3 v_POLY_param_color_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role1\nuniform vec3 v_POLY_param_color_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role2\nuniform vec3 v_POLY_param_color_role2_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role3\nuniform vec3 v_POLY_param_color_role3_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role4\nuniform vec3 v_POLY_param_color_role4_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role5\nuniform vec3 v_POLY_param_color_role5_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main () {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tfloat v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tfloat v_POLY_attribute_role0_val = varying_v_POLY_attribute_role0_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tfloat v_POLY_attribute_role1_val = varying_v_POLY_attribute_role1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/add1\n\tfloat v_POLY_add1_sum = (v_POLY_attribute2_val + v_POLY_attribute3_val + 0.0 + 0.0 + 0.0 + 0.0 + 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute_role0_val)*floor(abs(v_POLY_attribute_role0_val)+0.5);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute_role1_val)*floor(abs(v_POLY_attribute_role1_val)+0.5);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/compare3\n\tbool v_POLY_compare3_val = (v_POLY_add1_sum <= v_POLY_param_threshold_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd2\n\tfloat v_POLY_multAdd2_val = (1.0*(v_POLY_add1_sum + v_POLY_param_visibles_count_val)) + 0.0;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_int1\n\tint v_POLY_float_to_int1_int = int(v_POLY_round1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_int2\n\tint v_POLY_float_to_int2_int = int(v_POLY_round2_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/compare4\n\tbool v_POLY_compare4_val = (v_POLY_multAdd2_val > v_POLY_param_threshold_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/switch2\n\tvec3 v_POLY_switch2_val;\n\tint v_POLY_switch2_index = v_POLY_float_to_int1_int;\n\tif(v_POLY_switch2_index == 0){v_POLY_switch2_val = v_POLY_param_color_role0_val;}\n\telse if(v_POLY_switch2_index == 1){v_POLY_switch2_val = v_POLY_param_color_role1_val;}\n\telse if(v_POLY_switch2_index == 2){v_POLY_switch2_val = v_POLY_param_color_role2_val;}\n\telse if(v_POLY_switch2_index == 3){v_POLY_switch2_val = v_POLY_param_color_role3_val;}\n\telse if(v_POLY_switch2_index == 4){v_POLY_switch2_val = v_POLY_param_color_role4_val;}\n\telse if(v_POLY_switch2_index == 5){v_POLY_switch2_val = v_POLY_param_color_role5_val;}\n\telse if(v_POLY_switch2_index == 6){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 7){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 8){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 9){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 10){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/switch1\n\tvec3 v_POLY_switch1_val;\n\tint v_POLY_switch1_index = v_POLY_float_to_int2_int;\n\tif(v_POLY_switch1_index == 0){v_POLY_switch1_val = v_POLY_param_color_role0_val;}\n\telse if(v_POLY_switch1_index == 1){v_POLY_switch1_val = v_POLY_param_color_role1_val;}\n\telse if(v_POLY_switch1_index == 2){v_POLY_switch1_val = v_POLY_param_color_role2_val;}\n\telse if(v_POLY_switch1_index == 3){v_POLY_switch1_val = v_POLY_param_color_role3_val;}\n\telse if(v_POLY_switch1_index == 4){v_POLY_switch1_val = v_POLY_param_color_role4_val;}\n\telse if(v_POLY_switch1_index == 5){v_POLY_switch1_val = v_POLY_param_color_role5_val;}\n\telse if(v_POLY_switch1_index == 6){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 7){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 8){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 9){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 10){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/and1\n\tbool v_POLY_and1_and = v_POLY_compare3_val && v_POLY_compare4_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_switch2_val, v_POLY_switch1_val, v_POLY_attribute1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_and1_and){\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1\n\tvec3 v_POLY_rgb_to_hsv1_hsv = rgb2hsv(v_POLY_mix2_mix);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null1\n\tfloat v_POLY_null1_val = v_POLY_twoWaySwitch1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec3_to_float1\n\tfloat v_POLY_vec3_to_float1_x = v_POLY_rgb_to_hsv1_hsv.x;\n\tfloat v_POLY_vec3_to_float1_z = v_POLY_rgb_to_hsv1_hsv.z;\n\tfloat v_POLY_vec3_to_float1_y = v_POLY_rgb_to_hsv1_hsv.y;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null_alpha\n\tfloat v_POLY_null_alpha_val = v_POLY_null1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd3\n\tfloat v_POLY_multAdd3_val = (0.34*(v_POLY_vec3_to_float1_y + 0.0)) + 0.0;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_vec3_1\n\tvec3 v_POLY_float_to_vec3_1_vec3 = vec3(v_POLY_vec3_to_float1_x, v_POLY_multAdd3_val, v_POLY_vec3_to_float1_z);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1\n\tvec3 v_POLY_hsv_to_rgb1_rgb = hsv2rgb(v_POLY_float_to_vec3_1_vec3);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec3_to_vec4_1\n\tvec4 v_POLY_vec3_to_vec4_1_vec4 = vec4(v_POLY_hsv_to_rgb1_rgb.xyz, 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/color_correct1\n\tvec4 v_POLY_color_correct1_out = GammaToLinear(v_POLY_vec3_to_vec4_1_vec4, 2.2);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec4_to_vec3_1\n\tvec3 v_POLY_vec4_to_vec3_1_vec3 = v_POLY_color_correct1_out.xyz;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/mult2\n\tvec3 v_POLY_mult2_product = (v_POLY_null1_val * v_POLY_vec4_to_vec3_1_vec3);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv2\n\tvec3 v_POLY_rgb_to_hsv2_hsv = rgb2hsv(v_POLY_mult2_product);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd1\n\tvec3 v_POLY_multAdd1_val = (vec3(1.0, 1.4, 1.0)*(v_POLY_rgb_to_hsv2_hsv + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb2\n\tvec3 v_POLY_hsv_to_rgb2_rgb = hsv2rgb(v_POLY_multAdd1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null_color\n\tvec3 v_POLY_null_color_val = v_POLY_hsv_to_rgb2_rgb;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tdiffuseColor.xyz = v_POLY_null_color_val;\n\tdiffuseColor.a = v_POLY_null_alpha_val;\n\n\n\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\tfloat dist = length( vWorldPosition - referencePosition );\n\tdist = ( dist - nearDistance ) / ( farDistance - nearDistance );\n\tdist = saturate( dist ); // clamp to [ 0, 1 ]\n\n\tgl_FragColor = packDepthToRGBA( dist );\n\n}\n",
+				"lights": false
+			},
+			"customDepthMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "CDC8BCCE-E741-48A8-8874-5762B4635910",
+				"type": "ShaderMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 15658734
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"v_POLY_param3_val": {
+						"value": 0
+					},
+					"v_POLY_param_color_role0_val": {
+						"type": "c",
+						"value": 6693371
+					},
+					"v_POLY_param_color_role1_val": {
+						"type": "c",
+						"value": 14827610
+					},
+					"v_POLY_param_color_role2_val": {
+						"type": "c",
+						"value": 40444
+					},
+					"v_POLY_param_color_role3_val": {
+						"type": "c",
+						"value": 16610123
+					},
+					"v_POLY_param_color_role4_val": {
+						"type": "c",
+						"value": 16756278
+					},
+					"v_POLY_param_color_role5_val": {
+						"type": "c",
+						"value": 50389
+					},
+					"v_POLY_param_threshold_val": {
+						"value": 2
+					},
+					"v_POLY_param_visibles_count_val": {
+						"value": 5
+					},
+					"ramp_texture_v_POLY_ramp1_val": {
+						"value": null
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#include <common>\n\n\n\n// /MAT/mesh_basic_builder_ARCS/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_cameraPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/mesh_basic_builder_ARCS/varying_write1\nvarying vec4 varying_mvPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nattribute float idn;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nattribute float arc_id;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nattribute float role0;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nattribute float role1;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\n// This is used for computing an equivalent of gl_FragCoord.z that is as high precision as possible.\n// Some platforms compute gl_FragCoord at a lower precision which makes the manually computed value better for\n// depth-based postprocessing effects. Reproduced on iPad with A10 processor / iPadOS 13.3.1.\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_cameraPosition = vec3(cameraPosition);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tvarying_v_POLY_attribute2_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tvarying_v_POLY_attribute3_val = float(arc_id);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tvarying_v_POLY_attribute_role0_val = float(role0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tvarying_v_POLY_attribute_role1_val = float(role1);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tvarying_v_POLY_attribute1_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/model_view_matrix_mult1\n\tvec4 v_POLY_model_view_matrix_mult1_mvMult = modelViewMatrix * vec4(v_POLY_globals1_position, 1.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/varying_write1\n\tvarying_mvPosition = v_POLY_model_view_matrix_mult1_mvMult;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvHighPrecisionZW = gl_Position.zw;\n\n}\n",
+				"fragmentShader": "\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 rgb2hsv(vec3 c)\n{\n\tvec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);\n\tvec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));\n\tvec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));\n\n\tfloat d = q.x - min(q.w, q.y);\n\tfloat e = 1.0e-10;\n\treturn vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);\n}\n\n// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/mesh_basic_builder_ARCS/param_threshold\nuniform float v_POLY_param_threshold_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_visibles_count\nuniform float v_POLY_param_visibles_count_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role0\nuniform vec3 v_POLY_param_color_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role1\nuniform vec3 v_POLY_param_color_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role2\nuniform vec3 v_POLY_param_color_role2_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role3\nuniform vec3 v_POLY_param_color_role3_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role4\nuniform vec3 v_POLY_param_color_role4_val;\n\n// /MAT/mesh_basic_builder_ARCS/param_color_role5\nuniform vec3 v_POLY_param_color_role5_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tfloat v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tfloat v_POLY_attribute_role0_val = varying_v_POLY_attribute_role0_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tfloat v_POLY_attribute_role1_val = varying_v_POLY_attribute_role1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/add1\n\tfloat v_POLY_add1_sum = (v_POLY_attribute2_val + v_POLY_attribute3_val + 0.0 + 0.0 + 0.0 + 0.0 + 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute_role0_val)*floor(abs(v_POLY_attribute_role0_val)+0.5);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute_role1_val)*floor(abs(v_POLY_attribute_role1_val)+0.5);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/compare3\n\tbool v_POLY_compare3_val = (v_POLY_add1_sum <= v_POLY_param_threshold_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd2\n\tfloat v_POLY_multAdd2_val = (1.0*(v_POLY_add1_sum + v_POLY_param_visibles_count_val)) + 0.0;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_int1\n\tint v_POLY_float_to_int1_int = int(v_POLY_round1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_int2\n\tint v_POLY_float_to_int2_int = int(v_POLY_round2_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/compare4\n\tbool v_POLY_compare4_val = (v_POLY_multAdd2_val > v_POLY_param_threshold_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/switch2\n\tvec3 v_POLY_switch2_val;\n\tint v_POLY_switch2_index = v_POLY_float_to_int1_int;\n\tif(v_POLY_switch2_index == 0){v_POLY_switch2_val = v_POLY_param_color_role0_val;}\n\telse if(v_POLY_switch2_index == 1){v_POLY_switch2_val = v_POLY_param_color_role1_val;}\n\telse if(v_POLY_switch2_index == 2){v_POLY_switch2_val = v_POLY_param_color_role2_val;}\n\telse if(v_POLY_switch2_index == 3){v_POLY_switch2_val = v_POLY_param_color_role3_val;}\n\telse if(v_POLY_switch2_index == 4){v_POLY_switch2_val = v_POLY_param_color_role4_val;}\n\telse if(v_POLY_switch2_index == 5){v_POLY_switch2_val = v_POLY_param_color_role5_val;}\n\telse if(v_POLY_switch2_index == 6){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 7){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 8){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 9){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch2_index == 10){v_POLY_switch2_val = vec3(0.0, 0.0, 0.0);}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/switch1\n\tvec3 v_POLY_switch1_val;\n\tint v_POLY_switch1_index = v_POLY_float_to_int2_int;\n\tif(v_POLY_switch1_index == 0){v_POLY_switch1_val = v_POLY_param_color_role0_val;}\n\telse if(v_POLY_switch1_index == 1){v_POLY_switch1_val = v_POLY_param_color_role1_val;}\n\telse if(v_POLY_switch1_index == 2){v_POLY_switch1_val = v_POLY_param_color_role2_val;}\n\telse if(v_POLY_switch1_index == 3){v_POLY_switch1_val = v_POLY_param_color_role3_val;}\n\telse if(v_POLY_switch1_index == 4){v_POLY_switch1_val = v_POLY_param_color_role4_val;}\n\telse if(v_POLY_switch1_index == 5){v_POLY_switch1_val = v_POLY_param_color_role5_val;}\n\telse if(v_POLY_switch1_index == 6){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 7){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 8){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 9){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\telse if(v_POLY_switch1_index == 10){v_POLY_switch1_val = vec3(0.0, 0.0, 0.0);}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/and1\n\tbool v_POLY_and1_and = v_POLY_compare3_val && v_POLY_compare4_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_switch2_val, v_POLY_switch1_val, v_POLY_attribute1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_and1_and){\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t}\n\t\n\t// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv1\n\tvec3 v_POLY_rgb_to_hsv1_hsv = rgb2hsv(v_POLY_mix2_mix);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null1\n\tfloat v_POLY_null1_val = v_POLY_twoWaySwitch1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec3_to_float1\n\tfloat v_POLY_vec3_to_float1_x = v_POLY_rgb_to_hsv1_hsv.x;\n\tfloat v_POLY_vec3_to_float1_z = v_POLY_rgb_to_hsv1_hsv.z;\n\tfloat v_POLY_vec3_to_float1_y = v_POLY_rgb_to_hsv1_hsv.y;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null_alpha\n\tfloat v_POLY_null_alpha_val = v_POLY_null1_val;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd3\n\tfloat v_POLY_multAdd3_val = (0.34*(v_POLY_vec3_to_float1_y + 0.0)) + 0.0;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/float_to_vec3_1\n\tvec3 v_POLY_float_to_vec3_1_vec3 = vec3(v_POLY_vec3_to_float1_x, v_POLY_multAdd3_val, v_POLY_vec3_to_float1_z);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb1\n\tvec3 v_POLY_hsv_to_rgb1_rgb = hsv2rgb(v_POLY_float_to_vec3_1_vec3);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec3_to_vec4_1\n\tvec4 v_POLY_vec3_to_vec4_1_vec4 = vec4(v_POLY_hsv_to_rgb1_rgb.xyz, 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/color_correct1\n\tvec4 v_POLY_color_correct1_out = GammaToLinear(v_POLY_vec3_to_vec4_1_vec4, 2.2);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/vec4_to_vec3_1\n\tvec3 v_POLY_vec4_to_vec3_1_vec3 = v_POLY_color_correct1_out.xyz;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/mult2\n\tvec3 v_POLY_mult2_product = (v_POLY_null1_val * v_POLY_vec4_to_vec3_1_vec3);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/rgb_to_hsv2\n\tvec3 v_POLY_rgb_to_hsv2_hsv = rgb2hsv(v_POLY_mult2_product);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/multAdd1\n\tvec3 v_POLY_multAdd1_val = (vec3(1.0, 1.4, 1.0)*(v_POLY_rgb_to_hsv2_hsv + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/hsv_to_rgb2\n\tvec3 v_POLY_hsv_to_rgb2_rgb = hsv2rgb(v_POLY_multAdd1_val);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/null_color\n\tvec3 v_POLY_null_color_val = v_POLY_hsv_to_rgb2_rgb;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tdiffuseColor.xyz = v_POLY_null_color_val;\n\tdiffuseColor.a = v_POLY_null_alpha_val;\n\n\n\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n}\n",
+				"lights": false
+			},
+			"customDepthDOFMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "46507D51-C7E9-4AA5-862E-508D6AC087A7",
+				"type": "ShaderMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"mNear": {
+						"value": 0
+					},
+					"mFar": {
+						"value": 10
+					},
+					"v_POLY_param3_val": {
+						"value": 0
+					},
+					"v_POLY_param_color_role0_val": {
+						"type": "c",
+						"value": 6693371
+					},
+					"v_POLY_param_color_role1_val": {
+						"type": "c",
+						"value": 14827610
+					},
+					"v_POLY_param_color_role2_val": {
+						"type": "c",
+						"value": 40444
+					},
+					"v_POLY_param_color_role3_val": {
+						"type": "c",
+						"value": 16610123
+					},
+					"v_POLY_param_color_role4_val": {
+						"type": "c",
+						"value": 16756278
+					},
+					"v_POLY_param_color_role5_val": {
+						"type": "c",
+						"value": 50389
+					},
+					"v_POLY_param_threshold_val": {
+						"value": 2
+					},
+					"v_POLY_param_visibles_count_val": {
+						"value": 5
+					},
+					"ramp_texture_v_POLY_ramp1_val": {
+						"value": null
+					}
+				},
+				"vertexShader": "#include <common>\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /MAT/mesh_basic_builder_ARCS/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_cameraPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nvarying float varying_v_POLY_attribute2_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nvarying float varying_v_POLY_attribute_role0_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nvarying float varying_v_POLY_attribute_role1_val;\n\n// /MAT/mesh_basic_builder_ARCS/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/mesh_basic_builder_ARCS/varying_write1\nvarying vec4 varying_mvPosition;\n\n// /MAT/mesh_basic_builder_ARCS/attribute2\nattribute float idn;\n\n// /MAT/mesh_basic_builder_ARCS/attribute3\nattribute float arc_id;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role0\nattribute float role0;\n\n// /MAT/mesh_basic_builder_ARCS/attribute_role1\nattribute float role1;\n\n\n\n\n\n\n\nvoid main() {\n\n\t// INSERT BODY\n\n\n\n\t// /MAT/mesh_basic_builder_ARCS/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_cameraPosition = vec3(cameraPosition);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute2\n\tvarying_v_POLY_attribute2_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute3\n\tvarying_v_POLY_attribute3_val = float(arc_id);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role0\n\tvarying_v_POLY_attribute_role0_val = float(role0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute_role1\n\tvarying_v_POLY_attribute_role1_val = float(role1);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/attribute1\n\tvarying_v_POLY_attribute1_val = float(idn);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/model_view_matrix_mult1\n\tvec4 v_POLY_model_view_matrix_mult1_mvMult = modelViewMatrix * vec4(v_POLY_globals1_position, 1.0);\n\t\n\t// /MAT/mesh_basic_builder_ARCS/varying_write1\n\tvarying_mvPosition = v_POLY_model_view_matrix_mult1_mvMult;\n\t\n\t// /MAT/mesh_basic_builder_ARCS/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\n\n\t#include <project_vertex>\n\n\tvViewZDepth = - mvPosition.z;\n}",
+				"fragmentShader": "uniform float mNear;\nuniform float mFar;\n\nvarying float vViewZDepth;\n\nvoid main() {\n\n\tfloat color = 1.0 - smoothstep( mNear, mFar, vViewZDepth );\n\tgl_FragColor = vec4( vec3( color ), 1.0 );\n\n}\n",
+				"lights": false
+			}
+		}
+	}
+}

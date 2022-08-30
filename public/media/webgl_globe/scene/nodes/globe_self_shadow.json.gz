@@ -1,0 +1,34 @@
+{
+  "type": "geo",
+  "nodes": {
+    "sphere1": {
+      "type": "sphere",
+      "flags": {
+        "optimize": true
+      }
+    },
+    "material1": {
+      "type": "material",
+      "params": {
+        "material": "/MAT/mesh_lambert_SPHERE"
+      },
+      "inputs": [
+        "sphere1"
+      ],
+      "flags": {
+        "display": true,
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    }
+  },
+  "params": {
+    "render_order": 1
+  },
+  "inputs": [
+    "null_ry"
+  ],
+  "flags": {
+    "display": true
+  }
+}

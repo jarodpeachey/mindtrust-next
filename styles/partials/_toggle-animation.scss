@@ -1,6 +1,6 @@
-@use "breakpoints" as *;
-@use "shadows" as *;
-@use "colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/shadows" as *;
+@use "../../styles/partials/colors" as *;
 
 $factorxs: 0.6;
 $factorsm: 0.8;
@@ -465,7 +465,7 @@ $factormd: 1;
       top: 0;
       left: 0;
 
-      .team-cards,
+      .teamCards,
       h3 {
         display: none;
       }
@@ -481,7 +481,7 @@ $factormd: 1;
         width: 100%;
       }
 
-      .team-cards {
+      .teamCards {
         position: absolute;
         right: 24px;
         top: 55%;
@@ -501,7 +501,7 @@ $factormd: 1;
         top: #{$factormd * 20%};
         // }
 
-        .team-card {
+        .teamCard {
           margin: 8px 0;
           width: 100%;
           position: relative;
@@ -520,8 +520,8 @@ $factormd: 1;
           width: #{$factormd * 380}px;
           // }
 
-          .team-card__image,
-          .team-card__icon {
+          .teamCard__image,
+          .teamCard__icon {
             position: relative;
 
             img {
@@ -545,7 +545,7 @@ $factormd: 1;
             }
           }
 
-          .team-card__title {
+          .teamCard__title {
             position: relative;
             height: 100%;
 
@@ -576,7 +576,7 @@ $factormd: 1;
             animation-delay: 0s;
 
             img,
-            .team-card__title span {
+            .teamCard__title span {
               animation-delay: 0s;
             }
           }
@@ -584,7 +584,7 @@ $factormd: 1;
             animation-delay: 0.5s;
 
             img,
-            .team-card__title span {
+            .teamCard__title span {
               animation-delay: 0.5s;
             }
           }
@@ -592,7 +592,7 @@ $factormd: 1;
             animation-delay: 1s;
 
             img,
-            .team-card__title span {
+            .teamCard__title span {
               animation-delay: 1s;
             }
           }
@@ -600,7 +600,7 @@ $factormd: 1;
             animation-delay: 1.5s;
 
             img,
-            .team-card__title span {
+            .teamCard__title span {
               animation-delay: 1.5s;
             }
           }
@@ -608,7 +608,7 @@ $factormd: 1;
             animation-delay: 2s;
 
             img,
-            .team-card__title span {
+            .teamCard__title span {
               animation-delay: 2s;
             }
           }
@@ -616,7 +616,7 @@ $factormd: 1;
             animation-delay: 2.5s;
 
             img,
-            .team-card__title span {
+            .teamCard__title span {
               animation-delay: 2.5s;
             }
           }
@@ -646,7 +646,7 @@ $factormd: 1;
           transform: none;
         }
 
-        .team-cards,
+        .teamCards,
         h3 {
           display: block;
         }
@@ -714,9 +714,9 @@ $factormd: 1;
 
     &.two,
     &.three {
-      .team-cards {
+      .teamCards {
         display: block;
-        .team-card {
+        .teamCard {
           left: 0px;
           position: relative;
           animation: none;
@@ -730,9 +730,9 @@ $factormd: 1;
 
     &.two,
     &.three {
-      .team-cards {
-        .team-card {
-          .team-card__title {
+      .teamCards {
+        .teamCard {
+          .teamCard__title {
             span.one {
               animation-name: titleReverse;
             }
@@ -744,27 +744,27 @@ $factormd: 1;
             }
           }
 
-          &:nth-child(1) .team-card__title span.two {
+          &:nth-child(1) .teamCard__title span.two {
             animation-delay: 0.2s;
           }
 
-          &:nth-child(2) .team-card__title span.two {
+          &:nth-child(2) .teamCard__title span.two {
             animation-delay: 0.7s;
           }
 
-          &:nth-child(3) .team-card__title span.two {
+          &:nth-child(3) .teamCard__title span.two {
             animation-delay: 1.2s;
           }
 
-          &:nth-child(4) .team-card__title span.two {
+          &:nth-child(4) .teamCard__title span.two {
             animation-delay: 1.7s;
           }
 
-          &:nth-child(5) .team-card__title span.two {
+          &:nth-child(5) .teamCard__title span.two {
             animation-delay: 2.2s;
           }
 
-          &:nth-child(6) .team-card__title span.two {
+          &:nth-child(6) .teamCard__title span.two {
             animation-delay: 2.7s;
           }
         }
@@ -772,9 +772,9 @@ $factormd: 1;
     }
 
     &.two.from-one {
-      .team-cards {
-        .team-card {
-          .team-card__image {
+      .teamCards {
+        .teamCard {
+          .teamCard__image {
             img.one {
               animation-name: fadeOut;
             }
@@ -784,7 +784,7 @@ $factormd: 1;
             }
           }
 
-          .team-card__icon {
+          .teamCard__icon {
             img.two {
               animation-name: fadeIn;
             }
@@ -803,9 +803,9 @@ $factormd: 1;
         animation-name: fadeOut;
       }
 
-      .team-cards {
-        .team-card {
-          .team-card__image {
+      .teamCards {
+        .teamCard {
+          .teamCard__image {
             img.one {
               opacity: 0;
             }
@@ -815,7 +815,7 @@ $factormd: 1;
             }
           }
 
-          .team-card__icon {
+          .teamCard__icon {
             img.two {
               opacity: 0;
               animation-name: fadeIn;
@@ -831,9 +831,9 @@ $factormd: 1;
     }
 
     &.three.from-two {
-      .team-cards {
-        .team-card {
-          .team-card__image {
+      .teamCards {
+        .teamCard {
+          .teamCard__image {
             img.one {
               opacity: 0;
             }
@@ -843,7 +843,7 @@ $factormd: 1;
             }
           }
 
-          .team-card__icon {
+          .teamCard__icon {
             img.two {
               opacity: 1;
               animation-name: fadeOut;
@@ -859,9 +859,9 @@ $factormd: 1;
     }
 
     &.three.from-one {
-      .team-cards {
-        .team-card {
-          .team-card__image {
+      .teamCards {
+        .teamCard {
+          .teamCard__image {
             img.one {
               animation-name: fadeOut;
             }
@@ -871,7 +871,7 @@ $factormd: 1;
             }
           }
 
-          .team-card__icon {
+          .teamCard__icon {
             img.two {
               opacity: 0;
             }
@@ -924,10 +924,10 @@ $factormd: 1;
   }
 }
 
-* {
-  transition: height 0.2s;
-  transition-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
-}
+// div, span {
+//   transition: height 0.2s;
+//   transition-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
+// }
 
 @keyframes left {
   0% {

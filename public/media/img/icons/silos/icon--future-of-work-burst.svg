@@ -1,0 +1,12 @@
+<svg width="144" height="144" viewBox="0 0 144 144" fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <circle cx="71.9979" cy="72" r="53.2987" fill="white" fill-opacity="0.05"/>
+  <circle cx="72" cy="72" r="71.75" stroke="white" stroke-opacity="0.1" stroke-width="0.5"/>
+  <circle cx="71.9993" cy="72" r="39.2727" fill="white" fill-opacity="0.05"/>
+  <ellipse cx="72.0011" cy="71.9998" rx="24.3117" ry="24.3114" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M67.8332 69.6039L59.8457 74.2082L67.8335 78.8097L75.8185 74.2082L83.8049 69.6039L75.8184 64.9995L67.8332 69.6039Z" fill="#9E9F9E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M67.834 69.6039L75.8192 64.9995L75.8193 64.9997V55.7911L67.834 69.6039Z" fill="black"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M75.8173 74.2081L67.8322 78.8124L67.832 78.8123V88.0215L75.8173 74.2081Z" fill="black"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M75.8184 55.7911V64.9997L83.8048 69.6039L75.8184 55.7911Z" fill="#5F605F"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M67.8321 88.0215V78.8123L59.8457 74.2081L67.8321 88.0215Z" fill="#5F605F"/>
+</svg>

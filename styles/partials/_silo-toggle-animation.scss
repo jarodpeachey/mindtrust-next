@@ -668,7 +668,7 @@ $delaySix: 1s;
       top: 0;
       left: 0;
 
-      .team-cards,
+      .teamCards,
       h3 {
         display: none;
       }
@@ -684,7 +684,7 @@ $delaySix: 1s;
         width: 100%;
       }
 
-      .team-cards {
+      .teamCards {
         position: absolute;
         right: 24px;
         top: 55%;
@@ -705,7 +705,7 @@ $delaySix: 1s;
           right: 0px;
         }
 
-        .team-card {
+        .teamCard {
           margin: 8px 0;
           width: 100%;
           position: relative;
@@ -723,7 +723,7 @@ $delaySix: 1s;
             opacity: 0;
           }
 
-          .team-card__icon {
+          .teamCard__icon {
             position: relative;
             display: flex;
             flex-direction: row;
@@ -753,13 +753,13 @@ $delaySix: 1s;
             }
           }
 
-          .team-card__title {
+          .teamCard__title {
             position: relative;
             height: 100%;
             max-width: 50%;
           }
 
-          .team-card__hours {
+          .teamCard__hours {
             font-size: 15px !important;
             font-family: "Avenir Regular";
             position: relative;
@@ -806,7 +806,7 @@ $delaySix: 1s;
         opacity: 1;
       }
       .toggle__slide {
-        .team-cards,
+        .teamCards,
         h3 {
           display: block;
         }
@@ -847,8 +847,8 @@ $delaySix: 1s;
 
     &.one.from-start {
       .toggle__slide {
-        .team-cards {
-          .team-card {
+        .teamCards {
+          .teamCard {
             transform: none;
             position: relative;
             left: 100px;
@@ -981,8 +981,8 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
-          .team-card {
+        .teamCards {
+          .teamCard {
             position: relative;
 
             &:nth-child(1) {
@@ -1074,8 +1074,8 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
-          .team-card {
+        .teamCards {
+          .teamCard {
             transform: none;
             position: relative;
             left: 100px;
@@ -1140,8 +1140,8 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
-          .team-card {
+        .teamCards {
+          .teamCard {
             opacity: 1;
             left: 0;
             transform: none;
@@ -1233,8 +1233,8 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
-          .team-card {
+        .teamCards {
+          .teamCard {
             opacity: 1;
             left: 0;
             transform: none;
@@ -1322,8 +1322,8 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
-          .team-card {
+        .teamCards {
+          .teamCard {
             transform: none;
             position: relative;
             left: 100px;
@@ -1415,11 +1415,11 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
+        .teamCards {
           // animation: fadeOut 0.5s forwards;
           animation: fadeOut 0.5s forwards;
 
-          .team-card {
+          .teamCard {
             // left: 0px;
             animation-name: none;
             animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
@@ -1480,12 +1480,12 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
+        .teamCards {
           // animation: fadeOut 0.5s forwards;
           opacity: 0;
           animation: fadeOut 0.5s forwards;
 
-          .team-card {
+          .teamCard {
             // left: 0px;
             animation-name: none;
             animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);
@@ -1558,12 +1558,12 @@ $delaySix: 1s;
       }
 
       .toggle__slide {
-        .team-cards {
+        .teamCards {
           // animation: fadeOut 0.5s forwards;
           opacity: 0;
           animation: none;
 
-          .team-card {
+          .teamCard {
             // left: 0px;
             animation-name: none;
             animation-timing-function: cubic-bezier(0.22, -0.02, 0.17, 1.01);

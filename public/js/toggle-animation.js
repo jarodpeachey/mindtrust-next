@@ -39,6 +39,11 @@
   })
 
   function toggleAnimation(toggleButton, click = false) {
+    console.log("TOGGLE BUTTON: ", toggleButton);
+
+    if (toggleButton) {
+
+    }
     const toggleAnimationFunction = () => {
       currentIndex = parseInt(toggleButton.id.substring(toggleButton.id.length - 1, toggleButton.id.length))
       clearTimeout(animationTimeout)
@@ -184,14 +189,14 @@
       previousSlide = currentIndex
     }
 
-    if (click) {
+    if (click && toggleButton) {
       const newCurrentIndex = parseInt(toggleButton.id.substring(toggleButton.id.length - 1, toggleButton.id.length))
 
       if (previousSlide !== newCurrentIndex) {
-        toggleAnimationFunction()
+        toggleAnimationFunction(toggleButton)
       }
-    } else {
-      toggleAnimationFunction()
+    } else if (toggleButton) {
+      toggleAnimationFunction(toggleButton)
     }
   }
 })()

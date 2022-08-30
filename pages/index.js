@@ -1,7 +1,7 @@
 import Layout from "../components/layout"
 // import styles from '../styles/utils.module.css'
 import { getSortedPostsData } from "../lib/posts"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Navigation from "../components/Navigation/Navigation"
 import SiloCard from "../components/cards/SiloCard"
 import styles from "./Home.module.scss"
@@ -15,39 +15,72 @@ import TeamCard from "../components/cards/TeamCard"
 import ToggleAnimation from "../components/ToggleAnimation/ToggleAnimation"
 import { BRIDGE_APP_URL } from "../config"
 import { WebglGlobe } from "../components/WebglGlobe"
+import Script from "next/script"
 
 export default function Home({ data }) {
   const clientTestimonials = data?.taas?.clientTestimonials?.rows || []
   const featuredTMs = data?.taas?.featuredTMs?.rows || []
 
+  function addWebglGlobeFallback() {
+    const element = document.getElementsByClassName("webgl-globe-fallback")[0]
+    if (element) {
+      element.classList.remove("webgl-element-hidden")
+    }
+  }
+  function addWebglGlobe() {
+    const element = document.getElementsByClassName("webgl-globe")[0]
+    if (element) {
+      element.classList.remove("webgl-element-hidden")
+    }
+    addScript("/js/webgl_globe/three.bundle.fda87c5a7877e101b399.js")
+    addScript("/js/webgl_globe/globe-integration.fda87c5a7877e101b399.js")
+  }
+
+  const [showGlobe, setShowGlobe] = useState(false)
+
+  useEffect(() => {
+    if (window.innerWidth > 769) {
+      setShowGlobe(true)
+    }
+  }, [])
+
   return (
     <Layout title={"Teams as a Service Platform - Plug into the Internet of Talent"} bodyClass="home" homepage>
+      {showGlobe && (
+        <>
+          <Script src="/js/webgl_globe/three.bundle.fda87c5a7877e101b399.js" />
+          <Script src="/js/webgl_globe/globe-integration.fda87c5a7877e101b399.js" />
+        </>
+      )}
+      <Script src="/js/talentCarousel.js" />
       <header>
         <Navigation />
-        <TeamCard member={{ avatar: "", alt: "", title: "Test" }} />
-
         <div className={styles["linear-gradient-box"]}></div>
         <div className={styles.hero}>
           <div className="container">
             <div className="row">
               <div className="col-lg-5 col-md-6 hero-heading-container">
-                <h1 className="section-heading display plug-into">
-                  Plug into the <span className={styles.customSpan}>Internet</span> of Talent<sup>&reg;</sup>
+                <h1 className={`section-heading display plug-into ${styles.heroTitle}`}>
+                  Plug into the Internet of Talent<sup>&reg;</sup>
                 </h1>
-                <p className="section-description">
+                <p className={`section-description ${styles.heroParagraph}`}>
                   We built the world’s first Teams as a Service (TaaS) platform to give you on-demand access to the top developers, designers, marketers,
                   technologists, and business strategists.
                 </p>
-                <p className="section-description">Easily scale up or down, only pay for what you use.</p>
-                <a href="/request-project/1" className={`btn ${styles.hero__button}`}>
+                <p className={`section-description ${styles.heroParagraph}`}>Easily scale up or down, only pay for what you use.</p>
+                <a href="/request-project/1" className={`btn ${styles.heroButton}`}>
                   Get started
                 </a>
-                <a target="_blank" href="https://meetings.mindtrust.com/meetings/sales-team-demo/web-demo-request" className="btn outlined light">
+                <a
+                  target="_blank"
+                  href="https://meetings.mindtrust.com/meetings/sales-team-demo/web-demo-request"
+                  className={`btn outlined light ${styles.heroButtonTwo}`}
+                >
                   Request a demo
                 </a>
               </div>
-              <div className={`col-md-6 ${styles["webgl-globe-container"]}`}>
-                <WebglGlobe />
+              <div className={`col-md-6 webgl-globe-container`}>
+                <WebglGlobe showGlobe={showGlobe} />
                 {/* This part is the static globe image section */}
                 {/* <img className={styles.featured__image} src="/media/img/mobile-hero-globe.png" /> */}
               </div>
@@ -89,7 +122,7 @@ export default function Home({ data }) {
               bring your vision to life. Our areas of expertise include:
             </p>
             <div className="row cut--top-left card-grid">
-              <div className="col-lg-4 col-sm-6 col-12">
+              <div className={`col-lg-4 col-sm-6 col-12 ${styles.servicesCard}`}>
                 <SiloCard
                   link={true}
                   href={"/strategy-teams/"}
@@ -101,7 +134,7 @@ export default function Home({ data }) {
                 />
               </div>
 
-              <div className="col-lg-4 col-sm-6 col-12">
+              <div className={`col-lg-4 col-sm-6 col-12 ${styles.servicesCard}`}>
                 <SiloCard
                   link={true}
                   href={"/design-teams/"}
@@ -113,7 +146,7 @@ export default function Home({ data }) {
                 />
               </div>
 
-              <div className="col-lg-4 col-sm-6 col-12">
+              <div className={`col-lg-4 col-sm-6 col-12 ${styles.servicesCard}`}>
                 <SiloCard
                   link={true}
                   href={"/development-teams/"}
@@ -127,7 +160,7 @@ export default function Home({ data }) {
                 />
               </div>
 
-              <div className="col-lg-4 col-sm-6 col-12">
+              <div className={`col-lg-4 col-sm-6 col-12 ${styles.servicesCard}`}>
                 <SiloCard
                   link={true}
                   href={"/marketing-teams/"}
@@ -141,7 +174,7 @@ export default function Home({ data }) {
                 />
               </div>
 
-              <div className="col-lg-4 col-sm-6 col-12">
+              <div className={`col-lg-4 col-sm-6 col-12 ${styles.servicesCard}`}>
                 <SiloCard
                   link={true}
                   href={"/production-teams/"}
@@ -155,7 +188,7 @@ export default function Home({ data }) {
                 />
               </div>
 
-              <div className="col-lg-4 col-sm-6 col-12">
+              <div className={`col-lg-4 col-sm-6 col-12 ${styles.servicesCard}`}>
                 <SiloCard
                   link={true}
                   href={"/technology-teams/"}
@@ -205,8 +238,8 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        <section className={`overflow ${styles.taas}`}>
-          <div className={styles.background}>
+        <section className="taas overflow">
+          <div className="background">
             <div className="container">
               <h2 className="mt-animate__fade mt-animate section-heading display">The world's first Teams as a Service (TaaS) Platform</h2>
               <p className="mt-animate__fade mt-animate section-description">
@@ -216,38 +249,38 @@ export default function Home({ data }) {
               </p>
               <div className="row">
                 <div className="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                  <div id="taas__wrapper" className={styles.taas__wrapper}>
+                  <div id="taas__wrapper" className="taas__wrapper">
                     <h3>Your MindTrust Team</h3>
-                    <div className={styles.taas__body}>
+                    <div className="taas__body">
                       <div className="row">
                         <div className="col-md-5">
-                          <div className={styles.pie}>
-                            <div className={styles.pie__inner}>
-                              <div className={styles.pie__percent}>
+                          <div className="pie">
+                            <div className="pie__inner">
+                              <div className="pie__percent">
                                 <span className="taas-animation__number" data-animate="125">
                                   0
                                 </span>
                               </div>
-                              <div className={styles.pie__text}>
+                              <div className="pie__text">
                                 <strong>/ 200</strong> TaaS hours used
                               </div>
                               <img src="/media/img/icons/icon--mindtrust.svg" alt="MindTrust logo" />
                             </div>
 
-                            <div className={styles.taas__donut}></div>
+                            <div className="taas__donut"></div>
                           </div>
-                          <div className={styles.flex}>
-                            <div className={styles.block}></div>
-                            <div className={styles.taas__text}>Teams as a Service</div>
+                          <div className="flex">
+                            <div className="block"></div>
+                            <div className="taas__text">Teams as a Service</div>
                           </div>
                         </div>
 
                         <div className="col-md-7">
-                          <ul className="team-cards">
+                          <ul className="teamCards">
                             <li>
                               <TeamCard
                                 size="lg"
-                                className="taas__team-card"
+                                className="taas__teamCard"
                                 member={{
                                   avatar: "https://assets.mindtrust.com/img/development/software-architect.jpg?auto=format",
                                   alt: "Sample Avatar",
@@ -261,7 +294,7 @@ export default function Home({ data }) {
                             <li>
                               <TeamCard
                                 size="lg"
-                                className="taas__team-card"
+                                className="taas__teamCard"
                                 member={{
                                   avatar: "https://assets.mindtrust.com/img/development/mobile-developer.jpg?auto=format",
                                   alt: "Sample Avatar",
@@ -275,7 +308,7 @@ export default function Home({ data }) {
                             <li>
                               <TeamCard
                                 size="lg"
-                                className="taas__team-card"
+                                className="taas__teamCard"
                                 member={{
                                   avatar: "https://assets.mindtrust.com/img/design/ui-ux-designer.jpg?auto=format",
                                   alt: "Sample Avatar",
@@ -289,7 +322,7 @@ export default function Home({ data }) {
                             <li>
                               <TeamCard
                                 size="lg"
-                                className="taas__team-card"
+                                className="taas__teamCard"
                                 member={{
                                   avatar: "https://assets.mindtrust.com/img/strategy/product-manager.jpg?auto=format",
                                   alt: "Sample Avatar",
@@ -303,7 +336,7 @@ export default function Home({ data }) {
                             <li>
                               <TeamCard
                                 size="lg"
-                                className="taas__team-card"
+                                className="taas__teamCard"
                                 member={{
                                   avatar: "https://assets.mindtrust.com/img/development/full-stack-developer.jpg?auto=format",
                                   alt: "Sample Avatar",
@@ -328,8 +361,8 @@ export default function Home({ data }) {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-8 offset-md-2">
-                <p className={styles.callout}>People Powered</p>
-                <p className="callout-description section-description">
+                <p className="callout text-center pb-4">People Powered</p>
+                <p className={`${styles["callout-description"]} section-description`}>
                   The heartbeat of TaaS is our amazing people. Our global network of vetted industry experts can handle anything from ideation, to launch and
                   beyond.
                 </p>
@@ -344,10 +377,10 @@ export default function Home({ data }) {
 
             <div className="row">
               <div className="col-md-4">
-                <h2 className="mt-animate__slide mt-animate section-heading display">Meet your digital dream team</h2>
+                <h2 className="mt-animate__slide mt-animate section-heading text-left display">Meet your digital dream team</h2>
               </div>
               <div className="col-md-7 offset-md-1">
-                <p className="mt-animate__slide mt-animate mt-none section-description">
+                <p className="mt-animate__slide mt-animate mt-none section-description text-left">
                   MindTrust is an all-star team of top technologists, strategists, and creatives from leading companies and universities. We are a passionate
                   tribe committed to growing your business and building experiences people love! Headquartered in the USA, we’re a global company that spans 6
                   continents and 30+ countries and growing fast.
@@ -356,7 +389,7 @@ export default function Home({ data }) {
             </div>
           </div>
 
-          <div className="talent__carousel-holder">
+          <div className={styles["talent__carousel-holder"]}>
             <TalentCarousel slides={talentCarouselSlides} />
           </div>
         </section>

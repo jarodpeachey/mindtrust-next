@@ -47,19 +47,13 @@ export default function Layout(props, { children, home }) {
               "(function(w, d, s, i){var f = d.getElementsByTagName(s)[0],j = d.createElement(s);j.async = true;j.src = i+'/bundle.js';f.parentNode.insertBefore(j, f);})(window, document, 'script', 'https://ronaldo.mindtrust.com');",
           }}
         />
-
-        {/* TODO: ADD THESE SCRIPTS TO BODY */}
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        ></script>
       </Head>
 
       <Script src="/js/sal.js" />
       <Script src="/js/animate.js" />
-      <Script src="/js/slick/slick.min.js" />
+      <Script src="/js/navigation.js" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" strategy="lazyOnload" />
+      <Script src="/js/slick/slick.min.js" strategy='lazyOnLoad' />
 
       <main>{props.children}</main>
     </>

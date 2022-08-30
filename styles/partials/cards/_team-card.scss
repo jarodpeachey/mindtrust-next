@@ -1,8 +1,8 @@
-@use "./card" as *;
-@use "../shadows" as *;
+@use "../breakpoints" as *;
 @use "../colors" as *;
+@use "../shadows" as *;
 
-.team-cards {
+.teamCards {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -16,11 +16,11 @@
   }
 }
 
-.team-cards > li {
+.teamCards > li {
   margin-bottom: 0.6rem;
 }
 
-.team-card {
+.teamCard {
   list-style-type: none;
   padding: 6px 8px;
   display: flex;
@@ -50,7 +50,7 @@
     font-family: "Avenir Demi", "Raleway Bold", Helvetica, Arial;
   }
 
-  .team-card__image {
+  .teamCard__image {
     height: 48px;
     max-height: 48px;
     min-height: 48px;
@@ -71,14 +71,14 @@
     }
   }
 
-  .team-card__title {
+  .teamCard__title {
     font-family: "Avenir Demi", "Raleway Bold", "Raleway Extrabold";
     font-size: 1.125rem;
     line-height: 1.125rem;
     color: #2e353a;
   }
 
-  .team-card__icon {
+  .teamCard__icon {
     height: 34px;
     width: 34px;
     margin-left: auto;
@@ -141,7 +141,7 @@
   }
 
   &.lg {
-    .team-card__icon {
+    .teamCard__icon {
       display: flex;
       flex-direction: row-reverse;
       width: fit-content;
@@ -164,47 +164,47 @@
       }
     }
 
-    &.marketing .team-card__icon {
+    &.marketing .teamCard__icon {
       background: $color--marketing-lighter;
     }
-    &.strategy .team-card__icon {
+    &.strategy .teamCard__icon {
       background: $color--strategy-lighter;
     }
-    &.design .team-card__icon {
+    &.design .teamCard__icon {
       background: $color--design-lighter;
     }
-    &.development .team-card__icon {
+    &.development .teamCard__icon {
       background: $color--mindtrust-lighter;
     }
-    &.production .team-card__icon {
+    &.production .teamCard__icon {
       background: $color--production-lighter;
     }
-    &.technology .team-card__icon {
+    &.technology .teamCard__icon {
       background: $color--technology-lighter;
     }
   }
 
-  &.marketing .team-card__icon .tooltip {
+  &.marketing .teamCard__icon .tooltip {
     left: calc((-110.78px / 2) + 50%);
   }
 
-  &.strategy .team-card__icon .tooltip {
+  &.strategy .teamCard__icon .tooltip {
     left: calc((-100.15px / 2) + 50%);
   }
 
-  &.development .team-card__icon .tooltip {
+  &.development .teamCard__icon .tooltip {
     left: calc((-131.66px / 2) + 50%);
   }
 
-  &.design .team-card__icon .tooltip {
+  &.design .teamCard__icon .tooltip {
     left: calc((-81.06px / 2) + 50%);
   }
 
-  &.technology .team-card__icon .tooltip {
+  &.technology .teamCard__icon .tooltip {
     left: calc((-123.7px / 2) + 50%);
   }
 
-  &.production .team-card__icon .tooltip {
+  &.production .teamCard__icon .tooltip {
     left: calc((-122.09px / 2) + 50%);
   }
 }

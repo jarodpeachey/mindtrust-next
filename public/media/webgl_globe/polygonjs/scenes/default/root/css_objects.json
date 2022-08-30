@@ -1,0 +1,87 @@
+{
+	"type": "geo",
+	"nodes": {
+		"object_merge1": {
+			"type": "objectMerge",
+			"params": {
+				"geometry": "/arcs/OUT_selected_dots"
+			}
+		},
+		"css2d_object1": {
+			"type": "CSS2DObject",
+			"params": {
+				"useIdAttrib": 1,
+				"useClassAttrib": 1,
+				"useHtmlAttrib": 1
+			},
+			"inputs": [
+				"attrib_create1"
+			],
+			"flags": {
+				"optimize": true
+			}
+		},
+		"attrib_create1": {
+			"type": "attribCreate",
+			"params": {
+				"type": 1,
+				"name": "html",
+				"string": "<div class='webgl-profile-inner-container'>Designer</div>"
+			},
+			"inputs": [
+				"attrib_create2"
+			],
+			"flags": {
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"attrib_create2": {
+			"type": "attribCreate",
+			"params": {
+				"type": 1,
+				"name": "class",
+				"string": "webgl-profile-container"
+			},
+			"inputs": [
+				"attrib_create3"
+			],
+			"flags": {
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"OUT": {
+			"type": "null",
+			"inputs": [
+				"css2d_object1"
+			],
+			"flags": {
+				"display": true,
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		},
+		"attrib_create3": {
+			"type": "attribCreate",
+			"params": {
+				"type": 1,
+				"name": "id",
+				"string": "webgl-profile-`@ptnum`"
+			},
+			"inputs": [
+				"object_merge1"
+			],
+			"cloned_state_overriden": true
+		}
+	},
+	"inputs": [
+		"null_ry"
+	],
+	"flags": {
+		"display": true
+	},
+	"selection": [
+		"object_merge1"
+	]
+}

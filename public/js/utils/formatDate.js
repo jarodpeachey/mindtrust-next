@@ -1,7 +1,7 @@
 const formatDate = (time, short = false) => {
   const date = new Date(time)
   const year = date.getFullYear()
-  let month = date.getMonth() + 1
+  let month = date.getMonth()
   const day = date.getDate()
 
   if (month === 1) {

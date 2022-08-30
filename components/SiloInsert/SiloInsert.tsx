@@ -24,7 +24,7 @@ const SiloInsert = ({ title, subtitle, silo }) => {
           </div>
 
           <div className="col-xl-4 col-md-6 offset-xl-2">
-            <ul className="team-cards">
+            <ul className="teamCards">
               {teamCards.map((m, i) => {
                 return (
                   <li key={i}>

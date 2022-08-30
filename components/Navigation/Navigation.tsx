@@ -1,15 +1,13 @@
 import React from "react"
-import styles from "./Navigation.module.scss"
-import SubMenu from "./SubMenu"
-import { BRIDGE_APP_URL } from "../config"
+import Image from '../../node_modules/next/image'
 
 const Navigation = class extends React.Component {
   render() {
     return (
-      <nav role="navigation" aria-label="Main" className={styles.nav}>
+      <nav role="navigation" aria-label="Main" className="nav">
         <div className="container container--wide">
-          <div className={styles.menu__wrapper}>
-            <div className={styles.logo} id="logo">
+          <div className="menu__wrapper">
+            <div className="logo" id="logo">
               <a href="/" aria-label="MindTrust Homepage">
                 <svg width="174" height="41" viewBox="0 0 174 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g id="mindtrust-text">
@@ -116,43 +114,43 @@ const Navigation = class extends React.Component {
                 </svg>{" "}
               </a>
             </div>
-            <div className={styles["mobile-menu__toggle"]}>
-              <div className={styles["mobile-menu__toggle--mask"]}>
+            <div className="mobile-menu__toggle">
+              <div className="mobile-menu__toggle--mask">
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
             </div>
-            <div className={styles["navigation-menu"]}>
-              <ul className={styles.menu__main}>
-                <li className={styles["has-submenu menu__item"]} id="menu__item--solutions">
-                  <span className={`${styles.accent} ${styles.menu__item}`}>Solutions</span>
-                  <div className={styles.menu__submenu}>
-                    <div className={styles["menu__submenu--wrapper"]}>
+            <div className="navigation-menu">
+              <ul className="menu__main">
+                <li className="has-submenu menu__item" id="menu__item--solutions">
+                  <span className="accent menu__item">Solutions</span>
+                  <div className="menu__submenu">
+                    <div className="menu__submenu--wrapper">
                       <div className="row">
                         <div className="col-lg-6">
-                          <a href="/strategy-teams" className={styles.submenu__item}>
-                            <img loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--strategy.svg" alt="Strategy" />
-                            <div className={styles["submenu__item--content"]}>
-                              <p className={styles["submenu__item--title"]}>Strategy</p>
+                          <a href="/strategy-teams" className="submenu__item">
+                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--strategy.svg" alt="Strategy" />
+                            <div className="submenu__item--content">
+                              <p className="submenu__item--title">Strategy</p>
                               <p>Top business experts for digital transformation, data science, fundraising, finance, product and project management.</p>
                             </div>
                           </a>
                         </div>
                         <div className="col-lg-6">
-                          <a href="/design-teams" className={styles.submenu__item}>
-                            <img loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--design.svg" alt="Design" />
-                            <div className={styles["submenu__item--content"]}>
-                              <p className={styles["submenu__item--title"]}>Design</p>
+                          <a href="/design-teams" className="submenu__item">
+                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--design.svg" alt="Design" />
+                            <div className="submenu__item--content">
+                              <p className="submenu__item--title">Design</p>
                               <p>Award winning designers deliver amazing brand, creative, UI, UX, prototypes, and interactive digital experiences.</p>
                             </div>
                           </a>
                         </div>
                         <div className="col-lg-6">
-                          <a href="/development-teams" className={styles.submenu__item}>
-                            <img loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--development.svg" alt="Development" />
-                            <div className={styles["submenu__item--content"]}>
-                              <p className={styles["submenu__item--title"]}>Development</p>
+                          <a href="/development-teams" className="submenu__item">
+                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--development.svg" alt="Development" />
+                            <div className="submenu__item--content">
+                              <p className="submenu__item--title">Development</p>
                               <p>
                                 Expert software architects and engineers for full-stack web, mobile apps, and emerging technologies like blockchain, AI, and XR.
                               </p>
@@ -160,10 +158,10 @@ const Navigation = class extends React.Component {
                           </a>
                         </div>
                         <div className="col-lg-6">
-                          <a href="/marketing-teams" className={styles.submenu__item}>
-                            <img loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--marketing.svg" alt="Marketing" />
-                            <div className={styles["submenu__item--content"]}>
-                              <p className={styles["submenu__item--title"]}>Marketing</p>
+                          <a href="/marketing-teams" className="submenu__item">
+                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--marketing.svg" alt="Marketing" />
+                            <div className="submenu__item--content">
+                              <p className="submenu__item--title">Marketing</p>
                               <p>
                                 Brilliant marketing insight professionals, digital strategists, and growth hackers deliver inbound, search, social, and paid ad
                                 results.{" "}
@@ -172,10 +170,10 @@ const Navigation = class extends React.Component {
                           </a>
                         </div>
                         <div className="col-lg-6">
-                          <a href="/production-teams" className={styles.submenu__item}>
-                            <img loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--production.svg" alt="Production" />
-                            <div className={styles["submenu__item--content"]}>
-                              <p className={styles["submenu__item--title"]}>Production</p>
+                          <a href="/production-teams" className="submenu__item">
+                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--production.svg" alt="Production" />
+                            <div className="submenu__item--content">
+                              <p className="submenu__item--title">Production</p>
                               <p>
                                 Industry leading artists, illustrators, animators, 3D modelers, video, audio, game design, and AR/VR producers bring it to the
                                 next level.
@@ -184,10 +182,10 @@ const Navigation = class extends React.Component {
                           </a>
                         </div>
                         <div className="col-lg-6">
-                          <a href="/technology-teams" className={styles.submenu__item}>
-                            <img loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--technology.svg" alt="Technology" />
-                            <div className={styles["submenu__item--content"]}>
-                              <p className={styles["submenu__item--title"]}>Technology</p>
+                          <a href="/technology-teams" className="submenu__item">
+                            <Image loading="lazy" width="34" height="34" src="/media/img/icons/silos/navicon--technology.svg" alt="Technology" />
+                            <div className="submenu__item--content">
+                              <p className="submenu__item--title">Technology</p>
                               <p>
                                 Top technologists and cloud architects for infrastructure, DevOps, and CI/CD across AWS, GCP, Azure, and distributed Web 3.0
                                 platforms.
@@ -200,23 +198,23 @@ const Navigation = class extends React.Component {
                   </div>
                 </li>
                 <li>
-                  <a href="/why-mindtrust" className={`${styles.accent} ${styles.menu__item}`}>
+                  <a href="/why-mindtrust" className="accent menu__item">
                     Why MindTrust
                   </a>
                 </li>
                 {/* <li>
-                  <a href="/blog" className={styles.accent menu__item}>
+                  <a href="/blog" className="accent menu__item">
                     Blog
                   </a>
                 </li> */}
                 <li>
-                  <a href="/contact" className={`${styles.accent} ${styles.menu__item}`}>
+                  <a href="/contact" className="accent menu__item">
                     Contact
                   </a>
                 </li>
               </ul>
-              <div className={styles.menu__cta}>
-                <a className={styles.accent} href="tel:844646387878">
+              <div className="menu__cta">
+                <a className="accent" href="tel:844646387878">
                   844-MINDTRUST
                 </a>
                 <a href="/request-project/1" className="btn small">

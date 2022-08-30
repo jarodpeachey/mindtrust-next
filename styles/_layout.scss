@@ -5,6 +5,14 @@
 @use "partials/_buttons" as *;
 @use "partials/_animate" as *;
 @use "partials/cards/_card" as *;
+@use "partials/toggle-animation";
+@use "partials/silo-toggle-animation";
+@use "partials/taas-animation";
+@use "partials/navigation";
+@use "partials/cards/team-card";
+@use "partials/talent-carousel";
+@use "partials/webgl_globe";
+
 
 html {
   font-size: 100%;
@@ -24,7 +32,7 @@ body {
     content: "";
     width: 175px;
     height: 999999999px;
-    background: url("/media/img/grid.png");
+    background: url("/images/grid.png");
     position: fixed;
     z-index: -1;
     top: 0;

@@ -1,0 +1,26 @@
+{
+	"type": "renderers",
+	"nodes": {
+		"webgl_renderer1": {
+			"type": "WebGLRenderer",
+			"params": {
+				"alpha": 0,
+				"toneMapping": 0,
+				"sortObjects": 0,
+				"tpixelRatio": 1,
+				"pixelRatio": 1
+			}
+		},
+		"css2d_renderer1": {
+			"type": "CSS2DRenderer",
+			"params": {
+				"useFog": 1,
+				"fogNear": 2.5,
+				"fogFar": 3
+			}
+		}
+	},
+	"selection": [
+		"webgl_renderer1"
+	]
+}

@@ -27,23 +27,6 @@ section {
   }
 }
 
-.section-heading {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 1.75rem;
-  line-height: 3.125rem;
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section-description {
-  line-height: 2.125rem;
-  text-align: center;
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 section.hero {
   padding-top: 2rem;
@@ -57,7 +40,7 @@ section.hero {
   margin-bottom: 2.25rem;
 }
 
-.silo .hero ul.team-cards {
+.silo .hero ul.teamCards {
   display: none;
 
   @include media-breakpoint-up(sm) {
@@ -182,7 +165,7 @@ section.hero {
     left: -50%;
     width: 100%;
     height: 100%;
-    background: url("/media/img/gradient-cut.svg") no-repeat;
+    background: url("/images/gradient-cut.svg") no-repeat;
     filter: $cut--filter;
   }
 }
@@ -198,7 +181,7 @@ section.hero {
     right: -45%;
     width: 100%;
     height: 100%;
-    background: url("/media/img/gradient-cut.svg") no-repeat;
+    background: url("/images/gradient-cut.svg") no-repeat;
     transform: scaleX(-1);
     filter: $cut--filter;
   }
@@ -206,7 +189,7 @@ section.hero {
 
 // Silo Heros
 
-.hero .team-cards {
+.hero .teamCards {
   position: relative;
   margin: 0 auto;
   width: fit-content;
@@ -221,14 +204,14 @@ section.hero {
     }
   }
 
-  .team-card {
+  .teamCard {
     position: relative;
     margin-right: 0;
     top: 0;
   }
 
   li:nth-of-type(1) {
-    .team-card {
+    .teamCard {
       // left: -2rem;
 
       &.active {
@@ -244,7 +227,7 @@ section.hero {
   }
 
   li:nth-of-type(2) {
-    .team-card {
+    .teamCard {
       left: 60px;
 
       &.active {
@@ -260,7 +243,7 @@ section.hero {
   }
 
   li:nth-of-type(3) {
-    .team-card {
+    .teamCard {
       left: 17px;
 
       &.active {
@@ -275,7 +258,7 @@ section.hero {
   }
 
   li:nth-of-type(4) {
-    .team-card {
+    .teamCard {
       left: 87px;
 
       &.active {
@@ -291,7 +274,7 @@ section.hero {
   }
 
   li:nth-of-type(5) {
-    .team-card {
+    .teamCard {
       left: 153px;
 
       &.active {
@@ -310,13 +293,13 @@ section.hero {
     margin-top: 0;
 
     li:nth-of-type(4) {
-      .team-card {
+      .teamCard {
         left: -23px;
       }
     }
 
     li:nth-of-type(5) {
-      .team-card {
+      .teamCard {
         left: 0;
       }
     }
@@ -324,13 +307,13 @@ section.hero {
 
   @include media-breakpoint-up(lg) {
     li:nth-of-type(4) {
-      .team-card {
+      .teamCard {
         left: 87px;
       }
     }
 
     li:nth-of-type(5) {
-      .team-card {
+      .teamCard {
         left: 153px;
       }
     }
@@ -386,7 +369,7 @@ section.hero {
   content: "";
   width: 175px;
   height: 600px;
-  background: url("/media/img/grid.png");
+  background: url("/images/grid.png");
   position: absolute;
   background-attachment: fixed;
   height: 100%;
@@ -411,7 +394,7 @@ section.hero {
   content: "";
   width: 398px;
   height: 361px;
-  background: url("/media/img/backgrounds/dots.svg");
+  background: url("/images/backgrounds/dots.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -447,7 +430,7 @@ section.hero {
   content: "";
   width: 223px;
   height: 282px;
-  background: url("/media/img/backgrounds/dots--right.svg");
+  background: url("/images/backgrounds/dots--right.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -525,7 +508,7 @@ section.hero {
 .footer-cta::before {
   content: "";
   width: 175px;
-  background: url("/media/img/grid.png");
+  background: url("/images/grid.png");
   position: absolute;
   background-attachment: fixed;
   height: 100%;
@@ -550,7 +533,7 @@ section.hero {
   content: "";
   width: 398px;
   height: 361px;
-  background: url("/media/img/backgrounds/dots.svg");
+  background: url("/images/backgrounds/dots.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -585,7 +568,7 @@ section.hero {
   content: "";
   width: 223px;
   height: 282px;
-  background: url("/media/img/backgrounds/dots--right.svg");
+  background: url("/images/backgrounds/dots--right.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -705,7 +688,7 @@ section.hero {
   position: relative;
   &:before {
     content: "";
-    background: url("/media/img/dot-burst.svg") no-repeat;
+    background: url("/images/dot-burst.svg") no-repeat;
     width: 211px;
     height: 282px;
     min-width: 211px;

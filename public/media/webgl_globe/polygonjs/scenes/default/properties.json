@@ -1,0 +1,7 @@
+{
+	"frame": 1243,
+	"maxFrame": 10000,
+	"maxFrameLocked": false,
+	"realtimeState": true,
+	"masterCameraNodePath": "/perspective_camera_MASTER"
+}

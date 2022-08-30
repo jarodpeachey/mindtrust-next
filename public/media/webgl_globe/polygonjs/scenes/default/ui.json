@@ -1,0 +1,3065 @@
+{
+	"nodes": {
+		"null_ry": {
+			"pos": [
+				50,
+				-200
+			]
+		},
+		"hemisphere_light2": {
+			"pos": [
+				-1050,
+				150
+			]
+		},
+		"spot_light2": {
+			"pos": [
+				-850,
+				350
+			]
+		},
+		"null_gentle_rotation": {
+			"pos": [
+				50,
+				-300
+			]
+		},
+		"COP": {
+			"pos": [
+				-500,
+				500
+			],
+			"nodes": {
+				"file_land": {
+					"pos": [
+						300,
+						-50
+					]
+				},
+				"file_f": {
+					"pos": [
+						300,
+						50
+					]
+				},
+				"file_bg_shadow": {
+					"pos": [
+						300,
+						150
+					]
+				}
+			}
+		},
+		"dots": {
+			"pos": [
+				-50,
+				-50
+			],
+			"nodes": {
+				"circle1": {
+					"pos": [
+						-500,
+						-150
+					]
+				},
+				"OUT_pts": {
+					"pos": [
+						-200,
+						50
+					]
+				},
+				"transform_DEBUG": {
+					"pos": [
+						-500,
+						150
+					]
+				},
+				"delete1": {
+					"pos": [
+						0,
+						250
+					]
+				},
+				"OUT_land_pts": {
+					"pos": [
+						0,
+						350
+					]
+				},
+				"icosahedron1": {
+					"pos": [
+						-200,
+						-600
+					]
+				},
+				"attrib_from_texture1": {
+					"pos": [
+						-200,
+						-400
+					]
+				},
+				"attrib_from_texture2": {
+					"pos": [
+						-200,
+						-300
+					]
+				},
+				"transform1": {
+					"pos": [
+						-200,
+						-150
+					]
+				},
+				"object_properties_OUT": {
+					"pos": [
+						-300,
+						350
+					]
+				},
+				"transform_DOT": {
+					"pos": [
+						-500,
+						50
+					]
+				},
+				"instance_DOTS": {
+					"pos": [
+						-300,
+						250
+					]
+				},
+				"attribCreate1": {
+					"pos": [
+						-250,
+						-500
+					]
+				}
+			}
+		},
+		"MAT": {
+			"pos": [
+				-500,
+				400
+			],
+			"nodes": {
+				"mesh_lambert_SPHERE": {
+					"pos": [
+						0,
+						0
+					]
+				},
+				"mesh_basic_BG": {
+					"pos": [
+						0,
+						100
+					]
+				},
+				"mesh_basic_builder_DOTS": {
+					"pos": [
+						0,
+						-300
+					],
+					"nodes": {
+						"output1": {
+							"pos": [
+								2300,
+								0
+							]
+						},
+						"instance_transform1": {
+							"pos": [
+								1350,
+								100
+							]
+						},
+						"normalize1": {
+							"pos": [
+								300,
+								300
+							]
+						},
+						"vector_align1": {
+							"pos": [
+								450,
+								300
+							]
+						},
+						"param1": {
+							"pos": [
+								1000,
+								-1850
+							]
+						},
+						"attribute2": {
+							"pos": [
+								100,
+								550
+							]
+						},
+						"float_to_vec3_1": {
+							"pos": [
+								700,
+								700
+							]
+						},
+						"attribute3": {
+							"pos": [
+								100,
+								150
+							]
+						},
+						"param_sparkle_center": {
+							"pos": [
+								-700,
+								-1200
+							]
+						},
+						"param_sparkle_color": {
+							"pos": [
+								1000,
+								-1750
+							]
+						},
+						"attribute4": {
+							"pos": [
+								-1050,
+								-1450
+							]
+						},
+						"param_sparkle_radius": {
+							"pos": [
+								-350,
+								-1050
+							]
+						},
+						"distance1": {
+							"pos": [
+								-350,
+								-1250
+							]
+						},
+						"mix2": {
+							"pos": [
+								1650,
+								-1800
+							]
+						},
+						"normalize2": {
+							"pos": [
+								-500,
+								-1350
+							]
+						},
+						"normalize3": {
+							"pos": [
+								-500,
+								-1200
+							]
+						},
+						"color_correct1": {
+							"pos": [
+								1300,
+								-1900
+							]
+						},
+						"vec3_to_vec4_1": {
+							"pos": [
+								1150,
+								-1900
+							]
+						},
+						"vec4_to_vec3_1": {
+							"pos": [
+								1400,
+								-1900
+							]
+						},
+						"noise1": {
+							"pos": [
+								-800,
+								-1650
+							]
+						},
+						"abs1": {
+							"pos": [
+								-250,
+								-1850
+							]
+						},
+						"mult1": {
+							"pos": [
+								1150,
+								0
+							]
+						},
+						"two_way_switch_for_pos": {
+							"pos": [
+								1350,
+								-800
+							]
+						},
+						"mult_add1": {
+							"pos": [
+								1200,
+								-800
+							]
+						},
+						"substract1": {
+							"pos": [
+								-150,
+								-1150
+							]
+						},
+						"abs2": {
+							"pos": [
+								-50,
+								-1150
+							]
+						},
+						"clamp1": {
+							"pos": [
+								250,
+								-1000
+							]
+						},
+						"cos1": {
+							"pos": [
+								450,
+								-1000
+							]
+						},
+						"compare2": {
+							"pos": [
+								850,
+								-1100
+							]
+						},
+						"constant1": {
+							"pos": [
+								-150,
+								-900
+							]
+						},
+						"negate1": {
+							"pos": [
+								-50,
+								-1000
+							]
+						},
+						"clamp2": {
+							"pos": [
+								550,
+								-1000
+							]
+						},
+						"add1": {
+							"pos": [
+								-700,
+								-1500
+							]
+						},
+						"compare3": {
+							"pos": [
+								50,
+								-1500
+							]
+						},
+						"two_way_switch2": {
+							"pos": [
+								250,
+								-1600
+							]
+						},
+						"max1": {
+							"pos": [
+								900,
+								-1500
+							]
+						},
+						"mult2": {
+							"pos": [
+								450,
+								-1500
+							]
+						},
+						"clamp3": {
+							"pos": [
+								600,
+								-1500
+							]
+						},
+						"fit1": {
+							"pos": [
+								150,
+								-1350
+							]
+						},
+						"noise2": {
+							"pos": [
+								-400,
+								-1850
+							]
+						},
+						"noise3": {
+							"pos": [
+								-400,
+								-1700
+							]
+						},
+						"mult3": {
+							"pos": [
+								-150,
+								-1750
+							]
+						},
+						"clamp4": {
+							"pos": [
+								-300,
+								-1700
+							]
+						},
+						"mult4": {
+							"pos": [
+								650,
+								-900
+							]
+						},
+						"param_sparkle_intensity": {
+							"pos": [
+								450,
+								-750
+							]
+						},
+						"param_trail_intensity": {
+							"pos": [
+								500,
+								-1750
+							]
+						},
+						"mult5": {
+							"pos": [
+								700,
+								-1700
+							]
+						},
+						"param_near": {
+							"pos": [
+								2350,
+								-850
+							]
+						},
+						"param_far": {
+							"pos": [
+								2350,
+								-750
+							]
+						},
+						"globals1": {
+							"pos": [
+								2250,
+								-550
+							]
+						},
+						"vec4_to_vec3_2": {
+							"pos": [
+								2450,
+								-350
+							]
+						},
+						"normalize4": {
+							"pos": [
+								2600,
+								-400
+							]
+						},
+						"attribute1": {
+							"pos": [
+								2500,
+								-550
+							]
+						},
+						"substract2": {
+							"pos": [
+								2700,
+								-600
+							]
+						},
+						"model_view_matrix_mult1": {
+							"pos": [
+								1750,
+								-250
+							]
+						},
+						"fog1": {
+							"pos": [
+								2100,
+								-150
+							]
+						},
+						"compare1": {
+							"pos": [
+								250,
+								700
+							]
+						},
+						"two_way_switch1": {
+							"pos": [
+								400,
+								700
+							]
+						},
+						"constant_size_land": {
+							"pos": [
+								250,
+								950
+							]
+						},
+						"constant_size_sea": {
+							"pos": [
+								250,
+								850
+							]
+						},
+						"multAdd1": {
+							"pos": [
+								50,
+								-1150
+							]
+						},
+						"multAdd2": {
+							"pos": [
+								800,
+								-1300
+							]
+						},
+						"multAdd3": {
+							"pos": [
+								1200,
+								-700
+							]
+						},
+						"twoWaySwitch1": {
+							"pos": [
+								500,
+								800
+							]
+						},
+						"varyingRead1": {
+							"pos": [
+								1900,
+								-150
+							]
+						},
+						"varyingWrite1": {
+							"pos": [
+								1900,
+								-250
+							]
+						},
+						"twoWaySwitch2": {
+							"pos": [
+								250,
+								-1450
+							]
+						},
+						"colorCorrect1": {
+							"pos": [
+								1300,
+								-2000
+							]
+						},
+						"instanceTransform1": {
+							"pos": [
+								2050,
+								150
+							]
+						},
+						"twoWaySwitch3": {
+							"pos": [
+								1400,
+								-950
+							]
+						},
+						"null_color": {
+							"pos": [
+								1750,
+								-1800
+							]
+						},
+						"constant2": {
+							"pos": [
+								2150,
+								250
+							]
+						}
+					}
+				},
+				"mesh_basic_builder_ARCS": {
+					"pos": [
+						0,
+						200
+					],
+					"nodes": {
+						"globals1": {
+							"pos": [
+								-550,
+								-250
+							]
+						},
+						"output1": {
+							"pos": [
+								2400,
+								-200
+							]
+						},
+						"normalize1": {
+							"pos": [
+								-100,
+								-350
+							]
+						},
+						"normalize2": {
+							"pos": [
+								-100,
+								-200
+							]
+						},
+						"dot1": {
+							"pos": [
+								50,
+								-300
+							]
+						},
+						"fit1": {
+							"pos": [
+								200,
+								-300
+							]
+						},
+						"ramp1": {
+							"pos": [
+								350,
+								-300
+							]
+						},
+						"param3": {
+							"pos": [
+								-550,
+								-550
+							]
+						},
+						"mult_add3": {
+							"pos": [
+								-450,
+								-600
+							]
+						},
+						"rotate1": {
+							"pos": [
+								-300,
+								-550
+							]
+						},
+						"attribute_role0": {
+							"pos": [
+								-650,
+								-1750
+							]
+						},
+						"switch1": {
+							"pos": [
+								-200,
+								-1400
+							]
+						},
+						"float_to_int1": {
+							"pos": [
+								-400,
+								-1750
+							]
+						},
+						"param_color_role0": {
+							"pos": [
+								-500,
+								-1350
+							]
+						},
+						"param_color_role1": {
+							"pos": [
+								-500,
+								-1250
+							]
+						},
+						"param_color_role2": {
+							"pos": [
+								-500,
+								-1150
+							]
+						},
+						"param_color_role3": {
+							"pos": [
+								-500,
+								-1050
+							]
+						},
+						"param_color_role4": {
+							"pos": [
+								-500,
+								-950
+							]
+						},
+						"param_color_role5": {
+							"pos": [
+								-500,
+								-850
+							]
+						},
+						"round1": {
+							"pos": [
+								-500,
+								-1750
+							]
+						},
+						"mix2": {
+							"pos": [
+								200,
+								-1600
+							]
+						},
+						"switch2": {
+							"pos": [
+								-200,
+								-1750
+							]
+						},
+						"float_to_int2": {
+							"pos": [
+								-400,
+								-1550
+							]
+						},
+						"round2": {
+							"pos": [
+								-500,
+								-1550
+							]
+						},
+						"attribute_role1": {
+							"pos": [
+								-650,
+								-1550
+							]
+						},
+						"attribute1": {
+							"pos": [
+								0,
+								-1300
+							]
+						},
+						"mix3": {
+							"pos": [
+								1400,
+								-600
+							]
+						},
+						"constant_white": {
+							"pos": [
+								900,
+								-650
+							]
+						},
+						"clamp1": {
+							"pos": [
+								650,
+								-450
+							]
+						},
+						"attribute2": {
+							"pos": [
+								400,
+								50
+							]
+						},
+						"two_way_switch3": {
+							"pos": [
+								1150,
+								50
+							]
+						},
+						"compare3": {
+							"pos": [
+								800,
+								100
+							]
+						},
+						"mult2": {
+							"pos": [
+								1500,
+								-200
+							]
+						},
+						"attribute3": {
+							"pos": [
+								400,
+								150
+							]
+						},
+						"add1": {
+							"pos": [
+								500,
+								100
+							]
+						},
+						"color_correct1": {
+							"pos": [
+								1400,
+								-1550
+							]
+						},
+						"vec3_to_vec4_1": {
+							"pos": [
+								1250,
+								-1600
+							]
+						},
+						"vec4_to_vec3_1": {
+							"pos": [
+								1500,
+								-1600
+							]
+						},
+						"color_correct2": {
+							"pos": [
+								1400,
+								-1650
+							]
+						},
+						"compare4": {
+							"pos": [
+								850,
+								350
+							]
+						},
+						"mult_add1": {
+							"pos": [
+								750,
+								200
+							]
+						},
+						"and1": {
+							"pos": [
+								950,
+								200
+							]
+						},
+						"null1": {
+							"pos": [
+								1300,
+								-50
+							]
+						},
+						"constant1": {
+							"pos": [
+								1100,
+								-150
+							]
+						},
+						"hsv_to_rgb1": {
+							"pos": [
+								1000,
+								-1700
+							]
+						},
+						"rgb_to_hsv1": {
+							"pos": [
+								600,
+								-1700
+							]
+						},
+						"vec3_to_float1": {
+							"pos": [
+								700,
+								-1700
+							]
+						},
+						"float_to_vec3_1": {
+							"pos": [
+								900,
+								-1700
+							]
+						},
+						"mult_add2": {
+							"pos": [
+								800,
+								-2000
+							]
+						},
+						"param_threshold": {
+							"pos": [
+								550,
+								400
+							]
+						},
+						"param_visibles_count": {
+							"pos": [
+								400,
+								250
+							]
+						},
+						"model_view_matrix_mult1": {
+							"pos": [
+								0,
+								-550
+							]
+						},
+						"varying_write1": {
+							"pos": [
+								200,
+								-550
+							]
+						},
+						"varying_read1": {
+							"pos": [
+								1600,
+								-400
+							]
+						},
+						"fog1": {
+							"pos": [
+								1750,
+								-350
+							]
+						},
+						"constant2": {
+							"pos": [
+								1900,
+								-400
+							]
+						},
+						"rgb_to_hsv2": {
+							"pos": [
+								1650,
+								-600
+							]
+						},
+						"hsv_to_rgb2": {
+							"pos": [
+								2050,
+								-600
+							]
+						},
+						"vec3_to_float2": {
+							"pos": [
+								1750,
+								-800
+							]
+						},
+						"mult_add4": {
+							"pos": [
+								1800,
+								-550
+							]
+						},
+						"multAdd1": {
+							"pos": [
+								1850,
+								-750
+							]
+						},
+						"twoWaySwitch1": {
+							"pos": [
+								1200,
+								150
+							]
+						},
+						"multAdd2": {
+							"pos": [
+								700,
+								300
+							]
+						},
+						"fit2": {
+							"pos": [
+								200,
+								-200
+							]
+						},
+						"multAdd3": {
+							"pos": [
+								800,
+								-1850
+							]
+						},
+						"null_alpha": {
+							"pos": [
+								2200,
+								-50
+							]
+						},
+						"null_color": {
+							"pos": [
+								2150,
+								-600
+							]
+						}
+					}
+				},
+				"mesh_basic_builder_SELECTED_DOTS": {
+					"pos": [
+						0,
+						350
+					],
+					"comment": "- strategy: 0.4, 0.133, 0.988\\n- design: 0.890, 0.254, 0.356\\n- development: 0.0, 0.619, 0.992\\n- marketing: 0.996, 0.454, 0.298\\n- production: 1.0, 0.686, 0.215\\n- technology: 0.0, 0.772, 0.839\\n",
+					"nodes": {
+						"output1": {
+							"pos": [
+								1550,
+								350
+							]
+						},
+						"instance_transform1": {
+							"pos": [
+								450,
+								350
+							]
+						},
+						"attribute3": {
+							"pos": [
+								-900,
+								300
+							]
+						},
+						"rotate1": {
+							"pos": [
+								-400,
+								400
+							]
+						},
+						"globals2": {
+							"pos": [
+								-700,
+								550
+							]
+						},
+						"mult_add1": {
+							"pos": [
+								-500,
+								700
+							]
+						},
+						"param2": {
+							"pos": [
+								-800,
+								900
+							]
+						},
+						"normalize1": {
+							"pos": [
+								-150,
+								500
+							]
+						},
+						"vector_align1": {
+							"pos": [
+								0,
+								500
+							]
+						},
+						"attribute1": {
+							"pos": [
+								-400,
+								-1250
+							]
+						},
+						"switch1": {
+							"pos": [
+								0,
+								-1000
+							]
+						},
+						"float_to_int1": {
+							"pos": [
+								-200,
+								-1250
+							]
+						},
+						"param_color_role0": {
+							"pos": [
+								-300,
+								-1100
+							]
+						},
+						"param_color_role1": {
+							"pos": [
+								-300,
+								-1000
+							]
+						},
+						"param_color_role2": {
+							"pos": [
+								-300,
+								-900
+							]
+						},
+						"param_color_role3": {
+							"pos": [
+								-300,
+								-800
+							]
+						},
+						"param_color_role4": {
+							"pos": [
+								-300,
+								-700
+							]
+						},
+						"param_color_role5": {
+							"pos": [
+								-300,
+								-600
+							]
+						},
+						"attribute2": {
+							"pos": [
+								450,
+								-950
+							]
+						},
+						"two_way_switch1": {
+							"pos": [
+								800,
+								-700
+							]
+						},
+						"compare1": {
+							"pos": [
+								650,
+								-950
+							]
+						},
+						"round1": {
+							"pos": [
+								-300,
+								-1250
+							]
+						},
+						"color_correct1": {
+							"pos": [
+								1400,
+								-700
+							]
+						},
+						"vec3_to_vec4_1": {
+							"pos": [
+								1300,
+								-700
+							]
+						},
+						"vec4_to_vec3_1": {
+							"pos": [
+								1500,
+								-700
+							]
+						},
+						"round2": {
+							"pos": [
+								550,
+								-950
+							]
+						},
+						"distance1": {
+							"pos": [
+								-150,
+								-250
+							]
+						},
+						"globals1": {
+							"pos": [
+								-350,
+								-400
+							]
+						},
+						"compare2": {
+							"pos": [
+								100,
+								-450
+							]
+						},
+						"two_way_switch2": {
+							"pos": [
+								650,
+								-350
+							]
+						},
+						"length1": {
+							"pos": [
+								-100,
+								-450
+							]
+						},
+						"dot1": {
+							"pos": [
+								-200,
+								750
+							]
+						},
+						"ramp1": {
+							"pos": [
+								700,
+								900
+							]
+						},
+						"clamp1": {
+							"pos": [
+								800,
+								900
+							]
+						},
+						"dot2": {
+							"pos": [
+								-50,
+								900
+							]
+						},
+						"fit1": {
+							"pos": [
+								550,
+								900
+							]
+						},
+						"normalize2": {
+							"pos": [
+								-200,
+								950
+							]
+						},
+						"mult1": {
+							"pos": [
+								1300,
+								150
+							]
+						},
+						"null1": {
+							"pos": [
+								950,
+								600
+							]
+						},
+						"constant3": {
+							"pos": [
+								550,
+								550
+							]
+						},
+						"fit_from_01_to_variance1": {
+							"pos": [
+								750,
+								700
+							]
+						},
+						"constant_border_color": {
+							"pos": [
+								450,
+								-200
+							]
+						},
+						"constant_white_center": {
+							"pos": [
+								450,
+								-100
+							]
+						},
+						"two_way_switch3": {
+							"pos": [
+								1200,
+								-1250
+							]
+						},
+						"attribute4": {
+							"pos": [
+								850,
+								-1500
+							]
+						},
+						"compare3": {
+							"pos": [
+								1050,
+								-1500
+							]
+						},
+						"round3": {
+							"pos": [
+								950,
+								-1500
+							]
+						},
+						"constant1": {
+							"pos": [
+								850,
+								-1350
+							]
+						},
+						"distance2": {
+							"pos": [
+								500,
+								-1250
+							]
+						},
+						"globals3": {
+							"pos": [
+								350,
+								-1450
+							]
+						},
+						"mult2": {
+							"pos": [
+								1000,
+								-1250
+							]
+						},
+						"complement1": {
+							"pos": [
+								750,
+								-1250
+							]
+						},
+						"mult_add2": {
+							"pos": [
+								600,
+								-1200
+							]
+						},
+						"attribute5": {
+							"pos": [
+								-900,
+								1400
+							]
+						},
+						"substract1": {
+							"pos": [
+								-600,
+								1350
+							]
+						},
+						"clamp2": {
+							"pos": [
+								-350,
+								1350
+							]
+						},
+						"float_to_vec3_1": {
+							"pos": [
+								200,
+								1350
+							]
+						},
+						"mult_add3": {
+							"pos": [
+								-450,
+								1350
+							]
+						},
+						"easing1": {
+							"pos": [
+								-250,
+								1350
+							]
+						},
+						"null2": {
+							"pos": [
+								100,
+								1350
+							]
+						},
+						"mult_add4": {
+							"pos": [
+								-750,
+								1500
+							]
+						},
+						"compare4": {
+							"pos": [
+								-150,
+								1200
+							]
+						},
+						"clamp3": {
+							"pos": [
+								-250,
+								1500
+							]
+						},
+						"mult_add5": {
+							"pos": [
+								-350,
+								1500
+							]
+						},
+						"easing2": {
+							"pos": [
+								-50,
+								1500
+							]
+						},
+						"substract2": {
+							"pos": [
+								-600,
+								1500
+							]
+						},
+						"complement2": {
+							"pos": [
+								-150,
+								1500
+							]
+						},
+						"constant2": {
+							"pos": [
+								750,
+								600
+							]
+						},
+						"hsv_to_rgb1": {
+							"pos": [
+								550,
+								-550
+							]
+						},
+						"rgb_to_hsv1": {
+							"pos": [
+								150,
+								-550
+							]
+						},
+						"vec3_to_float1": {
+							"pos": [
+								250,
+								-550
+							]
+						},
+						"float_to_vec3_2": {
+							"pos": [
+								450,
+								-550
+							]
+						},
+						"mult_add6": {
+							"pos": [
+								350,
+								-650
+							]
+						},
+						"param_threshold": {
+							"pos": [
+								-900,
+								1250
+							]
+						},
+						"param_visibles_count": {
+							"pos": [
+								-900,
+								1600
+							]
+						},
+						"normalize3": {
+							"pos": [
+								-800,
+								300
+							]
+						},
+						"mult3": {
+							"pos": [
+								-650,
+								350
+							]
+						},
+						"constant4": {
+							"pos": [
+								-800,
+								50
+							]
+						},
+						"twoWaySwitch1": {
+							"pos": [
+								0,
+								1250
+							]
+						},
+						"multAdd1": {
+							"pos": [
+								-750,
+								1650
+							]
+						},
+						"multAdd2": {
+							"pos": [
+								-450,
+								1250
+							]
+						},
+						"multAdd3": {
+							"pos": [
+								-350,
+								1600
+							]
+						},
+						"multAdd4": {
+							"pos": [
+								-500,
+								600
+							]
+						},
+						"multAdd5": {
+							"pos": [
+								600,
+								-1350
+							]
+						},
+						"twoWaySwitch2": {
+							"pos": [
+								800,
+								-800
+							]
+						},
+						"null_color": {
+							"pos": [
+								1400,
+								150
+							]
+						},
+						"null_alpha": {
+							"pos": [
+								1100,
+								600
+							]
+						},
+						"instanceTransform1": {
+							"pos": [
+								1350,
+								500
+							]
+						},
+						"null_instanceScale": {
+							"pos": [
+								300,
+								1300
+							]
+						},
+						"null3": {
+							"pos": [
+								1050,
+								-500
+							]
+						},
+						"multAdd6": {
+							"pos": [
+								350,
+								-800
+							]
+						}
+					}
+				},
+				"mesh_basic_builder_DOTS_intro": {
+					"pos": [
+						350,
+						-300
+					],
+					"nodes": {
+						"attribute2": {
+							"pos": [
+								-300,
+								1200
+							]
+						},
+						"attribute3": {
+							"pos": [
+								-650,
+								250
+							]
+						},
+						"compare1": {
+							"pos": [
+								-150,
+								1150
+							]
+						},
+						"float_to_vec3_1": {
+							"pos": [
+								200,
+								1150
+							]
+						},
+						"instance_transform1": {
+							"pos": [
+								450,
+								250
+							]
+						},
+						"normalize1": {
+							"pos": [
+								-550,
+								250
+							]
+						},
+						"output1": {
+							"pos": [
+								1250,
+								200
+							]
+						},
+						"two_way_switch1": {
+							"pos": [
+								0,
+								1150
+							]
+						},
+						"vector_align1": {
+							"pos": [
+								-50,
+								250
+							]
+						},
+						"attribute1": {
+							"pos": [
+								-2050,
+								1000
+							]
+						},
+						"globals1": {
+							"pos": [
+								-1850,
+								100
+							]
+						},
+						"mult_add1": {
+							"pos": [
+								-1500,
+								400
+							]
+						},
+						"mult1": {
+							"pos": [
+								350,
+								950
+							]
+						},
+						"rotate1": {
+							"pos": [
+								-450,
+								400
+							]
+						},
+						"fit1": {
+							"pos": [
+								-900,
+								1000
+							]
+						},
+						"substract1": {
+							"pos": [
+								-1250,
+								850
+							]
+						},
+						"clamp1": {
+							"pos": [
+								-600,
+								1000
+							]
+						},
+						"fit2": {
+							"pos": [
+								-1300,
+								350
+							]
+						},
+						"clamp2": {
+							"pos": [
+								-1100,
+								450
+							]
+						},
+						"easing1": {
+							"pos": [
+								-900,
+								450
+							]
+						},
+						"easing2": {
+							"pos": [
+								-450,
+								1000
+							]
+						},
+						"mult_add2": {
+							"pos": [
+								-600,
+								600
+							]
+						},
+						"attribute4": {
+							"pos": [
+								-2450,
+								1150
+							]
+						},
+						"round1": {
+							"pos": [
+								-2350,
+								1150
+							]
+						},
+						"float_to_vec2_1": {
+							"pos": [
+								-2250,
+								1150
+							]
+						},
+						"random1": {
+							"pos": [
+								-2050,
+								1150
+							]
+						},
+						"fit_from_01_to_variance1": {
+							"pos": [
+								-1800,
+								1250
+							]
+						},
+						"add1": {
+							"pos": [
+								-1350,
+								1000
+							]
+						},
+						"easing3": {
+							"pos": [
+								-1950,
+								1250
+							]
+						},
+						"compare3": {
+							"pos": [
+								-1900,
+								1150
+							]
+						},
+						"two_way_switch3": {
+							"pos": [
+								-1550,
+								1150
+							]
+						},
+						"mult_add3": {
+							"pos": [
+								-1650,
+								1350
+							]
+						},
+						"noise1": {
+							"pos": [
+								-250,
+								0
+							]
+						},
+						"add2": {
+							"pos": [
+								-50,
+								0
+							]
+						},
+						"normalize2": {
+							"pos": [
+								100,
+								0
+							]
+						},
+						"null1": {
+							"pos": [
+								-550,
+								0
+							]
+						},
+						"float_to_vec3_2": {
+							"pos": [
+								-450,
+								0
+							]
+						},
+						"complement1": {
+							"pos": [
+								-850,
+								50
+							]
+						},
+						"complement2": {
+							"pos": [
+								-750,
+								450
+							]
+						},
+						"param1": {
+							"pos": [
+								-650,
+								-500
+							]
+						},
+						"color_correct1": {
+							"pos": [
+								-400,
+								-500
+							]
+						},
+						"vec3_to_vec4_1": {
+							"pos": [
+								-550,
+								-500
+							]
+						},
+						"vec4_to_vec3_1": {
+							"pos": [
+								-300,
+								-500
+							]
+						},
+						"constant_white": {
+							"pos": [
+								-400,
+								-250
+							]
+						},
+						"mix1": {
+							"pos": [
+								-150,
+								-300
+							]
+						},
+						"attribute5": {
+							"pos": [
+								-2150,
+								800
+							]
+						},
+						"two_way_switch2": {
+							"pos": [
+								-1900,
+								800
+							]
+						},
+						"compare2": {
+							"pos": [
+								-2050,
+								800
+							]
+						},
+						"add3": {
+							"pos": [
+								-1750,
+								900
+							]
+						},
+						"two_way_switch4": {
+							"pos": [
+								0,
+								1050
+							]
+						},
+						"attribute6": {
+							"pos": [
+								-750,
+								650
+							]
+						},
+						"float_to_vec3_3": {
+							"pos": [
+								200,
+								1050
+							]
+						},
+						"mult_add4": {
+							"pos": [
+								-700,
+								-100
+							]
+						},
+						"attribute7": {
+							"pos": [
+								-900,
+								-200
+							]
+						},
+						"param_progress": {
+							"pos": [
+								-1700,
+								550
+							]
+						},
+						"model_view_matrix_mult1": {
+							"pos": [
+								550,
+								100
+							]
+						},
+						"varying_write1": {
+							"pos": [
+								700,
+								100
+							]
+						},
+						"varying_read1": {
+							"pos": [
+								-150,
+								-650
+							]
+						},
+						"fog1": {
+							"pos": [
+								50,
+								-650
+							]
+						},
+						"constant_size_land": {
+							"pos": [
+								-150,
+								1400
+							]
+						},
+						"constant_size_sea": {
+							"pos": [
+								-150,
+								1300
+							]
+						},
+						"twoWaySwitch1": {
+							"pos": [
+								50,
+								1250
+							]
+						},
+						"twoWaySwitch2": {
+							"pos": [
+								0,
+								900
+							]
+						},
+						"fit3": {
+							"pos": [
+								-900,
+								1100
+							]
+						},
+						"twoWaySwitch3": {
+							"pos": [
+								-1900,
+								700
+							]
+						},
+						"fit4": {
+							"pos": [
+								-1200,
+								350
+							]
+						},
+						"multAdd1": {
+							"pos": [
+								-600,
+								700
+							]
+						},
+						"multAdd2": {
+							"pos": [
+								-700,
+								-250
+							]
+						},
+						"null_COLOR": {
+							"pos": [
+								-50,
+								-300
+							]
+						},
+						"instanceTransform1": {
+							"pos": [
+								950,
+								350
+							]
+						},
+						"null_INSTANCE_TRANSFORM_SCALE": {
+							"pos": [
+								450,
+								950
+							]
+						},
+						"noise2": {
+							"pos": [
+								-200,
+								-150
+							]
+						},
+						"null_INSTANCE_TRANSFORM_ORIENTATION": {
+							"pos": [
+								50,
+								350
+							]
+						},
+						"null_INSTANCE_TRANSFORM_POSITION": {
+							"pos": [
+								50,
+								-100
+							]
+						},
+						"complement3": {
+							"pos": [
+								-850,
+								-50
+							]
+						},
+						"easing4": {
+							"pos": [
+								-950,
+								250
+							]
+						},
+						"constant1": {
+							"pos": [
+								-1050,
+								0
+							]
+						},
+						"easing5": {
+							"pos": [
+								-1950,
+								1350
+							]
+						},
+						"constant2": {
+							"pos": [
+								-2200,
+								1350
+							]
+						},
+						"constant3": {
+							"pos": [
+								-1450,
+								850
+							]
+						}
+					}
+				},
+				"mesh_basic_builder_pulse_shadow": {
+					"pos": [
+						0,
+						700
+					],
+					"nodes": {
+						"globals1": {
+							"pos": [
+								-300,
+								0
+							]
+						},
+						"output1": {
+							"pos": [
+								1100,
+								150
+							]
+						},
+						"disk1": {
+							"pos": [
+								50,
+								300
+							]
+						},
+						"mix1": {
+							"pos": [
+								900,
+								300
+							]
+						},
+						"complement1": {
+							"pos": [
+								850,
+								700
+							]
+						},
+						"param_baseopacity": {
+							"pos": [
+								500,
+								700
+							]
+						},
+						"constant1": {
+							"pos": [
+								-100,
+								-1250
+							]
+						},
+						"param_shadowcolor": {
+							"pos": [
+								200,
+								-350
+							]
+						},
+						"disk2": {
+							"pos": [
+								50,
+								100
+							]
+						},
+						"param_pulsecolor": {
+							"pos": [
+								200,
+								-450
+							]
+						},
+						"mult1": {
+							"pos": [
+								400,
+								-450
+							]
+						},
+						"max1": {
+							"pos": [
+								350,
+								200
+							]
+						},
+						"mult2": {
+							"pos": [
+								400,
+								-350
+							]
+						},
+						"max2": {
+							"pos": [
+								600,
+								-400
+							]
+						},
+						"param_radius": {
+							"pos": [
+								-550,
+								400
+							]
+						},
+						"mult_add1": {
+							"pos": [
+								-150,
+								600
+							]
+						},
+						"mult_add2": {
+							"pos": [
+								-150,
+								350
+							]
+						},
+						"param_shadow_intensity": {
+							"pos": [
+								100,
+								500
+							]
+						},
+						"mult3": {
+							"pos": [
+								200,
+								300
+							]
+						},
+						"mult4": {
+							"pos": [
+								-400,
+								450
+							]
+						},
+						"constant2": {
+							"pos": [
+								-550,
+								550
+							]
+						},
+						"attribute1": {
+							"pos": [
+								-100,
+								850
+							]
+						},
+						"param_id": {
+							"pos": [
+								-100,
+								1000
+							]
+						},
+						"round1": {
+							"pos": [
+								50,
+								850
+							]
+						},
+						"round2": {
+							"pos": [
+								50,
+								1000
+							]
+						},
+						"compare1": {
+							"pos": [
+								250,
+								900
+							]
+						},
+						"two_way_switch1": {
+							"pos": [
+								450,
+								850
+							]
+						},
+						"mult5": {
+							"pos": [
+								1000,
+								850
+							]
+						},
+						"mult_add3": {
+							"pos": [
+								750,
+								750
+							]
+						},
+						"attribute2": {
+							"pos": [
+								-800,
+								-1300
+							]
+						},
+						"switch1": {
+							"pos": [
+								-400,
+								-1050
+							]
+						},
+						"float_to_int1": {
+							"pos": [
+								-600,
+								-1300
+							]
+						},
+						"param_color_role0": {
+							"pos": [
+								-700,
+								-1150
+							]
+						},
+						"param_color_role1": {
+							"pos": [
+								-700,
+								-1050
+							]
+						},
+						"param_color_role2": {
+							"pos": [
+								-700,
+								-950
+							]
+						},
+						"param_color_role3": {
+							"pos": [
+								-700,
+								-850
+							]
+						},
+						"param_color_role4": {
+							"pos": [
+								-700,
+								-750
+							]
+						},
+						"param_color_role5": {
+							"pos": [
+								-700,
+								-650
+							]
+						},
+						"round3": {
+							"pos": [
+								-700,
+								-1300
+							]
+						},
+						"min1": {
+							"pos": [
+								600,
+								-300
+							]
+						},
+						"compare2": {
+							"pos": [
+								350,
+								-50
+							]
+						},
+						"two_way_switch2": {
+							"pos": [
+								600,
+								-150
+							]
+						},
+						"disk3": {
+							"pos": [
+								50,
+								-100
+							]
+						},
+						"hsv_to_rgb1": {
+							"pos": [
+								200,
+								-1050
+							]
+						},
+						"rgb_to_hsv1": {
+							"pos": [
+								-250,
+								-1050
+							]
+						},
+						"float_to_vec3_1": {
+							"pos": [
+								100,
+								-1000
+							]
+						},
+						"vec3_to_float1": {
+							"pos": [
+								-150,
+								-1000
+							]
+						},
+						"mult_add4": {
+							"pos": [
+								-50,
+								-900
+							]
+						},
+						"mix2": {
+							"pos": [
+								-50,
+								-600
+							]
+						},
+						"constant_white": {
+							"pos": [
+								-200,
+								-500
+							]
+						},
+						"multAdd1": {
+							"pos": [
+								-50,
+								-800
+							]
+						},
+						"twoWaySwitch1": {
+							"pos": [
+								750,
+								-50
+							]
+						},
+						"multAdd2": {
+							"pos": [
+								-150,
+								700
+							]
+						},
+						"multAdd3": {
+							"pos": [
+								-150,
+								450
+							]
+						},
+						"twoWaySwitch2": {
+							"pos": [
+								450,
+								950
+							]
+						},
+						"multAdd4": {
+							"pos": [
+								750,
+								550
+							]
+						}
+					}
+				}
+			}
+		},
+		"perspective_camera_MASTER": {
+			"pos": [
+				-650,
+				-100
+			],
+			"nodes": {
+				"renderers1": {
+					"pos": [
+						-200,
+						150
+					],
+					"nodes": {
+						"webgl_renderer1": {
+							"pos": [
+								-200,
+								200
+							]
+						},
+						"css2d_renderer1": {
+							"pos": [
+								-200,
+								300
+							]
+						}
+					}
+				}
+			}
+		},
+		"globe_shadow": {
+			"pos": [
+				-500,
+				0
+			],
+			"nodes": {
+				"plane1": {
+					"pos": [
+						-150,
+						100
+					]
+				},
+				"transform1": {
+					"pos": [
+						-150,
+						250
+					]
+				},
+				"material1": {
+					"pos": [
+						-150,
+						500
+					]
+				}
+			}
+		},
+		"arcs": {
+			"pos": [
+				150,
+				150
+			],
+			"nodes": {
+				"OUT": {
+					"pos": [
+						200,
+						2700
+					]
+				},
+				"OUT_selected_dots": {
+					"pos": [
+						200,
+						650
+					]
+				},
+				"REF_attribs_role": {
+					"pos": [
+						50,
+						1250
+					]
+				},
+				"attrib_add_mult1": {
+					"pos": [
+						450,
+						1500
+					]
+				},
+				"attrib_copy1": {
+					"pos": [
+						450,
+						1250
+					]
+				},
+				"attrib_create2": {
+					"pos": [
+						300,
+						1150
+					]
+				},
+				"attrib_create3": {
+					"pos": [
+						200,
+						1900
+					]
+				},
+				"attrib_create4": {
+					"pos": [
+						200,
+						2000
+					]
+				},
+				"attrib_create5": {
+					"pos": [
+						200,
+						2100
+					]
+				},
+				"attrib_normalize1": {
+					"pos": [
+						450,
+						1400
+					]
+				},
+				"center1": {
+					"pos": [
+						300,
+						1050
+					]
+				},
+				"circle3points2": {
+					"pos": [
+						200,
+						1800
+					]
+				},
+				"copy1": {
+					"pos": [
+						200,
+						2200
+					]
+				},
+				"material2": {
+					"pos": [
+						200,
+						2450
+					]
+				},
+				"merge1": {
+					"pos": [
+						200,
+						1700
+					]
+				},
+				"merge5": {
+					"pos": [
+						200,
+						2350
+					]
+				},
+				"null1": {
+					"pos": [
+						200,
+						900
+					]
+				},
+				"object_properties1": {
+					"pos": [
+						200,
+						2600
+					]
+				},
+				"transform_to_have_space_for_pulse_objects": {
+					"pos": [
+						200,
+						550
+					]
+				},
+				"delete_for_copy_sop": {
+					"pos": [
+						200,
+						800
+					]
+				},
+				"data_IN": {
+					"pos": [
+						1450,
+						350
+					]
+				},
+				"add8": {
+					"pos": [
+						-3000,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy14": {
+					"pos": [
+						-3150,
+						-900
+					]
+				},
+				"attrib_create_role_strategy15": {
+					"pos": [
+						-2900,
+						-900
+					]
+				},
+				"add9": {
+					"pos": [
+						-2150,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy16": {
+					"pos": [
+						-2300,
+						-900
+					]
+				},
+				"attrib_create_role_strategy17": {
+					"pos": [
+						-2050,
+						-900
+					]
+				},
+				"add10": {
+					"pos": [
+						-1150,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy18": {
+					"pos": [
+						-1300,
+						-900
+					]
+				},
+				"attrib_create_role_strategy19": {
+					"pos": [
+						-1050,
+						-900
+					]
+				},
+				"add11": {
+					"pos": [
+						0,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy20": {
+					"pos": [
+						-150,
+						-900
+					]
+				},
+				"attrib_create_role_strategy21": {
+					"pos": [
+						100,
+						-900
+					]
+				},
+				"add12": {
+					"pos": [
+						1050,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy22": {
+					"pos": [
+						900,
+						-900
+					]
+				},
+				"attrib_create_role_strategy23": {
+					"pos": [
+						1150,
+						-900
+					]
+				},
+				"add13": {
+					"pos": [
+						2300,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy24": {
+					"pos": [
+						2150,
+						-900
+					]
+				},
+				"attrib_create_role_strategy25": {
+					"pos": [
+						2400,
+						-900
+					]
+				},
+				"add14": {
+					"pos": [
+						3300,
+						-1100
+					]
+				},
+				"attrib_create_role_strategy26": {
+					"pos": [
+						3150,
+						-900
+					]
+				},
+				"attrib_create_role_strategy27": {
+					"pos": [
+						3400,
+						-900
+					]
+				},
+				"merge10": {
+					"pos": [
+						-300,
+						200
+					]
+				},
+				"merge2": {
+					"pos": [
+						-300,
+						2400
+					]
+				},
+				"polarTransform_LONDON": {
+					"pos": [
+						-2900,
+						-700
+					]
+				},
+				"polarTransform_BERLIN": {
+					"pos": [
+						-2300,
+						-700
+					]
+				},
+				"polarTransform_KIEV": {
+					"pos": [
+						-2050,
+						-700
+					]
+				},
+				"polarTransform_BOSTON": {
+					"pos": [
+						-1300,
+						-700
+					]
+				},
+				"polarTransform_TEL_AVIV": {
+					"pos": [
+						-1050,
+						-700
+					]
+				},
+				"polarTransform_BANGALORE": {
+					"pos": [
+						-150,
+						-700
+					]
+				},
+				"polarTransform_BANGKOK": {
+					"pos": [
+						100,
+						-700
+					]
+				},
+				"polarTransform_SYDNEY": {
+					"pos": [
+						900,
+						-700
+					]
+				},
+				"polarTransform_SEATTLE": {
+					"pos": [
+						1150,
+						-700
+					]
+				},
+				"polarTransform_SAN_JOSE": {
+					"pos": [
+						2150,
+						-700
+					]
+				},
+				"polarTransform_MEDELLIN": {
+					"pos": [
+						2400,
+						-700
+					]
+				},
+				"polarTransform_BUENOS_AIRES": {
+					"pos": [
+						3150,
+						-700
+					]
+				},
+				"polarTransform_CAPE_TOWN": {
+					"pos": [
+						3400,
+						-700
+					]
+				},
+				"polarTransform_NEW_YORK": {
+					"pos": [
+						-3150,
+						-700
+					]
+				},
+				"merge11": {
+					"pos": [
+						300,
+						200
+					]
+				}
+			}
+		},
+		"selected_dots": {
+			"pos": [
+				250,
+				250
+			],
+			"nodes": {
+				"attrib_create_id": {
+					"pos": [
+						400,
+						50
+					]
+				},
+				"attrib_create_shadow1": {
+					"pos": [
+						-200,
+						-250
+					]
+				},
+				"attrib_create_shadow2": {
+					"pos": [
+						0,
+						-250
+					]
+				},
+				"attrib_create_sphere": {
+					"pos": [
+						0,
+						-150
+					]
+				},
+				"attrib_create_sphere1": {
+					"pos": [
+						-200,
+						-150
+					]
+				},
+				"circle1": {
+					"pos": [
+						-200,
+						-450
+					]
+				},
+				"instance1": {
+					"pos": [
+						250,
+						300
+					]
+				},
+				"merge1": {
+					"pos": [
+						-50,
+						50
+					]
+				},
+				"object_merge1": {
+					"pos": [
+						400,
+						-100
+					]
+				},
+				"sphere1": {
+					"pos": [
+						0,
+						-450
+					]
+				},
+				"REF_cook": {
+					"pos": [
+						250,
+						400
+					]
+				}
+			}
+		},
+		"css_objects": {
+			"pos": [
+				450,
+				450
+			],
+			"nodes": {
+				"object_merge1": {
+					"pos": [
+						100,
+						0
+					]
+				},
+				"css2d_object1": {
+					"pos": [
+						100,
+						400
+					]
+				},
+				"attrib_create1": {
+					"pos": [
+						100,
+						300
+					]
+				},
+				"attrib_create2": {
+					"pos": [
+						100,
+						200
+					]
+				},
+				"OUT": {
+					"pos": [
+						100,
+						550
+					]
+				},
+				"attrib_create3": {
+					"pos": [
+						100,
+						100
+					]
+				}
+			}
+		},
+		"globe_self_shadow": {
+			"pos": [
+				50,
+				50
+			],
+			"nodes": {
+				"sphere1": {
+					"pos": [
+						50,
+						-50
+					]
+				},
+				"material1": {
+					"pos": [
+						50,
+						50
+					]
+				}
+			}
+		},
+		"pulses": {
+			"pos": [
+				350,
+				350
+			],
+			"nodes": {
+				"attrib_create_id": {
+					"pos": [
+						150,
+						-50
+					]
+				},
+				"object_merge1": {
+					"pos": [
+						150,
+						-200
+					]
+				},
+				"copy1": {
+					"pos": [
+						-50,
+						700
+					]
+				},
+				"normals1": {
+					"pos": [
+						150,
+						100
+					]
+				},
+				"REF_cook": {
+					"pos": [
+						-50,
+						1300
+					]
+				},
+				"point1": {
+					"pos": [
+						150,
+						200
+					]
+				},
+				"plane2": {
+					"pos": [
+						-250,
+						200
+					]
+				},
+				"transform9": {
+					"pos": [
+						-250,
+						350
+					]
+				},
+				"material3": {
+					"pos": [
+						-50,
+						1150
+					]
+				},
+				"object_properties3": {
+					"pos": [
+						-250,
+						450
+					]
+				},
+				"attrib_create_id4": {
+					"pos": [
+						150,
+						550
+					]
+				},
+				"attrib_promote1": {
+					"pos": [
+						-50,
+						1050
+					]
+				},
+				"delete_keep_first_pt_of_each_arc": {
+					"pos": [
+						250,
+						300
+					]
+				},
+				"delete_first_pt": {
+					"pos": [
+						200,
+						400
+					]
+				}
+			}
+		},
+		"perspectiveCamera_DEBUG": {
+			"pos": [
+				-650,
+				-250
+			],
+			"nodes": {
+				"events1": {
+					"pos": [
+						-500,
+						-50
+					],
+					"nodes": {
+						"cameraOrbitControls1": {
+							"pos": [
+								-600,
+								50
+							]
+						}
+					}
+				}
+			}
+		}
+	}
+}

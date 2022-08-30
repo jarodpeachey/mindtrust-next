@@ -1,0 +1,21 @@
+{
+	"type": "perspectiveCamera",
+	"nodes": {},
+	"params": {
+		"t": [
+			0,
+			0,
+			3
+		],
+		"near": 0.1,
+		"far": 10,
+		"fov": 64,
+		"setRenderer": 1,
+		"renderer": "renderers1/webgl_renderer1",
+		"setCSSRenderer": 1,
+		"CSSRenderer": "renderers1/css2d_renderer1"
+	},
+	"flags": {
+		"display": true
+	}
+}

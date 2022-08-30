@@ -1,0 +1,66 @@
+{
+	"type": "geo",
+	"nodes": {
+		"plane1": {
+			"type": "plane",
+			"params": {
+				"size": [
+					5,
+					5
+				],
+				"direction": [
+					0,
+					0,
+					1
+				]
+			},
+			"flags": {
+				"optimize": true
+			}
+		},
+		"transform1": {
+			"type": "transform",
+			"params": {
+				"t": [
+					0,
+					0,
+					-4
+				]
+			},
+			"inputs": [
+				"plane1"
+			],
+			"flags": {
+				"optimize": true
+			}
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/mesh_basic_BG"
+			},
+			"inputs": [
+				"transform1"
+			],
+			"flags": {
+				"display": true,
+				"optimize": true
+			},
+			"cloned_state_overriden": true
+		}
+	},
+	"params": {
+		"renderOrder": 8
+	},
+	"inputs": [
+		"perspective_camera_MASTER"
+	],
+	"flags": {
+		"display": true
+	},
+	"selection": [
+		"plane1",
+		"transform1",
+		"material1"
+	]
+}

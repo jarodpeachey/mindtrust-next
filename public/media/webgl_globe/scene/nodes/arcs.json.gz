@@ -1,0 +1,1091 @@
+{
+  "type": "geo",
+  "nodes": {
+    "OUT": {
+      "type": "null",
+      "inputs": [
+        "object_properties1"
+      ],
+      "flags": {
+        "display": true,
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "OUT_selected_dots": {
+      "type": "null",
+      "inputs": [
+        "transform_to_have_space_for_pulse_objects"
+      ],
+      "cloned_state_overriden": true
+    },
+    "REF_attribs_role": {
+      "type": "null",
+      "inputs": [
+        "null1"
+      ]
+    },
+    "attrib_add_mult1": {
+      "type": "attrib_add_mult",
+      "params": {
+        "name": "position",
+        "mult": 1.35
+      },
+      "inputs": [
+        "attrib_normalize1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_copy1": {
+      "type": "attrib_copy",
+      "params": {
+        "name": "role"
+      },
+      "inputs": [
+        "attrib_create2",
+        "null1"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create2": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role"
+      },
+      "inputs": [
+        "center1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_create3": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role1",
+        "value1": "point('../REF_attribs_role', 'role', 1)"
+      },
+      "inputs": [
+        "circle3points2"
+      ],
+      "cloned_state_overriden": true
+    },
+    "attrib_create4": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role0",
+        "value1": "point('../REF_attribs_role', 'role', 0)"
+      },
+      "inputs": [
+        "attrib_create3"
+      ],
+      "cloned_state_overriden": true
+    },
+    "attrib_create5": {
+      "type": "attrib_create",
+      "params": {
+        "name": "arc_id",
+        "value1": "copy('../copy1', 0)"
+      },
+      "inputs": [
+        "attrib_create4"
+      ],
+      "cloned_state_overriden": true
+    },
+    "attrib_normalize1": {
+      "type": "attrib_normalize",
+      "params": {
+        "mode": 1
+      },
+      "inputs": [
+        "attrib_copy1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "center1": {
+      "type": "center",
+      "inputs": [
+        "null1"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "circle3points2": {
+      "type": "circle3points",
+      "params": {
+        "segments_length": 0.005,
+        "segments_count": 40,
+        "full": false,
+        "join_mode": 1,
+        "add_id_attribute": false
+      },
+      "inputs": [
+        "merge1"
+      ]
+    },
+    "copy1": {
+      "type": "copy",
+      "params": {
+        "count": "0.5*points_count('../OUT_selected_dots')",
+        "use_copy_expr": true
+      },
+      "inputs": [
+        "attrib_create5"
+      ]
+    },
+    "material2": {
+      "type": "material",
+      "params": {
+        "material": "/MAT/mesh_basic_builder_ARCS"
+      },
+      "inputs": [
+        "merge5"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge1": {
+      "type": "merge",
+      "inputs": [
+        "null1",
+        "attrib_add_mult1"
+      ]
+    },
+    "merge5": {
+      "type": "merge",
+      "inputs": [
+        "copy1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "null1": {
+      "type": "null",
+      "inputs": [
+        "delete_for_copy_sop"
+      ]
+    },
+    "object_properties1": {
+      "type": "object_properties",
+      "params": {
+        "cast_shadow": 0,
+        "receive_shadow": 0
+      },
+      "inputs": [
+        "material2"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add1": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -13,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          -5.1,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lat1": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -24,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng1": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          67.20000000000002,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add2": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat2": {
+      "type": "transform",
+      "params": {
+        "r": [
+          203,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy3"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng2": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          -82,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat2"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lat3": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -25.22,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy2"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng3": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          80.7,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat3"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add3": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat4": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -4.9,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy4"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng4": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          101.9,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat4"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lat6": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -17,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy5"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng6": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          0.7000000000000002,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat6"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add4": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat5": {
+      "type": "transform",
+      "params": {
+        "r": [
+          7,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy7"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng5": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          -219.2,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat5"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lat7": {
+      "type": "transform",
+      "params": {
+        "r": [
+          8.5,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy6"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng7": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          -197,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat7"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add5": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat8": {
+      "type": "transform",
+      "params": {
+        "r": [
+          46.2,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy9"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng8": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          212,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat8"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lat9": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -21.6,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy8"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng9": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          310,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat9"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add6": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat11": {
+      "type": "transform",
+      "params": {
+        "r": [
+          17.299999999999997,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy10"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng11": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          -3.6,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat11"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "add7": {
+      "type": "add",
+      "params": {
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      "flags": {
+        "optimize": true
+      }
+    },
+    "transform_lat12": {
+      "type": "transform",
+      "params": {
+        "r": [
+          50,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy13"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng12": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          13.199999999999989,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat12"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lat13": {
+      "type": "transform",
+      "params": {
+        "r": [
+          -5.8000000000000025,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy11"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng13": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          -41.1,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat13"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_to_have_space_for_pulse_objects": {
+      "type": "transform",
+      "params": {
+        "scale": 1.01
+      },
+      "inputs": [
+        "data_IN"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "delete_for_copy_sop": {
+      "type": "delete",
+      "params": {
+        "invert": true,
+        "by_expression": true,
+        "expression": "@ptnum==(2*copy('../copy1', 0)) || @ptnum==(1+2*copy('../copy1', 0))"
+      },
+      "inputs": [
+        "OUT_selected_dots"
+      ]
+    },
+    "transform_lat14": {
+      "type": "transform",
+      "params": {
+        "r": [
+          46.1,
+          0,
+          0
+        ]
+      },
+      "inputs": [
+        "attrib_create_role_strategy12"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "transform_lng14": {
+      "type": "transform",
+      "params": {
+        "r": [
+          0,
+          445,
+          0
+        ]
+      },
+      "inputs": [
+        "transform_lat14"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "attrib_create_role_strategy": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role"
+      },
+      "inputs": [
+        "add1"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy1": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 1
+      },
+      "inputs": [
+        "add1"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy2": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 5
+      },
+      "inputs": [
+        "add2"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy3": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 2
+      },
+      "inputs": [
+        "add2"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy4": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 5
+      },
+      "inputs": [
+        "add3"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy5": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 3
+      },
+      "inputs": [
+        "add3"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy6": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 4
+      },
+      "inputs": [
+        "add4"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy7": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 2
+      },
+      "inputs": [
+        "add4"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy8": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role"
+      },
+      "inputs": [
+        "add5"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy9": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 3
+      },
+      "inputs": [
+        "add5"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy10": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 2
+      },
+      "inputs": [
+        "add6"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy11": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 1
+      },
+      "inputs": [
+        "add6"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy12": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 3
+      },
+      "inputs": [
+        "add7"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "attrib_create_role_strategy13": {
+      "type": "attrib_create",
+      "params": {
+        "name": "role",
+        "value1": 4
+      },
+      "inputs": [
+        "add7"
+      ],
+      "flags": {
+        "optimize": true
+      }
+    },
+    "data_IN": {
+      "type": "data",
+      "params": {
+        "data": "[{\"role\":0,\"position\":[-0.08661594179679255,0.224951054343865,0.9705125974330463]},{\"role\":1,\"position\":[0.842163894701767,0.40673664307580026,0.3540131037690272]},{\"role\":5,\"position\":[0.020865881541637616,0.08541692313736747,0.9961267812026918]},{\"role\":2,\"position\":[0.627318252084546,-0.12186934340514748,-0.7691681699989852]},{\"role\":5,\"position\":[-0.366780001441441,-0.7217602280983622,-0.5869707008684647]},{\"role\":0,\"position\":[-0.6540099505021288,0.10105629718294634,0.7497056818804796]},{\"role\":3,\"position\":[0.6907632249754878,-0.7205511116803305,0.060433951365962815]},{\"role\":3,\"position\":[0.011683176002351244,0.29237170472273677,0.9562333866143865]},{\"role\":2,\"position\":[-0.059949926627003255,-0.29737487407778596,0.9528767971593379]},{\"role\":4,\"position\":[0.28916025396895295,-0.14780941112961063,-0.9458005738558888]},{\"role\":2,\"position\":[0.9115465634955903,0.39073112848927355,-0.1281095149037668]},{\"role\":4,\"position\":[0.1467811099682698,-0.766044443118978,0.6258044558190821]},{\"role\":3,\"position\":[-0.712250110357386,0.368124552684678,0.5976488049068593]},{\"role\":5,\"position\":[0.8927870232467522,0.4260951098432339,0.14619948183863543]}]"
+      }
+    },
+    "merge_dots": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng",
+        "transform_lng1"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots1": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng2",
+        "transform_lng5"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots2": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng8",
+        "transform_lng13"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots3": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng12",
+        "transform_lng3"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots4": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng4",
+        "transform_lng12"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots5": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng11",
+        "transform_lng6"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots6": {
+      "type": "merge",
+      "inputs": [
+        "transform_lng9",
+        "transform_lng7"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots7": {
+      "type": "merge",
+      "inputs": [
+        "merge_dots4",
+        "merge_dots5",
+        "merge_dots6"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots8": {
+      "type": "merge",
+      "inputs": [
+        "merge_dots"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    },
+    "merge_dots9": {
+      "type": "merge",
+      "inputs": [
+        "merge_dots8"
+      ],
+      "flags": {
+        "optimize": true
+      },
+      "cloned_state_overriden": true
+    }
+  },
+  "inputs": [
+    "null_ry"
+  ],
+  "flags": {
+    "display": true
+  },
+  "selection": [
+    "OUT"
+  ]
+}
