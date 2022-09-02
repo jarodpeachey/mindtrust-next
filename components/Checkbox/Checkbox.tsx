@@ -9,6 +9,8 @@ interface Props {
 }
 
 const Checkbox: React.FC<Props> = props => {
+  console.log("PROPS: ", props);
+  
   return (
     <label className={`checkbox ${props.className || ""} ${props.id || ""}`}>
       <input type="checkbox" id={props.id} />

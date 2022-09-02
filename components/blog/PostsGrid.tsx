@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import "../../styles/partials/_posts.scss"
 import PostCard from "../cards/PostCard"
@@ -6,6 +5,7 @@ import PostCard from "../cards/PostCard"
 interface PostsGridProps {
   category?: string
   show: number
+  currentPost: string
 }
 
 const PostsGrid: React.FC<PostsGridProps> = ({ show = 6, category, currentPost }) => {
@@ -39,7 +39,7 @@ const PostsGrid: React.FC<PostsGridProps> = ({ show = 6, category, currentPost }
   // `)
   return (
     <>
-      {entries.filter(entry => entry.id !== currentPost).length > 1 && (
+      {/* {entries.filter(entry => entry.id !== currentPost).length > 1 && (
         <aside className="read-more" aria-labelledby="read-more__title">
           <div className="container">
             <h3 id="read-more__title">Read similar posts</h3>
@@ -81,7 +81,8 @@ const PostsGrid: React.FC<PostsGridProps> = ({ show = 6, category, currentPost }
             </div>
           </div>
         </aside>
-      )}
+      )} */}
+      <div></div>
     </>
   )
 }

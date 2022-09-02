@@ -3,7 +3,7 @@ import TestimonialCarouselSlide from "./TestimonialCarouselSlide"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "./TestimonialCarousel.module.scss"
-// import "../../static/js/testimonialCarousel"
+// import "../public/js/testimonialCarousel"
 
 library.add(faChevronLeft, faChevronRight)
 

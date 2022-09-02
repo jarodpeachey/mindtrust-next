@@ -12,7 +12,7 @@
 @use "partials/cards/team-card";
 @use "partials/talent-carousel";
 @use "partials/webgl_globe";
-
+@use "partials/pages/silo";
 
 html {
   font-size: 100%;
@@ -32,7 +32,7 @@ body {
     content: "";
     width: 175px;
     height: 999999999px;
-    background: url("/images/grid.png");
+    background: url("/media/img/grid.png");
     position: fixed;
     z-index: -1;
     top: 0;
@@ -61,10 +61,10 @@ figure {
     margin: auto;
   }
 
-  .nav .container,
+  nav .container,
   footer .container,
-  .home .hero .container,
-  .silo .hero .container {
+  .home [class*="hero"] .container,
+  .silo [class*="hero"] .container {
     max-width: 1400px;
     padding-left: 30px;
     padding-right: 30px;

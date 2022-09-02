@@ -265,14 +265,15 @@
       previousSlide = currentIndex
     }
 
-    if (click) {
+    if (click && toggleButton) {
       const newCurrentIndex = parseInt(toggleButton.id.substring(toggleButton.id.length - 1, toggleButton.id.length))
 
       if (previousSlide !== newCurrentIndex) {
-        toggleAnimationFunction()
+        toggleAnimationFunction(toggleButton)
       }
-    } else {
-      toggleAnimationFunction()
+    } else if (toggleButton) {
+      toggleAnimationFunction(toggleButton)
     }
+    
   }
 })()

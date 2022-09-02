@@ -1,13 +1,19 @@
 import React from "react"
 import styles from "./PostCard.module.scss"
-import { formatDate } from "../../../static/js/utils/formatDate"
+import { formatDate } from "../../public/js/utils/formatDate"
+
+interface PostType {
+  widgets: any
+  publishDate: string
+  htmlTitle: string
+}
 
 interface NewsCardProps {
   href: string
   className?: string
   children: object
   category: string
-  post: object
+  post: PostType
 }
 
 const NewsCard: React.FC<NewsCardProps> = props => {

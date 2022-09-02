@@ -1,13 +1,20 @@
 import React from "react"
 import "../../styles/partials/_events-entry.scss"
-import { formatDate } from "../../../static/js/utils/formatDate"
+import { formatDate } from "../../public/js/utils/formatDate"
+
+interface PostType {
+  title: string
+  date: string
+  location: string
+  slug: string
+}
 
 interface EventsEntryProps {
   href: string
   className?: string
   children: object
   category: string
-  post: object
+  post: PostType
 }
 
 const EventsEntry: React.FC<EventsEntryProps> = props => {

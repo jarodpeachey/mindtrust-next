@@ -55,6 +55,9 @@ export default function Home({ data }) {
       <Script src="/js/talentCarousel.js" />
       <header>
         <Navigation />
+        {/* <Checkbox id="consent-checkbox" className="consent-checkbox">
+          I consent to my e-mail being used for marketing offers and updates.
+        </Checkbox> */}
         <div className={styles["linear-gradient-box"]}></div>
         <div className={styles.hero}>
           <div className="container">
@@ -88,7 +91,7 @@ export default function Home({ data }) {
           </div>
         </div>
 
-        <div className="container" id="trusted-by">
+        <div className={`container ${styles["trusted-by"]}`} id="trusted-by">
           <div className={styles.logos}>
             <div className={styles.logo}>
               <div className={styles.text}>Trusted by:</div>
@@ -417,11 +420,11 @@ export default function Home({ data }) {
   )
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData,
-    },
-  }
-}
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData()
+//   return {
+//     props: {
+//       allPostsData,
+//     },
+//   }
+// }

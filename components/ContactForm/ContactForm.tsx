@@ -2,10 +2,6 @@ import React from "react"
 
 import "../../styles/partials/_contact-form.scss"
 import "../../styles/partials/pages/_contact.scss"
-import Option from "../Option"
-import Select from "../Select"
-import Checkbox from "../Checkbox/Checkbox"
-import RadioButton from "../RadioButton"
 import styles from "./ContactForm.module.scss"
 
 interface Props {

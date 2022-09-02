@@ -20,6 +20,13 @@
   }
 }
 
+.webgl-globe-container {
+  z-index: -1;
+  @include media-breakpoint-up(md) {
+    position: relative;
+  }
+}
+
 .webgl-globe {
   position: absolute;
   top: -40%;

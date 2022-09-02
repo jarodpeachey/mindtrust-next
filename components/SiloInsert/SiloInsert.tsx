@@ -6,7 +6,7 @@ import { BRIDGE_APP_URL } from "../../config"
 import { teamCards } from "../../data/designPage"
 import TeamCard from "../cards/TeamCard"
 
-// import "../../static/js/talentCarousel
+// import "../public/js/talentCarousel
 const SiloInsert = ({ title, subtitle, silo }) => {
   return (
     <div className={`silo-insert ${silo.toLowerCase()}`}>

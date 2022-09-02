@@ -1,10 +1,10 @@
-@use "colors" as *;
-@use "breakpoints" as *;
-@use "shadows" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/shadows" as *;
 
-[class*="scene--"] svg {
-  border-radius: 18px;
-}
+// [class*="scene--"] svg {
+//   border-radius: 18px;
+// }
 
 .scene--phone {
   width: 100%;
@@ -103,7 +103,7 @@
     display: block;
   }
 
-  .teamCard {
+  [class*="teamCard"] {
     position: relative;
     margin-top: 0;
     margin-bottom: 11px;
@@ -121,14 +121,14 @@
     }
   }
 
-  .teamCard:first-of-type:before {
+  [class*="teamCard"]:first-of-type:before {
     content: url("/media/img/scenes/small-short.svg");
     position: absolute;
     // top: -7.5rem;
     z-index: -1;
   }
 
-  .teamCard:nth-of-type(2):before {
+  [class*="teamCard"]:nth-of-type(2):before {
     content: url("/media/img/scenes/large.svg");
     position: absolute;
     // top: -7.5rem;
@@ -136,32 +136,31 @@
   }
 }
 
-.teamCard.development:before {
+[class*="teamCard"].development:before {
   filter: invert(0.4) sepia(1) saturate(13.3) hue-rotate(180deg) brightness(0.93);
 }
 
-.teamCard.design:before {
+[class*="teamCard"].design:before {
   filter: invert(0.4) sepia(1) saturate(20) hue-rotate(313.2deg) brightness(1.01);
 }
 
-.teamCard.strategy:before {
+[class*="teamCard"].strategy:before {
   filter: invert(0.4) sepia(1) saturate(20) hue-rotate(216deg) brightness(0.77);
 }
 
-.teamCard.marketing:before {
+[class*="teamCard"].marketing:before {
   filter: invert(0.4) sepia(1) saturate(16) hue-rotate(331.2deg) brightness(1.06);
 }
 
-.teamCard.production:before {
+[class*="teamCard"].production:before {
   filter: invert(0.4) sepia(1) saturate(15.5) hue-rotate(360deg) brightness(1.2);
 }
 
-.teamCard.technology:before {
+[class*="teamCard"].technology:before {
   filter: invert(0.4) sepia(1) saturate(20) hue-rotate(140.4deg) brightness(0.94);
 }
 
-.production .scene--one,
-.design .scene--one {
+.designSceneOne {
   // margin-top: -10%;
   margin-left: 0;
   margin-right: 0;
@@ -214,7 +213,7 @@
     //   left: -115%;
     // }
 
-    .teamCard {
+    [class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
@@ -223,7 +222,7 @@
       margin-bottom: -5%;
     }
 
-    .teamCard:nth-child(1)::before {
+    [class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1) scaleY(-1);
       position: absolute;
       bottom: 110%;
@@ -235,7 +234,190 @@
       }
     }
 
-    .teamCard:nth-child(2)::before {
+    [class*="teamCard"]:nth-child(2)::before {
+      transform: scale(-1);
+      position: absolute;
+      top: 105%;
+      right: 20%;
+      content: url("/media/img/scenes/small-short.svg");
+      z-index: 99;
+
+      @include media-breakpoint-up(xl) {
+        left: 40%;
+      }
+    }
+  }
+}
+.designSceneTwo {
+  margin-bottom: 105px;
+  margin-left: 105px;
+  transform-origin: bottom left;
+
+  transform: scale(0.7);
+  margin-top: -170px;
+
+  @include media-breakpoint-up(sm) {
+    transform: scale(0.9);
+    margin-top: -70px;
+    margin-bottom: 120px;
+    margin-left: 135px;
+  }
+
+  @include media-breakpoint-up(md) {
+    transform: none;
+    margin-top: -10%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: 200px;
+  }
+
+  .scene__overlay {
+    position: absolute;
+    bottom: -15%;
+    left: -40%;
+    z-index: 9;
+    width: 70%;
+    // min-width:
+  }
+
+  .scene__cards {
+    width: 30%;
+    width: 300px;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: -150px;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+      left: -75%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: -200px;
+    }
+
+    [class*="teamCard"] {
+      height: fit-content;
+      position: relative;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: -5%;
+    }
+
+    [class*="teamCard"]:nth-child(1)::before {
+      transform: rotate(90deg);
+      position: absolute;
+      bottom: 20%;
+      left: 35%;
+      content: url("/media/img/scenes/medium-long.svg");
+
+      @include media-breakpoint-up(xl) {
+        left: 40%;
+      }
+    }
+
+    [class*="teamCard"]:nth-child(2)::before {
+      // transform: rotate(90deg);
+      position: absolute;
+      top: 115%;
+      left: 14.4%;
+      content: url("/media/img/scenes/large.svg");
+
+      @include media-breakpoint-up(xl) {
+        left: 40%;
+      }
+    }
+  }
+}
+.designSceneThree {
+}
+
+.production [class*="scene--one"],
+.design [class*="scene--one"],
+.designSceneOne {
+  // margin-top: -10%;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  margin-bottom: 90px;
+
+  transform-origin: bottom left;
+
+  transform: scale(0.7);
+  margin-top: -140px;
+
+  @include media-breakpoint-up(sm) {
+    transform: scale(0.9);
+    margin-top: -70px;
+  }
+
+  @include media-breakpoint-up(md) {
+    transform: none;
+    margin-top: 0;
+  }
+
+  .scene__overlay {
+    position: absolute;
+    bottom: -70px;
+    right: -40%;
+    z-index: 9;
+    width: 84%;
+    // min-width:
+  }
+
+  .scene__cards {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: -100px;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+      right: -65%;
+    }
+
+    // @include media-breakpoint-up(xl) {
+    //   left: -115%;
+    // }
+
+    [class*="teamCard"] {
+      height: fit-content;
+      position: relative;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: -5%;
+    }
+
+    [class*="teamCard"]:nth-child(1)::before {
+      transform: scaleX(-1) scaleY(-1);
+      position: absolute;
+      bottom: 110%;
+      right: 20%;
+      content: url("/media/img/scenes/large.svg");
+
+      @include media-breakpoint-up(xl) {
+        left: 40%;
+      }
+    }
+
+    [class*="teamCard"]:nth-child(2)::before {
       transform: scale(-1);
       position: absolute;
       top: 105%;
@@ -250,9 +432,9 @@
   }
 }
 
-.development .scene--one,
-.technology .scene--one,
-.marketing .scene--one {
+.development [class*="scene--one"],
+.technology [class*="scene--one"],
+.marketing [class*="scene--one"] {
   transform-origin: bottom left;
   transform: scale(0.9);
   margin-bottom: 90px;
@@ -303,19 +485,19 @@
       right: 8%;
     }
 
-    .teamCard {
+    [class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    .teamCard:nth-child(1)::before {
+    [class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1);
       position: absolute;
       bottom: 100%;
       right: 7%;
     }
 
-    .teamCard:nth-child(2)::before {
+    [class*="teamCard"]:nth-child(2)::before {
       // transform: scaleX(-1) rotate(-90deg);
       position: absolute;
       bottom: 30%;
@@ -325,8 +507,8 @@
   }
 }
 
-.technology .scene--three,
-.production .scene--three {
+.technology [class*="scene--three"],
+.production [class*="scene--three"] {
   transform-origin: bottom left;
   transform: scale(0.9);
   margin-top: -20px;
@@ -380,19 +562,19 @@
       transform: none;
     }
 
-    .teamCard {
+    [class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    .teamCard:nth-child(1)::before {
+    [class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1);
       position: absolute;
       bottom: 100%;
       right: 7%;
     }
 
-    .teamCard:nth-child(2)::before {
+    [class*="teamCard"]:nth-child(2)::before {
       // transform: scaleX(-1) rotate(-90deg);
       position: absolute;
       bottom: 30%;
@@ -402,8 +584,8 @@
   }
 }
 
-.development .scene--three,
-.marketing .scene--three {
+.development [class*="scene--three"],
+.marketing [class*="scene--three"] {
   // margin-top: -10%;
   position: relative;
   width: 80%;
@@ -491,12 +673,12 @@
       left: calc(75% - 80px);
     }
 
-    .teamCard {
+    [class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    .teamCard:nth-child(1)::before {
+    [class*="teamCard"]:nth-child(1)::before {
       transform: scale(-1);
       position: absolute;
       top: 32%;
@@ -526,7 +708,7 @@
       }
     }
 
-    .teamCard:nth-child(2)::before {
+    [class*="teamCard"]:nth-child(2)::before {
       position: absolute;
       transform: scaleY(-1);
       top: 104%;
@@ -557,8 +739,8 @@
   }
 }
 
-.technology .scene--two,
-.marketing .scene--two {
+.technology [class*="scene--two"],
+.marketing [class*="scene--two"] {
   transform-origin: bottom left;
   transform: scale(0.9);
   margin-top: 18px;
@@ -624,19 +806,19 @@
       transform: none;
     }
 
-    .teamCard {
+    [class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    .teamCard:nth-child(1)::before {
+    [class*="teamCard"]:nth-child(1)::before {
       // transform: scaleX(-1);
       position: absolute;
       bottom: 100%;
       left: 7%;
     }
 
-    .teamCard:nth-child(2)::before {
+    [class*="teamCard"]:nth-child(2)::before {
       transform: rotate(-90deg);
       position: absolute;
       bottom: 196%;
@@ -647,7 +829,7 @@
 }
 
 .development {
-  .scene--one {
+  [class*="scene--one"] {
     .scene__overlay {
       top: -70px;
       width: 50%;
@@ -663,7 +845,7 @@
     }
   }
 
-  .scene--two {
+  [class*="scene--two"] {
     margin-bottom: 92px;
     margin-left: 24%;
     transform-origin: bottom left;
@@ -721,7 +903,7 @@
         left: -200px;
       }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
@@ -730,7 +912,7 @@
         margin-bottom: -5%;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         transform: rotate(90deg);
         position: absolute;
         bottom: 20%;
@@ -742,7 +924,7 @@
         }
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         // transform: rotate(90deg);
         position: absolute;
         top: 115%;
@@ -758,7 +940,7 @@
 }
 
 .production {
-  .scene--two {
+  [class*="scene--two"] {
     // margin-top: -10%;
     margin-left: 60px;
     margin-right: 0;
@@ -803,7 +985,7 @@
       //   left: -115%;
       // }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
@@ -812,7 +994,7 @@
         margin-bottom: -5%;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         transform: scaleX(-1);
         position: absolute;
         bottom: 105%;
@@ -820,7 +1002,7 @@
         content: url("/media/img/scenes/medium-short.svg");
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         // transform: scaleX(-1);
         position: absolute;
         bottom: 34%;
@@ -831,12 +1013,12 @@
     }
   }
 
-  .scene--three {
+  [class*="scene--three"] {
   }
 }
 
 .technology {
-  .scene--one {
+  [class*="scene--one"] {
     @include media-breakpoint-up(md) {
       margin-top: 120px !important;
     }
@@ -849,16 +1031,16 @@
       margin-top: 0px !important;
     }
   }
-  .scene--one,
-  .scene--three {
+  [class*="scene--one"],
+  [class*="scene--three"] {
   }
 
-  .scene--two {
+  [class*="scene--two"] {
   }
 }
 
 .design {
-  .scene--one {
+  [class*="scene--one"] {
     // margin-top: -10%;
     margin-left: 0;
     margin-right: 0;
@@ -911,7 +1093,7 @@
       //   left: -115%;
       // }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
@@ -920,7 +1102,7 @@
         margin-bottom: -5%;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         transform: scaleX(-1) scaleY(-1);
         position: absolute;
         bottom: 110%;
@@ -932,7 +1114,7 @@
         }
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         transform: scale(-1);
         position: absolute;
         top: 105%;
@@ -947,98 +1129,7 @@
     }
   }
 
-  .scene--two {
-    margin-bottom: 105px;
-    margin-left: 105px;
-    transform-origin: bottom left;
-
-    transform: scale(0.7);
-    margin-top: -170px;
-
-    @include media-breakpoint-up(sm) {
-      transform: scale(0.9);
-      margin-top: -70px;
-      margin-bottom: 120px;
-      margin-left: 135px;
-    }
-
-    @include media-breakpoint-up(md) {
-      transform: none;
-      margin-top: -10%;
-    }
-
-    @include media-breakpoint-up(lg) {
-      margin-left: 200px;
-    }
-
-    .scene__overlay {
-      position: absolute;
-      bottom: -15%;
-      left: -40%;
-      z-index: 9;
-      width: 70%;
-      // min-width:
-    }
-
-    .scene__cards {
-      width: 30%;
-      width: 300px;
-      max-width: 100%;
-      position: absolute;
-      top: 0;
-      margin-top: auto;
-      margin-bottom: auto;
-      left: -150px;
-      height: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      display: flex;
-
-      @include media-breakpoint-up(lg) {
-        left: -75%;
-      }
-
-      @include media-breakpoint-up(xl) {
-        left: -200px;
-      }
-
-      .teamCard {
-        height: fit-content;
-        position: relative;
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin-bottom: -5%;
-      }
-
-      .teamCard:nth-child(1)::before {
-        transform: rotate(90deg);
-        position: absolute;
-        bottom: 20%;
-        left: 35%;
-        content: url("/media/img/scenes/medium-long.svg");
-
-        @include media-breakpoint-up(xl) {
-          left: 40%;
-        }
-      }
-
-      .teamCard:nth-child(2)::before {
-        // transform: rotate(90deg);
-        position: absolute;
-        top: 115%;
-        left: 14.4%;
-        content: url("/media/img/scenes/large.svg");
-
-        @include media-breakpoint-up(xl) {
-          left: 40%;
-        }
-      }
-    }
-  }
-
-  .scene--three {
+  [class*="scene--three"] {
     margin-bottom: 75px;
     width: fit-content;
     margin-right: 60px;
@@ -1109,12 +1200,12 @@
         left: -180px;
       }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         transform: scaleX(-1);
         position: absolute;
         bottom: 100%;
@@ -1126,7 +1217,7 @@
         }
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         // transform: scaleX(-1);
         position: absolute;
         content: url("/media/img/scenes/small-long.svg");
@@ -1138,7 +1229,7 @@
 }
 
 .strategy {
-  .scene--one {
+  [class*="scene--one"] {
     transform-origin: bottom left;
     // transform: scale(0.7);
     transform: scale(0.9);
@@ -1187,19 +1278,19 @@
         right: 8%;
       }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         transform: scaleX(-1);
         position: absolute;
         bottom: 100%;
         right: 7%;
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         // transform: scaleX(-1) rotate(-90deg);
         position: absolute;
         bottom: 30%;
@@ -1209,7 +1300,7 @@
     }
   }
 
-  .scene--two {
+  [class*="scene--two"] {
     transform-origin: bottom left;
     transform: scale(0.9);
     margin-top: 18px;
@@ -1275,19 +1366,19 @@
         left: 8%;
       }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         // transform: scaleX(-1);
         position: absolute;
         bottom: 100%;
         left: 7%;
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         transform: rotate(-90deg);
         position: absolute;
         bottom: 196%;
@@ -1297,7 +1388,7 @@
     }
   }
 
-  .scene--three {
+  [class*="scene--three"] {
     // margin-top: -10%;
     position: relative;
     width: 80%;
@@ -1378,12 +1469,12 @@
         left: calc(75% - 80px);
       }
 
-      .teamCard {
+      [class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      .teamCard:nth-child(1)::before {
+      [class*="teamCard"]:nth-child(1)::before {
         transform: scale(-1);
         position: absolute;
         top: 32%;
@@ -1413,7 +1504,7 @@
         }
       }
 
-      .teamCard:nth-child(2)::before {
+      [class*="teamCard"]:nth-child(2)::before {
         position: absolute;
         transform: scaleY(-1);
         top: 104%;
@@ -1446,21 +1537,21 @@
 }
 
 .marketing {
-  .scene--one {
+  [class*="scene--one"] {
     .scene__overlay {
       width: 35%;
       box-shadow: $shadow--deep;
     }
   }
 
-  .scene--two {
+  [class*="scene--two"] {
     .scene__overlay {
       width: 25%;
       box-shadow: $shadow--light;
     }
   }
 
-  .scene--three {
+  [class*="scene--three"] {
     .scene__overlay {
       width: 50%;
     }

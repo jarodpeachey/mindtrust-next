@@ -1,14 +1,19 @@
 import React from "react"
 // import "../../styles/partials/cards/_events-card.scss"
 import styles from "./EventsCard.module.scss"
-import { formatDate } from "../../../static/js/utils/formatDate"
+import { formatDate } from "../../public/js/utils/formatDate"
+
+interface PostTypes {
+  title: string
+  date: string
+}
 
 interface EventsCardProps {
   href: string
   className?: string
   children: object
   category: string
-  post: object
+  post: PostTypes
 }
 
 const EventsCard: React.FC<EventsCardProps> = props => {

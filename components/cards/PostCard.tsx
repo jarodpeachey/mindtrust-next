@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./PostCard.module.scss"
-import { formatDate } from "../../../static/js/utils/formatDate"
+import { formatDate } from "../../public/js/utils/formatDate"
 import { formatURL } from "../../utils/formatURL"
 
 interface PostCardProps {
@@ -12,10 +12,12 @@ interface PostCardProps {
   horizontal: boolean
   silo: string
   tag: string
-  date: string
+  postTags: any
+  allTags: any
+  overrideTag: any
 }
 
-const PostCard: React.FC<PostCardProps> = ({ title, className, href, summary, image, horizontal, silo, postTags, allTags, date, overrideTag }) => {
+const PostCard: React.FC<PostCardProps> = ({ title, className, href, summary, image, horizontal, silo, postTags, allTags, overrideTag }) => {
   let tags = []
 
   if (postTags && postTags.length > 0) {

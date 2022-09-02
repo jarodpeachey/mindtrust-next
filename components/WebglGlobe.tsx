@@ -1,8 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import TeamCard from "../components/cards/TeamCard"
 // import "../styles/partials/_webgl_globe.scss"
-// import styles from "./Globe.module.scss"
-import { TeamCardItem } from "../../types/card-types"
 
 // locations have underscore characters, to make it easier to use as css selector
 // such as element.querySelector(`[data-location=${location}]`)

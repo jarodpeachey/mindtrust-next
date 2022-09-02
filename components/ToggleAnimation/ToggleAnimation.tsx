@@ -6,7 +6,7 @@ import Script from '../../node_modules/next/script'
 // }
 
 const ToggleAnimation = props => {
-  let slides = props.slides
+  const slides = props.slides
 
   return (
     <div className="toggle">

@@ -28,7 +28,7 @@ section {
 }
 
 
-section.hero {
+section[class*="hero"] {
   padding-top: 2rem;
 
   @include media-breakpoint-up(md) {
@@ -40,7 +40,7 @@ section.hero {
   margin-bottom: 2.25rem;
 }
 
-.silo .hero ul.teamCards {
+.silo [class*="hero"] ul.teamCards {
   display: none;
 
   @include media-breakpoint-up(sm) {
@@ -49,7 +49,7 @@ section.hero {
 }
 
 // HERO STYLES
-.hero {
+[class*="hero"] {
   padding-top: 9rem;
   position: relative;
   text-align: center;
@@ -147,7 +147,7 @@ section.hero {
 }
 
 @include media-breakpoint-down(sm) {
-  .hero {
+  [class*="hero"] {
     padding-top: 6rem;
   }
 }
@@ -165,7 +165,7 @@ section.hero {
     left: -50%;
     width: 100%;
     height: 100%;
-    background: url("/images/gradient-cut.svg") no-repeat;
+    background: url("/media/img/gradient-cut.svg") no-repeat;
     filter: $cut--filter;
   }
 }
@@ -181,7 +181,7 @@ section.hero {
     right: -45%;
     width: 100%;
     height: 100%;
-    background: url("/images/gradient-cut.svg") no-repeat;
+    background: url("/media/img/gradient-cut.svg") no-repeat;
     transform: scaleX(-1);
     filter: $cut--filter;
   }
@@ -189,7 +189,7 @@ section.hero {
 
 // Silo Heros
 
-.hero .teamCards {
+[class*="hero"] .teamCards {
   position: relative;
   margin: 0 auto;
   width: fit-content;
@@ -369,7 +369,7 @@ section.hero {
   content: "";
   width: 175px;
   height: 600px;
-  background: url("/images/grid.png");
+  background: url("/media/img/grid.png");
   position: absolute;
   background-attachment: fixed;
   height: 100%;
@@ -394,7 +394,7 @@ section.hero {
   content: "";
   width: 398px;
   height: 361px;
-  background: url("/images/backgrounds/dots.svg");
+  background: url("/media/img/backgrounds/dots.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -430,7 +430,7 @@ section.hero {
   content: "";
   width: 223px;
   height: 282px;
-  background: url("/images/backgrounds/dots--right.svg");
+  background: url("/media/img/backgrounds/dots--right.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -508,7 +508,7 @@ section.hero {
 .footer-cta::before {
   content: "";
   width: 175px;
-  background: url("/images/grid.png");
+  background: url("/media/img/grid.png");
   position: absolute;
   background-attachment: fixed;
   height: 100%;
@@ -533,7 +533,7 @@ section.hero {
   content: "";
   width: 398px;
   height: 361px;
-  background: url("/images/backgrounds/dots.svg");
+  background: url("/media/img/backgrounds/dots.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -568,7 +568,7 @@ section.hero {
   content: "";
   width: 223px;
   height: 282px;
-  background: url("/images/backgrounds/dots--right.svg");
+  background: url("/media/img/backgrounds/dots--right.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -688,7 +688,7 @@ section.hero {
   position: relative;
   &:before {
     content: "";
-    background: url("/images/dot-burst.svg") no-repeat;
+    background: url("/media/img/dot-burst.svg") no-repeat;
     width: 211px;
     height: 282px;
     min-width: 211px;

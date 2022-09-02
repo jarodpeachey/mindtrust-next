@@ -1,13 +1,17 @@
 import React from "react"
 import "../../styles/partials/_news-entry.scss"
-import { formatDate } from "../../../static/js/utils/formatDate"
+import { formatDate } from "../../public/js/utils/formatDate"
 
+interface PostType {
+  htmlTitle: string
+  publishDate: string
+}
 interface NewsEntryProps {
   href: string
   className?: string
   children: object
   category: string
-  post: object
+  post: PostType
 }
 
 const NewsEntry: React.FC<NewsEntryProps> = props => {

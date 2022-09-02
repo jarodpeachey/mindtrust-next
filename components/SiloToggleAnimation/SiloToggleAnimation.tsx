@@ -1,20 +1,19 @@
 import React from "react"
-// import "../styles/partials/_silo-toggle-animation.scss"
-import TeamCard from "../cards/TeamCard"
-import { Doughnut } from "react-chartjs-2"
-import { data } from "../../data/pieData"
+import Script from '../../node_modules/next/script'
 
-// interface ToggleAnimationProps {
+// interface SiloToggleAnimationProps {
 //   slides:
 // }
 
-const ToggleAnimation = props => {
-  let slides = props.slides
-  let cards = props.cards
-  let swapCards = props.swapCards
+const SiloToggleAnimation = props => {
+  const slides = props.slides
+  const cards = props.cards
+  const swapCards = props.swapCards
 
   return (
     <div className="silo-toggle">
+      <Script src="/js/silo-toggle-animation.js" strategy="lazyOnload" />
+
       <div className="row">
         <div className="col-xl-4">
           <div className="toggle__left">
@@ -165,4 +164,4 @@ const ToggleAnimation = props => {
   )
 }
 
-export default ToggleAnimation
+export default SiloToggleAnimation

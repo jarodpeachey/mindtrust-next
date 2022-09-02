@@ -1,9 +1,10 @@
 import React from "react"
-import TeamCard from "./cards/TeamCard"
+import TeamCard from "../cards/TeamCard"
 
 // import "../styles/partials/_scenes.scss"
 
 import { TeamCardItem } from "../../types/card-types"
+import styles from "./Scene.module.scss"
 
 interface ScenePhoneProps {
   className: string
@@ -12,11 +13,12 @@ interface ScenePhoneProps {
   members: TeamCardItem[]
   captionID: string
   overlay: string
+  scene: string
 }
 
 const ScenePhone: React.FC<ScenePhoneProps> = props => {
   return (
-    <figure aria-labelledby={props.captionID} className={`scene--phone ${props.className}`} id={props.id}>
+    <figure aria-labelledby={props.captionID} className={`${styles["scene--phone"]} ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
       <svg
         // version="1.1"
         // id="Layer_1"
@@ -85,13 +87,13 @@ const ScenePhone: React.FC<ScenePhoneProps> = props => {
         </g>
       </svg>
 
-      <div className="scene__cards">
+      <div className={styles.scene__cards}>
         {props.members.map((member, index) => {
           return <TeamCard member={member} key={index} />
         })}
       </div>
 
-      <div className="scene__overlay">
+      <div className={styles.scene__overlay}>
         <img src={props.overlay} alt="" />
       </div>
     </figure>

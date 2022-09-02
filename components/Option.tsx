@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react"
-import PropTypes from "prop-types"
+import React from "react"
 
 interface Props {
-  children: object
+  children: string
   className: string
   id: string
   value: string

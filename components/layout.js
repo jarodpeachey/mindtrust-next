@@ -55,7 +55,7 @@ export default function Layout(props, { children, home }) {
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" strategy="lazyOnload" />
       <Script src="/js/slick/slick.min.js" strategy='lazyOnLoad' />
 
-      <main>{props.children}</main>
+      <main className={props.bodyClass || ""}>{props.children}</main>
     </>
   )
 }

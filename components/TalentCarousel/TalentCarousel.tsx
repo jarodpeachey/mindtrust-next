@@ -1,7 +1,7 @@
 import React from "react"
 import TalentCarouselSlide from "../cards/TalentCarouselSlide"
 import { TalentCarouselSlideItemHubDB } from "../../types/card-types"
-// import "../../static/js/talentCarousel"
+// import "../public/js/talentCarousel"
 
 // const slideWidth = 250;
 

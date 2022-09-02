@@ -6,31 +6,31 @@
   position: relative;
 
   &::before {
-    background-image: url("/images/backgrounds/silos/development--hero.svg");
+    background-image: url("/media/img/backgrounds/silos/development--hero.svg");
   }
 
   &.strategy::before {
-    background-image: url("/images/backgrounds/silos/strategy--hero.svg");
+    background-image: url("/media/img/backgrounds/silos/strategy--hero.svg");
     background-size: contain;
   }
 
   &.design::before {
-    background-image: url("/images/backgrounds/silos/design--hero.svg");
+    background-image: url("/media/img/backgrounds/silos/design--hero.svg");
     background-size: contain;
   }
 
   &.production::before {
-    background-image: url("/images/backgrounds/silos/production--hero.svg");
+    background-image: url("/media/img/backgrounds/silos/production--hero.svg");
     background-size: contain;
   }
 
   &.marketing::before {
-    background-image: url("/images/backgrounds/silos/marketing--hero.svg");
+    background-image: url("/media/img/backgrounds/silos/marketing--hero.svg");
     background-size: contain;
   }
 
   &.technology::before {
-    background-image: url("/images/backgrounds/silos/technology--hero.svg");
+    background-image: url("/media/img/backgrounds/silos/technology--hero.svg");
     background-size: contain;
   }
 
@@ -222,7 +222,7 @@
         width: 142px;
         height: 67px;
         left: 110%;
-        background: url("/images/icons/icon--hero-arrow.svg");
+        background: url("/media/img/icons/icon--hero-arrow.svg");
         background-size: cover;
       }
     }
