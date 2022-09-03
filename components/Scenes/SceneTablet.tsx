@@ -1,5 +1,6 @@
 import React from "react"
 import TeamCard from "../cards/TeamCard"
+import styles from "./Scene.module.scss"
 
 // import "../styles/partials/_scenes.scss"
 
@@ -12,11 +13,12 @@ interface SceneTabletProps {
   members: TeamCardItem[]
   captionID: string
   overlay: string
+  scene: string
 }
 
 const SceneTablet: React.FC<SceneTabletProps> = props => {
   return (
-    <figure aria-labelledby={props.captionID} className={`scene--tablet ${props.className}`} id={props.id}>
+    <figure aria-labelledby={props.captionID} className={`scene--tablet ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
       <svg viewBox="0 0 405 575" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="tablet-cutout" clipPathUnits="userSpaceOnUse">
@@ -33,13 +35,13 @@ const SceneTablet: React.FC<SceneTabletProps> = props => {
         <ellipse opacity="0.2" rx="3.49439" ry="3.46916" transform="matrix(4.37114e-08 1 1 -4.37114e-08 201.25 11.4949)" fill="white" />
       </svg>
 
-      <div className="scene__cards">
+      <div className={styles.scene__cards}>
         {props.members.map((member, index) => {
           return <TeamCard member={member} key={index} />
         })}
       </div>
 
-      <div className="scene__overlay">
+      <div className={styles.scene__overlay}>
         <img src={props.overlay} alt="" />
       </div>
     </figure>

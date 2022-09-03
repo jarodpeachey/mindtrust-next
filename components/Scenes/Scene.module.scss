@@ -103,7 +103,7 @@
     display: block;
   }
 
-  [class*="teamCard"] {
+  ul[class*="teamCard"] {
     position: relative;
     margin-top: 0;
     margin-bottom: 11px;
@@ -121,14 +121,14 @@
     }
   }
 
-  [class*="teamCard"]:first-of-type:before {
+  ul[class*="teamCard"]:first-of-type:before {
     content: url("/media/img/scenes/small-short.svg");
     position: absolute;
     // top: -7.5rem;
     z-index: -1;
   }
 
-  [class*="teamCard"]:nth-of-type(2):before {
+  ul[class*="teamCard"]:nth-of-type(2):before {
     content: url("/media/img/scenes/large.svg");
     position: absolute;
     // top: -7.5rem;
@@ -136,27 +136,27 @@
   }
 }
 
-[class*="teamCard"].development:before {
+ul[class*="teamCard"].development:before {
   filter: invert(0.4) sepia(1) saturate(13.3) hue-rotate(180deg) brightness(0.93);
 }
 
-[class*="teamCard"].design:before {
+ul[class*="teamCard"].design:before {
   filter: invert(0.4) sepia(1) saturate(20) hue-rotate(313.2deg) brightness(1.01);
 }
 
-[class*="teamCard"].strategy:before {
+ul[class*="teamCard"].strategy:before {
   filter: invert(0.4) sepia(1) saturate(20) hue-rotate(216deg) brightness(0.77);
 }
 
-[class*="teamCard"].marketing:before {
+ul[class*="teamCard"].marketing:before {
   filter: invert(0.4) sepia(1) saturate(16) hue-rotate(331.2deg) brightness(1.06);
 }
 
-[class*="teamCard"].production:before {
+ul[class*="teamCard"].production:before {
   filter: invert(0.4) sepia(1) saturate(15.5) hue-rotate(360deg) brightness(1.2);
 }
 
-[class*="teamCard"].technology:before {
+ul[class*="teamCard"].technology:before {
   filter: invert(0.4) sepia(1) saturate(20) hue-rotate(140.4deg) brightness(0.94);
 }
 
@@ -213,7 +213,7 @@
     //   left: -115%;
     // }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
@@ -222,7 +222,7 @@
       margin-bottom: -5%;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1) scaleY(-1);
       position: absolute;
       bottom: 110%;
@@ -234,7 +234,7 @@
       }
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       transform: scale(-1);
       position: absolute;
       top: 105%;
@@ -304,7 +304,7 @@
       left: -200px;
     }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
@@ -313,7 +313,7 @@
       margin-bottom: -5%;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       transform: rotate(90deg);
       position: absolute;
       bottom: 20%;
@@ -325,7 +325,7 @@
       }
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       // transform: rotate(90deg);
       position: absolute;
       top: 115%;
@@ -339,6 +339,101 @@
   }
 }
 .designSceneThree {
+  margin-bottom: 75px;
+  width: fit-content;
+  margin-right: 60px;
+
+  transform-origin: bottom left;
+
+  transform: scale(0.6);
+  margin-left: 90px;
+  margin-top: -220px;
+
+  @include media-breakpoint-up(sm) {
+    transform: scale(0.8);
+    margin-left: 114px;
+    margin-top: -130px;
+  }
+
+  @include media-breakpoint-up(md) {
+    transform: none;
+    margin-top: 0;
+  }
+
+  .scene__overlay {
+    right: -50px;
+    bottom: -60px;
+    width: 50%;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+    margin-left: 180px;
+    margin-right: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    margin-left: 100px;
+    margin-right: 0;
+    position: relative;
+    top: -50px;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 100%;
+    margin-left: 180px;
+    margin-right: 0;
+  }
+  .scene__cards {
+    // width: 30%;
+    // width: 300px;
+    max-width: 100%;
+    position: absolute;
+    // bottom: 15%;
+    left: -120px;
+    bottom: 12%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: fit-content;
+    display: flex;
+
+    @include media-breakpoint-up(md) {
+      left: -180px;
+    }
+
+    ul[class*="teamCard"] {
+      height: fit-content;
+      position: relative;
+    }
+
+    ul[class*="teamCard"]:nth-child(1)::before {
+      transform: scaleX(-1);
+      position: absolute;
+      bottom: 100%;
+      left: 20%;
+      content: url("/media/img/scenes/medium-short.svg");
+
+      @include media-breakpoint-up(md) {
+        left: 30%;
+      }
+    }
+
+    ul[class*="teamCard"]:nth-child(2)::before {
+      // transform: scaleX(-1);
+      position: absolute;
+      content: url("/media/img/scenes/small-long.svg");
+      left: 103%;
+      bottom: 31%;
+    }
+  }
 }
 
 .production [class*="scene--one"],
@@ -396,7 +491,7 @@
     //   left: -115%;
     // }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
@@ -405,7 +500,7 @@
       margin-bottom: -5%;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1) scaleY(-1);
       position: absolute;
       bottom: 110%;
@@ -417,7 +512,7 @@
       }
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       transform: scale(-1);
       position: absolute;
       top: 105%;
@@ -485,19 +580,19 @@
       right: 8%;
     }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1);
       position: absolute;
       bottom: 100%;
       right: 7%;
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       // transform: scaleX(-1) rotate(-90deg);
       position: absolute;
       bottom: 30%;
@@ -562,19 +657,19 @@
       transform: none;
     }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       transform: scaleX(-1);
       position: absolute;
       bottom: 100%;
       right: 7%;
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       // transform: scaleX(-1) rotate(-90deg);
       position: absolute;
       bottom: 30%;
@@ -673,12 +768,12 @@
       left: calc(75% - 80px);
     }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       transform: scale(-1);
       position: absolute;
       top: 32%;
@@ -708,7 +803,7 @@
       }
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       position: absolute;
       transform: scaleY(-1);
       top: 104%;
@@ -806,19 +901,19 @@
       transform: none;
     }
 
-    [class*="teamCard"] {
+    ul[class*="teamCard"] {
       height: fit-content;
       position: relative;
     }
 
-    [class*="teamCard"]:nth-child(1)::before {
+    ul[class*="teamCard"]:nth-child(1)::before {
       // transform: scaleX(-1);
       position: absolute;
       bottom: 100%;
       left: 7%;
     }
 
-    [class*="teamCard"]:nth-child(2)::before {
+    ul[class*="teamCard"]:nth-child(2)::before {
       transform: rotate(-90deg);
       position: absolute;
       bottom: 196%;
@@ -903,7 +998,7 @@
         left: -200px;
       }
 
-      [class*="teamCard"] {
+      ul[class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
@@ -912,7 +1007,7 @@
         margin-bottom: -5%;
       }
 
-      [class*="teamCard"]:nth-child(1)::before {
+      ul[class*="teamCard"]:nth-child(1)::before {
         transform: rotate(90deg);
         position: absolute;
         bottom: 20%;
@@ -924,7 +1019,7 @@
         }
       }
 
-      [class*="teamCard"]:nth-child(2)::before {
+      ul[class*="teamCard"]:nth-child(2)::before {
         // transform: rotate(90deg);
         position: absolute;
         top: 115%;
@@ -985,7 +1080,7 @@
       //   left: -115%;
       // }
 
-      [class*="teamCard"] {
+      ul[class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
@@ -994,7 +1089,7 @@
         margin-bottom: -5%;
       }
 
-      [class*="teamCard"]:nth-child(1)::before {
+      ul[class*="teamCard"]:nth-child(1)::before {
         transform: scaleX(-1);
         position: absolute;
         bottom: 105%;
@@ -1002,7 +1097,7 @@
         content: url("/media/img/scenes/medium-short.svg");
       }
 
-      [class*="teamCard"]:nth-child(2)::before {
+      ul[class*="teamCard"]:nth-child(2)::before {
         // transform: scaleX(-1);
         position: absolute;
         bottom: 34%;
@@ -1040,191 +1135,191 @@
 }
 
 .design {
-  [class*="scene--one"] {
-    // margin-top: -10%;
-    margin-left: 0;
-    margin-right: 0;
-    position: relative;
-    margin-bottom: 102px;
+  // [class*="scene--one"] {
+  //   // margin-top: -10%;
+  //   margin-left: 0;
+  //   margin-right: 0;
+  //   position: relative;
+  //   margin-bottom: 102px;
 
-    transform-origin: bottom left;
+  //   transform-origin: bottom left;
 
-    transform: scale(0.7);
-    margin-top: -140px;
+  //   transform: scale(0.7);
+  //   margin-top: -140px;
 
-    @include media-breakpoint-up(sm) {
-      transform: scale(0.8);
-      margin-top: -100px;
-    }
+  //   @include media-breakpoint-up(sm) {
+  //     transform: scale(0.8);
+  //     margin-top: -100px;
+  //   }
 
-    @include media-breakpoint-up(md) {
-      transform: none;
-      margin-top: 0;
-    }
+  //   @include media-breakpoint-up(md) {
+  //     transform: none;
+  //     margin-top: 0;
+  //   }
 
-    .scene__overlay {
-      position: absolute;
-      bottom: -70px;
-      right: -40%;
-      z-index: 9;
-      width: 84%;
-      // min-width:
-    }
+  //   .scene__overlay {
+  //     position: absolute;
+  //     bottom: -70px;
+  //     right: -40%;
+  //     z-index: 9;
+  //     width: 84%;
+  //     // min-width:
+  //   }
 
-    .scene__cards {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      margin-top: auto;
-      margin-bottom: auto;
-      right: -100px;
-      height: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      display: flex;
+  //   .scene__cards {
+  //     width: 100%;
+  //     height: 100%;
+  //     position: absolute;
+  //     top: 0;
+  //     margin-top: auto;
+  //     margin-bottom: auto;
+  //     right: -100px;
+  //     height: 100%;
+  //     flex-direction: column;
+  //     align-items: flex-start;
+  //     justify-content: center;
+  //     display: flex;
 
-      @include media-breakpoint-up(lg) {
-        right: -65%;
-      }
+  //     @include media-breakpoint-up(lg) {
+  //       right: -65%;
+  //     }
 
-      // @include media-breakpoint-up(xl) {
-      //   left: -115%;
-      // }
+  //     // @include media-breakpoint-up(xl) {
+  //     //   left: -115%;
+  //     // }
 
-      [class*="teamCard"] {
-        height: fit-content;
-        position: relative;
-      }
+  //     ul[class*="teamCard"] {
+  //       height: fit-content;
+  //       position: relative;
+  //     }
 
-      @include media-breakpoint-up(lg) {
-        margin-bottom: -5%;
-      }
+  //     @include media-breakpoint-up(lg) {
+  //       margin-bottom: -5%;
+  //     }
 
-      [class*="teamCard"]:nth-child(1)::before {
-        transform: scaleX(-1) scaleY(-1);
-        position: absolute;
-        bottom: 110%;
-        right: 20%;
-        content: url("/media/img/scenes/large.svg");
+  //     ul[class*="teamCard"]:nth-child(1)::before {
+  //       transform: scaleX(-1) scaleY(-1);
+  //       position: absolute;
+  //       bottom: 110%;
+  //       right: 20%;
+  //       content: url("/media/img/scenes/large.svg");
 
-        @include media-breakpoint-up(xl) {
-          left: 40%;
-        }
-      }
+  //       @include media-breakpoint-up(xl) {
+  //         left: 40%;
+  //       }
+  //     }
 
-      [class*="teamCard"]:nth-child(2)::before {
-        transform: scale(-1);
-        position: absolute;
-        top: 105%;
-        right: 20%;
-        content: url("/media/img/scenes/small-short.svg");
-        z-index: 99;
+  //     ul[class*="teamCard"]:nth-child(2)::before {
+  //       transform: scale(-1);
+  //       position: absolute;
+  //       top: 105%;
+  //       right: 20%;
+  //       content: url("/media/img/scenes/small-short.svg");
+  //       z-index: 99;
 
-        @include media-breakpoint-up(xl) {
-          left: 40%;
-        }
-      }
-    }
-  }
+  //       @include media-breakpoint-up(xl) {
+  //         left: 40%;
+  //       }
+  //     }
+  //   }
+  // }
 
   [class*="scene--three"] {
-    margin-bottom: 75px;
-    width: fit-content;
-    margin-right: 60px;
+    // margin-bottom: 75px;
+    // width: fit-content;
+    // margin-right: 60px;
 
-    transform-origin: bottom left;
+    // transform-origin: bottom left;
 
-    transform: scale(0.6);
-    margin-left: 90px;
-    margin-top: -220px;
+    // transform: scale(0.6);
+    // margin-left: 90px;
+    // margin-top: -220px;
 
-    @include media-breakpoint-up(sm) {
-      transform: scale(0.8);
-      margin-left: 114px;
-      margin-top: -130px;
-    }
+    // @include media-breakpoint-up(sm) {
+    //   transform: scale(0.8);
+    //   margin-left: 114px;
+    //   margin-top: -130px;
+    // }
 
-    @include media-breakpoint-up(md) {
-      transform: none;
-      margin-top: 0;
-    }
+    // @include media-breakpoint-up(md) {
+    //   transform: none;
+    //   margin-top: 0;
+    // }
 
-    .scene__overlay {
-      right: -50px;
-      bottom: -60px;
-      width: 50%;
-    }
+    // .scene__overlay {
+    //   right: -50px;
+    //   bottom: -60px;
+    //   width: 50%;
+    // }
 
-    @include media-breakpoint-up(md) {
-      margin-left: auto;
-    }
+    // @include media-breakpoint-up(md) {
+    //   margin-left: auto;
+    // }
 
-    @include media-breakpoint-up(md) {
-      width: 100%;
-      margin-left: 180px;
-      margin-right: 0;
-    }
+    // @include media-breakpoint-up(md) {
+    //   width: 100%;
+    //   margin-left: 180px;
+    //   margin-right: 0;
+    // }
 
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      margin-left: 100px;
-      margin-right: 0;
-      position: relative;
-      top: -50px;
-    }
-    @include media-breakpoint-up(xl) {
-      width: 100%;
-      margin-left: 180px;
-      margin-right: 0;
-    }
-    .scene__cards {
-      // width: 30%;
-      // width: 300px;
-      max-width: 100%;
-      position: absolute;
-      // bottom: 15%;
-      left: -120px;
-      bottom: 12%;
-      margin-top: auto;
-      margin-bottom: auto;
-      height: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      width: fit-content;
-      display: flex;
+    // @include media-breakpoint-up(lg) {
+    //   width: 100%;
+    //   margin-left: 100px;
+    //   margin-right: 0;
+    //   position: relative;
+    //   top: -50px;
+    // }
+    // @include media-breakpoint-up(xl) {
+    //   width: 100%;
+    //   margin-left: 180px;
+    //   margin-right: 0;
+    // }
+    // .scene__cards {
+    //   // width: 30%;
+    //   // width: 300px;
+    //   max-width: 100%;
+    //   position: absolute;
+    //   // bottom: 15%;
+    //   left: -120px;
+    //   bottom: 12%;
+    //   margin-top: auto;
+    //   margin-bottom: auto;
+    //   height: 100%;
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   justify-content: flex-end;
+    //   width: fit-content;
+    //   display: flex;
 
-      @include media-breakpoint-up(md) {
-        left: -180px;
-      }
+    //   @include media-breakpoint-up(md) {
+    //     left: -180px;
+    //   }
 
-      [class*="teamCard"] {
-        height: fit-content;
-        position: relative;
-      }
+    //   ul[class*="teamCard"] {
+    //     height: fit-content;
+    //     position: relative;
+    //   }
 
-      [class*="teamCard"]:nth-child(1)::before {
-        transform: scaleX(-1);
-        position: absolute;
-        bottom: 100%;
-        left: 20%;
-        content: url("/media/img/scenes/medium-short.svg");
+    //   ul[class*="teamCard"]:nth-child(1)::before {
+    //     transform: scaleX(-1);
+    //     position: absolute;
+    //     bottom: 100%;
+    //     left: 20%;
+    //     content: url("/media/img/scenes/medium-short.svg");
 
-        @include media-breakpoint-up(md) {
-          left: 30%;
-        }
-      }
+    //     @include media-breakpoint-up(md) {
+    //       left: 30%;
+    //     }
+    //   }
 
-      [class*="teamCard"]:nth-child(2)::before {
-        // transform: scaleX(-1);
-        position: absolute;
-        content: url("/media/img/scenes/small-long.svg");
-        left: 103%;
-        bottom: 31%;
-      }
-    }
+    //   ul[class*="teamCard"]:nth-child(2)::before {
+    //     // transform: scaleX(-1);
+    //     position: absolute;
+    //     content: url("/media/img/scenes/small-long.svg");
+    //     left: 103%;
+    //     bottom: 31%;
+    //   }
+    // }
   }
 }
 
@@ -1278,19 +1373,19 @@
         right: 8%;
       }
 
-      [class*="teamCard"] {
+      ul[class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      [class*="teamCard"]:nth-child(1)::before {
+      ul[class*="teamCard"]:nth-child(1)::before {
         transform: scaleX(-1);
         position: absolute;
         bottom: 100%;
         right: 7%;
       }
 
-      [class*="teamCard"]:nth-child(2)::before {
+      ul[class*="teamCard"]:nth-child(2)::before {
         // transform: scaleX(-1) rotate(-90deg);
         position: absolute;
         bottom: 30%;
@@ -1366,19 +1461,19 @@
         left: 8%;
       }
 
-      [class*="teamCard"] {
+      ul[class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      [class*="teamCard"]:nth-child(1)::before {
+      ul[class*="teamCard"]:nth-child(1)::before {
         // transform: scaleX(-1);
         position: absolute;
         bottom: 100%;
         left: 7%;
       }
 
-      [class*="teamCard"]:nth-child(2)::before {
+      ul[class*="teamCard"]:nth-child(2)::before {
         transform: rotate(-90deg);
         position: absolute;
         bottom: 196%;
@@ -1469,12 +1564,12 @@
         left: calc(75% - 80px);
       }
 
-      [class*="teamCard"] {
+      ul[class*="teamCard"] {
         height: fit-content;
         position: relative;
       }
 
-      [class*="teamCard"]:nth-child(1)::before {
+      ul[class*="teamCard"]:nth-child(1)::before {
         transform: scale(-1);
         position: absolute;
         top: 32%;
@@ -1504,7 +1599,7 @@
         }
       }
 
-      [class*="teamCard"]:nth-child(2)::before {
+      ul[class*="teamCard"]:nth-child(2)::before {
         position: absolute;
         transform: scaleY(-1);
         top: 104%;

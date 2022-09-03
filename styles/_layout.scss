@@ -3,6 +3,7 @@
 @use "partials/_sections" as *;
 @use "partials/_colors" as *;
 @use "partials/_buttons" as *;
+@use "partials/_inputs" as *;
 @use "partials/_animate" as *;
 @use "partials/cards/_card" as *;
 @use "partials/toggle-animation";
@@ -59,15 +60,6 @@ figure {
   .container--narrow {
     max-width: 960px;
     margin: auto;
-  }
-
-  nav .container,
-  footer .container,
-  .home [class*="hero"] .container,
-  .silo [class*="hero"] .container {
-    max-width: 1400px;
-    padding-left: 30px;
-    padding-right: 30px;
   }
 
   .container.container--wide {

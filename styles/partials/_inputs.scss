@@ -7,8 +7,7 @@
   font-size: 1.25rem;
 }
 
-.label,
-label {
+.label{
   font-size: 1rem;
   line-height: 1rem;
   display: block;
@@ -20,9 +19,7 @@ label {
   }
 }
 
-input.input,
-input,
-textarea,
+.input,
 .textarea {
   border: 1px solid #66737f;
   font-size: 1rem;
@@ -75,8 +72,7 @@ textarea,
   }
 }
 
-textarea,
-textarea.textarea {
+.textarea {
   resize: vertical;
   min-height: 100px;
 }

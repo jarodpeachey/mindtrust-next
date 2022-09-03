@@ -63,7 +63,7 @@ mutation AddProjectRequestMutation($input: ProjectRequestInput!) {
   // const additionalDetailsInput = document.querySelector("textarea.additionalDetails")
   const privacyPolicyInput = document.querySelector("#privacy-policy")
   // const optOutInput = document.querySelector("#opt-out")
-  const siloForm = document.querySelector("form.silo-form")
+  const siloForm = document.querySelector("form#silo-form")
 
   firstNameInput.addEventListener("blur", e => {
     firstNameHadError = true

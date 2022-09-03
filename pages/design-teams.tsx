@@ -1,5 +1,4 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import Navigation from "../components/Navigation/Navigation"
 import TeamCard from "../components/cards/TeamCard"
@@ -14,23 +13,21 @@ import styles from "./SiloDesign.module.scss"
 import Script from '../node_modules/next/script'
 
 const SiloDesign = ({ data }, props) => {
-  console.log("PROPS: ", props)
+  // const hasWallItems = data.skills.filter(silo => silo.silo.toLowerCase() === "design").length > 0
+  // let wallItems = []
 
-  const hasWallItems = data.skills.filter(silo => silo.silo.toLowerCase() === "design").length > 0
-  let wallItems = []
-
-  if (hasWallItems) {
-    wallItems = data.skills.filter(newSilo => newSilo.silo.toLowerCase() === "design")
-    wallItems.sort(function (a, b) {
-      if (a.skill.toLowerCase() < b.skill.toLowerCase()) {
-        return -1
-      }
-      if (a.skill.toLowerCase() > b.skill.toLowerCase()) {
-        return 1
-      }
-      return 0
-    })
-  }
+  // if (hasWallItems) {
+  //   wallItems = data.skills.filter(newSilo => newSilo.silo.toLowerCase() === "design")
+  //   wallItems.sort(function (a, b) {
+  //     if (a.skill.toLowerCase() < b.skill.toLowerCase()) {
+  //       return -1
+  //     }
+  //     if (a.skill.toLowerCase() > b.skill.toLowerCase()) {
+  //       return 1
+  //     }
+  //     return 0
+  //   })
+  // }
 
   return (
     <>
@@ -41,7 +38,7 @@ const SiloDesign = ({ data }, props) => {
 
           <div className={styles.hero}>
             {/* <img loading="lazy" src="/media/img/backgrounds/design.svg" alt="Design icon" className={styles["background--icon"]} /> */}
-            <div className="container relative">
+            <div className="container container--wide relative">
               <div className="row vertical-center">
                 <div className="col-xl-5 col-lg-6 col-md-6">
                   <h1 className="section-heading display">
@@ -167,10 +164,11 @@ const SiloDesign = ({ data }, props) => {
               />
             </div>
           </section>
+          {/* FIX THIS DOT BURST */}
           <section className={styles["dot-burst overflow"]}>
             <div className="container">
-              <h2 className={styles["mt-animate__fade mt-animate section-heading display"]}>MindTrust Design Services</h2>
-              <p className={styles["mt-animate__fade mt-animate section-description"]}>
+              <h2 className="mt-animate__fade mt-animate section-heading display">MindTrust Design Services</h2>
+              <p className="mt-animate__fade mt-animate section-description">
                 For over a decade, we’ve tested and refined our processes delivering thousands of design sprints, products, and creative campaigns. MindTrust
                 designers follow a collaborative design model — we marry our expertise with your vision to create a brand, product or site to delight your users
                 and propel your business.
@@ -183,24 +181,24 @@ const SiloDesign = ({ data }, props) => {
 
               <div className="row scene flex-column-reverse flex-lg-row">
                 <div className="col-lg-5">
-                  <h2 className={styles["section-heading mt-animate__slide mt-animate"]} id="scene-one">
+                  <h2 className="section-heading mt-animate__slide mt-animate" id="scene-one">
                     Build unified brand experiences
                   </h2>
-                  <p className={styles["section-description mt-animate__slide mt-animate"]}>
+                  <p className="section-description mt-animate__slide mt-animate">
                     Our branding experts will work with you to create a powerful campaign that clearly communicates your core values and USPs in a cohesive and
                     memorable way.
                   </p>
-                  <div className={styles["flex mt-animate__slide mt-animate"]}>
-                    <a href="/design-teams/brand-design-experts" className={styles["no-hover"]} aria-disabled="true">
+                  <div className={`mt-animate__slide mt-animate ${styles.sceneLinks}`}>
+                    <a href="/design-teams/brand-design-experts" className={styles.sceneLink} aria-disabled="true">
                       Brand Design
                     </a>
-                    <a href="/design-teams/ux-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/ux-designers" className={styles.sceneLink} aria-disabled="true">
                       User Experience (UX) Design
                     </a>
-                    <a href="/design-teams/ad-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/ad-designers" className={styles.sceneLink} aria-disabled="true">
                       Ads and Campaigns
                     </a>
-                    <a href="/design-teams/ui-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/ui-designers" className={styles.sceneLink} aria-disabled="true">
                       User Interface (UI) Design
                     </a>
                   </div>
@@ -215,24 +213,24 @@ const SiloDesign = ({ data }, props) => {
                   <ScenePhone scene="designSceneTwo" className={styles["scene--two"]} captionID="scene-two" {...scene2} />
                 </div>
                 <div className="col-lg-5 offset-lg-1">
-                  <h2 id="scene-two" className={styles["section-heading mt-animate__slide mt-animate"]}>
+                  <h2 id="scene-two" className="section-heading mt-animate__slide mt-animate">
                     Design amazing user interfaces
                   </h2>
                   <p className={styles["section-description mt-animate__slide mt-animate"]}>
                     First impressions are everything. Stand out amongst your competition with cutting-edge designs that wow your website and app users and keep
                     them engaged.
                   </p>
-                  <div className={styles["flex mt-animate__slide mt-animate"]}>
-                    <a href="/design-teams/website-designers" className={styles["no-hover"]} aria-disabled="true">
+                  <div className={`mt-animate__slide mt-animate ${styles.sceneLinks}`}>
+                    <a href="/design-teams/website-designers" className={styles.sceneLink} aria-disabled="true">
                       Websites
                     </a>
-                    <a href="/design-teams/web-app-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/web-app-designers" className={styles.sceneLink} aria-disabled="true">
                       Web and Desktop Applications
                     </a>
-                    <a href="/design-teams/mobile-app-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/mobile-app-designers" className={styles.sceneLink} aria-disabled="true">
                       Mobile Apps
                     </a>
-                    <a href="/design-teams/smart-watch-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/smart-watch-designers" className={styles.sceneLink} aria-disabled="true">
                       Smart Watch and Wearables
                     </a>
                   </div>
@@ -240,109 +238,109 @@ const SiloDesign = ({ data }, props) => {
               </div>
               <div className="row scene flex-column-reverse flex-lg-row">
                 <div className="col-lg-5">
-                  <h2 className={styles["section-heading mt-animate__slide mt-animate"]} id="scene-three">
+                  <h2 className="section-heading mt-animate__slide mt-animate" id="scene-three">
                     Design products people love
                   </h2>
                   <p className={styles["section-description mt-animate__slide mt-animate"]}>
                     Work with our squad of talented app and game designers to create unforgettable user and gaming experiences that hook your users and keep
                     them coming back for more.
                   </p>
-                  <div className={styles["flex mt-animate__slide mt-animate"]}>
-                    <a href="/design-teams/saas-paas-designers" className={styles["no-hover"]} aria-disabled="true">
+                  <div className={`mt-animate__slide mt-animate ${styles.sceneLinks}`}>
+                    <a href="/design-teams/saas-paas-designers" className={styles.sceneLink} aria-disabled="true">
                       SaaS and PaaS
                     </a>
-                    <a href="/design-teams/mobile-app-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/mobile-app-designers" className={styles.sceneLink} aria-disabled="true">
                       Mobile Apps
                     </a>
-                    <a href="/design-teams/mobile-game-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/mobile-game-designers" className={styles.sceneLink} aria-disabled="true">
                       Mobile Games
                     </a>
-                    <a href="/design-teams/wearable-tech-designers" className={styles["no-hover"]} aria-disabled="true">
+                    <a href="/design-teams/wearable-tech-designers" className={styles.sceneLink} aria-disabled="true">
                       Wearable Technology
                     </a>
                   </div>
                 </div>
                 <div className="col-lg-6 offset-lg-1 mt-animate__fade mt-animate">
-                  <SceneWatch className={styles["scene--three"]} captionID="scene-three" {...scene3} />
+                  <SceneWatch scene="designSceneThree" className={styles["scene--three"]} captionID="scene-three" {...scene3} />
                 </div>
               </div>
             </div>
           </section>
 
-          <section className={styles["experts cut--bottom-left"]}>
+          <section className={`cut--bottom-left ${styles.experts}`}>
             <div className="container">
-              <h2 className={styles["section-heading display"]}>Design experts for the leading design software</h2>
+              <h2 className={`section-heading display ${styles.expertsHeading}`}>Design experts for the leading design software</h2>
               <div className="row stack-animate">
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/proto-io-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-proto.svg" alt="Proto.io logo" />
-                    <p>Proto.io Designers</p>
+                  <a href="/design-teams/proto-io-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-proto.svg" alt="Proto.io logo" />
+                    <p className={styles.expertsText}>Proto.io Designers</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/adobe-photoshop-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-photoshop.svg" alt="Adobe Photoshop Designers logo" />
-                    <p>Adobe Photoshop Designers</p>
+                  <a href="/design-teams/adobe-photoshop-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-photoshop.svg" alt="Adobe Photoshop Designers logo" />
+                    <p className={styles.expertsText}>Adobe Photoshop Designers</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/adobe-indesign-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-indesign.svg" alt="Adobe InDesign Designers logo" />
-                    <p>Adobe InDesign Designers</p>
+                  <a href="/design-teams/adobe-indesign-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-indesign.svg" alt="Adobe InDesign Designers logo" />
+                    <p className={styles.expertsText}>Adobe InDesign Designers</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/sketch-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-sketch.svg" alt="Sketch logo" />
-                    <p>Sketch Designers</p>
+                  <a href="/design-teams/sketch-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-sketch.svg" alt="Sketch logo" />
+                    <p className={styles.expertsText}>Sketch Designers</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/invision-experts" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-invision.svg" alt="Invision logo" />
-                    <p>Invision Experts</p>
+                  <a href="/design-teams/invision-experts" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-invision.svg" alt="Invision logo" />
+                    <p className={styles.expertsText}>Invision Experts</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/invision-studio-experts" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-invisionstudio.svg" alt="Invision Studio logo" />
-                    <p>Invision Studio Experts</p>
+                  <a href="/design-teams/invision-studio-experts" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-invisionstudio.svg" alt="Invision Studio logo" />
+                    <p className={styles.expertsText}>Invision Studio Experts</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/adobe-illustrator-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-illustrator.svg" alt="Adobe Illustrator Experts logo" />
-                    <p>Adobe Illustrator Experts</p>
+                  <a href="/design-teams/adobe-illustrator-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-illustrator.svg" alt="Adobe Illustrator Experts logo" />
+                    <p className={styles.expertsText}>Adobe Illustrator Experts</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/adobe-xd-experts" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-adobexd.svg" alt="Adobe XD logo" />
-                    <p>Adobe XD Experts</p>
+                  <a href="/design-teams/adobe-xd-experts" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-adobexd.svg" alt="Adobe XD logo" />
+                    <p className={styles.expertsText}>Adobe XD Experts</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/figma-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-figma.svg" alt="Figma logo" />
-                    <p>Figma Designers</p>
+                  <a href="/design-teams/figma-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-figma.svg" alt="Figma logo" />
+                    <p className={styles.expertsText}>Figma Designers</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/framer-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-framer.svg" alt="Framer logo" />
-                    <p>Framer Experts</p>
+                  <a href="/design-teams/framer-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-framer.svg" alt="Framer logo" />
+                    <p className={styles.expertsText}>Framer Experts</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/axure-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-axure.svg" alt="Axure logo" />
-                    <p>Axure Experts</p>
+                  <a href="/design-teams/axure-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-axure.svg" alt="Axure logo" />
+                    <p className={styles.expertsText}>Axure Experts</p>
                   </a>
                 </div>
                 <div className="col-6 col-md-4">
-                  <a href="/design-teams/mockflow-designers" className="card animate">
-                    <img loading="lazy" src="/media/img/logos/logo-expert-marvel.png" alt="Mockflow Designers logo" />
-                    <p>Mockflow Designers</p>
+                  <a href="/design-teams/mockflow-designers" className={`card animate ${styles.expertsCard}`}>
+                    <img className={styles.expertsImage} loading="lazy" src="/media/img/logos/logo-expert-marvel.png" alt="Mockflow Designers logo" />
+                    <p className={styles.expertsText}>Mockflow Designers</p>
                   </a>
                 </div>
               </div>
@@ -350,8 +348,8 @@ const SiloDesign = ({ data }, props) => {
           </section>
           <section className={styles.team}>
             <div className="container">
-              <h2 className={styles["section-heading"]}>Design teams that mean business</h2>
-              <p className={styles["section-description"]}>
+              <h2 className="section-heading">Design teams that mean business</h2>
+              <p className="section-description">
                 Designing the best user experiences requires the best global teams. We choose our teams carefully so our people can be the secret to your
                 success. With MindTrust, you’ll have access to a team of top designers at your service.
               </p>
@@ -543,13 +541,13 @@ const SiloDesign = ({ data }, props) => {
             </div>
           </section>
         </main>
-        {hasWallItems && (
+        {/* {hasWallItems && (
           <aside className={styles.skills} aria-labelledby="possibilities">
             <div className="container">
-              <h2 id="possibilities" className={styles["mt-animate__fade mt-animate section-heading display"]}>
+              <h2 id="possibilities" className={`mt-animate__fade mt-animate section-heading display ${styles.skillsHeading}`}>
                 One budget, unlimited possibilities
               </h2>
-              <p className={styles["mt-animate__fade mt-animate section-description"]}>
+              <p className={`mt-animate__fade mt-animate section-description ${styles.skillsText}`}>
                 With one flexible subscription for every design need you can cross hiring designers off your list for good. This is more than a few helping
                 hands—it’s a mindtrust of elite designers who can fill skill gaps as they emerge and adapt to fit your needs over time. Your MindTrust design
                 team includes experts across a wide array of specialties including:
@@ -564,11 +562,11 @@ const SiloDesign = ({ data }, props) => {
                     ))}
                   </div>
                 </div>
-                <div id="expand">Show all</div>
+                <div className={styles.expand} id="expand">Show all</div>
               </div>
             </div>
           </aside>
-        )}
+        )} */}
         <SiloForm category="design" />
         <SiloFooter silo="Design" footerTalents={footerTalents} />
       </Layout>
@@ -578,25 +576,21 @@ const SiloDesign = ({ data }, props) => {
 
 export default SiloDesign
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch(
-    "https://api.hendrix.start.mindtrust.com/graphql?query={skills: cmsSkills { adjective metaDescription metaTitle silo siloMember siloMembers skill skillPlural skillSingular skillTeam skillTeams urlSlug}}"
-  )
-  const data = await res.json()
-  console.log("|||||||| RESPONSE ||||||||", res)
-  console.log("|||||||| JSON DATA ||||||||", data)
-  console.log("|||||||| SKILLS DATA ||||||||", data.skills)
+// export async function getStaticProps() {
+//   const res = await fetch(
+//     "https://api.hendrix.start.mindtrust.com/graphql?query={skills: cmsSkills { adjective metaDescription metaTitle silo siloMember siloMembers skill skillPlural skillSingular skillTeam skillTeams urlSlug}}"
+//   )
+//   const data = await res.json()
+//   console.log("|||||||| RESPONSE ||||||||", res)
+//   console.log("|||||||| JSON DATA ||||||||", data)
+//   console.log("|||||||| SKILLS DATA ||||||||", data.skills)
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      data: data.data
-    },
-  }
-}
+//   return {
+//     props: {
+//       data: data.data
+//     },
+//   }
+// }
 
 // export const query = graphql`
 //   query SiloDesignQuery {

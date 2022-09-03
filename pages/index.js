@@ -21,21 +21,6 @@ export default function Home({ data }) {
   const clientTestimonials = data?.taas?.clientTestimonials?.rows || []
   const featuredTMs = data?.taas?.featuredTMs?.rows || []
 
-  function addWebglGlobeFallback() {
-    const element = document.getElementsByClassName("webgl-globe-fallback")[0]
-    if (element) {
-      element.classList.remove("webgl-element-hidden")
-    }
-  }
-  function addWebglGlobe() {
-    const element = document.getElementsByClassName("webgl-globe")[0]
-    if (element) {
-      element.classList.remove("webgl-element-hidden")
-    }
-    addScript("/js/webgl_globe/three.bundle.fda87c5a7877e101b399.js")
-    addScript("/js/webgl_globe/globe-integration.fda87c5a7877e101b399.js")
-  }
-
   const [showGlobe, setShowGlobe] = useState(false)
 
   useEffect(() => {
@@ -60,7 +45,7 @@ export default function Home({ data }) {
         </Checkbox> */}
         <div className={styles["linear-gradient-box"]}></div>
         <div className={styles.hero}>
-          <div className="container">
+          <div className="container container--wide">
             <div className="row">
               <div className="col-lg-5 col-md-6 hero-heading-container">
                 <h1 className={`section-heading display plug-into ${styles.heroTitle}`}>

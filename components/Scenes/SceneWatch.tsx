@@ -1,5 +1,6 @@
 import React from "react"
 import TeamCard from "../cards/TeamCard"
+import styles from "./Scene.module.scss"
 
 // import "../styles/partials/_scenes.scss"
 
@@ -12,11 +13,12 @@ interface SceneWatchProps {
   members: TeamCardItem[]
   captionID: string
   overlay: string
+  scene: string
 }
 
 const SceneWatch: React.FC<SceneWatchProps> = props => {
   return (
-    <figure aria-labelledby={props.captionID} className={`scene--watch ${props.className}`} id={props.id}>
+    <figure aria-labelledby={props.captionID} className={`scene--watch ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
       <svg width="308" height="586" viewBox="0 0 308 586" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
@@ -38,13 +40,13 @@ const SceneWatch: React.FC<SceneWatchProps> = props => {
         <image preserveAspectRatio="xMinYMin slice" width="100%" height="100%" xlinkHref={props.background} clip-path="url(#watch-cutout)" />
       </svg>
 
-      <div className="scene__cards">
+      <div className={styles.scene__cards}>
         {props.members.map((member, index) => {
           return <TeamCard member={member} key={index} />
         })}
       </div>
 
-      <div className="scene__overlay">
+      <div className={styles.scene__overlay}>
         <img src={props.overlay} alt="" />
       </div>
     </figure>
