@@ -182,10 +182,10 @@ const SiloDevelopment = ({ data }) => {
 
               <div className="row scene flex-column-reverse flex-lg-row">
                 <div className="col-lg-5">
-                  <h2 className="section-heading mt-animate__slide mt-animate" id="scene-one">
+                  <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-one">
                     Develop amazing user experiences
                   </h2>
-                  <p className="section-description mt-animate__slide mt-animate">
+                  <p className="section-description mt-animate__slide mt-animate text-left">
                     From complex interactive websites to alluring apps, we'll use our expertise to bring to life a user experience that attracts your ideal
                     audience, elevates your brand, and increases profitability.
                   </p>
@@ -214,10 +214,10 @@ const SiloDevelopment = ({ data }) => {
                   <ScenePhone scene="developmentSceneTwo" className={styles["scene--two"]} captionID="scene-two" {...scene2} />
                 </div>
                 <div className="col-lg-5 offset-lg-1">
-                  <h2 id="scene-two" className="section-heading mt-animate__slide mt-animate">
+                  <h2 id="scene-two" className="section-heading mt-animate__slide mt-animate text-left">
                     Build game-changing apps
                   </h2>
-                  <p className="section-description mt-animate__slide mt-animate">
+                  <p className="section-description mt-animate__slide mt-animate text-left">
                     Have a lofty idea for an app or a game? Our team of hardcore developers will transform your concept into an enticing and thrilling product,
                     fully compatible with any modern mobile or desktop operating system.
                   </p>
@@ -239,10 +239,10 @@ const SiloDevelopment = ({ data }) => {
               </div>
               <div className="row scene flex-column-reverse flex-lg-row">
                 <div className="col-lg-5">
-                  <h2 className="section-heading mt-animate__slide mt-animate" id="scene-three">
+                  <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-three">
                     Ship better software products
                   </h2>
-                  <p className="section-description mt-animate__slide mt-animate">
+                  <p className="section-description mt-animate__slide mt-animate text-left">
                     Many entrepreneurs think they're great at building digital products, but in reality, most fail. Through intensive research, planning, and
                     meticulous testing, teaming up with MindTrust's all-star developers will significantly increase your odds for success.
                   </p>

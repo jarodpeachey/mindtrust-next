@@ -1,6 +1,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/shadows" as *;
+@use "./DevelopmentScenes.module.scss" as *;
 
 // [class*="scene--"] svg {
 //   border-radius: 18px;
@@ -936,99 +937,6 @@ ul[class*="teamCard"].technology:before {
 
       @include media-breakpoint-up(xs) {
         top: -150px;
-      }
-    }
-  }
-
-  [class*="scene--two"] {
-    margin-bottom: 92px;
-    margin-left: 24%;
-    transform-origin: bottom left;
-
-    transform: scale(0.7);
-    margin-top: -170px;
-
-    @include media-breakpoint-up(sm) {
-      transform: scale(0.9);
-      margin-top: -70px;
-    }
-
-    @include media-breakpoint-up(md) {
-      transform: none;
-      margin-top: -10%;
-    }
-
-    @include media-breakpoint-up(lg) {
-      margin-left: 200px;
-    }
-
-    .scene__overlay {
-      position: absolute;
-      bottom: -15%;
-      left: -40%;
-      z-index: 9;
-      width: 70%;
-      // min-width:
-    }
-
-    .scene__cards {
-      width: 30%;
-      width: 300px;
-      max-width: 100%;
-      position: absolute;
-      top: 0;
-      margin-top: auto;
-      margin-bottom: auto;
-      left: -120px;
-      height: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      display: flex;
-
-      @include media-breakpoint-up(sm) {
-        left: -150px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        left: -75%;
-      }
-
-      @include media-breakpoint-up(xl) {
-        left: -200px;
-      }
-
-      ul[class*="teamCard"] {
-        height: fit-content;
-        position: relative;
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin-bottom: -5%;
-      }
-
-      ul[class*="teamCard"]:nth-child(1)::before {
-        transform: rotate(90deg);
-        position: absolute;
-        bottom: 20%;
-        left: 35%;
-        content: url("/media/img/scenes/medium-long.svg");
-
-        @include media-breakpoint-up(xl) {
-          left: 40%;
-        }
-      }
-
-      ul[class*="teamCard"]:nth-child(2)::before {
-        // transform: rotate(90deg);
-        position: absolute;
-        top: 115%;
-        left: 14.4%;
-        content: url("/media/img/scenes/large.svg");
-
-        @include media-breakpoint-up(xl) {
-          left: 40%;
-        }
       }
     }
   }

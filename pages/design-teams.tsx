@@ -181,7 +181,7 @@ const SiloDesign = ({ data }, props) => {
 
               <div className="row scene flex-column-reverse flex-lg-row">
                 <div className="col-lg-5">
-                  <h2 className="section-heading mt-animate__slide mt-animate" id="scene-one">
+                  <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-one">
                     Build unified brand experiences
                   </h2>
                   <p className="section-description mt-animate__slide mt-animate">
@@ -213,7 +213,7 @@ const SiloDesign = ({ data }, props) => {
                   <ScenePhone scene="designSceneTwo" className={styles["scene--two"]} captionID="scene-two" {...scene2} />
                 </div>
                 <div className="col-lg-5 offset-lg-1">
-                  <h2 id="scene-two" className="section-heading mt-animate__slide mt-animate">
+                  <h2 id="scene-two" className="section-heading mt-animate__slide mt-animate text-left">
                     Design amazing user interfaces
                   </h2>
                   <p className={styles["section-description mt-animate__slide mt-animate"]}>
@@ -238,7 +238,7 @@ const SiloDesign = ({ data }, props) => {
               </div>
               <div className="row scene flex-column-reverse flex-lg-row">
                 <div className="col-lg-5">
-                  <h2 className="section-heading mt-animate__slide mt-animate" id="scene-three">
+                  <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-three">
                     Design products people love
                   </h2>
                   <p className={styles["section-description mt-animate__slide mt-animate"]}>
