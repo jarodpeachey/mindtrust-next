@@ -180,7 +180,7 @@ const SiloDevelopment = ({ data }) => {
                 </div>
               </div>
 
-              <div className="row scene flex-column-reverse flex-lg-row">
+              <div className={`row flex-column-reverse flex-lg-row ${styles.scene}`}>
                 <div className="col-lg-5">
                   <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-one">
                     Develop amazing user experiences
@@ -209,7 +209,7 @@ const SiloDevelopment = ({ data }) => {
                 </div>
               </div>
 
-              <div className="row scene">
+              <div className={`row ${styles.scene}`}>
                 <div className="col-lg-6 mt-animate__fade mt-animate">
                   <ScenePhone scene="developmentSceneTwo" className={styles["scene--two"]} captionID="scene-two" {...scene2} />
                 </div>
@@ -221,7 +221,7 @@ const SiloDevelopment = ({ data }) => {
                     Have a lofty idea for an app or a game? Our team of hardcore developers will transform your concept into an enticing and thrilling product,
                     fully compatible with any modern mobile or desktop operating system.
                   </p>
-                  <div className="flex mt-animate__slide mt-animate">
+                  <div className={`mt-animate__slide mt-animate ${styles.sceneLinks}`}>
                     <a className={styles.sceneLink} href="/development-teams/desktop-app-developers"  aria-disabled="true">
                       Desktop Applications
                     </a>
@@ -237,7 +237,7 @@ const SiloDevelopment = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="row scene flex-column-reverse flex-lg-row">
+              <div className={`row flex-column-reverse flex-lg-row ${styles.scene}`}>
                 <div className="col-lg-5">
                   <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-three">
                     Ship better software products
@@ -246,7 +246,7 @@ const SiloDevelopment = ({ data }) => {
                     Many entrepreneurs think they're great at building digital products, but in reality, most fail. Through intensive research, planning, and
                     meticulous testing, teaming up with MindTrust's all-star developers will significantly increase your odds for success.
                   </p>
-                  <div className="flex mt-animate__slide mt-animate">
+                  <div className={`mt-animate__slide mt-animate ${styles.sceneLinks}`}>
                     <a className={styles.sceneLink} href="/development-teams/saas-developers"  aria-disabled="true">
                       SaaS Platforms
                     </a>

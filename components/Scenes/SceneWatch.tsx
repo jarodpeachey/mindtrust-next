@@ -18,7 +18,7 @@ interface SceneWatchProps {
 
 const SceneWatch: React.FC<SceneWatchProps> = props => {
   return (
-    <figure aria-labelledby={props.captionID} className={`scene--watch ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
+    <figure aria-labelledby={props.captionID} className={`${styles["scene--watch"]} ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
       <svg width="308" height="586" viewBox="0 0 308 586" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"

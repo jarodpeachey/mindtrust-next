@@ -179,7 +179,7 @@ const SiloDesign = ({ data }, props) => {
                 </div>
               </div>
 
-              <div className="row scene flex-column-reverse flex-lg-row">
+              <div className={`row flex-column-reverse flex-lg-row ${styles.scene}`}>
                 <div className="col-lg-5">
                   <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-one">
                     Build unified brand experiences
@@ -208,7 +208,7 @@ const SiloDesign = ({ data }, props) => {
                 </div>
               </div>
 
-              <div className="row scene">
+              <div className={`row ${styles.scene}`}>
                 <div className="col-lg-6 mt-animate__fade mt-animate">
                   <ScenePhone scene="designSceneTwo" className={styles["scene--two"]} captionID="scene-two" {...scene2} />
                 </div>
@@ -236,7 +236,7 @@ const SiloDesign = ({ data }, props) => {
                   </div>
                 </div>
               </div>
-              <div className="row scene flex-column-reverse flex-lg-row">
+              <div className={`row flex-column-reverse flex-lg-row ${styles.scene}`}>
                 <div className="col-lg-5">
                   <h2 className="section-heading mt-animate__slide mt-animate text-left" id="scene-three">
                     Design products people love

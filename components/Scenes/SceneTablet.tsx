@@ -18,7 +18,7 @@ interface SceneTabletProps {
 
 const SceneTablet: React.FC<SceneTabletProps> = props => {
   return (
-    <figure aria-labelledby={props.captionID} className={`scene--tablet ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
+    <figure aria-labelledby={props.captionID} className={`${styles["scene--tablet"]} ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
       <svg viewBox="0 0 405 575" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="tablet-cutout" clipPathUnits="userSpaceOnUse">

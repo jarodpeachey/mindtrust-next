@@ -1,0 +1,250 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/shadows" as *;
+
+.technologySceneOne {
+  transform-origin: bottom left;
+  transform: scale(0.9);
+  margin-bottom: 90px;
+
+  @include media-breakpoint-up(sm) {
+    transform: scale(0.9);
+    margin-bottom: 120px;
+  }
+
+  @include media-breakpoint-up(md) {
+    transform: none;
+  }
+
+  .scene__overlay {
+    right: 6%;
+    top: -50px;
+    width: 40%;
+  }
+
+      @include media-breakpoint-up(md) {
+      margin-top: 120px !important;
+    }
+
+    .scene__overlay {
+      top: -120px !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0px !important;
+    }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 122px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0px !important;
+  }
+
+  .scene__cards {
+    // width: 30%;
+    // width: 300px;
+    max-width: 100%;
+    position: absolute;
+    // bottom: 15%;
+    right: -15%;
+    bottom: -90px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: fit-content;
+    display: flex;
+    transform: scale(0.8);
+
+    @include media-breakpoint-up(sm) {
+      transform: none;
+      right: 8%;
+    }
+
+    ul[class*="teamCard"] {
+      height: fit-content;
+      position: relative;
+    }
+
+    ul[class*="teamCard"]:nth-child(1)::before {
+      transform: scaleX(-1);
+      position: absolute;
+      bottom: 100%;
+      right: 7%;
+    }
+
+    ul[class*="teamCard"]:nth-child(2)::before {
+      // transform: scaleX(-1) rotate(-90deg);
+      position: absolute;
+      bottom: 30%;
+      left: -74px;
+      content: url("/media/img/scenes/large-two.svg");
+    }
+  }
+}
+.technologySceneTwo {
+  transform-origin: bottom left;
+  transform: scale(0.9);
+  margin-top: 18px;
+  margin-bottom: 80px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0px;
+    margin-bottom: 120px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 32px;
+    margin-top: 50px;
+    transform: none;
+  }
+
+  image {
+    width: 100%;
+    left: -10%;
+    position: relative;
+  }
+
+  .scene__overlay {
+    left: 6%;
+    top: -90px;
+    width: 40%;
+
+    top: -40px;
+
+    @include media-breakpoint-up(sm) {
+      top: -90px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 122px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0px !important;
+  }
+
+  .scene__cards {
+    // width: 30%;
+    // width: 300px;
+    max-width: 100%;
+    position: absolute;
+    // bottom: 15%;
+    left: -15%;
+    bottom: -90px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: fit-content;
+    display: flex;
+    transform: scale(0.7);
+
+    @include media-breakpoint-up(sm) {
+      left: 8%;
+      transform: none;
+    }
+
+    ul[class*="teamCard"] {
+      height: fit-content;
+      position: relative;
+    }
+
+    ul[class*="teamCard"]:nth-child(1)::before {
+      // transform: scaleX(-1);
+      position: absolute;
+      bottom: 100%;
+      left: 7%;
+    }
+
+    ul[class*="teamCard"]:nth-child(2)::before {
+      transform: rotate(-90deg);
+      position: absolute;
+      bottom: 196%;
+      right: -170px;
+      content: url("/media/img/scenes/large.svg");
+    }
+  }
+}
+.technologySceneThree {
+    transform-origin: bottom left;
+  transform: scale(0.9);
+  margin-top: -20px;
+  margin-bottom: 80px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0px;
+    margin-bottom: 120px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 32px;
+    margin-top: 50px;
+    transform: none;
+  }
+
+  .scene__overlay {
+    right: 6%;
+    top: -50px;
+    width: 40%;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 122px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0px !important;
+  }
+
+  .scene__cards {
+    // width: 30%;
+    // width: 300px;
+    max-width: 100%;
+    position: absolute;
+    // bottom: 15%;
+    right: -15%;
+    bottom: -90px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: fit-content;
+    display: flex;
+    transform: scale(0.8);
+
+    @include media-breakpoint-up(sm) {
+      right: 8%;
+      transform: none;
+    }
+
+    ul[class*="teamCard"] {
+      height: fit-content;
+      position: relative;
+    }
+
+    ul[class*="teamCard"]:nth-child(1)::before {
+      transform: scaleX(-1);
+      position: absolute;
+      bottom: 100%;
+      right: 7%;
+    }
+
+    ul[class*="teamCard"]:nth-child(2)::before {
+      // transform: scaleX(-1) rotate(-90deg);
+      position: absolute;
+      bottom: 30%;
+      left: -74px;
+      content: url("/media/img/scenes/large-two.svg");
+    }
+  }
+}

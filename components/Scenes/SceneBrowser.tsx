@@ -18,7 +18,7 @@ interface SceneBrowserProps {
 
 const SceneBrowser: React.FC<SceneBrowserProps> = props => {
   return (
-    <figure aria-labelledby={props.captionID} className={`scene--browser ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
+    <figure aria-labelledby={props.captionID} className={`${styles["scene--browser"]} ${props.className} ${styles[`${props.scene}`]}`} id={props.id}>
       <svg viewBox="0 0 700 450" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="browser-cutout" clipPathUnits="userSpaceOnUse">
