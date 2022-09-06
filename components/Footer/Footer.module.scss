@@ -232,8 +232,13 @@ footer.footer {
     display: flex;
     align-items: center;
     margin-top: 1rem;
+    justify-content: center;
 
-    a.social__button {
+    @include media-breakpoint-up(md) {
+      justify-content: flex-start;
+    }
+
+    .social__button {
       width: 36px;
       height: 36px;
       margin-top: 0;

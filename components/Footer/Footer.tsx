@@ -67,13 +67,13 @@ const Footer: React.FC<Props> = props => {
           </div>
         </div>
         <div className={styles.footer__end}>
-          <div className="container">
+          <div className={`container ${styles.footer__end__container}`}>
             <div className="d-flex flex-column align-items-center flex-md-row justify-content-md-between">
-              <span>&copy; Copyright {new Date().getFullYear()} MindTrust</span>
+              <span className={styles.footerCopyright}>&copy; Copyright {new Date().getFullYear()} MindTrust</span>
               <div className="d-flex flex-column align-items-center flex-sm-row">
-                <a href="/privacy-policy">Privacy policy</a>
-                <a href="/cookie-policy">Cookie policy</a>
-                <a href="/website-terms">Terms of use</a>
+                <a className={styles.footerInfoLink} href="/privacy-policy">Privacy policy</a>
+                <a className={styles.footerInfoLink} href="/cookie-policy">Cookie policy</a>
+                <a className={styles.footerInfoLink} href="/website-terms">Terms of use</a>
               </div>
             </div>
           </div>

@@ -232,8 +232,13 @@ footer.footer {
     display: flex;
     align-items: center;
     margin-top: 1rem;
+    justify-content: center;
 
-    a.social__button {
+    @include media-breakpoint-up(md) {
+      justify-content: flex-start;
+    }
+
+    .social__button {
       width: 36px;
       height: 36px;
       margin-top: 0;
@@ -268,12 +273,12 @@ footer.footer {
   padding: 0.75rem 0;
   color: $color--slate;
 
-  .container {
+  .footer__end__container {
     color: $color--slate;
     // display: flex;
     // flex-direction: column-reverse;
 
-    a {
+    .footerInfoLink {
       color: $color--slate;
       margin: 0;
       display: block;
@@ -288,6 +293,14 @@ footer.footer {
     span {
       text-align: center;
       color: $color--slate;
+    }
+    .footerCopyright {
+      margin-bottom: 18px;
+      display: block;
+
+      @include media-breakpoint-up(md) {
+        margin: 0;
+      }
     }
     @include media-breakpoint-up(md) {
       justify-content: space-between;

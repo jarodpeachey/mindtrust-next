@@ -28,6 +28,11 @@
   .quote {
     position: absolute;
     bottom: 0;
+    // width: calc(100% - 64px);
+    max-width: 540px;
+    margin: 0 auto;
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
 
     @include media-breakpoint-up(md) {
       position: static;
@@ -193,7 +198,7 @@
     .error-message {
       // color: $color--mindtrust;
       font-size: 1rem;
-      color: #009BFF;
+      color: #009bff;
     }
 
     input + .error-message {
