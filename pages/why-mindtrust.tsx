@@ -6,6 +6,7 @@ import styles from "./WhyMindtrust.module.scss"
 import Footer from "../components/Footer/Footer"
 import TalentCarousel from "../components/TalentCarousel/TalentCarousel"
 import { talentCarouselSlides } from "../data/homePage"
+import Script from '../node_modules/next/script'
 
 const WhyMindTrust = () => {
   return (
@@ -18,6 +19,7 @@ const WhyMindTrust = () => {
         }
         bodyClass="why"
       >
+        <Script src="/js/whyCollapse.js" strategy="lazyOnload" />
         <header>
           <Navigation />
         </header>
@@ -25,18 +27,20 @@ const WhyMindTrust = () => {
         <section className={`${styles.hero} ${styles["dot-burst"]}`}>
           {/* <img loading="lazy" src="/media/img/backgrounds/strategy.svg" alt="Strategy icon" className={styles["background--icon"]} /> */}
           <div className="container relative">
-            <h1 className={styles.display}>There’s a better way to grow your business</h1>
-            <p className="section-description">
+            <h1 className={`display ${styles.heroTitle}`}>There’s a better way to grow your business</h1>
+            <p className={`section-description ${styles.heroSubtitle}`}>
               Our Teams as a Service model combines world-class talent with proprietary software to load balance your growth. We’ve created the most efficient,
               least risky way for enterprises and startups to innovate and scale.
             </p>
 
-            <a href="/request-project/1" className="btn primary">
+            <div className={styles.buttons}>
+              <a href="/request-project/1" className="btn primary">
               Get started
             </a>
             <a target="_blank" href="https://meetings.mindtrust.com/meetings/sales-team-demo/web-demo-request" className="btn light outlined">
               Request a Demo
             </a>
+            </div>
             <div className={`row ${styles["trusted-by"]}`}>
               <div className="col-12">
                 <p>We've helped grow some of the largest companies:</p>
@@ -87,109 +91,109 @@ const WhyMindTrust = () => {
                     <h3>Teams as a Service</h3>
                   </div>
                 </div>
-                <div className={styles.advantage__item}>
-                  <div className={styles.advantage__left}>
+                <div className="advantage__item">
+                  <div className="advantage__left">
                     <h3>Team Size</h3>
                     <img src="/media/img/icons/icon--plus.svg" alt="Toggle collapse" height="32" width="32" />
                   </div>
                   <div className="advantage__right row">
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>Traditional Teams</h4>
+                      <h4 className="advantage__item--category">Traditional Teams</h4>
                       <img loading="lazy" src="/media/img/team-member.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member.svg" alt="Traditional teams" />
-                      <p className={styles.comparison__title}>5x Team Members</p>
+                      <p className="advantage__comparison--title">5x Team Members</p>
                       <p>Pay for salaries, benefits and 100% of your employee and contractor time.</p>
                     </div>
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>TaaS</h4>
+                      <h4 className="advantage__item--category">TaaS</h4>
                       <img loading="lazy" src="/media/img/team-member--blue.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member--blue.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member--blue.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member--blue.svg" alt="Traditional teams" />
                       <img loading="lazy" src="/media/img/team-member--blue.svg" alt="Traditional teams" />
-                      <p className={styles.comparison__title}>∞ Team Members</p>
+                      <p className="advantage__comparison--title">∞ Team Members</p>
                       <p>Your team is fluid and infinitely scalable based upon your month-to-month needs.</p>
                     </div>
                   </div>
                 </div>
-                <div className={styles.advantage__item}>
-                  <div className={styles.advantage__left}>
+                <div className="advantage__item">
+                  <div className="advantage__left">
                     <h3>Talent Utilization</h3>
                     <img src="/media/img/icons/icon--plus.svg" alt="Toggle collapse" height="32" width="32" />
                   </div>
                   <div className="advantage__right row">
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>Traditional Teams</h4>
-                      <div className={styles.flex}>
+                      <h4 className="advantage__item--category">Traditional Teams</h4>
+                      <div className="advantage__item--flex">
                         <img loading="lazy" src="/media/img/icons/icon--60-percent.svg" alt="Traditional teams" />
-                        <p className={styles.comparison__title}>60% Utilized</p>
+                        <p className="advantage__comparison--title">60% Utilized</p>
                       </div>
                     </div>
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>TaaS</h4>
-                      <div className={styles.flex}>
+                      <h4 className="advantage__item--category">TaaS</h4>
+                      <div className="advantage__item--flex">
                         <img loading="lazy" src="/media/img/icons/icon--100-percent.svg" alt="Traditional teams" />
                         <div>
-                          <p className={styles.comparison__title}>100% Utilized</p>
+                          <p className="advantage__comparison--title">100% Utilized</p>
                           <p>With our TaaS model, your team is adaptive to your needs. You only pay for hours you use. </p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className={styles.advantage__item}>
-                  <div className={styles.advantage__left}>
+                <div className="advantage__item">
+                  <div className="advantage__left">
                     <h3>Monthly Hours</h3>
                     <img src="/media/img/icons/icon--plus.svg" alt="Toggle collapse" height="32" width="32" />
                   </div>
                   <div className="advantage__right row">
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>Traditional Teams</h4>
-                      <div className={styles.flex}>
+                      <h4 className="advantage__item--category">Traditional Teams</h4>
+                      <div className="advantage__item--flex">
                         <img loading="lazy" src="/media/img/icons/icon--hours.svg" alt="Traditional teams" />
                         <div>
-                          <p className={styles.comparison__title}>867 hours</p>
+                          <p className="advantage__comparison--title">867 hours</p>
                           <p>You are paying for 160 to 184 hours per team member each and every month.</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>TaaS</h4>
-                      <div className={styles.flex}>
+                      <h4 className="advantage__item--category">TaaS</h4>
+                      <div className="advantage__item--flex">
                         <img loading="lazy" src="/media/img/icons/icon--hours-blue.svg" alt="Traditional teams" />
                         <div>
-                          <p className={styles.comparison__title}>Flexible hours</p>
+                          <p className="advantage__comparison--title">Flexible hours</p>
                           <p>With MindTrust you can easily scale up or down, and only pay for hours you use.</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className={styles.advantage__item}>
-                  <div className={styles.advantage__left}>
+                <div className="advantage__item">
+                  <div className="advantage__left">
                     <h3>Total Savings</h3>
                     <img src="/media/img/icons/icon--plus.svg" alt="Toggle collapse" height="32" width="32" />
                   </div>
                   <div className="advantage__right row">
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>Traditional Teams</h4>
-                      <div className={styles.flex}>
-                        <div className={styles.savings}>0%</div>
+                      <h4 className="advantage__item--category">Traditional Teams</h4>
+                      <div className="advantage__item--flex">
+                        <div className="advantage__savings">0%</div>
                         <div>
-                          <p className={styles.comparison__title}>Savings</p>
+                          <p className="advantage__comparison--title">Savings</p>
                           <p>Pay for salaries, benefits, and 100% of your employee and contractor time.</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-sm-6">
-                      <h4 className={styles["advantage__item--category"]}>TaaS</h4>
-                      <div className={styles.flex}>
-                        <div className={styles.savings}>53%</div>
+                      <h4 className="advantage__item--category">TaaS</h4>
+                      <div className="advantage__item--flex">
+                        <div className="advantage__savings">53%</div>
                         <div>
-                          <p className={styles.comparison__title}>Savings</p>
+                          <p className="advantage__comparison--title">Savings</p>
                           <p>We provide the right talent at the right time, and you only pay for hours worked.</p>
                         </div>
                       </div>
@@ -201,11 +205,11 @@ const WhyMindTrust = () => {
           </section>
           <section className={styles.compare}>
             <div className="container">
-              <h2 className="section-heading">How do you design, build, launch and promote projects today?</h2>
+              <h2 className={`section-heading ${styles.compareTitle}`}>How do you design, build, launch and promote projects today?</h2>
               <div className="row">
                 <div className="col-md-6 col-lg-4">
-                  <div className="category card">
-                    <div className={styles.info}>
+                  <div className={`card ${styles.compareCard}`}>
+                    <div className={styles.compareCardInfo}>
                       <img loading="lazy" alt="" className={styles.a} src="/media/img/backgrounds/a.svg" role="presentation" />
                       <div>
                         <h3>I rely on employees</h3>
@@ -241,8 +245,8 @@ const WhyMindTrust = () => {
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
-                  <div className="category card">
-                    <div className={styles.info}>
+                  <div className={`card ${styles.compareCard}`}>
+                    <div className={styles.compareCardInfo}>
                       <img loading="lazy" alt="" src="/media/img/backgrounds/b.svg" role="presentation" />
                       <div>
                         <h3>I rely on an agency</h3>
@@ -278,8 +282,8 @@ const WhyMindTrust = () => {
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
-                  <div className="category card">
-                    <div className={styles.info}>
+                  <div className={`card ${styles.compareCard}`}>
+                    <div className={styles.compareCardInfo}>
                       <img loading="lazy" alt="" className={styles.c} src="/media/img/backgrounds/c.svg" role="presentation" />
                       <div>
                         <h3>I rely on freelancers</h3>
@@ -355,12 +359,12 @@ const WhyMindTrust = () => {
                       "MindTrust has been a great partner for Datto. Having access to the right talent at the right time without disrupting our internal
                       workflow has been a game-changer.”
                     </p>
-                    <div className="quote__author d-flex align-items-center">
-                      <img src="/media/img/matthew-richards.jpg" alt="Sample avatar" />
+                    <div className={styles.quote__author}>
+                      <img className={styles.quote__image} src="/media/img/matthew-richards.jpg" alt="Sample avatar" />
                       <div className="d-flex flex-direction-column flex-column">
                         <p>Matt Richards</p>
-                        <p className={styles["m-0"]}>Chief Marketing Officer</p>
-                        <p className={styles["m-0"]}>Datto</p>
+                        <p className={"m-0"}>Chief Marketing Officer</p>
+                        <p className={"m-0"}>Datto</p>
                       </div>
                     </div>
                   </div>
@@ -437,28 +441,28 @@ const WhyMindTrust = () => {
               <h2 className="section-heading">We deliver, consistently</h2>
               <div className="row">
                 <div className="col-sm-6 col-lg-3">
-                  <div className="card">
+                  <div className={`card ${styles.deliverCard}`}>
                     <img loading="lazy" src="/media/img/icons/icon--trophy.svg" role="presentation" alt="" width="80" height="80" />
                     <p>Success Rate</p>
                     <p className={styles.score}>99.3%</p>
                   </div>
                 </div>
                 <div className="col-sm-6 col-lg-3">
-                  <div className="card">
+                  <div className={`card ${styles.deliverCard}`}>
                     <img loading="lazy" src="/media/img/icons/icon--ribbon.svg" role="presentation" alt="" width="80" height="80" />
                     <p>Projects complete</p>
                     <p className={styles.score}>3000+</p>
                   </div>
                 </div>
                 <div className="col-sm-6 col-lg-3">
-                  <div className="card">
+                  <div className={`card ${styles.deliverCard}`}>
                     <img loading="lazy" src="/media/img/icons/icon--speech-bubble.svg" role="presentation" alt="" width="80" height="80" />
                     <p>NetPromoter Score</p>
                     <p className={styles.score}>98%</p>
                   </div>
                 </div>
                 <div className="col-sm-6 col-lg-3">
-                  <div className="card">
+                  <div className={`card ${styles.deliverCard}`}>
                     <img loading="lazy" src="/media/img/icons/icon--happy.svg" role="presentation" alt="" width="80" height="80" />
                     <p>Happy Customers</p>
                     <p className={styles.score}>500+</p>
@@ -489,15 +493,26 @@ const WhyMindTrust = () => {
         </section> */}
         </main>
         <aside aria-labelledby="footer-cta" className={styles["footer-cta"]}>
-          <div className="container">
-            <img loading="lazy" width="38" height="56" className={styles["footer-cta__image"]} src="/media/img/icons/icon--mindtrust-white.svg" alt="MindTrust Logo" />
-            <h2 id="footer-cta" className="footer-cta__title section-heading">
-              Great teams are hard to build. <br />
-              Let us help.
-            </h2>
-            <a href="/request-project/1" className="footer-cta__button btn">
-              Get Started
-            </a>
+          <div className={`container ${styles["footer-cta__container"]}`}>
+            <div className={`row ${styles["container__inner"]}`}>
+              <div className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 text-center">
+                <img
+                  loading="lazy"
+                  width="38"
+                  height="56"
+                  className={styles["footer-cta__image"]}
+                  src="/media/img/icons/icon--mindtrust-white.svg"
+                  alt="MindTrust Logo"
+                />
+                <h2 id="footer-cta" className={`section-heading ${styles["footer-cta__title"]}`}>
+                  Great teams are hard to build. <br />
+                  Let us help.
+                </h2>
+                <a href="/request-project/1" className={`btn ${styles["footer-cta__button"]}`}>
+                  Get Started
+                </a>
+              </div>
+            </div>
           </div>
         </aside>
         <Footer />

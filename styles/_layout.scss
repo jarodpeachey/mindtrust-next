@@ -1,11 +1,11 @@
 @use "partials/_typography" as *;
-@use "vendor/_grid" as *;
-@use "partials/_sections" as *;
-@use "partials/_colors" as *;
-@use "partials/_buttons" as *;
-@use "partials/_inputs" as *;
-@use "partials/_animate" as *;
-@use "partials/cards/_card" as *;
+@use "vendor/grid" as *;
+@use "partials/sections" as *;
+@use "partials/colors" as *;
+@use "partials/buttons" as *;
+@use "partials/inputs" as *;
+@use "partials/animate" as *;
+@use "partials/cards/card" as *;
 @use "partials/toggle-animation";
 @use "partials/silo-toggle-animation";
 @use "partials/taas-animation";
@@ -14,6 +14,7 @@
 @use "partials/talent-carousel";
 @use "partials/webgl_globe";
 @use "partials/pages/silo";
+@use "partials/advantages";
 
 html {
   font-size: 100%;
