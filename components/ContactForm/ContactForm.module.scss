@@ -2,7 +2,7 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/inputs" as *;
 
-.contact .contact-form, .event .event-form {
+.contact-form {
   .contact-form__card {
     background: $color--cotton;
     padding: 2rem;

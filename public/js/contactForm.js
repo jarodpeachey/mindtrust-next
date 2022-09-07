@@ -25,7 +25,7 @@
   const messageInput = document.querySelector("textarea.message")
   const messageLabel = document.querySelector("label.message")
   const marketingCheckbox = document.getElementById("marketing-checkbox")
-  const contactForm = document.querySelector("form.contact-form")
+  const contactForm = document.querySelector("form#contact-form")
 
   firstNameInput.addEventListener("blur", e => {
     firstNameHadError = true

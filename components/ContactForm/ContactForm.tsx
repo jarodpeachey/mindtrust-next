@@ -1,7 +1,8 @@
 import React from "react"
+import Script from "../../node_modules/next/script"
 
-import "../../styles/partials/_contact-form.scss"
-import "../../styles/partials/pages/_contact.scss"
+// import "../../styles/partials/_contact-form.scss"
+// import "../../styles/partials/pages/_contact.scss"
 import styles from "./ContactForm.module.scss"
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 const ContactForm: React.FC<Props> = props => {
   return (
     <>
+      <Script src="/js/contactForm.js" strategy="lazyOnload" />
       <div className={styles["contact-form"]} aria-label="Contact MindTrust">
         <div className={styles["contact-form__card"]}>
           <div id="form-message"></div>
@@ -18,22 +20,22 @@ const ContactForm: React.FC<Props> = props => {
           <span className={styles.info}>
             Fields marked with a <span className={styles["error-message"]}>*</span> are required
           </span>
-          <form className={styles["contact-form"]}>
+          <form id="contact-form" className={styles["contact-form"]}>
             <div className="row">
               <div className="col-12">
-                <label htmlFor="firstName" className={styles["label first-name"]}>
+                <label htmlFor="firstName" className="label first-name">
                   First name <span className={styles["error-message"]}>*</span>
                 </label>
-                <input type="text" id="firstName" placeholder="" className={styles["input validate first-name"]} />
+                <input type="text" id="firstName" placeholder="" className="input validate first-name" />
                 <span className={styles["error-message"]}>Please enter your first name</span>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
-                <label htmlFor="lastName" className={styles["label last-name"]}>
+                <label htmlFor="lastName" className="label last-name">
                   Last name <span className={styles["error-message"]}>*</span>
                 </label>
-                <input type="text" id="lastName" placeholder="" className={styles["input validate last-name"]} />
+                <input type="text" id="lastName" placeholder="" className="input validate last-name" />
                 <span className={styles["error-message"]}>Please enter your last name</span>
               </div>
             </div>
@@ -51,7 +53,7 @@ const ContactForm: React.FC<Props> = props => {
                 <label htmlFor="phone" className="label phone">
                   Phone number
                 </label>
-                <input type="tel" id="phone" placeholder="" className="input phone"/>
+                <input type="tel" id="phone" placeholder="" className="input phone" />
               </div>
             </div>
             <div className="row">
