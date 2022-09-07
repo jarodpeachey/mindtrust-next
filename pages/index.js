@@ -37,7 +37,6 @@ export default function Home({ data }) {
           <Script src="/js/webgl_globe/globe-integration.fda87c5a7877e101b399.js" />
         </>
       )}
-      <Script src="/js/talentCarousel.js" />
       <header>
         <Navigation />
         {/* <Checkbox id="consent-checkbox" className="consent-checkbox">

@@ -1,6 +1,7 @@
 import React from "react"
 import TalentCarouselSlide from "../cards/TalentCarouselSlide"
 import { TalentCarouselSlideItemHubDB } from "../../types/card-types"
+import Script from '../../node_modules/next/script'
 // import "../public/js/talentCarousel"
 
 // const slideWidth = 250;
@@ -12,6 +13,8 @@ interface TalentCarouselProps {
 const TalentCarousel: React.FC<TalentCarouselProps> = props => {
   return (
     <div className="talent-carousel">
+      <Script src="/js/talentCarousel.js" />
+
       <div className="talent-carousel__mask" id="talent-carousel__mask">
         <div className="talent-carousel__track" id="talent-carousel__track">
           {/* TODO:: we need to use <TalentCarouselSlide /> component for the dynamic rendering */}
